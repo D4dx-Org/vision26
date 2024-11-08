@@ -42,18 +42,18 @@ class LanguageSelectionScreen extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                const SizedBox(height: 40),
+                const SizedBox(height: 20),
 
                 // Language Selection Text
                 Text(
-                  'Select your language / اپنی زبان منتخب کریں',
+                  'Select your language',
                   style: TextStyle(
-                    fontSize: 28,
+                    fontSize: 26,
                     color: Colors.grey[800],
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 40),
 
                 // Language Buttons
                 Row(

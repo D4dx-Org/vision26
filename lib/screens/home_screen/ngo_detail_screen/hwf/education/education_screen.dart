@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
-import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/education_detail_screen.dart/educational_institutions_screen.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/educational_institutions/educational_institutions_screen.dart';
 
 class EducationServicesScreen extends StatelessWidget {
   const EducationServicesScreen({super.key});

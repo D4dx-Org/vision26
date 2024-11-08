@@ -55,11 +55,11 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 10),
                       const Text(
                         'Welcome to IRT',
                         style: TextStyle(
-                          fontSize: 32,
+                          fontSize: 28,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
@@ -70,6 +70,7 @@ class HomeScreen extends StatelessWidget {
                           fontSize: 16,
                           color: Colors.white70,
                         ),
+                        maxLines: 2,
                       ),
                     ],
                   ),

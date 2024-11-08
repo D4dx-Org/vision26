@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
-import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/education_detail_screen.dart/capmpuses/siddique_hassan_campus.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/educational_institutions/capmpuses/hwf_malda_campus/hwf_malda_campus.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/educational_institutions/capmpuses/other_campuses/other_campuses_screen.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/educational_institutions/capmpuses/siddique_hassan_campus/siddique_hassan_campus.dart';
 
 class EducationalInstitutionsScreen extends StatelessWidget {
   const EducationalInstitutionsScreen({super.key});
@@ -104,7 +106,7 @@ class EducationalInstitutionsScreen extends StatelessWidget {
               delegate: SliverChildListDelegate([
                 _buildInstitutionCard(
                   context: context,
-                  child: const CampusProfileScreen(),
+                  child: const SiddiqueHassanCampus(),
                   name: 'Siddique Hassan Campus',
                   location: 'Mewat, Haryana',
                   code: 'A1(a) i',
@@ -113,7 +115,7 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                 ),
                 _buildInstitutionCard(
                   context: context,
-                  child: const CampusProfileScreen(),
+                  child: const HwfMaldaCampus(),
                   name: 'HWF Malda Campus',
                   location: 'West Bengal',
                   code: 'A1(a) ii',
@@ -122,7 +124,11 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                 ),
                 _buildInstitutionCard(
                   context: context,
-                  child: const CampusProfileScreen(),
+                  child: const OtherCampusesScreen(
+                    title: 'The Scholar School',
+                    description:
+                        "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
+                  ),
                   name: 'The Scholar School',
                   location: 'New Delhi',
                   code: 'A1(a) iii',
@@ -131,25 +137,37 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                 ),
                 _buildInstitutionCard(
                   context: context,
-                  child: const CampusProfileScreen(),
                   name: 'The Scholar School',
                   location: 'Guwahati, Assam',
+                  child: const OtherCampusesScreen(
+                    title: 'The Scholar School',
+                    description:
+                        "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
+                  ),
                   code: 'A1(a) iv',
                   image:
                       "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",
                 ),
                 _buildInstitutionCard(
                   context: context,
-                  child: const CampusProfileScreen(),
                   name: 'The Scholar School',
                   location: 'Howrah, West Bengal',
+                  child: const OtherCampusesScreen(
+                    title: 'The Scholar School',
+                    description:
+                        "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
+                  ),
                   code: 'A1(a) v',
                   image:
                       "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",
                 ),
                 _buildInstitutionCard(
                   context: context,
-                  child: const CampusProfileScreen(),
+                  child: const OtherCampusesScreen(
+                    title: 'The Scholar School',
+                    description:
+                        "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
+                  ),
                   name: 'The Scholar School',
                   location: 'Bargaon, Jharkhand',
                   code: 'A1(a) vi',
@@ -158,7 +176,11 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                 ),
                 _buildInstitutionCard(
                   context: context,
-                  child: const CampusProfileScreen(),
+                  child: const OtherCampusesScreen(
+                    title: 'The Scholar School',
+                    description:
+                        "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
+                  ),
                   name: 'The Scholar School',
                   location: 'Darbhanga, Bihar',
                   code: 'A1(a) vii',
@@ -167,7 +189,11 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                 ),
                 _buildInstitutionCard(
                   context: context,
-                  child: const CampusProfileScreen(),
+                  child: const OtherCampusesScreen(
+                    title: 'Millennium Public School',
+                    description:
+                        "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
+                  ),
                   name: 'Millennium Public School',
                   location: 'Hazaribagh, Jharkhand',
                   code: 'A1(a) viii',
@@ -187,7 +213,7 @@ class EducationalInstitutionsScreen extends StatelessWidget {
     required String location,
     required String code,
     required String image,
-    Widget child = const SizedBox(),
+    required Widget child,
     required BuildContext context,
   }) {
     return Container(

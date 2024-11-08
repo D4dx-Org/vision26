@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vision_2026/constants/image_class.dart';
+import 'package:vision_2026/helper/navigation_helper.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/educational_institutions/capmpuses/siddique_hassan_campus/existing_projects/school_profile_scren.dart';
 
-class CampusProfileScreen extends StatelessWidget {
-  const CampusProfileScreen({super.key});
+class HwfMaldaCampus extends StatelessWidget {
+  const HwfMaldaCampus({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,7 @@ class CampusProfileScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Siddique Hassan Campus',
+                    "HWF MALDA CAMPUS, WEST BENGAL",
                     style: TextStyle(
                       fontSize: 24,
                       color: Colors.white,
@@ -51,7 +53,7 @@ class CampusProfileScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'Mewat, Haryana',
+                    'Narayanpur, Malda, West Bengal',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.white70,
@@ -75,7 +77,7 @@ class CampusProfileScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    'A Developing Education Hub',
+                    'A Developing Education Hub in Malda',
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
@@ -90,7 +92,7 @@ class CampusProfileScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Text(
-                      "The campus is in Marora village, Nuh district, Mewat, Haryana, spanning 24 acres. Nuh, in the Mewat region, is the least developed district in Haryana and the only area from the state listed among NITI Aayog's 101 most underdeveloped districts in India, holding one of the lowest rankings. The Human Welfare Foundation aims to make this campus a central hub for empowerment initiatives in the region.",
+                      "The HWF Malda Campus is an emerging educational hub in Narayanpur, Malda district, West Bengal, covering 12 acres. This campus is part of the Human Welfare Foundation's ongoing development efforts to create multi-institution centers for learning and empowerment in underserved regions.",
                       style: TextStyle(
                         fontSize: 16,
                         height: 1.6,
@@ -144,22 +146,23 @@ class CampusProfileScreen extends StatelessWidget {
                       _buildProjectCard(
                         title: 'Al Jamia Senior Secondary School',
                         code: 'A1(a)i_1',
-                        icon: LucideIcons.graduationCap,
-                      ),
-                      _buildProjectCard(
-                        title: 'UG & PG College',
-                        code: 'A1(a)i_2',
-                        icon: LucideIcons.building2,
-                      ),
-                      _buildProjectCard(
-                        title: 'Chirag Public School (Hindi Medium)',
-                        code: 'A1(a)i_3',
                         icon: LucideIcons.school,
+                        context: context,
+                        child: const SchoolProfileScreen(),
                       ),
                       _buildProjectCard(
-                        title: 'Hostels for Boys & Girls',
-                        code: 'A1(a)i_4',
-                        icon: LucideIcons.bed,
+                        title: 'The Scholar School',
+                        code: 'A1(a)i_2',
+                        icon: LucideIcons.graduationCap,
+                        context: context,
+                        child: const SchoolProfileScreen(),
+                      ),
+                      _buildProjectCard(
+                        title: 'Hostel for Boys',
+                        code: 'A1(a)i_3',
+                        icon: LucideIcons.building2,
+                        context: context,
+                        child: const SchoolProfileScreen(),
                       ),
                     ],
                   ),
@@ -211,18 +214,16 @@ class CampusProfileScreen extends StatelessWidget {
                         code: 'Future',
                         icon: LucideIcons.wrench,
                         isFuture: true,
-                      ),
-                      _buildProjectCard(
-                        title: 'The Scholar School',
-                        code: 'Future',
-                        icon: LucideIcons.school2,
-                        isFuture: true,
+                        context: context,
+                        child: const SchoolProfileScreen(),
                       ),
                       _buildProjectCard(
                         title: 'Medical Centre',
                         code: 'Future',
                         icon: LucideIcons.stethoscope,
                         isFuture: true,
+                        context: context,
+                        child: const SchoolProfileScreen(),
                       ),
                     ],
                   ),
@@ -257,6 +258,8 @@ class CampusProfileScreen extends StatelessWidget {
     required String code,
     required IconData icon,
     bool isFuture = false,
+    Widget child = const SizedBox(),
+    required BuildContext context,
   }) {
     return Container(
       decoration: BoxDecoration(
@@ -274,7 +277,7 @@ class CampusProfileScreen extends StatelessWidget {
         color: Colors.transparent,
         child: InkWell(
           onTap: () {
-            // Handle project tap
+            navigateTo(context: context, route: child);
           },
           borderRadius: BorderRadius.circular(12),
           child: Padding(
