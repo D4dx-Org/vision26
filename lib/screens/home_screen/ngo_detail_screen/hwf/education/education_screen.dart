@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/capacity_building_schools/capacity_building_schools.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/educational_institutions/educational_institutions_screen.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/scholorship_screen/scholorship_screen.dart';
 
 class EducationServicesScreen extends StatelessWidget {
   const EducationServicesScreen({super.key});
@@ -77,6 +79,7 @@ class EducationServicesScreen extends StatelessWidget {
                       'Schools and educational facilities providing quality education.',
                 ),
                 _buildServiceCard(
+                  child: const CapacityBuildingScreen(),
                   title: 'Capacity Building of Schools',
                   code: 'A1(b)',
                   context: context,
@@ -88,6 +91,7 @@ class EducationServicesScreen extends StatelessWidget {
                 _buildServiceCard(
                   title: 'Scholarship',
                   context: context,
+                  child: const ScholarshipScreen(),
                   code: 'A1(c)',
                   image:
                       "https://www.sevamandir.org/images/What%20we%20do/WindowImg/171_4_E_3_sub-page_ed.jpg",
@@ -202,7 +206,7 @@ class EducationServicesScreen extends StatelessWidget {
                         Text(
                           title,
                           style: const TextStyle(
-                            fontSize: 16,
+                            fontSize: 15,
                             fontWeight: FontWeight.bold,
                             color: Color(0xFFB71C1C),
                           ),
