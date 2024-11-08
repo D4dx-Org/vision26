@@ -109,7 +109,7 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                   child: const SiddiqueHassanCampus(),
                   name: 'Siddique Hassan Campus',
                   location: 'Mewat, Haryana',
-                  code: 'A1(a) i',
+                  place: 'Hayana',
                   image:
                       "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",
                 ),
@@ -118,7 +118,7 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                   child: const HwfMaldaCampus(),
                   name: 'HWF Malda Campus',
                   location: 'West Bengal',
-                  code: 'A1(a) ii',
+                  place: 'West Bengal',
                   image:
                       "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",
                 ),
@@ -131,7 +131,7 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                   ),
                   name: 'The Scholar School',
                   location: 'New Delhi',
-                  code: 'A1(a) iii',
+                  place: 'New Delhi',
                   image:
                       "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",
                 ),
@@ -144,7 +144,7 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                     description:
                         "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
                   ),
-                  code: 'A1(a) iv',
+                  place: 'Assam',
                   image:
                       "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",
                 ),
@@ -157,7 +157,7 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                     description:
                         "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
                   ),
-                  code: 'A1(a) v',
+                  place: 'West Bengal',
                   image:
                       "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",
                 ),
@@ -170,7 +170,7 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                   ),
                   name: 'The Scholar School',
                   location: 'Bargaon, Jharkhand',
-                  code: 'A1(a) vi',
+                  place: 'Jharkhand',
                   image:
                       "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",
                 ),
@@ -183,7 +183,7 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                   ),
                   name: 'The Scholar School',
                   location: 'Darbhanga, Bihar',
-                  code: 'A1(a) vii',
+                  place: 'Bihar',
                   image:
                       "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",
                 ),
@@ -196,7 +196,7 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                   ),
                   name: 'Millennium Public School',
                   location: 'Hazaribagh, Jharkhand',
-                  code: 'A1(a) viii',
+                  place: 'Jharkhand',
                   image:
                       "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",
                 ),
@@ -211,7 +211,7 @@ class EducationalInstitutionsScreen extends StatelessWidget {
   Widget _buildInstitutionCard({
     required String name,
     required String location,
-    required String code,
+    required String place,
     required String image,
     required Widget child,
     required BuildContext context,
@@ -263,7 +263,7 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Text(
-                            code,
+                            place,
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 14,

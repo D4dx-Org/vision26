@@ -303,6 +303,22 @@ class HwfMaldaCampus extends StatelessWidget {
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
+                const SizedBox(height: 8),
+                Visibility(
+                  visible: !isFuture,
+                  child: TextButton(
+                    onPressed: null,
+                    child: Text(
+                      'View More',
+                      style: TextStyle(
+                        color: isFuture
+                            ? Colors.orange[800]
+                            : const Color(0xFFB71C1C),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

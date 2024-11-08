@@ -173,7 +173,7 @@ class HomeScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      'Our Partners',
+                      "Our NGO'S",
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -239,11 +239,6 @@ class HomeScreen extends StatelessWidget {
             fontSize: 16,
             fontWeight: FontWeight.w500,
           ),
-        ),
-        trailing: const Icon(
-          Icons.arrow_forward_ios,
-          size: 16,
-          color: Colors.grey,
         ),
         onTap: () {
           // Handle intervention area tap

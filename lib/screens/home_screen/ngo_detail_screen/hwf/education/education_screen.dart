@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/capacity_building_schools/capacity_building_schools.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/career_guidence_screen/career_guidence_screen.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/community_learning_centers/community_learning_centers.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/educational_institutions/educational_institutions_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/scholorship_screen/scholorship_screen.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/school_enrollment_program/school_enrollment_program.dart';
 
 class EducationServicesScreen extends StatelessWidget {
   const EducationServicesScreen({super.key});
@@ -72,7 +75,7 @@ class EducationServicesScreen extends StatelessWidget {
                   child: const EducationalInstitutionsScreen(),
                   context: context,
                   title: 'Educational Institutions',
-                  code: 'A1(a)',
+                  code: 'Institutes',
                   image:
                       "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Holy_cross_institute_of_management_and_technology.jpg/1100px-Holy_cross_institute_of_management_and_technology.jpg",
                   description:
@@ -81,7 +84,7 @@ class EducationServicesScreen extends StatelessWidget {
                 _buildServiceCard(
                   child: const CapacityBuildingScreen(),
                   title: 'Capacity Building of Schools',
-                  code: 'A1(b)',
+                  code: 'Capacity',
                   context: context,
                   image:
                       "https://vision.gcdn.co//media/1045/education_img-4.jpg",
@@ -92,7 +95,7 @@ class EducationServicesScreen extends StatelessWidget {
                   title: 'Scholarship',
                   context: context,
                   child: const ScholarshipScreen(),
-                  code: 'A1(c)',
+                  code: 'Scholarship',
                   image:
                       "https://www.sevamandir.org/images/What%20we%20do/WindowImg/171_4_E_3_sub-page_ed.jpg",
                   description: 'Financial support for deserving students.',
@@ -100,14 +103,16 @@ class EducationServicesScreen extends StatelessWidget {
                 _buildServiceCard(
                   context: context,
                   title: 'Career Guidance & Coaching',
-                  code: 'A1(d)',
+                  code: 'Coaching',
+                  child: const CareerGuidanceScreen(),
                   image:
                       "https://content.jdmagicbox.com/comp/kozhikode/dc/0495px495.x495.110808155236.n8s7dc/catalogue/career-guidance-academy-ymca-road-kozhikode-tutorials-4nrn6k8e23.jpg",
                   description: 'Professional guidance for future success.',
                 ),
                 _buildServiceCard(
                   title: 'School Enrollment Program',
-                  code: 'A1(e)',
+                  code: 'Enrollment',
+                  child: const SchoolEnrollmentScreen(),
                   context: context,
                   image:
                       "https://media.assettype.com/freepressjournal/2021-11/c3c7571d-c72f-44de-8c70-570eb11ef220/photo_1574097656146_0b43b7660cb6.jpg",
@@ -116,7 +121,8 @@ class EducationServicesScreen extends StatelessWidget {
                 _buildServiceCard(
                   context: context,
                   title: 'Community Learning Centres',
-                  code: 'A1(f)',
+                  code: 'Learning Centres',
+                  child: const CommunityLearningCenterScreen(),
                   image:
                       "https://saiangel.org/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-03-at-2.35.17-PM.jpeg",
                   description: 'Local centers for community education.',

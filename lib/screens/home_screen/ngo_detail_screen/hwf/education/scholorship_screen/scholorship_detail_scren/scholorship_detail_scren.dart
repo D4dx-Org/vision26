@@ -305,7 +305,6 @@ class ScholarshipDetailScreen extends StatelessWidget {
           ...ScholarshipType.values
               .where((t) => t != type)
               .map((t) => _buildRelatedScholarshipCard(t, context))
-              .toList()
         ],
       ),
     );

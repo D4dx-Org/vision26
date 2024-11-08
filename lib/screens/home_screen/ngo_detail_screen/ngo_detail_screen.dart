@@ -216,13 +216,13 @@ class InterventionAreaCard extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 4),
-                Text(
-                  code,
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey[600],
-                  ),
-                ),
+                // Text(
+                //   code,
+                //   style: TextStyle(
+                //     fontSize: 14,
+                //     color: Colors.grey[600],
+                //   ),
+                // ),
               ],
             ),
           ),
