@@ -3,6 +3,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vision_2026/constants/image_class.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/education_screen.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/healthcare/health_care_screen.dart';
 
 class NGOProfileScreen extends StatelessWidget {
   const NGOProfileScreen({super.key});
@@ -127,26 +128,31 @@ class NGOProfileScreen extends StatelessWidget {
                     title: 'Education',
                     icon: LucideIcons.graduationCap,
                     code: 'A1',
+                    child: EducationServicesScreen(),
                   ),
                   InterventionAreaCard(
                     title: 'Healthcare',
                     icon: LucideIcons.stethoscope,
                     code: 'A2',
+                    child: HealthcareServicesScreen(),
                   ),
                   InterventionAreaCard(
                     title: 'Orphan Care',
                     icon: LucideIcons.heart,
                     code: 'A3',
+                    child: HealthcareServicesScreen(),
                   ),
                   InterventionAreaCard(
                     title: 'Government Scheme\nFacilitation Center',
                     icon: LucideIcons.building,
                     code: 'A4',
+                    child: HealthcareServicesScreen(),
                   ),
                   InterventionAreaCard(
                     title: 'Vocational Training',
                     icon: LucideIcons.briefcase,
                     code: 'A5',
+                    child: HealthcareServicesScreen(),
                   ),
                 ],
               ),
@@ -164,12 +170,14 @@ class InterventionAreaCard extends StatelessWidget {
   final String title;
   final IconData icon;
   final String code;
+  final Widget child;
 
   const InterventionAreaCard({
     super.key,
     required this.title,
     required this.icon,
     required this.code,
+    required this.child,
   });
 
   @override
@@ -191,8 +199,7 @@ class InterventionAreaCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
         child: InkWell(
           onTap: () {
-            navigateTo(
-                context: context, route: const EducationServicesScreen());
+            navigateTo(context: context, route: child);
           },
           borderRadius: BorderRadius.circular(15),
           child: Padding(
