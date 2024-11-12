@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vision_2026/constants/app_content.dart';
 import 'package:vision_2026/constants/image_class.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/education_screen.dart';
@@ -87,7 +88,7 @@ class NGOProfileScreen extends StatelessWidget {
                     ],
                   ),
                   child: const Text(
-                    "Human Welfare Foundation carries out humanitarian and development programs to fight poverty and people's sufferings by working in partnership with vulnerable communities",
+                    AppContent.hwfdescription,
                     style: TextStyle(
                       fontSize: 16,
                       height: 1.5,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vision_2026/constants/app_content.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/educational_institutions/capmpuses/hwf_malda_campus/hwf_malda_campus.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/educational_institutions/capmpuses/other_campuses/other_campuses_screen.dart';
@@ -126,6 +127,8 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                   context: context,
                   child: const OtherCampusesScreen(
                     title: 'The Scholar School',
+                    imageList: [],
+                    location: 'New Delhi',
                     description:
                         "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
                   ),
@@ -141,6 +144,8 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                   location: 'Guwahati, Assam',
                   child: const OtherCampusesScreen(
                     title: 'The Scholar School',
+                    imageList: [],
+                    location: 'Assam',
                     description:
                         "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
                   ),
@@ -154,6 +159,8 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                   location: 'Howrah, West Bengal',
                   child: const OtherCampusesScreen(
                     title: 'The Scholar School',
+                    imageList: [],
+                    location: 'West Bengal',
                     description:
                         "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
                   ),
@@ -165,6 +172,8 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                   context: context,
                   child: const OtherCampusesScreen(
                     title: 'The Scholar School',
+                    imageList: [],
+                    location: 'Bargaon, Jharkhand',
                     description:
                         "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
                   ),
@@ -178,6 +187,8 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                   context: context,
                   child: const OtherCampusesScreen(
                     title: 'The Scholar School',
+                    location: 'Darbhanga, Bihar',
+                    imageList: [],
                     description:
                         "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
                   ),
@@ -191,14 +202,21 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                   context: context,
                   child: const OtherCampusesScreen(
                     title: 'Millennium Public School',
+                    location: 'Hazaribagh, Jharkhand',
+                    imageList: [
+                      AppContent.millenniumSchoolImage,
+                      AppContent.millenniumSchoolImage2,
+                      AppContent.millenniumSchoolImage3,
+                      AppContent.millenniumSchoolImage4,
+                      AppContent.millenniumSchoolImage5,
+                    ],
                     description:
                         "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
                   ),
                   name: 'Millennium Public School',
                   location: 'Hazaribagh, Jharkhand',
                   place: 'Jharkhand',
-                  image:
-                      "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",
+                  image: AppContent.millenniumSchoolImage,
                 ),
               ]),
             ),
@@ -242,14 +260,19 @@ class EducationalInstitutionsScreen extends StatelessWidget {
               children: [
                 // Image Section
                 SizedBox(
-                  height: 200,
+                  height: 230,
                   child: Stack(
                     fit: StackFit.expand,
                     children: [
-                      Image.network(
-                        image,
-                        fit: BoxFit.cover,
-                      ),
+                      image.startsWith('http')
+                          ? Image.network(
+                              image,
+                              fit: BoxFit.cover,
+                            )
+                          : Image.asset(
+                              image,
+                              fit: BoxFit.cover,
+                            ),
                       Positioned(
                         top: 12,
                         right: 12,

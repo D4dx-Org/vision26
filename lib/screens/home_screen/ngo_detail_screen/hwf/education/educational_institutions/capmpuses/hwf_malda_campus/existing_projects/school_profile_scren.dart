@@ -51,7 +51,7 @@ class SchoolProfileScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 4),
                   Text(
-                    'Existing Project • A1(a)i_1',
+                    'Existing Project',
                     style: TextStyle(
                       fontSize: 14,
                       color: Colors.white70,
