@@ -121,31 +121,33 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                     place: 'West Bengal',
                     image: HwfContent.hwfMaldaCampus),
                 _buildInstitutionCard(
-                  context: context,
-                  child: const OtherCampusesScreen(
-                    title: 'The Scholar School',
-                    imageList: [],
-                    location: 'New Delhi',
-                    description:
-                        "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
-                  ),
-                  name: 'The Scholar School',
-                  location: 'New Delhi',
-                  place: 'New Delhi',
-                  image:
-                      "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",
-                ),
+                    context: context,
+                    child: const OtherCampusesScreen(
+                      title: 'The Scholar School',
+                      imageList: [
+                        HwfContent.delphiScholarSchool1,
+                        HwfContent.delphiScholarSchool2,
+                        HwfContent.delphiScholarSchool3,
+                        HwfContent.delphiScholarSchool4,
+                      ],
+                      location: 'Jamia Nagar, New Delhi',
+                      description:
+                          "The Scholar School in Jamia Nagar, Delhi, provides education up to the 8th grade, following the CBSE curriculum. The school features quality infrastructure, including well-equipped classrooms and a newly inaugurated multipurpose hall.",
+                    ),
+                    name: 'The Scholar School',
+                    location: 'Jamia Nagar, New Delhi',
+                    place: 'New Delhi',
+                    image: HwfContent.delphiScholarSchool),
                 _buildInstitutionCard(
                   context: context,
                   name: 'The Scholar School',
                   location: 'Guwahati, Assam',
                   child: const OtherCampusesScreen(
-                    title: 'The Scholar School',
-                    imageList: [],
-                    location: 'Assam',
-                    description:
-                        "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
-                  ),
+                      title: 'The Scholar School',
+                      imageList: [],
+                      location: 'Assam',
+                      description:
+                          "The Scholar School in Guwahati, Assam, affiliated with CBSE, offers education up to grade 12. In the recent final examinations, it achieved the highest scores in the state. This residential school of separate hostels for boys and girls."),
                   place: 'Assam',
                   image:
                       "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",

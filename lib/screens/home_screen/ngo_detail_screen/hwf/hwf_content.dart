@@ -2,6 +2,7 @@ class HwfContent {
   // hwf
   static const String imageRoot = 'assets/images/hwf/';
   static const String imageRoot2 = 'assets/images/hwf/malda/';
+  static const String imageRoot3 = 'assets/images/hwf/delhischolar/';
 
   static const String logo = '${imageRoot}logo.svg';
   static const String hwfdescription =
@@ -30,6 +31,18 @@ class HwfContent {
       '${imageRoot2}malda-scholor-school2.jpeg';
   static const String maldaScholorSchool3 =
       '${imageRoot2}malda-scholor-school1.jpeg';
+
+  //// Delfhi Scholar school
+  static const String delphiScholarSchool =
+      '${imageRoot3}delhi-scholar-school.jpg';
+  static const String delphiScholarSchool1 =
+      '${imageRoot3}delhi-scholar-school1.jpg';
+  static const String delphiScholarSchool2 =
+      '${imageRoot3}delhi-scholar-school2.jpg';
+  static const String delphiScholarSchool3 =
+      '${imageRoot3}delhi-scholar-school3.jpg';
+  static const String delphiScholarSchool4 =
+      '${imageRoot3}delhi-scholar-school4.jpg';
 
 // millennium school
   static const String millenniumSchoolImage =
