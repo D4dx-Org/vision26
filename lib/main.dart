@@ -1,5 +1,8 @@
 // ignore_for_file: deprecated_member_use
 
+import 'dart:io';
+
+import 'package:device_preview/device_preview.dart';
 import 'package:vision_2026/constants/theme.dart';
 import 'package:vision_2026/providers/home_provider.dart';
 import 'package:vision_2026/screens/splash_screen/splashscreen.dart';
@@ -26,37 +29,35 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    // bool isTestMode = Platform.isLinux;
-    // int deviceWidth = isTestMode ? 200 : 800;
+    bool isTestMode = Platform.isLinux;
+    int deviceWidth = isTestMode ? 200 : 800;
 
-    // final isMobileDevice = MediaQuery.of(context).size.width < deviceWidth;
+    final isMobileDevice = MediaQuery.of(context).size.width < deviceWidth;
 
     return MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (context) => HomeProvider()),
-        ],
-        child:
-            // isMobileDevice
-            //     ?
-            MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Vision 2026',
-          theme: AppTheme.lightTheme(context),
-          home: const SplashScreen(),
-        )
-        // : DevicePreview(
-        //     enabled: true,
-        //     isToolbarVisible: false,
-        //     builder: (context) => MaterialApp(
-        //       useInheritedMediaQuery: true,
-        //       theme: AppTheme.lightTheme(context),
-        //       home: const SplashScreen(),
-        //       locale: DevicePreview.locale(context),
-        //       builder: DevicePreview.appBuilder,
-        //       debugShowCheckedModeBanner: false,
-        //       title: 'Vision 2026',
-        //     ),
-        //   ),
-        );
+      providers: [
+        ChangeNotifierProvider(create: (context) => HomeProvider()),
+      ],
+      child: isMobileDevice
+          ? MaterialApp(
+              debugShowCheckedModeBanner: false,
+              title: 'Vision 2026',
+              theme: AppTheme.lightTheme(context),
+              home: const SplashScreen(),
+            )
+          : DevicePreview(
+              enabled: true,
+              isToolbarVisible: false,
+              builder: (context) => MaterialApp(
+                useInheritedMediaQuery: true,
+                theme: AppTheme.lightTheme(context),
+                home: const SplashScreen(),
+                locale: DevicePreview.locale(context),
+                builder: DevicePreview.appBuilder,
+                debugShowCheckedModeBanner: false,
+                title: 'Vision 2026',
+              ),
+            ),
+    );
   }
 }
