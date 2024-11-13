@@ -114,14 +114,12 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                   image: HwfContent.siddiqueHassanCampus,
                 ),
                 _buildInstitutionCard(
-                  context: context,
-                  child: const HwfMaldaCampus(),
-                  name: 'HWF Malda Campus',
-                  location: 'West Bengal',
-                  place: 'West Bengal',
-                  image:
-                      "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",
-                ),
+                    context: context,
+                    child: const HwfMaldaCampus(),
+                    name: 'HWF Malda Campus',
+                    location: 'West Bengal',
+                    place: 'West Bengal',
+                    image: HwfContent.hwfMaldaCampus),
                 _buildInstitutionCard(
                   context: context,
                   child: const OtherCampusesScreen(

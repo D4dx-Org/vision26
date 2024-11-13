@@ -9,8 +9,15 @@ class HwfContent {
   ///  Siddique hassan campus
   static const String siddiqueHassanCampus =
       '${imageRoot}siddique_hassan_campus.png';
-  static const String siddiqueHassanCampusAljamiaSchool =
-      '${imageRoot}siddique-hassan-aljamia-school.JPG';
+  static const String siddiqueHassanCampusAljamiaSchool1 =
+      '${imageRoot}aljamia-campus1.jpg';
+  static const String ugAndPgCollege = '${imageRoot}ug-and-pg.jpeg';
+  static const String chiragPublicSchool = '${imageRoot}chiragPublicSchool.jpg';
+  static const String boysHostel = '${imageRoot}boysHostel.jpg';
+  static const String girlsHostel = '${imageRoot}girlsHostel.jpg';
+
+  /// Hwf Malda campus
+  static const String hwfMaldaCampus = '${imageRoot}hwfMaldaCampus.png';
 // millennium school
   static const String millenniumSchoolImage =
       '${imageRoot}millennium_school-1.jpg';

@@ -3,6 +3,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vision_2026/constants/image_class.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/educational_institutions/capmpuses/siddique_hassan_campus/existing_projects/school_profile_scren.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
 
 class HwfMaldaCampus extends StatelessWidget {
   const HwfMaldaCampus({super.key});
@@ -23,7 +24,7 @@ class HwfMaldaCampus extends StatelessWidget {
                 fit: StackFit.expand,
                 children: [
                   Image.asset(
-                    ImageClass.siddiqueHassanCampus,
+                    HwfContent.hwfMaldaCampus,
                     fit: BoxFit.cover,
                   ),
                   Container(
@@ -145,21 +146,18 @@ class HwfMaldaCampus extends StatelessWidget {
                     children: [
                       _buildProjectCard(
                         title: 'Al Jamia Senior Secondary School',
-                        code: 'A1(a)i_1',
                         icon: LucideIcons.school,
                         context: context,
                         child: const SchoolProfileScreen(),
                       ),
                       _buildProjectCard(
                         title: 'The Scholar School',
-                        code: 'A1(a)i_2',
                         icon: LucideIcons.graduationCap,
                         context: context,
                         child: const SchoolProfileScreen(),
                       ),
                       _buildProjectCard(
                         title: 'Hostel for Boys',
-                        code: 'A1(a)i_3',
                         icon: LucideIcons.building2,
                         context: context,
                         child: const SchoolProfileScreen(),
@@ -211,7 +209,6 @@ class HwfMaldaCampus extends StatelessWidget {
                     children: [
                       _buildProjectCard(
                         title: 'Industrial Training Centre',
-                        code: 'Future',
                         icon: LucideIcons.wrench,
                         isFuture: true,
                         context: context,
@@ -219,7 +216,6 @@ class HwfMaldaCampus extends StatelessWidget {
                       ),
                       _buildProjectCard(
                         title: 'Medical Centre',
-                        code: 'Future',
                         icon: LucideIcons.stethoscope,
                         isFuture: true,
                         context: context,
@@ -255,7 +251,6 @@ class HwfMaldaCampus extends StatelessWidget {
 
   Widget _buildProjectCard({
     required String title,
-    required String code,
     required IconData icon,
     bool isFuture = false,
     Widget child = const SizedBox(),
