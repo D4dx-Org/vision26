@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:vision_2026/constants/app_content.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/educational_institutions/capmpuses/hwf_malda_campus/hwf_malda_campus.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/educational_institutions/capmpuses/other_campuses/other_campuses_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/educational_institutions/capmpuses/siddique_hassan_campus/siddique_hassan_campus.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
 
 class EducationalInstitutionsScreen extends StatelessWidget {
   const EducationalInstitutionsScreen({super.key});
@@ -111,8 +111,7 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                   name: 'Siddique Hassan Campus',
                   location: 'Mewat, Haryana',
                   place: 'Hayana',
-                  image:
-                      "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",
+                  image: HwfContent.siddiqueHassanCampus,
                 ),
                 _buildInstitutionCard(
                   context: context,
@@ -204,11 +203,11 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                     title: 'Millennium Public School',
                     location: 'Hazaribagh, Jharkhand',
                     imageList: [
-                      AppContent.millenniumSchoolImage,
-                      AppContent.millenniumSchoolImage2,
-                      AppContent.millenniumSchoolImage3,
-                      AppContent.millenniumSchoolImage4,
-                      AppContent.millenniumSchoolImage5,
+                      HwfContent.millenniumSchoolImage,
+                      HwfContent.millenniumSchoolImage2,
+                      HwfContent.millenniumSchoolImage3,
+                      HwfContent.millenniumSchoolImage4,
+                      HwfContent.millenniumSchoolImage5,
                     ],
                     description:
                         "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
@@ -216,7 +215,7 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                   name: 'Millennium Public School',
                   location: 'Hazaribagh, Jharkhand',
                   place: 'Jharkhand',
-                  image: AppContent.millenniumSchoolImage,
+                  image: HwfContent.millenniumSchoolImage,
                 ),
               ]),
             ),

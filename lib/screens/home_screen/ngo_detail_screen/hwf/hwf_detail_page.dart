@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:vision_2026/constants/app_content.dart';
 import 'package:vision_2026/constants/image_class.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/education_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/healthcare/health_care_screen.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
 
 class NGOProfileScreen extends StatelessWidget {
   const NGOProfileScreen({super.key});
@@ -88,7 +88,7 @@ class NGOProfileScreen extends StatelessWidget {
                     ],
                   ),
                   child: const Text(
-                    AppContent.hwfdescription,
+                    HwfContent.hwfdescription,
                     style: TextStyle(
                       fontSize: 16,
                       height: 1.5,
