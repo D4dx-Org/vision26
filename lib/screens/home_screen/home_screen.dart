@@ -3,7 +3,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vision_2026/constants/color_class.dart';
 import 'package:vision_2026/constants/image_class.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
-import 'package:vision_2026/screens/home_screen/ngo_detail_screen/ngo_detail_screen.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_detail_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
