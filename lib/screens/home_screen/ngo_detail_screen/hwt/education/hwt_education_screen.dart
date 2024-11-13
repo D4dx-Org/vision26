@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/education/components/hwt_education_service_detail_screen.dart';
-import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/healthcare/hwt_health_care_service_detail_screen.dart';
 
 class HWTEducationServicesScreen extends StatelessWidget {
   const HWTEducationServicesScreen({super.key});
@@ -132,7 +131,16 @@ class HWTEducationServicesScreen extends StatelessWidget {
                   context: context,
                   title: 'Community ',
                   code: 'Education',
-                  child: const HwtEducationServiceDetailScreen(),
+                  child: const HwtEducationServiceDetailScreen(
+                    title: 'Community Learning Centre',
+                    description:
+                        'In 2022, HWT has established a Community Learning Centre (CLC) in Shiv Vihar, North East Delhi, where school dropout rates are high. This Centre offers basic education to out-of-school children, preparing them for formal schooling. The Centre accommodates 50 children, who attend in two shifts over a six-day week.',
+                    images: [
+                      'assets/images/hwt/Page-3 C(1)_sub image 1.jpg',
+                      'assets/images/hwt/Page-3 C(1)_sub image 2.jpg',
+                      'assets/images/hwt/Page-3 C(1)_sub image 3.jpg',
+                    ],
+                  ),
                   image: "assets/images/hwt/Page-3 C(1)_sub image 1.jpg",
                   description:
                       'Interactive learning spaces designed for collaborative education and community engagement.',
@@ -141,7 +149,15 @@ class HWTEducationServicesScreen extends StatelessWidget {
                   context: context,
                   title: 'Construction of School',
                   code: 'Education',
-                  child: const HwtEducationServiceDetailScreen(),
+                  child: const HwtEducationServiceDetailScreen(
+                    title: 'Construction of Schools',
+                    description:
+                        'Constructed in July 2020 by Human Welfare Trust in Natial, Murshidabad, West Bengal, Gulbaag Academy is one of the key schools of this area, where over 200 children study currently from class LKG to Class 4th. The school building also houses a community centre.In 2019, Human Welfare Trust had constructed the building of Modern Islamic School in Cooch Bihar, West Bengal. This building also houses a student hostel, a community centre, a clinic and a shop. There is currently over 100 students in this school studying from class 4th to class 10th. ',
+                    images: [
+                      'assets/images/hwt/Page-3 C(2)_sub image 1.jpg',
+                      'assets/images/hwt/Page-3 C(2)_sub image 2.png',
+                    ],
+                  ),
                   image: "assets/images/hwt/Page-3 C(2)_sub image 1.jpg",
                   description:
                       'Modern infrastructure development with sustainable design principles for quality education.',
@@ -150,7 +166,14 @@ class HWTEducationServicesScreen extends StatelessWidget {
                   context: context,
                   title: 'Construction of Hostel Camps',
                   code: 'Education',
-                  child: const HwtEducationServiceDetailScreen(),
+                  child: const HwtEducationServiceDetailScreen(
+                    title: 'Construction of Hostel',
+                    description:
+                        'The construction of the Student Hostel in the Jamia Islamia Shantapuram campus located in Mattadi, Kerala was completed by Human Welfare Trust in 2021. Around 50 students currently stay in this hostel.',
+                    images: [
+                      "assets/images/hwt/Page-3 C(3)_sub image 1.png",
+                    ],
+                  ),
                   image: "assets/images/hwt/Page-3 C(3)_sub image 1.png",
                   description:
                       'Residential facilities designed to provide safe and nurturing learning environments.',
@@ -159,7 +182,16 @@ class HWTEducationServicesScreen extends StatelessWidget {
                   context: context,
                   title: 'School Capacity Buildings',
                   code: 'Education',
-                  child: const HwtEducationServiceDetailScreen(),
+                  child: const HwtEducationServiceDetailScreen(
+                    title: 'School Capacity Building',
+                    description:
+                        'HWT has contributed to the development of numerous schools by supporting infrastructure projects, including constructing classrooms, furnishing learning spaces, and building libraries, among other essential facilities.',
+                    images: [
+                      "assets/images/hwt/Page-3 C(4)_sub image 1.jpg",
+                      'assets/images/hwt/Page-3 C(4)_sub image 2.jpg',
+                      'assets/images/hwt/Page-3 C(4)_sub image 3.jpg',
+                    ],
+                  ),
                   image: "assets/images/hwt/Page-3 C(4)_sub image 1.jpg",
                   description:
                       'Expanding educational infrastructure with modern classroom facilities and resources.',
