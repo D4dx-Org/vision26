@@ -32,7 +32,7 @@ class HwfContent {
   static const String maldaScholorSchool3 =
       '${imageRoot2}malda-scholor-school1.jpeg';
 
-  //// Delfhi Scholar school
+  //// Delhi Scholar school
   static const String delphiScholarSchool =
       '${imageRoot3}delhi-scholar-school.jpg';
   static const String delphiScholarSchool1 =
@@ -43,6 +43,18 @@ class HwfContent {
       '${imageRoot3}delhi-scholar-school3.jpg';
   static const String delphiScholarSchool4 =
       '${imageRoot3}delhi-scholar-school4.jpg';
+
+  //// guwahati scholar school
+  static const String guwahatiScholarSchool =
+      '${imageRoot3}guwahatiScholar1.jpg';
+  static const String guwahatiScholarSchool2 =
+      '${imageRoot3}guwahatiScholar2.jpg';
+  static const String guwahatiScholarSchool3 =
+      '${imageRoot3}guwahatiScholar3.jpg';
+  static const String guwahatiScholarSchool4 =
+      '${imageRoot3}guwahatiScholar4.jpg';
+  static const String guwahatiScholarSchool5 =
+      '${imageRoot3}guwahatiScholar5.jpg';
 
 // millennium school
   static const String millenniumSchoolImage =

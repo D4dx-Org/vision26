@@ -125,6 +125,7 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                     child: const OtherCampusesScreen(
                       title: 'The Scholar School',
                       imageList: [
+                        HwfContent.delphiScholarSchool,
                         HwfContent.delphiScholarSchool1,
                         HwfContent.delphiScholarSchool2,
                         HwfContent.delphiScholarSchool3,
@@ -139,19 +140,23 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                     place: 'New Delhi',
                     image: HwfContent.delphiScholarSchool),
                 _buildInstitutionCard(
-                  context: context,
-                  name: 'The Scholar School',
-                  location: 'Guwahati, Assam',
-                  child: const OtherCampusesScreen(
-                      title: 'The Scholar School',
-                      imageList: [],
-                      location: 'Assam',
-                      description:
-                          "The Scholar School in Guwahati, Assam, affiliated with CBSE, offers education up to grade 12. In the recent final examinations, it achieved the highest scores in the state. This residential school of separate hostels for boys and girls."),
-                  place: 'Assam',
-                  image:
-                      "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",
-                ),
+                    context: context,
+                    name: 'The Scholar School',
+                    location: 'Guwahati, Assam',
+                    child: const OtherCampusesScreen(
+                        title: 'The Scholar School',
+                        imageList: [
+                          HwfContent.guwahatiScholarSchool,
+                          HwfContent.guwahatiScholarSchool2,
+                          HwfContent.guwahatiScholarSchool3,
+                          HwfContent.guwahatiScholarSchool4,
+                          HwfContent.guwahatiScholarSchool5,
+                        ],
+                        location: 'Assam',
+                        description:
+                            "The Scholar School in Guwahati, Assam, affiliated with CBSE, offers education up to grade 12. In the recent final examinations, it achieved the highest scores in the state. This residential school of separate hostels for boys and girls."),
+                    place: 'Assam',
+                    image: HwfContent.guwahatiScholarSchool),
                 _buildInstitutionCard(
                   context: context,
                   name: 'The Scholar School',
