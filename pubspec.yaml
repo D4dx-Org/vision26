@@ -72,6 +72,8 @@ flutter:
     - assets/icons/
     - assets/images/
     - assets/images/hwf/
+    - assets/images/hwf/malda/
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

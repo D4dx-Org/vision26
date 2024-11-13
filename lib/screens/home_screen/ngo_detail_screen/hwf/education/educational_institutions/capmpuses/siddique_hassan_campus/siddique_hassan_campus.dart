@@ -180,21 +180,14 @@ class SiddiqueHassanCampus extends StatelessWidget {
                         icon: LucideIcons.bed,
                         context: context,
                         child: const SchoolProfileScreen(
-                          schoolName: 'Hostels for Boys',
+                          schoolName: 'Hostels for Boys & girls',
                           description:
                               "Separate hostels have been arranged for boys and girls of Al Jamia Off-Campus and UG & PG Colleges. Special accommodations are reserved for orphaned students in these hostels.",
                           image: HwfContent.boysHostel,
-                        ),
-                      ),
-                      _buildProjectCard(
-                        title: 'Hostels for Girls',
-                        icon: LucideIcons.bed,
-                        context: context,
-                        child: const SchoolProfileScreen(
-                          schoolName: 'Hostels for Girls',
-                          description:
-                              "Separate hostels have been arranged for boys and girls of Al Jamia Off-Campus and UG & PG Colleges. Special accommodations are reserved for orphaned students in these hostels.",
-                          image: HwfContent.girlsHostel,
+                          imageList: [
+                            HwfContent.boysHostel,
+                            HwfContent.girlsHostel,
+                          ],
                         ),
                       ),
                     ],

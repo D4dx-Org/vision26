@@ -7,9 +7,14 @@ class SchoolProfileScreen extends StatelessWidget {
   final String? image;
   final String? schoolName;
   final String? description;
+  final List? imageList;
 
   const SchoolProfileScreen(
-      {super.key, this.image, this.schoolName, this.description});
+      {super.key,
+      this.image,
+      this.schoolName,
+      this.description,
+      this.imageList});
 
   @override
   Widget build(BuildContext context) {
@@ -214,45 +219,66 @@ class SchoolProfileScreen extends StatelessWidget {
           // ),
 
           // Gallery Section
-          // SliverToBoxAdapter(
-          //   child: Container(
-          //     margin: const EdgeInsets.all(16),
-          //     child: Column(
-          //       crossAxisAlignment: CrossAxisAlignment.start,
-          //       children: [
-          //         const Text(
-          //           'Gallery',
-          //           style: TextStyle(
-          //             fontSize: 20,
-          //             fontWeight: FontWeight.bold,
-          //             color: Colors.black87,
-          //           ),
-          //         ),
-          //         const SizedBox(height: 16),
-          //         SizedBox(
-          //           height: 120,
-          //           child: ListView.builder(
-          //             scrollDirection: Axis.horizontal,
-          //             itemCount: 5,
-          //             itemBuilder: (context, index) {
-          //               return Container(
-          //                 width: 160,
-          //                 margin: const EdgeInsets.only(right: 12),
-          //                 decoration: BoxDecoration(
-          //                   borderRadius: BorderRadius.circular(12),
-          //                   image: const DecorationImage(
-          //                     image: NetworkImage(ImageClass.tempSchoolImage),
-          //                     fit: BoxFit.cover,
-          //                   ),
-          //                 ),
-          //               );
-          //             },
-          //           ),
-          //         ),
-          //       ],
-          //     ),
-          //   ),
-          // ),
+          SliverToBoxAdapter(
+            child: Visibility(
+              visible: imageList != null,
+              child: Container(
+                margin: const EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Gallery',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black87,
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.width / 2,
+                      child: GridView.builder(
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          mainAxisSpacing: 12,
+                          crossAxisSpacing: 12,
+                        ),
+                        itemCount: imageList!.length,
+                        itemBuilder: (context, index) {
+                          return Container(
+                            width: 160,
+                            margin: const EdgeInsets.only(right: 12),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(12),
+                              child: Image.asset(
+                                imageList![index],
+                                fit: BoxFit.cover,
+                                errorBuilder: (context, error, stackTrace) {
+                                  return Container(
+                                    color: Colors.grey[300],
+                                    child: const Icon(
+                                      LucideIcons.imageOff,
+                                      color: Colors.grey,
+                                      size: 30,
+                                    ),
+                                  );
+                                },
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
         ],
       ),
       // floatingActionButton: FloatingActionButton.extended(
