@@ -32,7 +32,7 @@ class OtherCampusesScreen extends StatelessWidget {
                 fit: StackFit.expand,
                 children: [
                   Image.asset(
-                    AppContent.millenniumSchoolImage2,
+                    imageList.first,
                     fit: BoxFit.cover,
                     errorBuilder: (context, error, stackTrace) {
                       return Container(
