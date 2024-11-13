@@ -4,6 +4,7 @@ import 'package:vision_2026/constants/color_class.dart';
 import 'package:vision_2026/constants/image_class.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_detail_page.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/hwt_detail_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -256,6 +257,47 @@ class PartnerCard extends StatelessWidget {
     required this.name,
   });
 
+  void _navigateToNGOScreen(BuildContext context) {
+    Widget destinationScreen;
+
+    switch (name.toUpperCase()) {
+      case 'SBF':
+        destinationScreen = const NGOProfileScreen();
+        break;
+      case 'HWT':
+        destinationScreen = const HWTProfileScreen();
+        break;
+      case 'HWF':
+        destinationScreen = const NGOProfileScreen();
+        break;
+      case 'IRT':
+        destinationScreen = const NGOProfileScreen();
+        break;
+      case 'MVT':
+        destinationScreen = const NGOProfileScreen();
+        break;
+      case 'MSS':
+        destinationScreen = const NGOProfileScreen();
+        break;
+      case 'TWEET':
+        destinationScreen = const NGOProfileScreen();
+        break;
+      case 'MASAWAT':
+        destinationScreen = const NGOProfileScreen();
+        break;
+      case 'SAHULAT':
+        destinationScreen = const NGOProfileScreen();
+        break;
+      default:
+        destinationScreen = const NGOProfileScreen();
+    }
+
+    navigateTo(
+      context: context,
+      route: destinationScreen,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -272,10 +314,7 @@ class PartnerCard extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
-          navigateTo(
-            context: context,
-            route: const NGOProfileScreen(),
-          );
+          _navigateToNGOScreen(context);
         },
         borderRadius: BorderRadius.circular(12),
         child: Center(

@@ -2,6 +2,9 @@ class ImageClass {
   static const String imageRoot = 'assets/images/';
   static const String appIcon = '${imageRoot}appIcon.png';
   static const String hwfLogo = '${imageRoot}logo-hwf.png';
+  static const String hwtLogo =
+      '${imageRoot}hwt/Human Welfare Trust Logo_png.png';
+
   static const String siddiqueHassanCampus =
       '${imageRoot}siddique_hassan_campus.png';
 
