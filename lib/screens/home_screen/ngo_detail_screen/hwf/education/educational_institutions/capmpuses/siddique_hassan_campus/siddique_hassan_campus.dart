@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:vision_2026/constants/image_class.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/educational_institutions/capmpuses/siddique_hassan_campus/existing_projects/school_profile_scren.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
 
 class SiddiqueHassanCampus extends StatelessWidget {
   const SiddiqueHassanCampus({super.key});
@@ -23,7 +23,7 @@ class SiddiqueHassanCampus extends StatelessWidget {
                 fit: StackFit.expand,
                 children: [
                   Image.asset(
-                    ImageClass.siddiqueHassanCampus,
+                    HwfContent.siddiqueHassanCampus,
                     fit: BoxFit.cover,
                   ),
                   Container(
@@ -145,31 +145,50 @@ class SiddiqueHassanCampus extends StatelessWidget {
                     children: [
                       _buildProjectCard(
                         title: 'Al Jamia Senior Secondary School',
-                        code: 'A1(a)i_1',
                         icon: LucideIcons.graduationCap,
                         context: context,
-                        child: const SchoolProfileScreen(),
+                        child: const SchoolProfileScreen(
+                          schoolName: 'Al Jamia Senior Secondary School',
+                          description:
+                              'This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala.  Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor’s degree, with a curriculum that includes comprehensive knowledge in Islamic studies.',
+                          image: HwfContent.siddiqueHassanCampusAljamiaSchool1,
+                        ),
                       ),
                       _buildProjectCard(
                         title: 'UG & PG College',
-                        code: 'A1(a)i_2',
                         icon: LucideIcons.building2,
                         context: context,
-                        child: const SchoolProfileScreen(),
+                        child: const SchoolProfileScreen(
+                            schoolName: 'UG & PG College',
+                            description:
+                                "The UG and PG College offers a variety of undergraduate and postgraduate courses, affiliated with recognized universities. Comprehensive facilities, including hostels, are already in place to support student needs.",
+                            image: HwfContent.ugAndPgCollege),
                       ),
                       _buildProjectCard(
                         title: 'Chirag Public School (Hindi Medium)',
-                        code: 'A1(a)i_3',
                         icon: LucideIcons.school,
                         context: context,
-                        child: const SchoolProfileScreen(),
+                        child: const SchoolProfileScreen(
+                          schoolName: 'Chirag Public School (Hindi Medium)',
+                          description:
+                              "Chirag Public School is a state-recognized, Hindi-medium institution established to address the region's educational needs. With limited schooling options and inadequate infrastructure in existing government schools, Chirag Public School aims to bridge this gap and tackle the educational challenges faced by the local community.",
+                          image: HwfContent.chiragPublicSchool,
+                        ),
                       ),
                       _buildProjectCard(
-                        title: 'Hostels for Boys & Girls',
-                        code: 'A1(a)i_4',
+                        title: 'Hostels for Boys',
                         icon: LucideIcons.bed,
                         context: context,
-                        child: const SchoolProfileScreen(),
+                        child: const SchoolProfileScreen(
+                          schoolName: 'Hostels for Boys & girls',
+                          description:
+                              "Separate hostels have been arranged for boys and girls of Al Jamia Off-Campus and UG & PG Colleges. Special accommodations are reserved for orphaned students in these hostels.",
+                          image: HwfContent.boysHostel,
+                          imageList: [
+                            HwfContent.boysHostel,
+                            HwfContent.girlsHostel,
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -218,7 +237,6 @@ class SiddiqueHassanCampus extends StatelessWidget {
                     children: [
                       _buildProjectCard(
                         title: 'Industrial Training Centre',
-                        code: 'Future',
                         icon: LucideIcons.wrench,
                         isFuture: true,
                         context: context,
@@ -226,7 +244,6 @@ class SiddiqueHassanCampus extends StatelessWidget {
                       ),
                       _buildProjectCard(
                         title: 'The Scholar School',
-                        code: 'Future',
                         icon: LucideIcons.school2,
                         isFuture: true,
                         context: context,
@@ -234,7 +251,6 @@ class SiddiqueHassanCampus extends StatelessWidget {
                       ),
                       _buildProjectCard(
                         title: 'Medical Centre',
-                        code: 'Future',
                         icon: LucideIcons.stethoscope,
                         isFuture: true,
                         context: context,
@@ -270,7 +286,6 @@ class SiddiqueHassanCampus extends StatelessWidget {
 
   Widget _buildProjectCard({
     required String title,
-    required String code,
     required IconData icon,
     bool isFuture = false,
     Widget child = const SizedBox(),
@@ -291,9 +306,11 @@ class SiddiqueHassanCampus extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: () {
-            navigateTo(context: context, route: child);
-          },
+          onTap: isFuture
+              ? null
+              : () {
+                  navigateTo(context: context, route: child);
+                },
           borderRadius: BorderRadius.circular(12),
           child: Padding(
             padding: const EdgeInsets.all(16),

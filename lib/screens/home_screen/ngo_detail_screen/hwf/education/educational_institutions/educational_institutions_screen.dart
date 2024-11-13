@@ -111,63 +111,72 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                   name: 'Siddique Hassan Campus',
                   location: 'Mewat, Haryana',
                   place: 'Hayana',
-                  image:
-                      "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",
+                  image: HwfContent.siddiqueHassanCampus,
                 ),
                 _buildInstitutionCard(
-                  context: context,
-                  child: const HwfMaldaCampus(),
-                  name: 'HWF Malda Campus',
-                  location: 'West Bengal',
-                  place: 'West Bengal',
-                  image:
-                      "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",
-                ),
-                _buildInstitutionCard(
-                  context: context,
-                  child: const OtherCampusesScreen(
-                    title: 'The Scholar School',
-                    imageList: [],
-                    location: 'New Delhi',
-                    description:
-                        "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
-                  ),
-                  name: 'The Scholar School',
-                  location: 'New Delhi',
-                  place: 'New Delhi',
-                  image:
-                      "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",
-                ),
-                _buildInstitutionCard(
-                  context: context,
-                  name: 'The Scholar School',
-                  location: 'Guwahati, Assam',
-                  child: const OtherCampusesScreen(
-                    title: 'The Scholar School',
-                    imageList: [],
-                    location: 'Assam',
-                    description:
-                        "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
-                  ),
-                  place: 'Assam',
-                  image:
-                      "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",
-                ),
-                _buildInstitutionCard(
-                  context: context,
-                  name: 'The Scholar School',
-                  location: 'Howrah, West Bengal',
-                  child: const OtherCampusesScreen(
-                    title: 'The Scholar School',
-                    imageList: [],
+                    context: context,
+                    child: const HwfMaldaCampus(),
+                    name: 'HWF Malda Campus',
                     location: 'West Bengal',
-                    description:
-                        "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
-                  ),
-                  place: 'West Bengal',
-                  image:
-                      "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",
-                ),
+                    place: 'West Bengal',
+                    image: HwfContent.hwfMaldaCampus),
+                _buildInstitutionCard(
+                    context: context,
+                    child: const OtherCampusesScreen(
+                      title: 'The Scholar School',
+                      imageList: [
+                        HwfContent.delphiScholarSchool,
+                        HwfContent.delphiScholarSchool1,
+                        HwfContent.delphiScholarSchool2,
+                        HwfContent.delphiScholarSchool3,
+                        HwfContent.delphiScholarSchool4,
+                      ],
+                      location: 'Jamia Nagar, New Delhi',
+                      description:
+                          "The Scholar School in Jamia Nagar, Delhi, provides education up to the 8th grade, following the CBSE curriculum. The school features quality infrastructure, including well-equipped classrooms and a newly inaugurated multipurpose hall.",
+                    ),
+                    name: 'The Scholar School',
+                    location: 'Jamia Nagar, New Delhi',
+                    place: 'New Delhi',
+                    image: HwfContent.delphiScholarSchool),
+                _buildInstitutionCard(
+                    context: context,
+                    name: 'The Scholar School',
+                    location: 'Guwahati, Assam',
+                    child: const OtherCampusesScreen(
+                        title: 'The Scholar School',
+                        imageList: [
+                          HwfContent.guwahatiScholarSchool,
+                          HwfContent.guwahatiScholarSchool2,
+                          HwfContent.guwahatiScholarSchool3,
+                          HwfContent.guwahatiScholarSchool4,
+                          HwfContent.guwahatiScholarSchool5,
+                        ],
+                        location: 'Assam',
+                        description:
+                            "The Scholar School in Guwahati, Assam, affiliated with CBSE, offers education up to grade 12. In the recent final examinations, it achieved the highest scores in the state. This residential school of separate hostels for boys and girls."),
+                    place: 'Assam',
+                    image: HwfContent.guwahatiScholarSchool),
+                _buildInstitutionCard(
+                    context: context,
+                    name: 'The Scholar School',
+                    location: 'Howrah, West Bengal',
+                    child: const OtherCampusesScreen(
+                      title: 'The Scholar School',
+                      imageList: [
+                        HwfContent.howrahScholarSchool,
+                        HwfContent.howrahScholarSchool1,
+                        HwfContent.howrahScholarSchool2,
+                        HwfContent.howrahScholarSchool3,
+                        HwfContent.howrahScholarSchool4,
+                        HwfContent.howrahScholarSchool5,
+                      ],
+                      location: 'West Bengal',
+                      description:
+                          "The Scholar School in Bhagnan, Howrah, West Bengal, offers education up to 10th standard. This residential school has good infrastructure including hostel for boys and good play area.",
+                    ),
+                    place: 'West Bengal',
+                    image: HwfContent.howrahScholarSchool),
                 _buildInstitutionCard(
                   context: context,
                   child: const OtherCampusesScreen(
@@ -204,11 +213,11 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                     title: 'Millennium Public School',
                     location: 'Hazaribagh, Jharkhand',
                     imageList: [
-                      AppContent.millenniumSchoolImage,
-                      AppContent.millenniumSchoolImage2,
-                      AppContent.millenniumSchoolImage3,
-                      AppContent.millenniumSchoolImage4,
-                      AppContent.millenniumSchoolImage5,
+                      HwfContent.millenniumSchoolImage,
+                      HwfContent.millenniumSchoolImage2,
+                      HwfContent.millenniumSchoolImage3,
+                      HwfContent.millenniumSchoolImage4,
+                      HwfContent.millenniumSchoolImage5,
                     ],
                     description:
                         "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
@@ -216,7 +225,7 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                   name: 'Millennium Public School',
                   location: 'Hazaribagh, Jharkhand',
                   place: 'Jharkhand',
-                  image: AppContent.millenniumSchoolImage,
+                  image: HwfContent.millenniumSchoolImage,
                 ),
               ]),
             ),

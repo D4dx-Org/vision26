@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:vision_2026/constants/image_class.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/educational_institutions/capmpuses/siddique_hassan_campus/existing_projects/school_profile_scren.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
 
 class HwfMaldaCampus extends StatelessWidget {
   const HwfMaldaCampus({super.key});
@@ -23,7 +23,7 @@ class HwfMaldaCampus extends StatelessWidget {
                 fit: StackFit.expand,
                 children: [
                   Image.asset(
-                    ImageClass.siddiqueHassanCampus,
+                    HwfContent.hwfMaldaCampus,
                     fit: BoxFit.cover,
                   ),
                   Container(
@@ -145,24 +145,49 @@ class HwfMaldaCampus extends StatelessWidget {
                     children: [
                       _buildProjectCard(
                         title: 'Al Jamia Senior Secondary School',
-                        code: 'A1(a)i_1',
                         icon: LucideIcons.school,
                         context: context,
-                        child: const SchoolProfileScreen(),
+                        child: const SchoolProfileScreen(
+                          schoolName: 'Al Jamia Senior Secondary School',
+                          image: HwfContent.maldaJamiaCampus1,
+                          imageList: [
+                            HwfContent.maldaJamiaCampus2,
+                            HwfContent.maldaJamiaCampus3,
+                            HwfContent.maldaJamiaCampus4,
+                          ],
+                          description:
+                              "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala.  Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor’s degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
+                        ),
                       ),
                       _buildProjectCard(
                         title: 'The Scholar School',
-                        code: 'A1(a)i_2',
                         icon: LucideIcons.graduationCap,
                         context: context,
-                        child: const SchoolProfileScreen(),
+                        child: const SchoolProfileScreen(
+                          schoolName: 'The Scholar School',
+                          description:
+                              "This year, The Scholar School at the Malda campus has launched with KG and 1st grade. In the coming years, it is set to develop into a CBSE-affiliated English medium school.",
+                          image: HwfContent.maldaScholorSchool,
+                          imageList: [
+                            HwfContent.maldaScholorSchool2,
+                            HwfContent.maldaScholorSchool3,
+                          ],
+                        ),
                       ),
                       _buildProjectCard(
                         title: 'Hostel for Boys',
-                        code: 'A1(a)i_3',
                         icon: LucideIcons.building2,
                         context: context,
-                        child: const SchoolProfileScreen(),
+                        child: const SchoolProfileScreen(
+                          schoolName: 'Hostels for Boys & girls',
+                          description:
+                              "Separate hostels have been arranged for boys and girls of Al Jamia Off-Campus and Scholar School, Special accommodations are reserved for orphaned students in these hostels.",
+                          image: HwfContent.boysHostel,
+                          imageList: [
+                            HwfContent.boysHostel,
+                            HwfContent.girlsHostel,
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -211,7 +236,6 @@ class HwfMaldaCampus extends StatelessWidget {
                     children: [
                       _buildProjectCard(
                         title: 'Industrial Training Centre',
-                        code: 'Future',
                         icon: LucideIcons.wrench,
                         isFuture: true,
                         context: context,
@@ -219,7 +243,6 @@ class HwfMaldaCampus extends StatelessWidget {
                       ),
                       _buildProjectCard(
                         title: 'Medical Centre',
-                        code: 'Future',
                         icon: LucideIcons.stethoscope,
                         isFuture: true,
                         context: context,
@@ -255,7 +278,6 @@ class HwfMaldaCampus extends StatelessWidget {
 
   Widget _buildProjectCard({
     required String title,
-    required String code,
     required IconData icon,
     bool isFuture = false,
     Widget child = const SizedBox(),
@@ -276,9 +298,11 @@ class HwfMaldaCampus extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: () {
-            navigateTo(context: context, route: child);
-          },
+          onTap: isFuture
+              ? null
+              : () {
+                  navigateTo(context: context, route: child);
+                },
           borderRadius: BorderRadius.circular(12),
           child: Padding(
             padding: const EdgeInsets.all(16),

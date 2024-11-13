@@ -88,7 +88,7 @@ class NGOProfileScreen extends StatelessWidget {
                     ],
                   ),
                   child: const Text(
-                    AppContent.hwfdescription,
+                    HwfContent.hwfdescription,
                     style: TextStyle(
                       fontSize: 16,
                       height: 1.5,

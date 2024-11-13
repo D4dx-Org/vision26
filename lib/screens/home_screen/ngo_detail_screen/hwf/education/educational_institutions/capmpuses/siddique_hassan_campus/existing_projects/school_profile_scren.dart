@@ -1,9 +1,20 @@
+// ignore_for_file: unused_element
+
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:vision_2026/constants/image_class.dart';
 
 class SchoolProfileScreen extends StatelessWidget {
-  const SchoolProfileScreen({super.key});
+  final String? image;
+  final String? schoolName;
+  final String? description;
+  final List? imageList;
+
+  const SchoolProfileScreen(
+      {super.key,
+      this.image,
+      this.schoolName,
+      this.description,
+      this.imageList});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +31,7 @@ class SchoolProfileScreen extends StatelessWidget {
                 fit: StackFit.expand,
                 children: [
                   Image.asset(
-                    ImageClass.siddiqueHassanCampus,
+                    image!,
                     fit: BoxFit.cover,
                   ),
                   Container(
@@ -37,26 +48,19 @@ class SchoolProfileScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              title: const Column(
+              title: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Al Jamia Senior Secondary School',
-                    style: TextStyle(
+                    schoolName!,
+                    style: const TextStyle(
                       fontSize: 24,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 4),
-                  Text(
-                    'Existing Project • A1(a)i_1',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.white70,
-                    ),
-                  ),
+                  const SizedBox(height: 4),
                 ],
               ),
             ),
@@ -67,44 +71,44 @@ class SchoolProfileScreen extends StatelessWidget {
               ),
               onPressed: () => Navigator.pop(context),
             ),
-            actions: [
-              IconButton(
-                icon: const Icon(LucideIcons.share2),
-                onPressed: () {
-                  // Share functionality
-                },
-              ),
-              const SizedBox(width: 8),
-            ],
+            // actions: [
+            //   IconButton(
+            //     icon: const Icon(LucideIcons.share2),
+            //     onPressed: () {
+            //       // Share functionality
+            //     },
+            //   ),
+            //   const SizedBox(width: 8),
+            // ],
           ),
 
           // Quick Info Cards
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Row(
-                children: [
-                  _buildInfoCard(
-                    icon: LucideIcons.users,
-                    title: 'Students',
-                    value: '500+',
-                  ),
-                  const SizedBox(width: 16),
-                  _buildInfoCard(
-                    icon: LucideIcons.school2,
-                    title: 'Grade Range',
-                    value: '10-12',
-                  ),
-                  const SizedBox(width: 16),
-                  _buildInfoCard(
-                    icon: LucideIcons.bookOpen,
-                    title: 'Programs',
-                    value: '3',
-                  ),
-                ],
-              ),
-            ),
-          ),
+          // SliverToBoxAdapter(
+          //   child: Padding(
+          //     padding: const EdgeInsets.all(16),
+          //     child: Row(
+          //       children: [
+          //         _buildInfoCard(
+          //           icon: LucideIcons.users,
+          //           title: 'Students',
+          //           value: '500+',
+          //         ),
+          //         const SizedBox(width: 16),
+          //         _buildInfoCard(
+          //           icon: LucideIcons.school2,
+          //           title: 'Grade Range',
+          //           value: '10-12',
+          //         ),
+          //         const SizedBox(width: 16),
+          //         _buildInfoCard(
+          //           icon: LucideIcons.bookOpen,
+          //           title: 'Programs',
+          //           value: '3',
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
 
           // About Section
           SliverToBoxAdapter(
@@ -145,7 +149,7 @@ class SchoolProfileScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
+                    description!,
                     style: TextStyle(
                       fontSize: 16,
                       height: 1.6,
@@ -158,122 +162,143 @@ class SchoolProfileScreen extends StatelessWidget {
           ),
 
           // Features Section
+          // SliverToBoxAdapter(
+          //   child: Container(
+          //     margin: const EdgeInsets.symmetric(horizontal: 16),
+          //     child: Column(
+          //       crossAxisAlignment: CrossAxisAlignment.start,
+          //       children: [
+          //         const Padding(
+          //           padding: EdgeInsets.symmetric(vertical: 16),
+          //           child: Text(
+          //             'Features & Facilities',
+          //             style: TextStyle(
+          //               fontSize: 20,
+          //               fontWeight: FontWeight.bold,
+          //               color: Colors.black87,
+          //             ),
+          //           ),
+          //         ),
+          //         GridView.count(
+          //           shrinkWrap: true,
+          //           physics: const NeverScrollableScrollPhysics(),
+          //           crossAxisCount: 3,
+          //           mainAxisSpacing: 16,
+          //           crossAxisSpacing: 16,
+          //           childAspectRatio: 1,
+          //           children: [
+          //             _buildFeatureCard(
+          //               icon: LucideIcons.building2,
+          //               title: 'Modern Campus',
+          //             ),
+          //             _buildFeatureCard(
+          //               icon: LucideIcons.bookOpen,
+          //               title: 'Library',
+          //             ),
+          //             _buildFeatureCard(
+          //               icon: LucideIcons.laptop2,
+          //               title: 'Computer Lab',
+          //             ),
+          //             _buildFeatureCard(
+          //               icon: LucideIcons.bed,
+          //               title: 'Hostel',
+          //             ),
+          //             _buildFeatureCard(
+          //               icon: LucideIcons.utensils,
+          //               title: 'Cafeteria',
+          //             ),
+          //             _buildFeatureCard(
+          //               icon: LucideIcons.playCircle,
+          //               title: 'Play Ground',
+          //             ),
+          //           ],
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
+
+          // Gallery Section
           SliverToBoxAdapter(
-            child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 16),
-                    child: Text(
-                      'Features & Facilities',
+            child: Visibility(
+              visible: imageList != null,
+              child: Container(
+                margin: const EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Gallery',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: Colors.black87,
                       ),
                     ),
-                  ),
-                  GridView.count(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    crossAxisCount: 3,
-                    mainAxisSpacing: 16,
-                    crossAxisSpacing: 16,
-                    childAspectRatio: 1,
-                    children: [
-                      _buildFeatureCard(
-                        icon: LucideIcons.building2,
-                        title: 'Modern Campus',
-                      ),
-                      _buildFeatureCard(
-                        icon: LucideIcons.bookOpen,
-                        title: 'Library',
-                      ),
-                      _buildFeatureCard(
-                        icon: LucideIcons.laptop2,
-                        title: 'Computer Lab',
-                      ),
-                      _buildFeatureCard(
-                        icon: LucideIcons.bed,
-                        title: 'Hostel',
-                      ),
-                      _buildFeatureCard(
-                        icon: LucideIcons.utensils,
-                        title: 'Cafeteria',
-                      ),
-                      _buildFeatureCard(
-                        icon: LucideIcons.playCircle,
-                        title: 'Play Ground',
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-
-          // Gallery Section
-          SliverToBoxAdapter(
-            child: Container(
-              margin: const EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Gallery',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  SizedBox(
-                    height: 120,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 5,
-                      itemBuilder: (context, index) {
-                        return Container(
-                          width: 160,
-                          margin: const EdgeInsets.only(right: 12),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                            image: const DecorationImage(
-                              image: NetworkImage(ImageClass.tempSchoolImage),
-                              fit: BoxFit.cover,
+                    const SizedBox(height: 16),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.width / 2,
+                      child: GridView.builder(
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          mainAxisSpacing: 12,
+                          crossAxisSpacing: 12,
+                        ),
+                        itemCount: imageList!.length,
+                        itemBuilder: (context, index) {
+                          return Container(
+                            width: 160,
+                            margin: const EdgeInsets.only(right: 12),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
                             ),
-                          ),
-                        );
-                      },
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(12),
+                              child: Image.asset(
+                                imageList![index],
+                                fit: BoxFit.cover,
+                                errorBuilder: (context, error, stackTrace) {
+                                  return Container(
+                                    color: Colors.grey[300],
+                                    child: const Icon(
+                                      LucideIcons.imageOff,
+                                      color: Colors.grey,
+                                      size: 30,
+                                    ),
+                                  );
+                                },
+                              ),
+                            ),
+                          );
+                        },
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          // Admission inquiry
-        },
-        backgroundColor: const Color(0xFFB71C1C),
-        icon: const Icon(
-          LucideIcons.clipboardCheck,
-          color: Colors.white,
-        ),
-        label: const Text(
-          'Admission Inquiry',
-          style: TextStyle(
-            fontSize: 16,
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
+      // floatingActionButton: FloatingActionButton.extended(
+      //   onPressed: () {
+      //     // Admission inquiry
+      //   },
+      //   backgroundColor: const Color(0xFFB71C1C),
+      //   icon: const Icon(
+      //     LucideIcons.clipboardCheck,
+      //     color: Colors.white,
+      //   ),
+      //   label: const Text(
+      //     'Admission Inquiry',
+      //     style: TextStyle(
+      //       fontSize: 16,
+      //       color: Colors.white,
+      //       fontWeight: FontWeight.bold,
+      //     ),
+      //   ),
+      // ),
     );
   }
 
