@@ -163,8 +163,8 @@ class SiddiqueHassanCampus extends StatelessWidget {
                         context: context,
                         child: const SchoolProfileScreen(
                           schoolName: 'UG & PG College',
-                          description: "The UG and PG College offers a variety of undergraduate and postgraduate courses, affiliated with recognized universities. Comprehensive facilities, including hostels, are already in place to support student needs.",
-                          image: 
+                          description:
+                              "The UG and PG College offers a variety of undergraduate and postgraduate courses, affiliated with recognized universities. Comprehensive facilities, including hostels, are already in place to support student needs.",
                         ),
                       ),
                       _buildProjectCard(
