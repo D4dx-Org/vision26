@@ -128,31 +128,26 @@ class NGOProfileScreen extends StatelessWidget {
                   InterventionAreaCard(
                     title: 'Education',
                     icon: LucideIcons.graduationCap,
-                    code: 'A1',
                     child: EducationServicesScreen(),
                   ),
                   InterventionAreaCard(
                     title: 'Healthcare',
                     icon: LucideIcons.stethoscope,
-                    code: 'A2',
                     child: HealthcareServicesScreen(),
                   ),
                   InterventionAreaCard(
                     title: 'Orphan Care',
                     icon: LucideIcons.heart,
-                    code: 'A3',
                     child: HealthcareServicesScreen(),
                   ),
                   InterventionAreaCard(
                     title: 'Government Scheme\nFacilitation Center',
                     icon: LucideIcons.building,
-                    code: 'A4',
                     child: HealthcareServicesScreen(),
                   ),
                   InterventionAreaCard(
                     title: 'Vocational Training',
                     icon: LucideIcons.briefcase,
-                    code: 'A5',
                     child: HealthcareServicesScreen(),
                   ),
                 ],
@@ -170,14 +165,13 @@ class NGOProfileScreen extends StatelessWidget {
 class InterventionAreaCard extends StatelessWidget {
   final String title;
   final IconData icon;
-  final String code;
+
   final Widget child;
 
   const InterventionAreaCard({
     super.key,
     required this.title,
     required this.icon,
-    required this.code,
     required this.child,
   });
 
