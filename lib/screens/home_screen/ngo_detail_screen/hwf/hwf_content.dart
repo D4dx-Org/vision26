@@ -56,6 +56,21 @@ class HwfContent {
   static const String guwahatiScholarSchool5 =
       '${imageRoot3}guwahatiScholar5.jpg';
 
+  //// howrah scholar school
+  static const String howrahScholarSchool =
+      '${imageRoot3}howrahScholarSchool.jpg';
+  static const String howrahScholarSchool1 =
+      '${imageRoot3}howrahScholarSchool1.jpg';
+
+  static const String howrahScholarSchool2 =
+      '${imageRoot3}howrahScholarSchool2.jpg';
+  static const String howrahScholarSchool3 =
+      '${imageRoot3}howrahScholarSchool3.jpg';
+  static const String howrahScholarSchool4 =
+      '${imageRoot3}howrahScholarSchool4.jpg';
+  static const String howrahScholarSchool5 =
+      '${imageRoot3}howrahScholarSchool5.jpg';
+
 // millennium school
   static const String millenniumSchoolImage =
       '${imageRoot}millennium_school-1.jpg';

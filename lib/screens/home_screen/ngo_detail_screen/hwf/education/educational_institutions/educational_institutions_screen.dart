@@ -158,20 +158,25 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                     place: 'Assam',
                     image: HwfContent.guwahatiScholarSchool),
                 _buildInstitutionCard(
-                  context: context,
-                  name: 'The Scholar School',
-                  location: 'Howrah, West Bengal',
-                  child: const OtherCampusesScreen(
-                    title: 'The Scholar School',
-                    imageList: [],
-                    location: 'West Bengal',
-                    description:
-                        "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
-                  ),
-                  place: 'West Bengal',
-                  image:
-                      "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",
-                ),
+                    context: context,
+                    name: 'The Scholar School',
+                    location: 'Howrah, West Bengal',
+                    child: const OtherCampusesScreen(
+                      title: 'The Scholar School',
+                      imageList: [
+                        HwfContent.howrahScholarSchool,
+                        HwfContent.howrahScholarSchool1,
+                        HwfContent.howrahScholarSchool2,
+                        HwfContent.howrahScholarSchool3,
+                        HwfContent.howrahScholarSchool4,
+                        HwfContent.howrahScholarSchool5,
+                      ],
+                      location: 'West Bengal',
+                      description:
+                          "The Scholar School in Bhagnan, Howrah, West Bengal, offers education up to 10th standard. This residential school has good infrastructure including hostel for boys and good play area.",
+                    ),
+                    place: 'West Bengal',
+                    image: HwfContent.howrahScholarSchool),
                 _buildInstitutionCard(
                   context: context,
                   child: const OtherCampusesScreen(
