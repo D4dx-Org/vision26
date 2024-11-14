@@ -6,7 +6,9 @@ import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/education/
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/healthcare/hwt_health_care_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/hwt_hunger_relief.dart/hwt_hunger_relief.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/masawat/financial_support/financial_support.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/masawat/market_linkage/market_linkage.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/masawat/masawat_content.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/masawat/skill_development/skill_development.dart';
 
 class MasawatProfileScreen extends StatelessWidget {
   const MasawatProfileScreen({super.key});
@@ -135,12 +137,12 @@ class MasawatProfileScreen extends StatelessWidget {
                   InterventionAreaCard(
                     title: 'Skill Development',
                     icon: LucideIcons.utensilsCrossed,
-                    child: HWTHungerReliefPage(),
+                    child: MasawatSkillDevelopmentPage(),
                   ),
                   InterventionAreaCard(
                     title: 'Market Linkage',
                     icon: LucideIcons.graduationCap,
-                    child: HWTEducationServicesScreen(),
+                    child: MasawatMarketLinkagePage(),
                   ),
                 ],
               ),

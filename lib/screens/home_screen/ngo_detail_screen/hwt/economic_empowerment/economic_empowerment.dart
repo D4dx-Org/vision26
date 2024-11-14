@@ -173,7 +173,7 @@ class EconomicEmpowermentScreen extends StatelessWidget {
                           _buildImageCard(
                               "assets/images/hwt/Page-3 E_sub image 3.jpg"),
                           _buildImageCard(
-                              "assets/images/hwt/Page-3 E_sub image 4.JPG"),
+                              "assets/images/hwt/Page-3 E_sub image 4.jpg"),
                         ],
                       ),
                     ),
