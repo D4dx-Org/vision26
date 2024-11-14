@@ -7,6 +7,7 @@ import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MSS/mss_detail
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/hwt_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/masawat/masawat_detail_page.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/tweet/tweet_detail_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -198,7 +199,7 @@ class HomeScreen extends StatelessWidget {
                         // PartnerCard(name: 'IRT'),
                         // PartnerCard(name: 'MVT'),
                         PartnerCard(name: 'MSS'),
-                        // PartnerCard(name: 'TWEET'),
+                        PartnerCard(name: 'TWEET'),
                         PartnerCard(name: 'MASAWAT'),
                         // PartnerCard(name: 'SAHULAT'),
                       ],
@@ -282,7 +283,7 @@ class PartnerCard extends StatelessWidget {
         destinationScreen = const MSSProfileScreen();
         break;
       case 'TWEET':
-        destinationScreen = const NGOProfileScreen();
+        destinationScreen = const TweetDetailPage();
         break;
       case 'MASAWAT':
         destinationScreen = const MasawatProfileScreen();
