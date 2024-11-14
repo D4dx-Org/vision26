@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vision_2026/constants/color_class.dart';
 
 class OrphanWidowCareScreen extends StatelessWidget {
   const OrphanWidowCareScreen({super.key});

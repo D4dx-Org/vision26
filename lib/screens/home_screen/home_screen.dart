@@ -5,6 +5,7 @@ import 'package:vision_2026/constants/image_class.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/hwt_detail_page.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/masawat/masawat_detail_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -283,7 +284,7 @@ class PartnerCard extends StatelessWidget {
         destinationScreen = const NGOProfileScreen();
         break;
       case 'MASAWAT':
-        destinationScreen = const NGOProfileScreen();
+        destinationScreen = const MasawatProfileScreen();
         break;
       case 'SAHULAT':
         destinationScreen = const NGOProfileScreen();
