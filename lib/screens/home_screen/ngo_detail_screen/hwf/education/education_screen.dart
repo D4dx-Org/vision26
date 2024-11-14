@@ -102,9 +102,10 @@ class EducationServicesScreen extends StatelessWidget {
                   context: context,
                   title: 'Career Guidance & Coaching',
                   code: 'Coaching',
-                  child: const CareerGuidanceScreen(),
-                  image:
-                      "https://content.jdmagicbox.com/comp/kozhikode/dc/0495px495.x495.110808155236.n8s7dc/catalogue/career-guidance-academy-ymca-road-kozhikode-tutorials-4nrn6k8e23.jpg",
+                  child: const CareerGuidanceScreen(
+                    image: HwfContent.coaching,
+                  ),
+                  image: HwfContent.coaching,
                   description: 'Professional guidance for future success.',
                 ),
                 _buildServiceCard(

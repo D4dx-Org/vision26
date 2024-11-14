@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/career_guidence_screen/career_guidence_detail_screen/career_guidence_detail_screen.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
 
 class CareerGuidanceScreen extends StatelessWidget {
-  const CareerGuidanceScreen({super.key});
+  final String image;
+  const CareerGuidanceScreen({super.key, required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +21,8 @@ class CareerGuidanceScreen extends StatelessWidget {
               background: Stack(
                 fit: StackFit.expand,
                 children: [
-                  Image.network(
-                    "https://dashboard.careernaksha.com/uploads/Career_Naksha_Career_Counselling_693f07d5a6.jpg",
+                  Image.asset(
+                    image,
                     fit: BoxFit.cover,
                   ),
                   Container(
@@ -100,6 +102,9 @@ class CareerGuidanceScreen extends StatelessWidget {
                   _buildSectionTitle(
                       'Centre for Training and Academic Guidance (CTAG)'),
                   const SizedBox(height: 16),
+                  Image.asset(
+                    HwfContent.ctag,
+                  ),
                   Container(
                     padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
@@ -139,90 +144,69 @@ class CareerGuidanceScreen extends StatelessWidget {
               ),
               delegate: SliverChildListDelegate([
                 _buildProgramCard(
-                  title: 'Training Center',
+                  title: 'WEST BENGAL CIVIL SERVICE COACHING CENTRE',
                   subtitle: 'Kolkata',
                   icon: LucideIcons.school2,
-                  child: const TrainingCenterDetailScreen(),
+                  child: const TrainingCenterDetailScreen(
+                    title: 'WEST BENGAL CIVIL SERVICE COACHING CENTRE',
+                    image: HwfContent.coaching,
+                    description:
+                        "The WBCS Coaching Program is a highly promising initiative providing free, residential coaching for aspirants of the West Bengal Civil Service (WBCS) exam. Of the 58 students enrolled so far, several achieved significant successes including WBCS, state and central government services.",
+                  ),
                   context: context,
                 ),
                 _buildProgramCard(
-                  title: 'Coaching Center',
+                  title: 'CAREER GUIDANCE & COUNSELLING',
                   subtitle: 'WBCS',
-                  icon: LucideIcons.graduationCap,
-                  child: const TrainingCenterDetailScreen(),
-                  context: context,
-                ),
-                _buildProgramCard(
-                  title: 'Career Guidance',
-                  subtitle: 'Counselling',
                   icon: LucideIcons.compass,
-                  child: const TrainingCenterDetailScreen(),
+                  child: const TrainingCenterDetailScreen(
+                    title: 'CAREER GUIDANCE & COUNSELLING',
+                    image: HwfContent.coaching2,
+                    description:
+                        "CTAG’s mission is to empower individuals and communities by providing access to quality education and career opportunities. Through innovative learning programs, skill-building initiatives, and strategic partnerships, CTAG strives to create pathways to personal and professional growth, enabling people to achieve their potential and contribute meaningfully to society. Our commitment is to foster an inclusive environment where everyone has the resources, guidance, and support to build fulfilling careers and improve their quality of life.",
+                  ),
                   context: context,
                 ),
                 _buildProgramCard(
                   title: 'Training Programs',
                   subtitle: 'Skill Development',
                   icon: LucideIcons.briefcase,
-                  child: const TrainingCenterDetailScreen(),
+                  child: const TrainingCenterDetailScreen(
+                    title: 'Training Programs',
+                    image: HwfContent.coaching,
+                    description:
+                        "CTAG conducts specialized training sessions for Career Counsellors, Teachers, and Trainers to equip them with advanced skills in delivering impactful training and motivational sessions. These programs focus on enhancing their abilities to inspire, guide, and empower young minds, ensuring they become influential mentors and role models. Through practical workshops and strategic learning modules, CTAG enables these professionals to foster personal growth, instill confidence, and ignite the potential in students, shaping a more motivated and capable future generation.",
+                  ),
                   context: context,
                 ),
                 _buildProgramCard(
                   title: 'Career Web Portal',
                   subtitle: 'Online Resources',
                   icon: LucideIcons.globe2,
-                  child: const TrainingCenterDetailScreen(),
+                  child: const TrainingCenterDetailScreen(
+                    title: 'Career Web Portal',
+                    image: HwfContent.coaching3,
+                    description:
+                        "CTAG hosts a comprehensive and well-maintained career web portal, designed to provide timely and relevant information for a wide range of users, including career aspirants, job seekers, career guidance professionals, educators, and more. The portal is a valuable resource, offering insights on career paths, industry trends, job opportunities, and practical guidance to support career development at all stages. By presenting up-to-date content and interactive tools, the platform enables users to make informed decisions, build strong professional networks, and access expert guidance tailored to their career goals and aspirations.",
+                  ),
                   context: context,
                 ),
                 _buildProgramCard(
                   title: 'Career Newsletter',
                   subtitle: 'Monthly Updates',
                   icon: LucideIcons.mailCheck,
-                  child: const TrainingCenterDetailScreen(),
+                  child: const TrainingCenterDetailScreen(
+                    title: 'Career Newsletter',
+                    image: HwfContent.coaching4,
+                    description:
+                        "Each month, CTAG publishes a meticulously curated newsletter designed to keep subscribers informed about the latest scholarships, job openings in government sectors and Public Sector Undertakings (PSUs), and resources for personal and professional growth. This newsletter serves as a comprehensive guide for students, job seekers, and professionals looking to advance their careers and develop essential life skills. ",
+                  ),
                   context: context,
                 ),
               ]),
             ),
           ),
-
-          // Success Stories
-          SliverToBoxAdapter(
-            child: Container(
-              margin: const EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  _buildSectionTitle('Success Stories'),
-                  const SizedBox(height: 16),
-                  SizedBox(
-                    height: 200,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 5,
-                      itemBuilder: (context, index) => _buildSuccessStoryCard(),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
         ],
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          // Handle counselling session booking
-        },
-        backgroundColor: const Color(0xFF1565C0),
-        icon: const Icon(
-          LucideIcons.calendar,
-          color: Colors.white,
-        ),
-        label: const Text(
-          'Book Counselling Session',
-          style: TextStyle(
-            fontSize: 14,
-            color: Colors.white,
-          ),
-        ),
       ),
     );
   }

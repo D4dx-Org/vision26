@@ -145,7 +145,13 @@ class HwfContent {
     capacityBuildingofBuilding5,
   ];
 
-  ///////////////////////// [Scholorship] /////////////////////////
+  ///////////////////////// [Others] /////////////////////////
   static const String othersRoot = 'assets/images/hwf/others/';
   static const String scholarshipImage = '${othersRoot}scholarship.png';
+  static const String coaching = '${othersRoot}coaching.png';
+  static const String ctag = '${othersRoot}ctag.png';
+  static const String coaching1 = '${othersRoot}coaching1.png';
+  static const String coaching2 = '${othersRoot}coaching2.png';
+  static const String coaching3 = '${othersRoot}coaching3.png';
+  static const String coaching4 = '${othersRoot}coaching4.png';
 }
