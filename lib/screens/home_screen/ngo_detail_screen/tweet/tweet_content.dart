@@ -49,4 +49,12 @@ class TweetContent {
 
   static const String tweetDescription5 =
       "TWEET runs Adult Literacy Centres in different parts of country with the aim of instilling basic reading and writing skills among community women who lack access to education, especially those facing dire circumstances.   ";
+  static const String tweetDescription6 =
+      "TWEET facilitate for financial independence of women to cope up with the life struggle more easily. Under economic empowerment programs, it provides livelihood support, entrepreneurship development and skill development trainings. ";
+  static const String tweetDescription7 =
+      "TWEET's Livelihood Support Program is making a profound impact on the lives of destitute women grappling with financial difficulties. ";
+  static const String tweetDescription8 =
+      "The entrepreneurship development program is designed to equip aspiring female entrepreneurs with the skills, knowledge, and resources needed to start and grow their business. TWEET supported different women groups for entrepreneurship development like starting an agarbatti manufacturing unit, jute bag production unit, and women friendly marketplace.";
+  static const String tweetDescription9 =
+      "TWEET runs skill development trainings aiming at providing employment-oriented skills to women. TWEET has tailoring and stitching centres at Delhi and Jharkhand and also conducts timely training programs like bangle making, detergent making, mehndi designing, etc in different parts of the country.";
 }

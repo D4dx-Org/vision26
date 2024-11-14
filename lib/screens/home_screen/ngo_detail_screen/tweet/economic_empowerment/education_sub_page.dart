@@ -26,8 +26,8 @@ class EconomicEmpowermentScreen extends StatelessWidget {
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
-                          Color(0xFFD32F2F),
-                          Color(0xFFB71C1C),
+                          Color.fromARGB(255, 47, 132, 211),
+                          Color.fromARGB(255, 28, 82, 183),
                         ],
                       ),
                     ),
@@ -36,7 +36,7 @@ class EconomicEmpowermentScreen extends StatelessWidget {
                     right: -100,
                     top: -100,
                     child: Icon(
-                      LucideIcons.stethoscope,
+                      LucideIcons.trendingUp,
                       size: 300,
                       color: Colors.white.withOpacity(0.1),
                     ),
@@ -58,7 +58,7 @@ class EconomicEmpowermentScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: const Text(
-                            '#education',
+                            '#empowerment',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 14,
@@ -67,7 +67,7 @@ class EconomicEmpowermentScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 8),
                         const Text(
-                          "EDUCATION",
+                          "Economic empowerment",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 32,
@@ -81,7 +81,10 @@ class EconomicEmpowermentScreen extends StatelessWidget {
               ),
             ),
             leading: IconButton(
-              icon: const Icon(Icons.arrow_back_ios),
+              icon: const Icon(
+                Icons.arrow_back_ios,
+                color: Colors.white,
+              ),
               onPressed: () => Navigator.pop(context),
             ),
           ),
@@ -105,7 +108,7 @@ class EconomicEmpowermentScreen extends StatelessWidget {
                   ],
                 ),
                 child: Text(
-                  TweetContent.tweetDescription2,
+                  TweetContent.tweetDescription6,
                   style: TextStyle(
                     fontSize: 16,
                     height: 1.6,
@@ -123,57 +126,52 @@ class EconomicEmpowermentScreen extends StatelessWidget {
             sliver: SliverGrid(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 1.5,
+                childAspectRatio: 1.0,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
               ),
               delegate: SliverChildListDelegate([
                 _buildServiceCard(
                   context: context,
-                  title: "Meritorious Girls Scholarship",
-                  icon: LucideIcons.medal,
+                  title: "Livelihood Support",
+                  icon: LucideIcons.briefcase,
                   child: const EducationDetailPage(
-                    title: "Meritorious Girls Scholarship",
-                    code: "#Scholarship",
-                    description: TweetContent.tweetDescription3,
-                    imagePath: TweetContent.tweetimage16,
-                    icon: LucideIcons.medal,
+                    title: "Livelihood Support",
+                    code: "#Support",
+                    description: TweetContent.tweetDescription7,
+                    imagePath: TweetContent.tweetimage22,
+                    icon: LucideIcons.briefcase,
+                  ),
+                ),
+                _buildServiceCard(
+                  context: context,
+                  title: "Entrepreneurship Development",
+                  icon: LucideIcons.lightbulb,
+                  child: const EducationDetailPage(
+                    title: "Entrepreneurship Development",
+                    code: "#Entrepreneurship",
+                    description: TweetContent.tweetDescription8,
+                    imagePath: TweetContent.tweetimage23,
+                    icon: LucideIcons.lightbulb,
                     imageList: [
-                      TweetContent.tweetimage16,
-                      TweetContent.tweetimage17,
+                      TweetContent.tweetimage23,
+                      TweetContent.tweetimage25,
                     ],
                   ),
                 ),
                 _buildServiceCard(
                   context: context,
-                  title: "National Literacy Campaign",
-                  icon: LucideIcons.bookOpen,
+                  title: "Skill Development Trainings",
+                  icon: LucideIcons.hammer,
                   child: const EducationDetailPage(
-                    title: "National Literacy Campaign",
-                    code: "#Campaign",
-                    description: TweetContent.tweetDescription4,
-                    imagePath: TweetContent.tweetimage19,
-                    icon: LucideIcons.bookOpen,
+                    title: "Skill Development Trainings",
+                    code: "#Trainings",
+                    description: TweetContent.tweetDescription9,
+                    imagePath: TweetContent.tweetimage26,
+                    icon: LucideIcons.hammer,
                     imageList: [
-                      TweetContent.tweetimage19,
-                      TweetContent.tweetimage18,
-                    ],
-                  ),
-                ),
-                _buildServiceCard(
-                  context: context,
-                  title: "Adult Literacy Centres",
-                  icon: LucideIcons.graduationCap,
-                  child: const EducationDetailPage(
-                    title: "Adult Literacy Centres",
-                    code: "#Campaign",
-                    description: TweetContent.tweetDescription5,
-                    imagePath: TweetContent.tweetimage21,
-                    icon: LucideIcons.graduationCap,
-                    imageList: [
-                      TweetContent.tweetimage20,
-                      TweetContent.tweetimage21,
-                      TweetContent.tweetimage24,
+                      TweetContent.tweetimage26,
+                      TweetContent.tweetimage27,
                     ],
                   ),
                 ),
@@ -224,13 +222,13 @@ class EconomicEmpowermentScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: const Color(0xFFB71C1C).withOpacity(0.1),
+                    color: Colors.blueAccent.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Icon(
                     icon,
                     size: 32,
-                    color: const Color(0xFFB71C1C),
+                    color: Colors.blueAccent,
                   ),
                 ),
                 const SizedBox(height: 16),

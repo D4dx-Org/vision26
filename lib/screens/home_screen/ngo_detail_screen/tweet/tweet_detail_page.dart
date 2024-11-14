@@ -4,6 +4,7 @@ import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/general_detail_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/healthcare/health_care_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/tweet/economic_empowerment/education_sub_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/tweet/education/education_sub_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/tweet/tweet_content.dart';
 
@@ -124,7 +125,7 @@ class TweetDetailPage extends StatelessWidget {
                 crossAxisCount: 2,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
-                childAspectRatio: 1.3,
+                childAspectRatio: 1.8,
                 children: const [
                   InterventionAreaCard(
                     title: 'Education',
@@ -136,7 +137,7 @@ class TweetDetailPage extends StatelessWidget {
                     title: 'Economic empowerment',
                     icon: LucideIcons
                         .wallet, // Changed to wallet icon to represent economic aspects
-                    child: HealthcareServicesScreen(),
+                    child: EconomicEmpowermentScreen(),
                   ),
                   InterventionAreaCard(
                     title: 'Widow support',

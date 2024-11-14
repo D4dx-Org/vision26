@@ -115,15 +115,6 @@ class EducationDetailPage extends StatelessWidget {
               ),
               onPressed: () => Navigator.pop(context),
             ),
-            actions: [
-              IconButton(
-                icon: const Icon(LucideIcons.share2),
-                onPressed: () {
-                  // Share functionality
-                },
-              ),
-              const SizedBox(width: 8),
-            ],
           ),
 
           // Description
