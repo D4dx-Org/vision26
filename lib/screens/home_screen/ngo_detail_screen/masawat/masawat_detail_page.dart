@@ -5,6 +5,7 @@ import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/education/hwt_education_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/healthcare/hwt_health_care_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/hwt_hunger_relief.dart/hwt_hunger_relief.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/masawat/financial_support/financial_support.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/masawat/masawat_content.dart';
 
 class MasawatProfileScreen extends StatelessWidget {
@@ -129,7 +130,7 @@ class MasawatProfileScreen extends StatelessWidget {
                   InterventionAreaCard(
                     title: 'Financial Support',
                     icon: LucideIcons.dollarSign,
-                    child: HWTHealthcareServicesScreen(),
+                    child: MasawatFinancialPage(),
                   ),
                   InterventionAreaCard(
                     title: 'Skill Development',
@@ -156,14 +157,10 @@ class MasawatProfileScreen extends StatelessWidget {
                 crossAxisSpacing: 16,
                 childAspectRatio: 1.3,
                 children: [
-                  _buildImageCard(
-                      "assets/images/masawat/financial_support_1.jpg"),
-                  _buildImageCard(
-                      "assets/images/masawat/skill_development_1.jpg"),
-                  _buildImageCard(
-                      "assets/images/masawat/financial_support_2.jpg"),
-                  _buildImageCard(
-                      "assets/images/masawat/skill_development_2.jpg"),
+                  _buildImageCard("assets/images/masawat/3A-1.jpg"),
+                  _buildImageCard("assets/images/masawat/3A-2.jpg"),
+                  _buildImageCard("assets/images/masawat/3A-3.jpg"),
+                  _buildImageCard("assets/images/masawat/3A-4.jpg"),
                 ],
               ),
             ),
