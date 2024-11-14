@@ -11,6 +11,7 @@ import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/hwt_hunger
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/low_cost_housing/low_cost_housing.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/orphan_and_widow/orphan_and_widow_care.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/water_sanitation/water_sanitation.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/winter_relief/winter_relief.dart';
 
 class HWTProfileScreen extends StatelessWidget {
   const HWTProfileScreen({super.key});
@@ -169,7 +170,7 @@ class HWTProfileScreen extends StatelessWidget {
                   InterventionAreaCard(
                     title: 'Winter Relief',
                     icon: LucideIcons.snowflake,
-                    child: HealthcareServicesScreen(),
+                    child: WinterReliefScreen(),
                   ),
                 ],
               ),
