@@ -3,6 +3,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vision_2026/constants/image_class.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/healthcare/health_care_screen.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/economic_empowerment/economic_empowerment.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/education/hwt_education_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/healthcare/hwt_health_care_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/hwt_content.dart';
@@ -151,7 +152,7 @@ class HWTProfileScreen extends StatelessWidget {
                   InterventionAreaCard(
                     title: 'Economic Empowerment',
                     icon: LucideIcons.dollarSign,
-                    child: HealthcareServicesScreen(),
+                    child: EconomicEmpowermentScreen(),
                   ),
                   InterventionAreaCard(
                     title: 'Low-Cost Housing',
