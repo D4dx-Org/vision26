@@ -23,33 +23,33 @@ class ScholarshipDetailScreen extends StatelessWidget {
           // Header with Gradient
           _buildHeader(context),
 
-          // Quick Stats
-          SliverToBoxAdapter(
-            child: Container(
-              padding: const EdgeInsets.all(20),
-              child: Row(
-                children: [
-                  _buildStatCard(
-                    icon: LucideIcons.users,
-                    value: '500+',
-                    label: 'Recipients',
-                  ),
-                  const SizedBox(width: 16),
-                  _buildStatCard(
-                    icon: LucideIcons.indianRupee,
-                    value: '₹50k',
-                    label: 'Max Amount',
-                  ),
-                  const SizedBox(width: 16),
-                  _buildStatCard(
-                    icon: LucideIcons.calendar,
-                    value: '1 Year',
-                    label: 'Duration',
-                  ),
-                ],
-              ),
-            ),
-          ),
+          // // Quick Stats
+          // SliverToBoxAdapter(
+          //   child: Container(
+          //     padding: const EdgeInsets.all(20),
+          //     child: Row(
+          //       children: [
+          //         _buildStatCard(
+          //           icon: LucideIcons.users,
+          //           value: '500+',
+          //           label: 'Recipients',
+          //         ),
+          //         const SizedBox(width: 16),
+          //         _buildStatCard(
+          //           icon: LucideIcons.indianRupee,
+          //           value: '₹50k',
+          //           label: 'Max Amount',
+          //         ),
+          //         const SizedBox(width: 16),
+          //         _buildStatCard(
+          //           icon: LucideIcons.calendar,
+          //           value: '1 Year',
+          //           label: 'Duration',
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
 
           // Description
           SliverToBoxAdapter(
@@ -84,14 +84,14 @@ class ScholarshipDetailScreen extends StatelessWidget {
           ),
 
           // Eligibility Criteria
-          SliverToBoxAdapter(
-            child: _buildEligibilitySection(),
-          ),
+          // SliverToBoxAdapter(
+          //   child: _buildEligibilitySection(),
+          // ),
 
-          // Required Documents
-          SliverToBoxAdapter(
-            child: _buildDocumentsSection(),
-          ),
+          // // Required Documents
+          // SliverToBoxAdapter(
+          //   child: _buildDocumentsSection(),
+          // ),
 
           // Related Scholarships
           SliverToBoxAdapter(

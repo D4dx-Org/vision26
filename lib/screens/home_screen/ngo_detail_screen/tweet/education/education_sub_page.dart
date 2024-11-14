@@ -122,8 +122,8 @@ class EducationSubPage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             sliver: SliverGrid(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 1.5,
+                crossAxisCount: 3,
+                childAspectRatio: 0.9,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
               ),

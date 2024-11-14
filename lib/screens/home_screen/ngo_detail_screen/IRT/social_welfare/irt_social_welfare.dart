@@ -121,7 +121,7 @@ class IRTHealthcareServicesScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             sliver: SliverGrid(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
+                crossAxisCount: 3,
                 childAspectRatio: 0.85,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
@@ -164,6 +164,7 @@ class IRTHealthcareServicesScreen extends StatelessWidget {
                       'assets/images/irt/image60.jpg',
                       'assets/images/irt/image61.jpg',
                       'assets/images/irt/image62.jpg',
+                      'assets/images/irt/image63.jpg',
                     ],
                   ),
                 ),
@@ -180,9 +181,11 @@ class IRTHealthcareServicesScreen extends StatelessWidget {
                     imagePath: "assets/images/irt/image30.jpg",
                     icon: LucideIcons.milk,
                     galleryImages: [
+                      'assets/images/irt/image29.jpg',
                       'assets/images/irt/image30.jpg',
                       'assets/images/irt/image32.jpg',
                       'assets/images/irt/image33.jpg',
+                      'assets/images/irt/image35.jpg',
                     ],
                   ),
                 ),
@@ -201,6 +204,7 @@ class IRTHealthcareServicesScreen extends StatelessWidget {
                     galleryImages: [
                       'assets/images/irt/image37.jpg',
                       'assets/images/irt/image36.jpg',
+                      'assets/images/irt/image38.jpg',
                     ],
                   ),
                 ),

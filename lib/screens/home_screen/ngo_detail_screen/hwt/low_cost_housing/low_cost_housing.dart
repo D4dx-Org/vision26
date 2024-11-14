@@ -193,54 +193,59 @@ class LowCostHousingScreen extends StatelessWidget {
                               Expanded(
                                   child: _buildImageCard(
                                       "assets/images/hwt/Page-3 F_sub image 2.jpeg")),
+                              const SizedBox(width: 16),
+                              Expanded(
+                                  child: _buildImageCard(
+                                "assets/images/hwt/Page-3 F_sub image 3.png",
+                              )),
                             ],
                           ),
                           const SizedBox(height: 16),
                           // Single image with caption
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(16),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(0.1),
-                                  blurRadius: 10,
-                                  offset: const Offset(0, 2),
-                                ),
-                              ],
-                            ),
-                            child: Column(
-                              children: [
-                                ClipRRect(
-                                  borderRadius: const BorderRadius.vertical(
-                                    top: Radius.circular(16),
-                                  ),
-                                  child: Image.asset(
-                                    "assets/images/hwt/Page-3 F_sub image 3.png",
-                                    fit: BoxFit.cover,
-                                    width: double.infinity,
-                                  ),
-                                ),
-                                Container(
-                                  padding: const EdgeInsets.all(12),
-                                  decoration: const BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.vertical(
-                                      bottom: Radius.circular(16),
-                                    ),
-                                  ),
-                                  child: const Text(
-                                    'Assam Flood Rehabilitation - Gobardhana, Barpeta',
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.grey,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
+                          // Container(
+                          //   decoration: BoxDecoration(
+                          //     color: Colors.white,
+                          //     borderRadius: BorderRadius.circular(16),
+                          //     boxShadow: [
+                          //       BoxShadow(
+                          //         color: Colors.black.withOpacity(0.1),
+                          //         blurRadius: 10,
+                          //         offset: const Offset(0, 2),
+                          //       ),
+                          //     ],
+                          //   ),
+                          //   child: Column(
+                          //     children: [
+                          //       ClipRRect(
+                          //         borderRadius: const BorderRadius.vertical(
+                          //           top: Radius.circular(16),
+                          //         ),
+                          //         child: Image.asset(
+                          //           "assets/images/hwt/Page-3 F_sub image 3.png",
+                          //           fit: BoxFit.cover,
+                          //           width: double.infinity,
+                          //         ),
+                          //       ),
+                          //       Container(
+                          //         padding: const EdgeInsets.all(12),
+                          //         decoration: const BoxDecoration(
+                          //           color: Colors.white,
+                          //           borderRadius: BorderRadius.vertical(
+                          //             bottom: Radius.circular(16),
+                          //           ),
+                          //         ),
+                          //         child: const Text(
+                          //           'Assam Flood Rehabilitation - Gobardhana, Barpeta',
+                          //           style: TextStyle(
+                          //             fontSize: 14,
+                          //             color: Colors.grey,
+                          //           ),
+                          //           textAlign: TextAlign.center,
+                          //         ),
+                          //       ),
+                          //     ],
+                          //   ),
+                          // ),
                         ],
                       ),
                     ),
@@ -296,7 +301,7 @@ class LowCostHousingScreen extends StatelessWidget {
         ],
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(12),
         child: Image.asset(
           imagePath,
           fit: BoxFit.cover,

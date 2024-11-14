@@ -102,7 +102,7 @@ final List<InterventionArea> interventionAreas = [
     ],
   ),
   InterventionArea(
-    title: 'WASH',
+    title: 'WASH (Water, Sanitation & Hygiene)',
     icon: LucideIcons.droplets,
     description:
         'Our WASH initiatives focus on ensuring access to safe drinking water and sanitation for improved health and a cleaner environment. MVT empowers community leaders and encourages people to manage water projects sustainably, while also promoting better sanitation and personal hygiene practices.',
@@ -148,6 +148,7 @@ final List<InterventionArea> interventionAreas = [
               'Our programs in this sector focus on promoting organic farming, supporting irrigation systems, facilitating access to government schemes, and building farmers\' capacity. We also work on creating green spaces, establishing environment-friendly institutions, and advocating for the 3R principle (Reduce, Reuse, Recycle).',
           images: [
             'assets/images/mvt/mvt-img-36.png',
+            'assets/images/mvt/mvt-img-9.png',
           ]),
     ],
   ),
@@ -163,6 +164,7 @@ final List<InterventionArea> interventionAreas = [
               'Our livelihood programs aim to create better employment opportunities, increase the involvement of marginalized communities in income-generating activities, and reduce migration by promoting self-employment ventures locally. We focus on modernizing traditional livelihood activities and offer training and workshops on new trends and best practices in the field.',
           images: [
             'assets/images/mvt/mvt-img-10.png',
+            'assets/images/mvt/mvt-img-11.png',
           ])
     ],
   ),
@@ -177,6 +179,7 @@ final List<InterventionArea> interventionAreas = [
           description:
               "India faces a significant and complex challenge with homelessness, housing the largest homeless population globally. Millions of people live without proper shelter, often resorting to makeshift dwellings on streets, sidewalks, and under flyovers in some of the country’s wealthiest metropolitan areas. This alarming reality highlights the urgent need for initiatives to address this issue.\nMVT focuses primarily on supporting individuals in the least developed villages across various North Indian states, with particular emphasis on assisting victims of natural disasters. To date, MVT has successfully completed 121 low-cost housing projects in West Bengal, Jharkhand, Haryana, Odisha, Uttar Pradesh, Assam, and Bihar, benefiting numerous families.",
           images: [
+            'assets/images/mvt/mvt-img-12.png',
             'assets/images/mvt/mvt-img-13.png',
           ])
     ],
@@ -187,8 +190,17 @@ final List<InterventionArea> interventionAreas = [
     description:
         'Unsafe water has been a long-standing source of human suffering, and in India, millions of people still wake up without access to clean, safe water. This ongoing water crisis severely impacts health, well-being, and quality of life.\nMVT’s efforts have extended across nine North Indian states—Uttar Pradesh, Bihar, Haryana, Jharkhand, West Bengal, Odisha, Madhya Pradesh, Rajasthan, and Assam—reflecting our commitment to reaching as many communities as possible and making a meaningful difference in their lives. Over the past five years, MVT has implemented 189 direct water projects, in collaboration with other NGOs, including hand pumps, submersible pumps, open wells, and RO plants, benefiting countless individuals.',
     sections: [
-      InterventionSection(
-          title: 'Drinking Water', images: ['assets/images/mvt/mvt-img-17.png'])
+      InterventionSection(title: 'Drinking Water', images: [
+        'assets/images/mvt/mvt-img-14.png',
+        'assets/images/mvt/mvt-img-15.png',
+        'assets/images/mvt/mvt-img-16.png',
+        'assets/images/mvt/mvt-img-17.png',
+        'assets/images/mvt/mvt-img-18.png',
+        'assets/images/mvt/mvt-img-2.png',
+        'assets/images/mvt/mvt-img-3.png',
+        'assets/images/mvt/mvt-img-4.png',
+        'assets/images/mvt/mvt-img-5.png',
+      ])
     ],
   ),
   InterventionArea(
@@ -208,6 +220,7 @@ final List<InterventionArea> interventionAreas = [
           title: 'Food Kit Distribution',
           description: 'Alleviate hunger, promote health, and empower dignity.',
           images: [
+            'assets/images/mvt/mvt-img-6.png',
             'assets/images/mvt/mvt-img-7.png',
           ]),
       InterventionSection(

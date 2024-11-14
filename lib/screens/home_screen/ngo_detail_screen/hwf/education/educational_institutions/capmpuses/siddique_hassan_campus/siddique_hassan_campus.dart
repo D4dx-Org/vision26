@@ -272,23 +272,23 @@ class SiddiqueHassanCampus extends StatelessWidget {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          // Open campus map
-        },
-        backgroundColor: const Color(0xFFB71C1C),
-        label: const Text(
-          'View Campus Map',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        icon: const Icon(
-          LucideIcons.map,
-          color: Colors.white,
-        ),
-      ),
+      // floatingActionButton: FloatingActionButton.extended(
+      //   onPressed: () {
+      //     // Open campus map
+      //   },
+      //   backgroundColor: const Color(0xFFB71C1C),
+      //   label: const Text(
+      //     'View Campus Map',
+      //     style: TextStyle(
+      //       color: Colors.white,
+      //       fontWeight: FontWeight.bold,
+      //     ),
+      //   ),
+      //   icon: const Icon(
+      //     LucideIcons.map,
+      //     color: Colors.white,
+      //   ),
+      // ),
     );
   }
 

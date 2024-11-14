@@ -153,15 +153,15 @@ class WaterSanitationScreen extends StatelessWidget {
                           const SizedBox(height: 24),
                           GridView.count(
                             shrinkWrap: true,
-                            crossAxisCount: 2,
-                            childAspectRatio: 1.5,
+                            crossAxisCount: 3,
+                            childAspectRatio: 1.3,
                             crossAxisSpacing: 20,
                             mainAxisSpacing: 20,
                             physics: const NeverScrollableScrollPhysics(),
                             children: [
                               _buildStatisticCard(
                                 icon: LucideIcons.droplet,
-                                label: 'Submersible',
+                                label: 'Submersible Pumps',
                                 value: '433',
                               ),
                               _buildStatisticCard(

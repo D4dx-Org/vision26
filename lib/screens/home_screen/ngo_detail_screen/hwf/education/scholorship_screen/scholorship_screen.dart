@@ -50,7 +50,7 @@ class ScholarshipScreen extends StatelessWidget {
                         '8650+ Scholarships Provided',
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 10,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                       ),

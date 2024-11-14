@@ -80,14 +80,14 @@ class ProjectDetailPage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'About the Project',
-                        style: TextStyle(
-                          fontSize: isMobile ? 20 : 24,
-                          fontWeight: FontWeight.bold,
-                          color: ColorClass.primaryColor,
-                        ),
-                      ),
+                      // Text(
+                      //   'About the Project',
+                      //   style: TextStyle(
+                      //     fontSize: isMobile ? 20 : 24,
+                      //     fontWeight: FontWeight.bold,
+                      //     color: ColorClass.primaryColor,
+                      //   ),
+                      // ),
                       const SizedBox(height: 12),
                       Text(
                         projectDetails.description,
@@ -95,6 +95,33 @@ class ProjectDetailPage extends StatelessWidget {
                           fontSize: isMobile ? 14 : 16,
                           height: 1.6,
                         ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            // Impact Stats
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Card(
+                color: Colors.red[50],
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 16),
+                      Wrap(
+                        spacing: 16,
+                        runSpacing: 16,
+                        children: projectDetails.impactStats.entries
+                            .map((entry) => _buildStatItem(
+                                  entry.key,
+                                  entry.value,
+                                  isMobile,
+                                ))
+                            .toList(),
                       ),
                     ],
                   ),
@@ -139,42 +166,7 @@ class ProjectDetailPage extends StatelessWidget {
                 ],
               ),
             ),
-
-            // Impact Stats
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: Card(
-                color: Colors.red[50],
-                child: Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Our Impact',
-                        style: TextStyle(
-                          fontSize: isMobile ? 20 : 24,
-                          fontWeight: FontWeight.bold,
-                          color: ColorClass.primaryColor,
-                        ),
-                      ),
-                      const SizedBox(height: 16),
-                      Wrap(
-                        spacing: 16,
-                        runSpacing: 16,
-                        children: projectDetails.impactStats.entries
-                            .map((entry) => _buildStatItem(
-                                  entry.key,
-                                  entry.value,
-                                  isMobile,
-                                ))
-                            .toList(),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
+            const SizedBox(height: 20),
           ],
         ),
       ),
@@ -183,7 +175,7 @@ class ProjectDetailPage extends StatelessWidget {
 
   Widget _buildStatItem(String label, String value, bool isMobile) {
     return Container(
-      width: isMobile ? double.infinity : 200,
+      width: isMobile ? double.infinity : 150,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -201,7 +193,7 @@ class ProjectDetailPage extends StatelessWidget {
           Text(
             value,
             style: TextStyle(
-              fontSize: isMobile ? 24 : 28,
+              fontSize: isMobile ? 24 : 20,
               fontWeight: FontWeight.bold,
               color: ColorClass.primaryColor,
             ),

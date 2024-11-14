@@ -101,11 +101,19 @@ HWT is committed to fighting hunger by distributing essential Food Kits to those
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      const Text(
+                        "Distributing fresh cooked meals, food baskets / Ration kits to impoverished families, with a focus on widows, orphans, and slum dwellers.",
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
+                      ),
+                      const SizedBox(height: 20),
                       GridView.count(
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
                         crossAxisCount: isMobile ? 1 : 2,
-                        childAspectRatio: 1.5,
+                        childAspectRatio: 1.2,
                         mainAxisSpacing: 20,
                         crossAxisSpacing: 20,
                         children: [

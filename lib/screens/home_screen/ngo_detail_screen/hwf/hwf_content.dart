@@ -165,5 +165,5 @@ class HwfContent {
   ////////////////// [others in hwf] /////////////////////////
   static const String other1 = '${othersRoot}others1.png';
   static const String other2 = '${othersRoot}others2.png';
-  static const String other3 = '${othersRoot}others3.png';
+  static const String other3 = '${othersRoot}others3.jpg';
 }

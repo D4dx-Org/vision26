@@ -106,7 +106,10 @@ class IRTEducationTrainingServiceDetail extends StatelessWidget {
             ),
             backgroundColor: const Color(0xFFB71C1C),
             leading: IconButton(
-              icon: const Icon(Icons.arrow_back_ios,color: ColorClass.white,),
+              icon: const Icon(
+                Icons.arrow_back_ios,
+                color: ColorClass.white,
+              ),
               onPressed: () => Navigator.pop(context),
             ),
             actions: [
@@ -266,7 +269,6 @@ class IRTEducationTrainingServiceDetail extends StatelessWidget {
           ),
         ],
       ),
-      
     );
   }
 

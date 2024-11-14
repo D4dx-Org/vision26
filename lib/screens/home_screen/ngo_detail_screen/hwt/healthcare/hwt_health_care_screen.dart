@@ -121,7 +121,7 @@ class HWTHealthcareServicesScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             sliver: SliverGrid(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
+                crossAxisCount: 3,
                 childAspectRatio: 0.85,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
@@ -173,7 +173,7 @@ class HWTHealthcareServicesScreen extends StatelessWidget {
                     galleryImages: [
                       'assets/images/hwt/Page-3 A(2)_sub image 1.jpg',
                       'assets/images/hwt/Page-3 A(2)_sub image 2.jpg',
-                      'assets/images/hwt/Page-3 A(2)_sub image 3.jpg',
+                      'assets/images/hwt/Page-3 A(2)_sub image 3.JPG',
                       'assets/images/hwt/Page-3 A(2)_sub image 4.jpeg'
                     ],
                   ),
@@ -334,15 +334,15 @@ class HWTHealthcareServicesScreen extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 8),
-                Text(
-                  description,
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.grey[600],
-                  ),
-                  textAlign: TextAlign.center,
-                ),
+                // const SizedBox(height: 8),
+                // Text(
+                //   description,
+                //   style: TextStyle(
+                //     fontSize: 12,
+                //     color: Colors.grey[600],
+                //   ),
+                //   textAlign: TextAlign.center,
+                // ),
               ],
             ),
           ),

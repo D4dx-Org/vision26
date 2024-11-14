@@ -121,7 +121,7 @@ class NGOProfileScreen extends StatelessWidget {
               child: GridView.count(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                crossAxisCount: 2,
+                crossAxisCount: 3,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
                 childAspectRatio: 1.3,
@@ -158,6 +158,11 @@ class NGOProfileScreen extends StatelessWidget {
                       description:
                           "Nagrik Vikas Kendra (NVK) serves as a bridge between government schemes and marginalized communities, helping ensure that the benefits of these programs reach those in need.\n\n43 NVKs are functioning in 12 States. \n\nIn the last financial year, NVKs assisted beneficiaries in securing a collective total of ₹44 crore through various government schemes.",
                       imagePath: HwfContent.other2,
+                      subPoints: [
+                        '43 NVKs',
+                        'In 12 States',
+                        "Govt. Scheme worth ₹44 crore secured"
+                      ],
                     ),
                   ),
                   InterventionAreaCard(

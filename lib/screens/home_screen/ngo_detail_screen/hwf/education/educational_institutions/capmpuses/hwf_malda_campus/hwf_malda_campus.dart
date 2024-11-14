@@ -179,7 +179,7 @@ class HwfMaldaCampus extends StatelessWidget {
                         icon: LucideIcons.building2,
                         context: context,
                         child: const SchoolProfileScreen(
-                          schoolName: 'Hostels for Boys & girls',
+                          schoolName: 'Hostels for Boys',
                           description:
                               "Separate hostels have been arranged for boys and girls of Al Jamia Off-Campus and Scholar School, Special accommodations are reserved for orphaned students in these hostels.",
                           image: HwfContent.siddiqueHassanCampus2,
@@ -256,23 +256,23 @@ class HwfMaldaCampus extends StatelessWidget {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          // Open campus map
-        },
-        backgroundColor: const Color(0xFFB71C1C),
-        label: const Text(
-          'View Campus Map',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        icon: const Icon(
-          LucideIcons.map,
-          color: Colors.white,
-        ),
-      ),
+      // floatingActionButton: FloatingActionButton.extended(
+      //   onPressed: () {
+      //     // Open campus map
+      //   },
+      //   backgroundColor: const Color(0xFFB71C1C),
+      //   label: const Text(
+      //     'View Campus Map',
+      //     style: TextStyle(
+      //       color: Colors.white,
+      //       fontWeight: FontWeight.bold,
+      //     ),
+      //   ),
+      //   icon: const Icon(
+      //     LucideIcons.map,
+      //     color: Colors.white,
+      //   ),
+      // ),
     );
   }
 

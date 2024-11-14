@@ -125,7 +125,7 @@ class EconomicEmpowermentScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             sliver: SliverGrid(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
+                crossAxisCount: 3,
                 childAspectRatio: 1.0,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,

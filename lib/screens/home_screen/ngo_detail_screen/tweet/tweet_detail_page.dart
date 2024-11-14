@@ -123,10 +123,10 @@ class TweetDetailPage extends StatelessWidget {
               child: GridView.count(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                crossAxisCount: 2,
+                crossAxisCount: 3,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
-                childAspectRatio: 1.8,
+                childAspectRatio: 1.5,
                 children: const [
                   InterventionAreaCard(
                     title: 'Education',

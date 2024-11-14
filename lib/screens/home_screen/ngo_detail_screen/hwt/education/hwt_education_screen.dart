@@ -121,7 +121,7 @@ class HWTEducationServicesScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             sliver: SliverGrid(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
+                crossAxisCount: 3,
                 childAspectRatio: 0.85,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
@@ -129,7 +129,7 @@ class HWTEducationServicesScreen extends StatelessWidget {
               delegate: SliverChildListDelegate([
                 _buildServiceCard(
                   context: context,
-                  title: 'Community ',
+                  title: 'Community Learning Centre',
                   code: 'Education',
                   child: const HwtEducationServiceDetailScreen(
                     title: 'Community Learning Centre',
@@ -164,7 +164,7 @@ class HWTEducationServicesScreen extends StatelessWidget {
                 ),
                 _buildServiceCard(
                   context: context,
-                  title: 'Construction of Hostel Camps',
+                  title: 'Construction of Hostel',
                   code: 'Education',
                   child: const HwtEducationServiceDetailScreen(
                     title: 'Construction of Hostel',
@@ -180,7 +180,7 @@ class HWTEducationServicesScreen extends StatelessWidget {
                 ),
                 _buildServiceCard(
                   context: context,
-                  title: 'School Capacity Buildings',
+                  title: 'School Capacity Building',
                   code: 'Education',
                   child: const HwtEducationServiceDetailScreen(
                     title: 'School Capacity Building',
@@ -281,23 +281,23 @@ class HWTEducationServicesScreen extends StatelessWidget {
                         Text(
                           title,
                           style: const TextStyle(
-                            fontSize: 24,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: Color(0xFFB71C1C),
                           ),
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                         ),
-                        const SizedBox(height: 4),
-                        Text(
-                          description,
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.grey[600],
-                          ),
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                        ),
+                        // const SizedBox(height: 4),
+                        // Text(
+                        //   description,
+                        //   style: TextStyle(
+                        //     fontSize: 16,
+                        //     color: Colors.grey[600],
+                        //   ),
+                        //   maxLines: 2,
+                        //   overflow: TextOverflow.ellipsis,
+                        // ),
                       ],
                     ),
                   ),

@@ -151,7 +151,7 @@ class CareerGuidanceScreen extends StatelessWidget {
                   icon: LucideIcons.school2,
                   child: const TrainingCenterDetailScreen(
                     title: 'WEST BENGAL CIVIL SERVICE COACHING CENTRE',
-                    image: HwfContent.coaching,
+                    image: HwfContent.coaching1,
                     description:
                         "The WBCS Coaching Program is a highly promising initiative providing free, residential coaching for aspirants of the West Bengal Civil Service (WBCS) exam. Of the 58 students enrolled so far, several achieved significant successes including WBCS, state and central government services.",
                   ),

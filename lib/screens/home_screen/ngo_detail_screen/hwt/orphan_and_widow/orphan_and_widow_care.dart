@@ -169,13 +169,17 @@ class OrphanWidowCareScreen extends StatelessWidget {
                       child: GridView.count(
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
-                        crossAxisCount: 1,
+                        crossAxisCount: 2,
                         mainAxisSpacing: 16,
+                        crossAxisSpacing: 16,
                         childAspectRatio: 1.5,
                         children: [
-                          _buildImageCard("assets/images/hwt/Page-3 D_sub image 1.jpg"),
-                          _buildImageCard("assets/images/hwt/Page-3 D_sub image 2.jpg"),
-                          _buildImageCard("assets/images/hwt/Page-3 D_sub image 3.jpg"),
+                          _buildImageCard(
+                              "assets/images/hwt/Page-3 D_sub image 1.jpg"),
+                          _buildImageCard(
+                              "assets/images/hwt/Page-3 D_sub image 2.jpg"),
+                          _buildImageCard(
+                              "assets/images/hwt/Page-3 D_sub image 3.jpg"),
                         ],
                       ),
                     ),

@@ -147,8 +147,9 @@ class MVTProfileScreen extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(16),
                   child: Image.asset(
-                    'assets/images/mvt/india_map.png',
+                    'assets/images/mvt/mvt-img-22.png',
                     fit: BoxFit.scaleDown,
+                    height: MediaQuery.of(context).size.width * 0.6,
                   ),
                 ),
               ),
@@ -254,8 +255,7 @@ class MVTProfileScreen extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => MVTInterventionScreen(
-                              intervention: interventionAreas[index]
-                                  ,
+                              intervention: interventionAreas[index],
                             ),
                           ),
                         );
@@ -291,6 +291,7 @@ class MVTProfileScreen extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(height: 24),
           ],
         ),
       ),

@@ -22,67 +22,67 @@ class HomeScreen extends StatelessWidget {
         child: CustomScrollView(
           slivers: [
             // App Bar
-            SliverAppBar(
-              floating: true,
-              backgroundColor: const Color(0xFFB71C1C),
-              expandedHeight: 200,
-              flexibleSpace: FlexibleSpaceBar(
-                background: Container(
-                  color: const Color(0xFFB71C1C),
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Image.asset(
-                            ImageClass.appIcon,
-                            height: 60,
-                            color: ColorClass.white,
-                          ),
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 16,
-                              vertical: 8,
-                            ),
-                            decoration: BoxDecoration(
-                              color: Colors.white24,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: const Text(
-                              'English',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 10),
-                      const Text(
-                        'Welcome to IRT',
-                        style: TextStyle(
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                      const Text(
-                        'Transforming lives through humanitarian and development programs',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.white70,
-                        ),
-                        maxLines: 2,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
+            // SliverAppBar(
+            //   floating: true,
+            //   backgroundColor: const Color(0xFFB71C1C),
+            //   expandedHeight: 200,
+            //   flexibleSpace: FlexibleSpaceBar(
+            //     background: Container(
+            //       color: const Color(0xFFB71C1C),
+            //       padding: const EdgeInsets.all(20),
+            //       child: Column(
+            //         crossAxisAlignment: CrossAxisAlignment.start,
+            //         mainAxisAlignment: MainAxisAlignment.end,
+            //         children: [
+            //           Row(
+            //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //             children: [
+            //               Image.asset(
+            //                 ImageClass.appIcon,
+            //                 height: 60,
+            //                 color: ColorClass.white,
+            //               ),
+            //               Container(
+            //                 padding: const EdgeInsets.symmetric(
+            //                   horizontal: 16,
+            //                   vertical: 8,
+            //                 ),
+            //                 decoration: BoxDecoration(
+            //                   color: Colors.white24,
+            //                   borderRadius: BorderRadius.circular(20),
+            //                 ),
+            //                 child: const Text(
+            //                   'English',
+            //                   style: TextStyle(
+            //                     color: Colors.white,
+            //                     fontWeight: FontWeight.w500,
+            //                   ),
+            //                 ),
+            //               ),
+            //             ],
+            //           ),
+            //           const SizedBox(height: 10),
+            //           const Text(
+            //             'Welcome to Vison26',
+            //             style: TextStyle(
+            //               fontSize: 28,
+            //               fontWeight: FontWeight.bold,
+            //               color: Colors.white,
+            //             ),
+            //           ),
+            //           const Text(
+            //             'Transforming lives through humanitarian and development programs',
+            //             style: TextStyle(
+            //               fontSize: 16,
+            //               color: Colors.white70,
+            //             ),
+            //             maxLines: 2,
+            //           ),
+            //         ],
+            //       ),
+            //     ),
+            //   ),
+            // ),
 
             // Vision 2026 Section
             SliverToBoxAdapter(
@@ -107,25 +107,25 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         Image.asset(
                           ImageClass.appIcon,
-                          height: 40,
+                          height: 60,
                         ),
                         const SizedBox(width: 12),
-                        const Text(
-                          'Vision 2026',
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xFFB71C1C),
-                          ),
-                        ),
+                        // const Text(
+                        //   'Vision 2026',
+                        //   style: TextStyle(
+                        //     fontSize: 24,
+                        //     fontWeight: FontWeight.bold,
+                        //     color: Color(0xFFB71C1C),
+                        //   ),
+                        // ),
                       ],
                     ),
                     const SizedBox(height: 16),
                     const Text(
-                      "A collective goal shared by NGOs dedicated to transforming lives of the underprivileged and empowering them to become heroes in the nation's journey of progress.",
+                      "Vision 2026 is a collective goal shared by NGOs dedicated to transforming lives of the underprivileged and empowering them to become heroes in the nation's journey of progress.",
                       style: TextStyle(
                         fontSize: 16,
-                        color: Colors.grey,
+                        color: Colors.black,
                         height: 1.5,
                       ),
                     ),
@@ -135,41 +135,41 @@ class HomeScreen extends StatelessWidget {
             ),
 
             // Core Intervention Areas
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Core Intervention Areas',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black87,
-                      ),
-                    ),
-                    const SizedBox(height: 16),
-                    _buildInterventionArea(
-                      icon: LucideIcons.users,
-                      title: 'Community Development',
-                    ),
-                    _buildInterventionArea(
-                      icon: LucideIcons.heart,
-                      title: 'Social Welfare',
-                    ),
-                    _buildInterventionArea(
-                      icon: LucideIcons.bookOpen,
-                      title: 'Education & Training',
-                    ),
-                    _buildInterventionArea(
-                      icon: LucideIcons.stethoscope,
-                      title: 'Health',
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            // SliverToBoxAdapter(
+            //   child: Padding(
+            //     padding: const EdgeInsets.symmetric(horizontal: 20),
+            //     child: Column(
+            //       crossAxisAlignment: CrossAxisAlignment.start,
+            //       children: [
+            //         const Text(
+            //           'Core Intervention Areas',
+            //           style: TextStyle(
+            //             fontSize: 20,
+            //             fontWeight: FontWeight.bold,
+            //             color: Colors.black87,
+            //           ),
+            //         ),
+            //         const SizedBox(height: 16),
+            //         _buildInterventionArea(
+            //           icon: LucideIcons.users,
+            //           title: 'Community Development',
+            //         ),
+            //         _buildInterventionArea(
+            //           icon: LucideIcons.heart,
+            //           title: 'Social Welfare',
+            //         ),
+            //         _buildInterventionArea(
+            //           icon: LucideIcons.bookOpen,
+            //           title: 'Education & Training',
+            //         ),
+            //         _buildInterventionArea(
+            //           icon: LucideIcons.stethoscope,
+            //           title: 'Health',
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
 
             // Partner NGOs
             SliverToBoxAdapter(
@@ -178,14 +178,14 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      "Our NGO'S",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black87,
-                      ),
-                    ),
+                    // const Text(
+                    //   "Our NGO'S",
+                    //   style: TextStyle(
+                    //     fontSize: 20,
+                    //     fontWeight: FontWeight.bold,
+                    //     color: Colors.black87,
+                    //   ),
+                    // ),
                     const SizedBox(height: 16),
                     GridView.count(
                       shrinkWrap: true,
@@ -195,15 +195,15 @@ class HomeScreen extends StatelessWidget {
                       crossAxisSpacing: 16,
                       childAspectRatio: 1.5,
                       children: const [
-                        PartnerCard(name: 'SBF'),
                         PartnerCard(name: 'HWF'),
                         PartnerCard(name: 'HWT'),
-                        PartnerCard(name: 'IRT'),
-                        PartnerCard(name: 'MVT'),
-                        PartnerCard(name: 'MSS'),
-                        PartnerCard(name: 'TWEET'),
-                        PartnerCard(name: 'MASAWAT'),
+                        PartnerCard(name: 'SBF'),
                         PartnerCard(name: 'SAHULAT'),
+                        PartnerCard(name: 'MVT'),
+                        PartnerCard(name: 'TWEET'),
+                        PartnerCard(name: 'IRT'),
+                        PartnerCard(name: 'MASAWAT'),
+                        PartnerCard(name: 'MSS'),
                       ],
                     ),
                   ],

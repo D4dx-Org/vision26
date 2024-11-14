@@ -76,9 +76,9 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: Column(
+                child: const Column(
                   children: [
-                    const Text(
+                    Text(
                       '8 Developing Campuses',
                       style: TextStyle(
                         fontSize: 24,
@@ -86,12 +86,12 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                         color: Color(0xFFB71C1C),
                       ),
                     ),
-                    const SizedBox(height: 8),
+                    SizedBox(height: 8),
                     Text(
-                      '7 Schools in 6 States',
+                      '6 States',
                       style: TextStyle(
                         fontSize: 18,
-                        color: Colors.grey[600],
+                        color: Colors.black,
                       ),
                     ),
                   ],
@@ -217,18 +217,17 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                 _buildInstitutionCard(
                   context: context,
                   child: const OtherCampusesScreen(
-                    title: 'Millennium Public School',
-                    location: 'Hazaribagh, Jharkhand',
-                    imageList: [
-                      HwfContent.millenniumSchoolImage,
-                      HwfContent.millenniumSchoolImage2,
-                      HwfContent.millenniumSchoolImage3,
-                      HwfContent.millenniumSchoolImage4,
-                      HwfContent.millenniumSchoolImage5,
-                    ],
-                    description:
-                        "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
-                  ),
+                      title: 'Millennium Public School',
+                      location: 'Hazaribagh, Jharkhand',
+                      imageList: [
+                        HwfContent.millenniumSchoolImage,
+                        HwfContent.millenniumSchoolImage2,
+                        HwfContent.millenniumSchoolImage3,
+                        HwfContent.millenniumSchoolImage4,
+                        HwfContent.millenniumSchoolImage5,
+                      ],
+                      description:
+                          "The Millennium School in Hazaribagh, Jharkhand, currently offers education up to the 10th grade. With a well-developed infrastructure, future plans include establishing a residential coaching center for girls."),
                   name: 'Millennium Public School',
                   location: 'Hazaribagh, Jharkhand',
                   place: 'Jharkhand',

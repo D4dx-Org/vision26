@@ -191,13 +191,6 @@ class CapacityBuildingScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 12),
                   _buildInitiativeCard(
-                    icon: LucideIcons.bookOpen,
-                    title: 'Teaching Resources',
-                    description:
-                        'Providing educational materials and teaching aids',
-                  ),
-                  const SizedBox(height: 12),
-                  _buildInitiativeCard(
                     icon: LucideIcons.graduationCap,
                     title: 'Teacher Training',
                     description: 'Capacity building workshops for teachers',

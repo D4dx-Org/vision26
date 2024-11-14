@@ -136,15 +136,15 @@ class EducationDetailPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'About this Service',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
+                  // const Text(
+                  //   'About this Service',
+                  //   style: TextStyle(
+                  //     fontSize: 20,
+                  //     fontWeight: FontWeight.bold,
+                  //     color: Colors.black87,
+                  //   ),
+                  // ),
+                  // const SizedBox(height: 16),
                   Text(
                     description,
                     style: TextStyle(

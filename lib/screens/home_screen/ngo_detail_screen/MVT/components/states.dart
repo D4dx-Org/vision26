@@ -226,18 +226,19 @@ class StateDetailScreen extends StatelessWidget {
                     physics: const NeverScrollableScrollPhysics(),
                     itemCount: stateData.villages.length,
                     itemBuilder: (context, index) => TextButton(
-                      onPressed: () {
-                        // Navigate to village detail page
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => VillageDetailScreen(
-                              stateName: stateData.state,
-                              villageName: stateData.villages[index],
-                            ),
-                          ),
-                        );
-                      },
+                      onPressed: null,
+                      //  () {
+                      //   // Navigate to village detail page
+                      //   Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //       builder: (context) => VillageDetailScreen(
+                      //         stateName: stateData.state,
+                      //         villageName: stateData.villages[index],
+                      //       ),
+                      //     ),
+                      //   );
+                      // },
                       style: TextButton.styleFrom(
                         padding: const EdgeInsets.symmetric(
                           horizontal: 20,

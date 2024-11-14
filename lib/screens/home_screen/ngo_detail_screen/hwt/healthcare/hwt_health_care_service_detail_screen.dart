@@ -108,15 +108,15 @@ class HWTHealthcareServiceDetail extends StatelessWidget {
               icon: const Icon(Icons.arrow_back_ios),
               onPressed: () => Navigator.pop(context),
             ),
-            actions: [
-              IconButton(
-                icon: const Icon(LucideIcons.share2),
-                onPressed: () {
-                  // Share functionality
-                },
-              ),
-              const SizedBox(width: 8),
-            ],
+            // actions: [
+            //   IconButton(
+            //     icon: const Icon(LucideIcons.share2),
+            //     onPressed: () {
+            //       // Share functionality
+            //     },
+            //   ),
+            //   const SizedBox(width: 8),
+            // ],
           ),
 
           // Content
@@ -125,32 +125,32 @@ class HWTHealthcareServiceDetail extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Quick Stats
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Row(
-                    children: stats.entries.map((entry) {
-                      IconData statIcon;
-                      switch (entry.key) {
-                        case 'Beneficiaries':
-                          statIcon = LucideIcons.users;
-                          break;
-                        case 'Locations':
-                          statIcon = LucideIcons.mapPin;
-                          break;
-                        case 'Success Rate':
-                          statIcon = LucideIcons.heartPulse;
-                          break;
-                        default:
-                          statIcon = LucideIcons.info;
-                      }
-                      return _buildQuickStat(
-                        icon: statIcon,
-                        value: entry.value,
-                        label: entry.key,
-                      );
-                    }).toList(),
-                  ),
-                ),
+                // Padding(
+                //   padding: const EdgeInsets.all(20),
+                //   child: Row(
+                //     children: stats.entries.map((entry) {
+                //       IconData statIcon;
+                //       switch (entry.key) {
+                //         case 'Beneficiaries':
+                //           statIcon = LucideIcons.users;
+                //           break;
+                //         case 'Locations':
+                //           statIcon = LucideIcons.mapPin;
+                //           break;
+                //         case 'Success Rate':
+                //           statIcon = LucideIcons.heartPulse;
+                //           break;
+                //         default:
+                //           statIcon = LucideIcons.info;
+                //       }
+                //       return _buildQuickStat(
+                //         icon: statIcon,
+                //         value: entry.value,
+                //         label: entry.key,
+                //       );
+                //     }).toList(),
+                //   ),
+                // ),
 
                 // Description
                 Container(
@@ -170,14 +170,14 @@ class HWTHealthcareServiceDetail extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'About this Service',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black87,
-                        ),
-                      ),
+                      // const Text(
+                      //   'About this Service',
+                      //   style: TextStyle(
+                      //     fontSize: 20,
+                      //     fontWeight: FontWeight.bold,
+                      //     color: Colors.black87,
+                      //   ),
+                      // ),
                       const SizedBox(height: 16),
                       Text(
                         description,
@@ -199,15 +199,15 @@ class HWTHealthcareServiceDetail extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          'Key Features',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black87,
-                          ),
-                        ),
-                        const SizedBox(height: 16),
+                        // const Text(
+                        //   'Key Features',
+                        //   style: TextStyle(
+                        //     fontSize: 20,
+                        //     fontWeight: FontWeight.bold,
+                        //     color: Colors.black87,
+                        //   ),
+                        // ),
+                        // const SizedBox(height: 16),
                         ...features
                             .map((feature) => _buildFeatureItem(feature)),
                       ],

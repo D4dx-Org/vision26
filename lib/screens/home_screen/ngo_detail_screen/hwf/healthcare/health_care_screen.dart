@@ -122,7 +122,7 @@ class HealthcareServicesScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             sliver: SliverGrid(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
+                crossAxisCount: 3,
                 childAspectRatio: 0.85,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
@@ -190,8 +190,7 @@ class HealthcareServicesScreen extends StatelessWidget {
                       code: "#Health Awareness",
                       description:
                           "Health awareness programs are conducted primarily in villages to educate communities on critical health topics, including the prevention of communicable diseases, the importance of vaccinations, child health, and menstrual hygiene. These initiatives aim to empower community members with knowledge and practices that support healthier lifestyles and improve overall well-being. By addressing essential health issues and encouraging proactive care, the programs foster a more informed and resilient community better equipped to handle health challenges.",
-                      imagePath:
-                          "https://avocure-uploads.s3.amazonaws.com/uploads/clinic/cover_pic_url/155/kovai-medical-center-hospital-coimbatore.jpg",
+                      imagePath: HwfContent.health4,
                       icon: LucideIcons.building2),
                 ),
               ]),
@@ -260,15 +259,15 @@ class HealthcareServicesScreen extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 8),
-                Text(
-                  description,
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.grey[600],
-                  ),
-                  textAlign: TextAlign.center,
-                ),
+                // const SizedBox(height: 8),
+                // Text(
+                //   description,
+                //   style: TextStyle(
+                //     fontSize: 12,
+                //     color: Colors.grey[600],
+                //   ),
+                //   textAlign: TextAlign.center,
+                // ),
               ],
             ),
           ),

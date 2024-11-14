@@ -146,24 +146,24 @@ class OtherCampusesScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Row(
-                    children: [
-                      Icon(
-                        LucideIcons.info,
-                        color: Color(0xFFB71C1C),
-                        size: 24,
-                      ),
-                      SizedBox(width: 12),
-                      Text(
-                        'About the Institution',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFFB71C1C),
-                        ),
-                      ),
-                    ],
-                  ),
+                  // const Row(
+                  //   children: [
+                  //     Icon(
+                  //       LucideIcons.info,
+                  //       color: Color(0xFFB71C1C),
+                  //       size: 24,
+                  //     ),
+                  //     SizedBox(width: 12),
+                  //     Text(
+                  //       'About the Institution',
+                  //       style: TextStyle(
+                  //         fontSize: 20,
+                  //         fontWeight: FontWeight.bold,
+                  //         color: Color(0xFFB71C1C),
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
                   const SizedBox(height: 16),
                   Text(
                     description,

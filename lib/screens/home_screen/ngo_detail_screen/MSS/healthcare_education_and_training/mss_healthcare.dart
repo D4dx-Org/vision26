@@ -127,7 +127,7 @@ class MSSHealthCarePage extends StatelessWidget {
                 crossAxisCount: 2,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
-                childAspectRatio: 1.0,
+                childAspectRatio: 1.4,
               ),
               delegate: SliverChildListDelegate([
                 _buildImageWithCaption(
