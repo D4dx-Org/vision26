@@ -3,6 +3,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vision_2026/constants/color_class.dart';
 import 'package:vision_2026/constants/image_class.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MSS/mss_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/hwt_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/masawat/masawat_detail_page.dart';
@@ -278,7 +279,7 @@ class PartnerCard extends StatelessWidget {
         destinationScreen = const NGOProfileScreen();
         break;
       case 'MSS':
-        destinationScreen = const NGOProfileScreen();
+        destinationScreen = const MSSProfileScreen();
         break;
       case 'TWEET':
         destinationScreen = const NGOProfileScreen();
