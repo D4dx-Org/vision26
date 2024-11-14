@@ -19,8 +19,8 @@ class CapacityBuildingScreen extends StatelessWidget {
               background: Stack(
                 fit: StackFit.expand,
                 children: [
-                  Image.network(
-                    "https://ruralindiaonline.org/media/images/_PAL1053.max-1400x1120.jpg",
+                  Image.asset(
+                    HwfContent.capacityBuildingofBuilding1,
                     fit: BoxFit.cover,
                   ),
                   Container(
@@ -232,9 +232,9 @@ class CapacityBuildingScreen extends StatelessWidget {
                       mainAxisSpacing: 16,
                       crossAxisSpacing: 16,
                     ),
-                    itemCount: HwfContent.capacityBuildingImages.length,
+                    itemCount: HwfContent.capacityBuildingImagesList.length,
                     itemBuilder: (context, index) => _buildGalleryImage(
-                        HwfContent.capacityBuildingImages[index]),
+                        HwfContent.capacityBuildingImagesList[index]),
                   ),
                 ],
               ),

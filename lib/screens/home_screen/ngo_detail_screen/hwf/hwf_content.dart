@@ -9,7 +9,7 @@ class HwfContent {
       "Human Welfare Foundation carries out humanitarian and development programs to fight poverty and people’s sufferings by working in partnership with vulnerable communities";
 
   /// [Educational Institutions] ///
-  static const String educationIntro = '${imageRoot}siddique_hassan_campus.png';
+  static const String educationIntro = '${imageRoot}education-intro.jpg';
 
   ///  Siddique hassan campus
   static const String siddiqueHassanCampus =
@@ -137,7 +137,7 @@ class HwfContent {
       '${capacityofBuildingRoot}capacityofBuilding4.png';
   static const String capacityBuildingofBuilding5 =
       '${capacityofBuildingRoot}capacityofBuilding5.png';
-  static const List<String> capacityBuildingImages = [
+  static const List<String> capacityBuildingImagesList = [
     capacityBuildingofBuilding1,
     capacityBuildingofBuilding2,
     capacityBuildingofBuilding3,
