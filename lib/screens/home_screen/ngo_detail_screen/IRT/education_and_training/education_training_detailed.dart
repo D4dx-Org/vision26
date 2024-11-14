@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vision_2026/constants/color_class.dart';
 
-class IRTSocialServiceDetail extends StatelessWidget {
+class IRTEducationTrainingServiceDetail extends StatelessWidget {
   final String title;
   final String code;
   final String description;
@@ -11,7 +12,7 @@ class IRTSocialServiceDetail extends StatelessWidget {
   final Map<String, String> stats; // Added for quick stats
   final List<String> galleryImages; // Added for gallery images
 
-  const IRTSocialServiceDetail({
+  const IRTEducationTrainingServiceDetail({
     super.key,
     required this.title,
     required this.code,
@@ -105,7 +106,7 @@ class IRTSocialServiceDetail extends StatelessWidget {
             ),
             backgroundColor: const Color(0xFFB71C1C),
             leading: IconButton(
-              icon: const Icon(Icons.arrow_back_ios),
+              icon: const Icon(Icons.arrow_back_ios,color: ColorClass.white,),
               onPressed: () => Navigator.pop(context),
             ),
             actions: [
@@ -265,6 +266,7 @@ class IRTSocialServiceDetail extends StatelessWidget {
           ),
         ],
       ),
+      
     );
   }
 

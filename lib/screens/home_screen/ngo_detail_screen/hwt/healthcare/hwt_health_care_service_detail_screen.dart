@@ -265,14 +265,6 @@ class HWTHealthcareServiceDetail extends StatelessWidget {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          // Handle service request
-        },
-        backgroundColor: const Color(0xFFB71C1C),
-        icon: const Icon(LucideIcons.phoneCall),
-        label: const Text('Request Service'),
-      ),
     );
   }
 
