@@ -113,13 +113,13 @@ class HwfContent {
 
 // millennium school
   static const String millenniumSchoolImage =
-      '${imageRoot}millennium_school-1.jpg';
+      '${imageRoot3}millennium_school-1.jpg';
   static const String millenniumSchoolImage2 =
-      '${imageRoot}millennium_school-2.JPG';
+      '${imageRoot3}millennium_school-2.JPG';
   static const String millenniumSchoolImage3 =
-      '${imageRoot}millennium_school-3.JPG';
+      '${imageRoot3}millennium_school-3.JPG';
   static const String millenniumSchoolImage4 =
-      '${imageRoot}millennium_school-4.JPG';
+      '${imageRoot3}millennium_school-4.JPG';
   static const String millenniumSchoolImage5 =
-      '${imageRoot}millennium_school-5.JPG';
+      '${imageRoot3}millennium_school-5.JPG';
 }
