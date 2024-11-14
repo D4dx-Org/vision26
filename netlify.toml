@@ -1,4 +1,19 @@
 [build]
+  base = ""
+  command = """
+    git clone https://github.com/flutter/flutter.git && \
+    cd flutter && \
+    git checkout stable && \
+    export PATH="$PWD/bin:$PATH" && \
+    cd .. && \
+    flutter doctor && \
+    flutter config --enable-web && \
+    flutter build web --release
+  """
+  publish = "build/web"
+
+[context.development]
+  base = ""
   command = """
     git clone https://github.com/flutter/flutter.git && \
     cd flutter && \
