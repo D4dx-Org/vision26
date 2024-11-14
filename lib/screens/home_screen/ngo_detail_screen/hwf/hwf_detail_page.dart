@@ -3,6 +3,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vision_2026/constants/image_class.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/education_screen.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/general_detail_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/healthcare/health_care_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
 
@@ -138,17 +139,39 @@ class NGOProfileScreen extends StatelessWidget {
                   InterventionAreaCard(
                     title: 'Orphan Care',
                     icon: LucideIcons.heart,
-                    child: HealthcareServicesScreen(),
+                    child: GeneralDetailScreen(
+                      title: "ORPHAN CARE PROGRAM",
+                      description:
+                          "The Orphan Care Program is dedicated to addressing the essential needs of children who require care and protection. Since 2009, we have been striving to improve the quality of life for children who have lost one or both parents, through a holistic and compassionate approach.",
+                      imagePath: HwfContent.other1,
+                      subPoints: [
+                        'Orphan Scholarship Program',
+                        'Orphan Hostels'
+                      ],
+                    ),
                   ),
                   InterventionAreaCard(
                     title: 'Government Scheme\nFacilitation Center',
                     icon: LucideIcons.building,
-                    child: HealthcareServicesScreen(),
+                    child: GeneralDetailScreen(
+                      title: 'Government Scheme\nFacilitation Center',
+                      description:
+                          "Nagrik Vikas Kendra (NVK) serves as a bridge between government schemes and marginalized communities, helping ensure that the benefits of these programs reach those in need.\n\n43 NVKs are functioning in 12 States. \n\nIn the last financial year, NVKs assisted beneficiaries in securing a collective total of ₹44 crore through various government schemes.",
+                      imagePath: HwfContent.other2,
+                    ),
                   ),
                   InterventionAreaCard(
                     title: 'Vocational Training',
                     icon: LucideIcons.briefcase,
-                    child: HealthcareServicesScreen(),
+                    child: GeneralDetailScreen(
+                      title: 'Vocational Training',
+                      description:
+                          "Human Welfare Foundation's skill development and vocational training initiatives aim to empower underprivileged communities by enhancing their technical skills, increasing employability, and fostering opportunities for employment and entrepreneurship. These training centers are strategically established in some of the country's most underdeveloped regions. Major courses run are various computer courses and Assistant Nursing & Midwifery.",
+                      imagePath: HwfContent.other3,
+                      subPoints: [
+                        "Innovation and Skill Training Centers in 6 States"
+                      ],
+                    ),
                   ),
                 ],
               ),

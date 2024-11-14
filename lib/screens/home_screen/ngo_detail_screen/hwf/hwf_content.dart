@@ -161,4 +161,9 @@ class HwfContent {
   static const String health2 = '${othersRoot}health2.png';
   static const String health3 = '${othersRoot}health3.png';
   static const String health4 = '${othersRoot}health4.png';
+
+  ////////////////// [others in hwf] /////////////////////////
+  static const String other1 = '${othersRoot}others1.png';
+  static const String other2 = '${othersRoot}others2.png';
+  static const String other3 = '${othersRoot}others3.png';
 }
