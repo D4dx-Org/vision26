@@ -57,4 +57,17 @@ class TweetContent {
       "The entrepreneurship development program is designed to equip aspiring female entrepreneurs with the skills, knowledge, and resources needed to start and grow their business. TWEET supported different women groups for entrepreneurship development like starting an agarbatti manufacturing unit, jute bag production unit, and women friendly marketplace.";
   static const String tweetDescription9 =
       "TWEET runs skill development trainings aiming at providing employment-oriented skills to women. TWEET has tailoring and stitching centres at Delhi and Jharkhand and also conducts timely training programs like bangle making, detergent making, mehndi designing, etc in different parts of the country.";
+  static const String tweetDescription10 =
+      "TWEET’s widow support program offers a compassionate lifeline to women who have lost their spouses, helping them to navigate the emotional and financial challenges they face. The program provides essential financial aid, along with individual and group counselling services, ensuring these women receive both the emotional support and practical resources needed to rebuild their lives with strength and resilience. ";
+
+  static const String tweetDescription11 =
+      "Leadership development program nurtures the skills, knowledge, and mindset needed to make sound decision, inspire and lead teams and strive toward change. This program guides emerging women leaders and change makers to fuel their journey towards success of organizations and communities. ";
+  static const String tweetDescription12 =
+      "The Women Facilitation Centre provides a safe space for women to access essential services like counselling, legal aid, welfare assistance, and capacity-building programs. The organisation provides safe and comfortable accommodation for women pursuing education or careers at Delhi. ";
+  static const String tweetDescription13 =
+      "TWEET’s social empowerment is about fostering the ability of individuals and communities to shape their own destinies and participate fully in society. By promoting equal opportunities, access to resources, and a supportive environment, social empowerment helps marginalized groups, especially women and the economically disadvantaged, to gain the confidence and skills necessary to improve their quality of life and contribute meaningfully to societal development. Sensitization programs and self-defense training programs in association with different govt and non govt organizations are conducting under this category.";
+  static const String tweetDescription14 =
+      "The mahila help desk offers support to women facing violence, legal issues, distress and other problems. It serves as a vital lifeline for their safety and well-being, addressing their concerns by providing guidance and connecting with essential resources. ";
+  static const String tweetDescription15 =
+      "Relief activities like provision of food, cloth, shelter, medical support, marriage assistance for poor is also doing under TWEET. This initiative extends the organizations outreach to the most marginalized individuals, who are often overlooked and in need of basic needs. ";
 }

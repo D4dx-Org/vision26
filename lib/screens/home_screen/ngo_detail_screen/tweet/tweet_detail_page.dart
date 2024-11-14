@@ -5,6 +5,7 @@ import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/general_de
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/healthcare/health_care_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/tweet/economic_empowerment/education_sub_page.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/tweet/education/education_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/tweet/education/education_sub_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/tweet/tweet_content.dart';
 
@@ -142,40 +143,52 @@ class TweetDetailPage extends StatelessWidget {
                   InterventionAreaCard(
                     title: 'Widow support',
                     icon: LucideIcons
-                        .heart, // Already appropriate - represents care and support
-                    child: GeneralDetailScreen(
-                      title: "ORPHAN CARE PROGRAM",
-                      description:
-                          "The Orphan Care Program is dedicated to addressing the essential needs of children who require care and protection. Since 2009, we have been striving to improve the quality of life for children who have lost one or both parents, through a holistic and compassionate approach.",
-                      imagePath: HwfContent.other1,
-                      subPoints: [
-                        'Orphan Scholarship Program',
-                        'Orphan Hostels'
+                        .shield, // Already appropriate - represents care and support
+                    child: EducationDetailPage(
+                      title: 'Widow support',
+                      code: "#support",
+                      description: TweetContent.tweetDescription10,
+                      imagePath: TweetContent.tweetimage29,
+                      icon: LucideIcons.shield,
+                      imageList: [
+                        TweetContent.tweetimage28,
+                        TweetContent.tweetimage29,
+                        TweetContent.tweetimage30,
                       ],
                     ),
                   ),
                   InterventionAreaCard(
                     title: 'Leadership development',
                     icon: LucideIcons
-                        .users, // Changed to users icon to represent leadership and team
-                    child: GeneralDetailScreen(
-                      title: 'Government Scheme\nFacilitation Center',
-                      description:
-                          "Nagrik Vikas Kendra (NVK) serves as a bridge between government schemes and marginalized communities, helping ensure that the benefits of these programs reach those in need.\n\n43 NVKs are functioning in 12 States. \n\nIn the last financial year, NVKs assisted beneficiaries in securing a collective total of ₹44 crore through various government schemes.",
-                      imagePath: HwfContent.other2,
+                        .trophy, // Changed to users icon to represent leadership and team
+                    child: EducationDetailPage(
+                      title: 'Leadership development',
+                      code: "#Leadership",
+                      description: TweetContent.tweetDescription11,
+                      imagePath: TweetContent.tweetimage31,
+                      icon: LucideIcons.trophy,
+                      imageList: [
+                        TweetContent.tweetimage31,
+                        TweetContent.tweetimage32,
+                        TweetContent.tweetimage4,
+                        TweetContent.tweetimage5,
+                      ],
                     ),
                   ),
                   InterventionAreaCard(
                     title: "Women facilitation centre",
                     icon: LucideIcons
                         .userCircle2, // Changed to user-circle-2 to represent person-centered services
-                    child: GeneralDetailScreen(
-                      title: 'Vocational Training',
-                      description:
-                          "Human Welfare Foundation's skill development and vocational training initiatives aim to empower underprivileged communities by enhancing their technical skills, increasing employability, and fostering opportunities for employment and entrepreneurship. These training centers are strategically established in some of the country's most underdeveloped regions. Major courses run are various computer courses and Assistant Nursing & Midwifery.",
-                      imagePath: HwfContent.other3,
-                      subPoints: [
-                        "Innovation and Skill Training Centers in 6 States"
+                    child: EducationDetailPage(
+                      title: "Women facilitation centre",
+                      code: "#Leadership",
+                      description: TweetContent.tweetDescription12,
+                      imagePath: TweetContent.tweetimage6,
+                      icon: LucideIcons.userCircle2,
+                      imageList: [
+                        TweetContent.tweetimage6,
+                        TweetContent.tweetimage7,
+                        TweetContent.tweetimage8,
                       ],
                     ),
                   ),
@@ -183,13 +196,17 @@ class TweetDetailPage extends StatelessWidget {
                     title: "Social empowerment",
                     icon: LucideIcons
                         .network, // Changed to network icon to represent social connections
-                    child: GeneralDetailScreen(
-                      title: 'Vocational Training',
-                      description:
-                          "Human Welfare Foundation's skill development and vocational training initiatives aim to empower underprivileged communities by enhancing their technical skills, increasing employability, and fostering opportunities for employment and entrepreneurship. These training centers are strategically established in some of the country's most underdeveloped regions. Major courses run are various computer courses and Assistant Nursing & Midwifery.",
-                      imagePath: HwfContent.other3,
-                      subPoints: [
-                        "Innovation and Skill Training Centers in 6 States"
+                    child: EducationDetailPage(
+                      title: "Social empowerment",
+                      code: "#empowerment",
+                      description: TweetContent.tweetDescription13,
+                      imagePath: TweetContent.tweetimage9,
+                      icon: LucideIcons.network,
+                      imageList: [
+                        TweetContent.tweetimage9,
+                        TweetContent.tweetimage10,
+                        TweetContent.tweetimage11,
+                        TweetContent.tweetimage12,
                       ],
                     ),
                   ),
@@ -197,13 +214,16 @@ class TweetDetailPage extends StatelessWidget {
                     title: "Mahila help desk",
                     icon: LucideIcons
                         .helpingHand, // Changed to helping-hand icon to represent assistance
-                    child: GeneralDetailScreen(
-                      title: 'Vocational Training',
-                      description:
-                          "Human Welfare Foundation's skill development and vocational training initiatives aim to empower underprivileged communities by enhancing their technical skills, increasing employability, and fostering opportunities for employment and entrepreneurship. These training centers are strategically established in some of the country's most underdeveloped regions. Major courses run are various computer courses and Assistant Nursing & Midwifery.",
-                      imagePath: HwfContent.other3,
-                      subPoints: [
-                        "Innovation and Skill Training Centers in 6 States"
+                    child: EducationDetailPage(
+                      title: "Mahila help desk",
+                      code: "#help desk",
+                      description: TweetContent.tweetDescription14,
+                      imagePath: TweetContent.tweetimage13,
+                      icon: LucideIcons.helpingHand,
+                      imageList: [
+                        TweetContent.tweetimage13,
+                        TweetContent.tweetimage1,
+                        TweetContent.tweetimage2,
                       ],
                     ),
                   ),
@@ -211,13 +231,14 @@ class TweetDetailPage extends StatelessWidget {
                     title: "Relief & rehabilitation",
                     icon: LucideIcons
                         .lifeBuoy, // Changed to life-buoy icon to represent emergency relief
-                    child: GeneralDetailScreen(
-                      title: 'Vocational Training',
-                      description:
-                          "Human Welfare Foundation's skill development and vocational training initiatives aim to empower underprivileged communities by enhancing their technical skills, increasing employability, and fostering opportunities for employment and entrepreneurship. These training centers are strategically established in some of the country's most underdeveloped regions. Major courses run are various computer courses and Assistant Nursing & Midwifery.",
-                      imagePath: HwfContent.other3,
-                      subPoints: [
-                        "Innovation and Skill Training Centers in 6 States"
+                    child: EducationDetailPage(
+                      title: "Relief & rehabilitation",
+                      code: "#help desk",
+                      description: TweetContent.tweetDescription15,
+                      imagePath: TweetContent.tweetimage3,
+                      icon: LucideIcons.lifeBuoy,
+                      imageList: [
+                        TweetContent.tweetimage3,
                       ],
                     ),
                   ),
