@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element
+
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 
@@ -30,10 +32,15 @@ class HealthcareServiceDetail extends StatelessWidget {
               background: Stack(
                 fit: StackFit.expand,
                 children: [
-                  Image.network(
-                    imagePath,
-                    fit: BoxFit.cover,
-                  ),
+                  imagePath.startsWith('http')
+                      ? Image.network(
+                          imagePath,
+                          fit: BoxFit.cover,
+                        )
+                      : Image.asset(
+                          imagePath,
+                          fit: BoxFit.cover,
+                        ),
                   Container(
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
@@ -182,88 +189,88 @@ class HealthcareServiceDetail extends StatelessWidget {
                 ),
 
                 // Key Features
-                Container(
-                  margin: const EdgeInsets.all(20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'Key Features',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black87,
-                        ),
-                      ),
-                      const SizedBox(height: 16),
-                      _buildFeatureItem('24/7 availability for emergencies'),
-                      _buildFeatureItem('Qualified medical professionals'),
-                      _buildFeatureItem('State-of-the-art equipment'),
-                      _buildFeatureItem('Free services for underprivileged'),
-                    ],
-                  ),
-                ),
+                // Container(
+                //   margin: const EdgeInsets.all(20),
+                //   child: Column(
+                //     crossAxisAlignment: CrossAxisAlignment.start,
+                //     children: [
+                //       const Text(
+                //         'Key Features',
+                //         style: TextStyle(
+                //           fontSize: 20,
+                //           fontWeight: FontWeight.bold,
+                //           color: Colors.black87,
+                //         ),
+                //       ),
+                //       const SizedBox(height: 16),
+                //       _buildFeatureItem('24/7 availability for emergencies'),
+                //       _buildFeatureItem('Qualified medical professionals'),
+                //       _buildFeatureItem('State-of-the-art equipment'),
+                //       _buildFeatureItem('Free services for underprivileged'),
+                //     ],
+                //   ),
+                // ),
 
-                // Gallery
-                Container(
-                  margin: const EdgeInsets.all(20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'Gallery',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black87,
-                        ),
-                      ),
-                      const SizedBox(height: 16),
-                      SizedBox(
-                        height: 120,
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: 5,
-                          itemBuilder: (context, index) {
-                            return Container(
-                              width: 160,
-                              margin: const EdgeInsets.only(right: 12),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12),
-                                image: DecorationImage(
-                                  image: NetworkImage(
-                                    imagePath,
-                                  ),
-                                  fit: BoxFit.cover,
-                                ),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black.withOpacity(0.1),
-                                    blurRadius: 10,
-                                    offset: const Offset(0, 2),
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                // // Gallery
+                // Container(
+                //   margin: const EdgeInsets.all(20),
+                //   child: Column(
+                //     crossAxisAlignment: CrossAxisAlignment.start,
+                //     children: [
+                //       const Text(
+                //         'Gallery',
+                //         style: TextStyle(
+                //           fontSize: 20,
+                //           fontWeight: FontWeight.bold,
+                //           color: Colors.black87,
+                //         ),
+                //       ),
+                //       const SizedBox(height: 16),
+                //       SizedBox(
+                //         height: 120,
+                //         child: ListView.builder(
+                //           scrollDirection: Axis.horizontal,
+                //           itemCount: 5,
+                //           itemBuilder: (context, index) {
+                //             return Container(
+                //               width: 160,
+                //               margin: const EdgeInsets.only(right: 12),
+                //               decoration: BoxDecoration(
+                //                 borderRadius: BorderRadius.circular(12),
+                //                 image: DecorationImage(
+                //                   image: NetworkImage(
+                //                     imagePath,
+                //                   ),
+                //                   fit: BoxFit.cover,
+                //                 ),
+                //                 boxShadow: [
+                //                   BoxShadow(
+                //                     color: Colors.black.withOpacity(0.1),
+                //                     blurRadius: 10,
+                //                     offset: const Offset(0, 2),
+                //                   ),
+                //                 ],
+                //               ),
+                //             );
+                //           },
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+                // ),
               ],
             ),
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          // Handle service request
-        },
-        backgroundColor: const Color(0xFFB71C1C),
-        icon: const Icon(LucideIcons.phoneCall),
-        label: const Text('Request Service'),
-      ),
+      // floatingActionButton: FloatingActionButton.extended(
+      //   onPressed: () {
+      //     // Handle service request
+      //   },
+      //   backgroundColor: const Color(0xFFB71C1C),
+      //   icon: const Icon(LucideIcons.phoneCall),
+      //   label: const Text('Request Service'),
+      // ),
     );
   }
 

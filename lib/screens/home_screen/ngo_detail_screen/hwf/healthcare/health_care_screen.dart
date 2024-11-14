@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/healthcare/health_care_service_detail_screen.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
 
 class HealthcareServicesScreen extends StatelessWidget {
   const HealthcareServicesScreen({super.key});
@@ -136,9 +137,8 @@ class HealthcareServicesScreen extends StatelessWidget {
                       title: 'Medical Centres',
                       code: "#MedicalCentres",
                       description:
-                          'Providing comprehensive healthcare services',
-                      imagePath:
-                          "https://avocure-uploads.s3.amazonaws.com/uploads/clinic/cover_pic_url/155/kovai-medical-center-hospital-coimbatore.jpg",
+                          "Human Welfare Foundation is dedicated to making a tangible difference in the health and well-being of communities that face severe healthcare challenges. One of our cornerstones is the establishment and operation of medical care centers, strategically positioned to cater to areas where healthcare services are scarce or absent. These centres provide hope for communities in dire need, providing essential medical care, diagnosis, and treatment. ",
+                      imagePath: HwfContent.health1,
                       icon: LucideIcons.building2),
                 ),
                 _buildServiceCard(
@@ -147,12 +147,11 @@ class HealthcareServicesScreen extends StatelessWidget {
                   icon: LucideIcons.heartPulse,
                   description: 'Healthcare services at your doorstep',
                   child: const HealthcareServiceDetail(
-                      title: 'Medical Centres',
-                      code: "#MedicalCentres",
+                      title: 'Mobile Medical Vans',
+                      code: "#Medical Vans",
                       description:
-                          'Providing comprehensive healthcare services',
-                      imagePath:
-                          "https://avocure-uploads.s3.amazonaws.com/uploads/clinic/cover_pic_url/155/kovai-medical-center-hospital-coimbatore.jpg",
+                          "HWF operates three dedicated mobile medical vans—one in Delhi, which is a collaborative effort with Al Shifa Hospital and the Aster DM Foundation from Kerala; another in Jamshedpur, Jharkhand; and the third one in the Barmer region of Rajasthan, also operating in collaboration with the Aster DM Foundation. These mobile medical units are equipped with the necessary medical equipment and staffed by skilled healthcare professionals who are passionate about making a difference.",
+                      imagePath: HwfContent.health2,
                       icon: LucideIcons.building2),
                 ),
                 _buildServiceCard(
@@ -161,12 +160,11 @@ class HealthcareServicesScreen extends StatelessWidget {
                   icon: LucideIcons.truck,
                   description: '24/7 emergency medical transportation',
                   child: const HealthcareServiceDetail(
-                      title: 'Medical Centres',
-                      code: "#MedicalCentres",
+                      title: 'Ambulance Service',
+                      code: "#Ambulance",
                       description:
-                          'Providing comprehensive healthcare services',
-                      imagePath:
-                          "https://avocure-uploads.s3.amazonaws.com/uploads/clinic/cover_pic_url/155/kovai-medical-center-hospital-coimbatore.jpg",
+                          "The Human Welfare Foundation (HWF) provides critical healthcare services in underserved areas through its Mobile Medical Units and Ambulance services.  ",
+                      imagePath: HwfContent.health3,
                       icon: LucideIcons.building2),
                 ),
                 _buildServiceCard(
@@ -174,12 +172,11 @@ class HealthcareServicesScreen extends StatelessWidget {
                   icon: LucideIcons.tent,
                   description: 'Free medical & vaccination camps',
                   child: const HealthcareServiceDetail(
-                      title: 'Medical Centres',
-                      code: "#MedicalCentres",
+                      title: 'Medical Camps',
+                      code: "#MedicalCamps",
                       description:
-                          'Providing comprehensive healthcare services',
-                      imagePath:
-                          "https://avocure-uploads.s3.amazonaws.com/uploads/clinic/cover_pic_url/155/kovai-medical-center-hospital-coimbatore.jpg",
+                          "Vaccination is one of the most effective public health interventions. By offering a range of vaccines, we contribute to the prevention of various infectious diseases that can have severe consequences for individuals and communities. We are also collaborating with Government Health Departments to implement this program. \n \nHealth Screening Camps serve as lifelines for communities that may not have the resources or proximity to access essential healthcare services. The services provided at these camps are fundamental, encompassing basic medical care, health check-ups, and consultations with healthcare professionals. ",
+                      imagePath: HwfContent.health4,
                       icon: LucideIcons.building2),
                   context: context,
                 ),
@@ -189,10 +186,10 @@ class HealthcareServicesScreen extends StatelessWidget {
                   icon: LucideIcons.megaphone,
                   description: 'Community health education programs',
                   child: const HealthcareServiceDetail(
-                      title: 'Medical Centres',
-                      code: "#MedicalCentres",
+                      title: 'Health Awareness',
+                      code: "#Health Awareness",
                       description:
-                          'Providing comprehensive healthcare services',
+                          "Health awareness programs are conducted primarily in villages to educate communities on critical health topics, including the prevention of communicable diseases, the importance of vaccinations, child health, and menstrual hygiene. These initiatives aim to empower community members with knowledge and practices that support healthier lifestyles and improve overall well-being. By addressing essential health issues and encouraging proactive care, the programs foster a more informed and resilient community better equipped to handle health challenges.",
                       imagePath:
                           "https://avocure-uploads.s3.amazonaws.com/uploads/clinic/cover_pic_url/155/kovai-medical-center-hospital-coimbatore.jpg",
                       icon: LucideIcons.building2),

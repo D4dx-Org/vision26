@@ -155,4 +155,10 @@ class HwfContent {
   static const String coaching3 = '${othersRoot}coaching3.png';
   static const String coaching4 = '${othersRoot}coaching4.png';
   static const String communitycenter = '${othersRoot}communitycenter.png';
+
+  ////////////////////////////[Health]////////////////////////
+  static const String health1 = '${othersRoot}health1.png';
+  static const String health2 = '${othersRoot}health2.png';
+  static const String health3 = '${othersRoot}health3.png';
+  static const String health4 = '${othersRoot}health4.png';
 }
