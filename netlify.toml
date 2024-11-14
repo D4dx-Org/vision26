@@ -1,6 +1,6 @@
 [build]
-  base = ""
   command = """
+    rm -rf flutter && \
     git clone https://github.com/flutter/flutter.git && \
     cd flutter && \
     git checkout stable && \
@@ -13,8 +13,8 @@
   publish = "build/web"
 
 [context.development]
-  base = ""
   command = """
+    rm -rf flutter && \
     git clone https://github.com/flutter/flutter.git && \
     cd flutter && \
     git checkout stable && \
