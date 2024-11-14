@@ -69,7 +69,7 @@ class EducationServicesScreen extends StatelessWidget {
                 crossAxisCount: 2,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
-                childAspectRatio: 0.8,
+                childAspectRatio: 1.0,
               ),
               delegate: SliverChildListDelegate([
                 _buildServiceCard(
@@ -122,8 +122,7 @@ class EducationServicesScreen extends StatelessWidget {
                   title: 'Community Learning Centres',
                   code: 'Learning Centres',
                   child: const CommunityLearningCenterScreen(),
-                  image:
-                      "https://saiangel.org/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-03-at-2.35.17-PM.jpeg",
+                  image: HwfContent.communitycenter,
                   description: 'Local centers for community education.',
                 ),
               ]),
@@ -167,7 +166,7 @@ class EducationServicesScreen extends StatelessWidget {
               children: [
                 // Image Section
                 Expanded(
-                  flex: 3,
+                  flex: 5,
                   child: Stack(
                     fit: StackFit.expand,
                     children: [

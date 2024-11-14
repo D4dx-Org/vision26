@@ -116,7 +116,7 @@ class SchoolEnrollmentScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     Text(
-                      'The School Enrollment Program aims to reintegrate these children into the educational system by covering school fees and providing essential study materials. This initiative specifically targets rural villages, aiming to reduce dropout rates and ensure that every child has access to quality education. By addressing financial barriers and supporting families, the program seeks to create lasting change and open new educational pathways for children who would otherwise miss out on learning opportunities.',
+                      "  Over 12 million children aged 6-17 in India are out of school, with the majority in rural areas (ASER 2021-22). The School Enrollment Program aims to reintegrate these children into the educational system by covering school fees and providing essential study materials. This initiative specifically targets rural villages, aiming to reduce dropout rates and ensure that every child has access to quality education. By addressing financial barriers and supporting families, the program seeks to create lasting change and open new educational pathways for children who would otherwise miss out on learning opportunities.",
                       style: TextStyle(
                         fontSize: 16,
                         height: 1.6,
@@ -128,24 +128,6 @@ class SchoolEnrollmentScreen extends StatelessWidget {
                 ),
               ),
             ],
-          ),
-        ),
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          // Handle enrollment request
-        },
-        backgroundColor: const Color(0xFF1565C0),
-        icon: const Icon(
-          LucideIcons.helpingHand,
-          color: Colors.white,
-        ),
-        label: const Text(
-          'Support a Child',
-          style: TextStyle(
-            fontSize: 16,
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
           ),
         ),
       ),

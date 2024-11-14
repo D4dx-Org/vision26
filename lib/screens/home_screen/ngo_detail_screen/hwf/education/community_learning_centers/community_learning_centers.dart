@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
 
 class CommunityLearningCenterScreen extends StatelessWidget {
   const CommunityLearningCenterScreen({super.key});
@@ -47,8 +48,8 @@ class CommunityLearningCenterScreen extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                 image: const DecorationImage(
-                  image: NetworkImage(
-                    "https://0e1f9520cfbb74a61ba4-0c2137d93f8d1ba7abe4c5e2888a558f.ssl.cf1.rackcdn.com/145839435857114.jpeg",
+                  image: AssetImage(
+                    HwfContent.communitycenter,
                   ),
                   fit: BoxFit.cover,
                 ),
@@ -127,20 +128,6 @@ class CommunityLearningCenterScreen extends StatelessWidget {
               ),
             ),
           ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          // Handle center visit request
-        },
-        backgroundColor: const Color(0xFF1565C0),
-        icon: const Icon(LucideIcons.mapPin, color: Colors.white),
-        label: const Text(
-          'Visit Center',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
         ),
       ),
     );

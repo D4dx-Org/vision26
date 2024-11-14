@@ -154,4 +154,5 @@ class HwfContent {
   static const String coaching2 = '${othersRoot}coaching2.png';
   static const String coaching3 = '${othersRoot}coaching3.png';
   static const String coaching4 = '${othersRoot}coaching4.png';
+  static const String communitycenter = '${othersRoot}communitycenter.png';
 }
