@@ -122,4 +122,26 @@ class HwfContent {
       '${imageRoot3}millennium_school-4.JPG';
   static const String millenniumSchoolImage5 =
       '${imageRoot3}millennium_school-5.JPG';
+  ///////////////////////////////////////////////////////
+  /// [Capacity of Building Care] /////////////////////
+  static const String capacityofBuildingRoot =
+      'assets/images/hwf/capacityofbuilding/';
+
+  static const String capacityBuildingofBuilding1 =
+      '${capacityofBuildingRoot}capacityofBuilding1.png';
+  static const String capacityBuildingofBuilding2 =
+      '${capacityofBuildingRoot}capacityofBuilding2.png';
+  static const String capacityBuildingofBuilding3 =
+      '${capacityofBuildingRoot}capacityofBuilding3.png';
+  static const String capacityBuildingofBuilding4 =
+      '${capacityofBuildingRoot}capacityofBuilding4.png';
+  static const String capacityBuildingofBuilding5 =
+      '${capacityofBuildingRoot}capacityofBuilding5.png';
+  static const List<String> capacityBuildingImages = [
+    capacityBuildingofBuilding1,
+    capacityBuildingofBuilding2,
+    capacityBuildingofBuilding3,
+    capacityBuildingofBuilding4,
+    capacityBuildingofBuilding5,
+  ];
 }
