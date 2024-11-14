@@ -182,10 +182,10 @@ class HwfMaldaCampus extends StatelessWidget {
                           schoolName: 'Hostels for Boys & girls',
                           description:
                               "Separate hostels have been arranged for boys and girls of Al Jamia Off-Campus and Scholar School, Special accommodations are reserved for orphaned students in these hostels.",
-                          image: HwfContent.boysHostel,
+                          image: HwfContent.siddiqueHassanCampus2,
                           imageList: [
-                            HwfContent.boysHostel,
-                            HwfContent.girlsHostel,
+                            HwfContent.siddiqueHassanCampus2,
+                            HwfContent.siddiqueHassanCampus4,
                           ],
                         ),
                       ),
