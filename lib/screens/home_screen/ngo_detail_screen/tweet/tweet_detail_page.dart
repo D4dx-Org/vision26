@@ -6,6 +6,7 @@ import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/general_detail_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/healthcare/health_care_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/tweet/tweet_content.dart';
 
 class TweetDetailPage extends StatelessWidget {
   const TweetDetailPage({super.key});
@@ -18,7 +19,7 @@ class TweetDetailPage extends StatelessWidget {
         backgroundColor: const Color(0xFFB71C1C),
         elevation: 0,
         title: const Text(
-          'Human Welfare Foundation',
+          "www.tweetrust.org",
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
@@ -46,7 +47,7 @@ class TweetDetailPage extends StatelessWidget {
                   // Logo
                   Container(
                     width: 190,
-                    height: 100,
+                    height: 190,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
@@ -61,7 +62,7 @@ class TweetDetailPage extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
                       child: Image.asset(
-                        ImageClass.hwfLogo,
+                        TweetContent.logo,
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -132,12 +133,12 @@ class TweetDetailPage extends StatelessWidget {
                     child: EducationServicesScreen(),
                   ),
                   InterventionAreaCard(
-                    title: 'Healthcare',
+                    title: 'Economic empowerment',
                     icon: LucideIcons.stethoscope,
                     child: HealthcareServicesScreen(),
                   ),
                   InterventionAreaCard(
-                    title: 'Orphan Care',
+                    title: 'Widow support',
                     icon: LucideIcons.heart,
                     child: GeneralDetailScreen(
                       title: "ORPHAN CARE PROGRAM",
@@ -151,7 +152,7 @@ class TweetDetailPage extends StatelessWidget {
                     ),
                   ),
                   InterventionAreaCard(
-                    title: 'Government Scheme\nFacilitation Center',
+                    title: 'Leadership development',
                     icon: LucideIcons.building,
                     child: GeneralDetailScreen(
                       title: 'Government Scheme\nFacilitation Center',
@@ -161,7 +162,46 @@ class TweetDetailPage extends StatelessWidget {
                     ),
                   ),
                   InterventionAreaCard(
-                    title: 'Vocational Training',
+                    title: "Women facilitation centre",
+                    icon: LucideIcons.briefcase,
+                    child: GeneralDetailScreen(
+                      title: 'Vocational Training',
+                      description:
+                          "Human Welfare Foundation's skill development and vocational training initiatives aim to empower underprivileged communities by enhancing their technical skills, increasing employability, and fostering opportunities for employment and entrepreneurship. These training centers are strategically established in some of the country's most underdeveloped regions. Major courses run are various computer courses and Assistant Nursing & Midwifery.",
+                      imagePath: HwfContent.other3,
+                      subPoints: [
+                        "Innovation and Skill Training Centers in 6 States"
+                      ],
+                    ),
+                  ),
+                  InterventionAreaCard(
+                    title: "Social empowerment",
+                    icon: LucideIcons.briefcase,
+                    child: GeneralDetailScreen(
+                      title: 'Vocational Training',
+                      description:
+                          "Human Welfare Foundation's skill development and vocational training initiatives aim to empower underprivileged communities by enhancing their technical skills, increasing employability, and fostering opportunities for employment and entrepreneurship. These training centers are strategically established in some of the country's most underdeveloped regions. Major courses run are various computer courses and Assistant Nursing & Midwifery.",
+                      imagePath: HwfContent.other3,
+                      subPoints: [
+                        "Innovation and Skill Training Centers in 6 States"
+                      ],
+                    ),
+                  ),
+                  InterventionAreaCard(
+                    title: "Mahila help desk",
+                    icon: LucideIcons.briefcase,
+                    child: GeneralDetailScreen(
+                      title: 'Vocational Training',
+                      description:
+                          "Human Welfare Foundation's skill development and vocational training initiatives aim to empower underprivileged communities by enhancing their technical skills, increasing employability, and fostering opportunities for employment and entrepreneurship. These training centers are strategically established in some of the country's most underdeveloped regions. Major courses run are various computer courses and Assistant Nursing & Midwifery.",
+                      imagePath: HwfContent.other3,
+                      subPoints: [
+                        "Innovation and Skill Training Centers in 6 States"
+                      ],
+                    ),
+                  ),
+                  InterventionAreaCard(
+                    title: "Relief & rehabilitation",
                     icon: LucideIcons.briefcase,
                     child: GeneralDetailScreen(
                       title: 'Vocational Training',
