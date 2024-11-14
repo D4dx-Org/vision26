@@ -8,6 +8,7 @@ import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/education/
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/healthcare/hwt_health_care_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/hwt_content.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/hwt_hunger_relief.dart/hwt_hunger_relief.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/low_cost_housing/low_cost_housing.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/orphan_and_widow/orphan_and_widow_care.dart';
 
 class HWTProfileScreen extends StatelessWidget {
@@ -157,7 +158,7 @@ class HWTProfileScreen extends StatelessWidget {
                   InterventionAreaCard(
                     title: 'Low-Cost Housing',
                     icon: LucideIcons.home,
-                    child: HealthcareServicesScreen(),
+                    child: LowCostHousingScreen(),
                   ),
                   InterventionAreaCard(
                     title: 'Water and Sanitaion',
