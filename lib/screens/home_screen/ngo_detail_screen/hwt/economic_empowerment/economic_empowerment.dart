@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vision_2026/constants/color_class.dart';
 
 class EconomicEmpowermentScreen extends StatelessWidget {
   const EconomicEmpowermentScreen({super.key});
@@ -141,10 +140,14 @@ class EconomicEmpowermentScreen extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 16),
-                          _buildSupportItem('Establishment of Small Shops / Kiosk', '100+'),
-                          _buildSupportItem('Stock for Small Shops / Kiosk', '200+'),
+                          _buildSupportItem(
+                              'Establishment of Small Shops / Kiosk', '100+'),
+                          _buildSupportItem(
+                              'Stock for Small Shops / Kiosk', '200+'),
                           _buildSupportItem('Sewing Machines', '1,250+'),
-                          _buildSupportItem('Vehicle Support (including Auto Rickshaw, E-Rickshaw, Commercial Car)', '25+'),
+                          _buildSupportItem(
+                              'Vehicle Support (including Auto Rickshaw, E-Rickshaw, Commercial Car)',
+                              '25+'),
                           _buildSupportItem('Vegetable / Cycle Cart', '35+'),
                           _buildSupportItem('Grass/Bush Cutter', '100+'),
                           _buildSupportItem('Bicycle', '160+'),
@@ -163,10 +166,14 @@ class EconomicEmpowermentScreen extends StatelessWidget {
                         mainAxisSpacing: 16,
                         crossAxisSpacing: 16,
                         children: [
-                          _buildImageCard("assets/images/hwt/Page-3 E_sub image 1.jpg"),
-                          _buildImageCard("assets/images/hwt/Page-3 E_sub image 2.jpg"),
-                          _buildImageCard("assets/images/hwt/Page-3 E_sub image 3.jpg"),
-                          _buildImageCard("assets/images/hwt/Page-3 E_sub image 4.JPG"),
+                          _buildImageCard(
+                              "assets/images/hwt/Page-3 E_sub image 1.jpg"),
+                          _buildImageCard(
+                              "assets/images/hwt/Page-3 E_sub image 2.jpg"),
+                          _buildImageCard(
+                              "assets/images/hwt/Page-3 E_sub image 3.jpg"),
+                          _buildImageCard(
+                              "assets/images/hwt/Page-3 E_sub image 4.JPG"),
                         ],
                       ),
                     ),
