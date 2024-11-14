@@ -1,23 +1,43 @@
 class HwfContent {
   // hwf
   static const String imageRoot = 'assets/images/hwf/';
+  static const String imageRoot1 = 'assets/images/hwf/siddikhasan/';
   static const String imageRoot2 = 'assets/images/hwf/malda/';
   static const String imageRoot3 = 'assets/images/hwf/delhischolar/';
 
-  static const String logo = '${imageRoot}logo.svg';
   static const String hwfdescription =
       "Human Welfare Foundation carries out humanitarian and development programs to fight poverty and people’s sufferings by working in partnership with vulnerable communities";
 
-  /// Educational Institutions ///
+  /// [Educational Institutions] ///
+  static const String educationIntro = '${imageRoot}education-intro.jpg';
+
   ///  Siddique hassan campus
   static const String siddiqueHassanCampus =
-      '${imageRoot}siddique_hassan_campus.png';
-  static const String siddiqueHassanCampusAljamiaSchool1 =
-      '${imageRoot}aljamia-campus1.jpg';
-  static const String ugAndPgCollege = '${imageRoot}ug-and-pg.jpeg';
-  static const String chiragPublicSchool = '${imageRoot}chiragPublicSchool.jpg';
-  static const String boysHostel = '${imageRoot}boysHostel.jpg';
-  static const String girlsHostel = '${imageRoot}girlsHostel.jpg';
+      '${imageRoot1}siddique_hassan_campus.png';
+  static const String siddiqueHassanCampus1 =
+      '${imageRoot1}siddikhasanaljamia-campus1.png';
+
+  static const String siddiqueHassanCampus1_1 =
+      '${imageRoot1}siddikhasanaljamia-campus1-1.png';
+  static const String siddiqueHassanCampus1_2 =
+      '${imageRoot1}siddikhasanaljamia-campus1-2.png';
+  static const String siddiqueHassanCampus1_3 =
+      '${imageRoot1}siddikhasanaljamia-campus1-3.png';
+  static const String siddiqueHassanCampus1_4 =
+      '${imageRoot1}siddikhasanaljamia-campus1-4.png';
+  static const String siddiqueHassanCampus1_5 =
+      '${imageRoot1}siddikhasanaljamia-campus1-5.png';
+  static const String siddiqueHassanCampus1_6 =
+      '${imageRoot1}siddikhasanaljamia-campus1-6.png';
+  // other schools
+  static const String siddiqueHassanCampus2 =
+      '${imageRoot1}siddikhasanaljamia-campus2.png';
+  static const String siddiqueHassanCampus3 =
+      '${imageRoot1}siddikhasanaljamia-campus3.png';
+  static const String siddiqueHassanCampus4 =
+      '${imageRoot1}siddikhasanaljamia-campus4.png';
+  static const String siddiqueHassanCampus5 =
+      '${imageRoot1}siddikhasanaljamia-campus5.png';
 
   //// Hwf Malda campus
   static const String hwfMaldaCampus = '${imageRoot2}hwfMaldaCampus.png';
@@ -71,15 +91,61 @@ class HwfContent {
   static const String howrahScholarSchool5 =
       '${imageRoot3}howrahScholarSchool5.jpg';
 
+  //// rargaon Scholar School
+  static const String rargaonsScholarSchool =
+      '${imageRoot3}rargaonsScholarSchool.jpg';
+  static const String rargaonsScholarSchool1 =
+      '${imageRoot3}rargaonsScholarSchool1.jpg';
+  static const String rargaonsScholarSchool2 =
+      '${imageRoot3}rargaonsScholarSchool2.jpg';
+  static const String rargaonsScholarSchool3 =
+      '${imageRoot3}rargaonsScholarSchool3.jpg';
+  static const String rargaonsScholarSchool4 =
+      '${imageRoot3}rargaonsScholarSchool4.jpg';
+
+  //// Darbhanga bihar Scholar school
+  static const String biharscholarSchool =
+      '${imageRoot3}biharscholarSchool.png';
+  static const String biharscholarSchool1 =
+      '${imageRoot3}biharscholarSchool1.png';
+  static const String biharscholarSchool2 =
+      '${imageRoot3}biharscholarSchool2.png';
+
 // millennium school
   static const String millenniumSchoolImage =
-      '${imageRoot}millennium_school-1.jpg';
+      '${imageRoot3}millennium_school-1.jpg';
   static const String millenniumSchoolImage2 =
-      '${imageRoot}millennium_school-2.JPG';
+      '${imageRoot3}millennium_school-2.JPG';
   static const String millenniumSchoolImage3 =
-      '${imageRoot}millennium_school-3.JPG';
+      '${imageRoot3}millennium_school-3.JPG';
   static const String millenniumSchoolImage4 =
-      '${imageRoot}millennium_school-4.JPG';
+      '${imageRoot3}millennium_school-4.JPG';
   static const String millenniumSchoolImage5 =
-      '${imageRoot}millennium_school-5.JPG';
+      '${imageRoot3}millennium_school-5.JPG';
+  ///////////////////////////////////////////////////////
+  /// [Capacity of Building Care] /////////////////////
+  static const String capacityofBuildingRoot =
+      'assets/images/hwf/capacityofbuilding/';
+
+  static const String capacityBuildingofBuilding1 =
+      '${capacityofBuildingRoot}capacityofBuilding1.png';
+  static const String capacityBuildingofBuilding2 =
+      '${capacityofBuildingRoot}capacityofBuilding2.png';
+  static const String capacityBuildingofBuilding3 =
+      '${capacityofBuildingRoot}capacityofBuilding3.png';
+  static const String capacityBuildingofBuilding4 =
+      '${capacityofBuildingRoot}capacityofBuilding4.png';
+  static const String capacityBuildingofBuilding5 =
+      '${capacityofBuildingRoot}capacityofBuilding5.png';
+  static const List<String> capacityBuildingImagesList = [
+    capacityBuildingofBuilding1,
+    capacityBuildingofBuilding2,
+    capacityBuildingofBuilding3,
+    capacityBuildingofBuilding4,
+    capacityBuildingofBuilding5,
+  ];
+
+  ///////////////////////// [Scholorship] /////////////////////////
+  static const String othersRoot = 'assets/images/hwf/others/';
+  static const String scholarshipImage = '${othersRoot}scholarship.png';
 }

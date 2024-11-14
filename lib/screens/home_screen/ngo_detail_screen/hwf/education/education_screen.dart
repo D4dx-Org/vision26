@@ -6,6 +6,7 @@ import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/educational_institutions/educational_institutions_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/scholorship_screen/scholorship_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/school_enrollment_program/school_enrollment_program.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
 
 class EducationServicesScreen extends StatelessWidget {
   const EducationServicesScreen({super.key});
@@ -23,8 +24,8 @@ class EducationServicesScreen extends StatelessWidget {
               background: Stack(
                 fit: StackFit.expand,
                 children: [
-                  Image.network(
-                    "https://vision.gcdn.co//media/1044/education_img-3.jpg",
+                  Image.asset(
+                    HwfContent.guwahatiScholarSchool5,
                     fit: BoxFit.cover,
                   ),
                   Container(
@@ -76,8 +77,7 @@ class EducationServicesScreen extends StatelessWidget {
                   context: context,
                   title: 'Educational Institutions',
                   code: 'Institutes',
-                  image:
-                      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Holy_cross_institute_of_management_and_technology.jpg/1100px-Holy_cross_institute_of_management_and_technology.jpg",
+                  image: HwfContent.educationIntro,
                   description:
                       'Schools and educational facilities providing quality education.',
                 ),
@@ -86,8 +86,7 @@ class EducationServicesScreen extends StatelessWidget {
                   title: 'Capacity Building of Schools',
                   code: 'Capacity',
                   context: context,
-                  image:
-                      "https://vision.gcdn.co//media/1045/education_img-4.jpg",
+                  image: HwfContent.capacityBuildingofBuilding2,
                   description:
                       'Enhancing infrastructure and teaching capabilities.',
                 ),
@@ -96,8 +95,7 @@ class EducationServicesScreen extends StatelessWidget {
                   context: context,
                   child: const ScholarshipScreen(),
                   code: 'Scholarship',
-                  image:
-                      "https://www.sevamandir.org/images/What%20we%20do/WindowImg/171_4_E_3_sub-page_ed.jpg",
+                  image: HwfContent.scholarshipImage,
                   description: 'Financial support for deserving students.',
                 ),
                 _buildServiceCard(
@@ -172,10 +170,15 @@ class EducationServicesScreen extends StatelessWidget {
                   child: Stack(
                     fit: StackFit.expand,
                     children: [
-                      Image.network(
-                        image,
-                        fit: BoxFit.cover,
-                      ),
+                      image.startsWith('http')
+                          ? Image.network(
+                              image,
+                              fit: BoxFit.cover,
+                            )
+                          : Image.asset(
+                              image,
+                              fit: BoxFit.cover,
+                            ),
                       Positioned(
                         top: 8,
                         right: 8,

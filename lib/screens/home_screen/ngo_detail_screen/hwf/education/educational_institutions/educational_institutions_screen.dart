@@ -181,31 +181,38 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                   context: context,
                   child: const OtherCampusesScreen(
                     title: 'The Scholar School',
-                    imageList: [],
-                    location: 'Bargaon, Jharkhand',
+                    imageList: [
+                      HwfContent.rargaonsScholarSchool,
+                      HwfContent.rargaonsScholarSchool1,
+                      HwfContent.rargaonsScholarSchool2,
+                      HwfContent.rargaonsScholarSchool3,
+                      HwfContent.rargaonsScholarSchool4,
+                    ],
+                    location: 'Rargaon, Jharkhand',
                     description:
-                        "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
+                        "The Scholar School in Rargaon, Jharkhand, offers education up to 4th grade. In the coming years, it is set to develop into a CBSE-affiliated English medium school.",
                   ),
                   name: 'The Scholar School',
-                  location: 'Bargaon, Jharkhand',
+                  location: 'Rargaon, Jharkhand',
                   place: 'Jharkhand',
-                  image:
-                      "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",
+                  image: HwfContent.howrahScholarSchool5,
                 ),
                 _buildInstitutionCard(
                   context: context,
                   child: const OtherCampusesScreen(
-                    title: 'The Scholar School',
-                    location: 'Darbhanga, Bihar',
-                    imageList: [],
-                    description:
-                        "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala. Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor's degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
-                  ),
+                      title: 'The Scholar School',
+                      location: 'Darbhanga, Bihar',
+                      imageList: [
+                        HwfContent.biharscholarSchool,
+                        HwfContent.biharscholarSchool1,
+                        HwfContent.biharscholarSchool2,
+                      ],
+                      description:
+                          "The Scholar School in Darbhanga, Bihar, provides education from nursery through 3rd standard. In the coming years, it is set to develop into a CBSE-affiliated English medium school."),
                   name: 'The Scholar School',
                   location: 'Darbhanga, Bihar',
                   place: 'Bihar',
-                  image:
-                      "https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg",
+                  image: HwfContent.biharscholarSchool,
                 ),
                 _buildInstitutionCard(
                   context: context,

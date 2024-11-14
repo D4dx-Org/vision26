@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
 
 class CapacityBuildingScreen extends StatelessWidget {
   const CapacityBuildingScreen({super.key});
@@ -18,8 +19,8 @@ class CapacityBuildingScreen extends StatelessWidget {
               background: Stack(
                 fit: StackFit.expand,
                 children: [
-                  Image.network(
-                    "https://ruralindiaonline.org/media/images/_PAL1053.max-1400x1120.jpg",
+                  Image.asset(
+                    HwfContent.capacityBuildingofBuilding1,
                     fit: BoxFit.cover,
                   ),
                   Container(
@@ -118,7 +119,7 @@ class CapacityBuildingScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    'HWF is committed to enhancing under-resourced schools by adopting them or providing essential funding to build critical infrastructure.',
+                    "HWF is committed to enhancing under-resourced schools by adopting them or providing essential funding to build critical infrastructure. To date, HWF has supported 65 schools across Assam, Bihar, Delhi, Gujarat, Jharkhand, Haryana, Madhya Pradesh, Maharashtra, Rajasthan, Uttar Pradesh, West Bengal, and Punjab.",
                     style: TextStyle(
                       fontSize: 16,
                       height: 1.6,
@@ -205,16 +206,64 @@ class CapacityBuildingScreen extends StatelessWidget {
               ),
             ),
           ),
+          // Image Gallery Section
+          SliverToBoxAdapter(
+            child: Container(
+              margin: const EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Impact Gallery',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  GridView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 1.0,
+                      mainAxisSpacing: 16,
+                      crossAxisSpacing: 16,
+                    ),
+                    itemCount: HwfContent.capacityBuildingImagesList.length,
+                    itemBuilder: (context, index) => _buildGalleryImage(
+                        HwfContent.capacityBuildingImagesList[index]),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          // Handle support schools action
-        },
-        backgroundColor: const Color(0xFFB71C1C),
-        icon: const Icon(LucideIcons.heartHandshake, color: Colors.white),
-        label: const Text('Support Schools',
-            style: TextStyle(color: Colors.white)),
+    );
+  }
+
+// Add this method to your class
+  Widget _buildGalleryImage(String imagePath) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 10,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16),
+        child: Image.asset(
+          imagePath,
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }

@@ -219,9 +219,8 @@ class SchoolProfileScreen extends StatelessWidget {
           // ),
 
           // Gallery Section
-          SliverToBoxAdapter(
-            child: Visibility(
-              visible: imageList != null,
+          if (imageList != null)
+            SliverToBoxAdapter(
               child: Container(
                 margin: const EdgeInsets.all(16),
                 child: Column(
@@ -278,7 +277,6 @@ class SchoolProfileScreen extends StatelessWidget {
                 ),
               ),
             ),
-          ),
         ],
       ),
       // floatingActionButton: FloatingActionButton.extended(

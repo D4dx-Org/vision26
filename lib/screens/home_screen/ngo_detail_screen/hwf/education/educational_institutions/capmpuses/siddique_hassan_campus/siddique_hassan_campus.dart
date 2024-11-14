@@ -149,9 +149,17 @@ class SiddiqueHassanCampus extends StatelessWidget {
                         context: context,
                         child: const SchoolProfileScreen(
                           schoolName: 'Al Jamia Senior Secondary School',
+                          imageList: [
+                            HwfContent.siddiqueHassanCampus1_1,
+                            HwfContent.siddiqueHassanCampus1_2,
+                            HwfContent.siddiqueHassanCampus1_3,
+                            HwfContent.siddiqueHassanCampus1_4,
+                            HwfContent.siddiqueHassanCampus1_5,
+                            HwfContent.siddiqueHassanCampus1_6,
+                          ],
                           description:
                               'This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala.  Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor’s degree, with a curriculum that includes comprehensive knowledge in Islamic studies.',
-                          image: HwfContent.siddiqueHassanCampusAljamiaSchool1,
+                          image: HwfContent.siddiqueHassanCampus1,
                         ),
                       ),
                       _buildProjectCard(
@@ -162,7 +170,7 @@ class SiddiqueHassanCampus extends StatelessWidget {
                             schoolName: 'UG & PG College',
                             description:
                                 "The UG and PG College offers a variety of undergraduate and postgraduate courses, affiliated with recognized universities. Comprehensive facilities, including hostels, are already in place to support student needs.",
-                            image: HwfContent.ugAndPgCollege),
+                            image: HwfContent.siddiqueHassanCampus5),
                       ),
                       _buildProjectCard(
                         title: 'Chirag Public School (Hindi Medium)',
@@ -172,7 +180,7 @@ class SiddiqueHassanCampus extends StatelessWidget {
                           schoolName: 'Chirag Public School (Hindi Medium)',
                           description:
                               "Chirag Public School is a state-recognized, Hindi-medium institution established to address the region's educational needs. With limited schooling options and inadequate infrastructure in existing government schools, Chirag Public School aims to bridge this gap and tackle the educational challenges faced by the local community.",
-                          image: HwfContent.chiragPublicSchool,
+                          image: HwfContent.siddiqueHassanCampus3,
                         ),
                       ),
                       _buildProjectCard(
@@ -183,10 +191,10 @@ class SiddiqueHassanCampus extends StatelessWidget {
                           schoolName: 'Hostels for Boys & girls',
                           description:
                               "Separate hostels have been arranged for boys and girls of Al Jamia Off-Campus and UG & PG Colleges. Special accommodations are reserved for orphaned students in these hostels.",
-                          image: HwfContent.boysHostel,
+                          image: HwfContent.siddiqueHassanCampus2,
                           imageList: [
-                            HwfContent.boysHostel,
-                            HwfContent.girlsHostel,
+                            HwfContent.siddiqueHassanCampus2,
+                            HwfContent.siddiqueHassanCampus4,
                           ],
                         ),
                       ),

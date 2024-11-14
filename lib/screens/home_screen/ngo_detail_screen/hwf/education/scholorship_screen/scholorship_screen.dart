@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/scholorship_screen/scholorship_detail_scren/scholorship_detail_scren.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
 
 class ScholarshipScreen extends StatelessWidget {
   const ScholarshipScreen({super.key});
@@ -20,8 +21,8 @@ class ScholarshipScreen extends StatelessWidget {
               background: Stack(
                 fit: StackFit.expand,
                 children: [
-                  Image.network(
-                    "https://static.wixstatic.com/media/11ee09_31bc8e2aa6f642029688432c90cd81d5~mv2.jpg/v1/fill/w_1000,h_666,al_c,q_85,usm_0.66_1.00_0.01/11ee09_31bc8e2aa6f642029688432c90cd81d5~mv2.jpg",
+                  Image.asset(
+                    HwfContent.scholarshipImage,
                     fit: BoxFit.cover,
                   ),
                   Container(
@@ -193,120 +194,120 @@ class ScholarshipScreen extends StatelessWidget {
           ),
 
           // Success Stories
-          SliverToBoxAdapter(
-            child: Container(
-              margin: const EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Success Stories',
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  SizedBox(
-                    height: 200,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 5,
-                      itemBuilder: (context, index) {
-                        return Container(
-                          width: 300,
-                          margin: const EdgeInsets.only(right: 16),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(16),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.05),
-                                blurRadius: 10,
-                                offset: const Offset(0, 2),
-                              ),
-                            ],
-                          ),
-                          child: Stack(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(16),
-                                child: Image.network(
-                                  "https://i.ytimg.com/vi/JBZ22ecVTts/mqdefault.jpg",
-                                  fit: BoxFit.cover,
-                                  width: 300,
-                                  height: 200,
-                                ),
-                              ),
-                              Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(16),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topCenter,
-                                    end: Alignment.bottomCenter,
-                                    colors: [
-                                      Colors.transparent,
-                                      Colors.black.withOpacity(0.8),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              const Positioned(
-                                bottom: 16,
-                                left: 16,
-                                right: 16,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Student Success Story',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    SizedBox(height: 4),
-                                    Text(
-                                      'From scholarship recipient to successful professional',
-                                      style: TextStyle(
-                                        color: Colors.white70,
-                                        fontSize: 14,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          // SliverToBoxAdapter(
+          //   child: Container(
+          //     margin: const EdgeInsets.all(20),
+          //     child: Column(
+          //       crossAxisAlignment: CrossAxisAlignment.start,
+          //       children: [
+          //         const Text(
+          //           'Success Stories',
+          //           style: TextStyle(
+          //             fontSize: 22,
+          //             fontWeight: FontWeight.bold,
+          //             color: Colors.black87,
+          //           ),
+          //         ),
+          //         const SizedBox(height: 16),
+          //         SizedBox(
+          //           height: 200,
+          //           child: ListView.builder(
+          //             scrollDirection: Axis.horizontal,
+          //             itemCount: 5,
+          //             itemBuilder: (context, index) {
+          //               return Container(
+          //                 width: 300,
+          //                 margin: const EdgeInsets.only(right: 16),
+          //                 decoration: BoxDecoration(
+          //                   color: Colors.white,
+          //                   borderRadius: BorderRadius.circular(16),
+          //                   boxShadow: [
+          //                     BoxShadow(
+          //                       color: Colors.black.withOpacity(0.05),
+          //                       blurRadius: 10,
+          //                       offset: const Offset(0, 2),
+          //                     ),
+          //                   ],
+          //                 ),
+          //                 child: Stack(
+          //                   children: [
+          //                     ClipRRect(
+          //                       borderRadius: BorderRadius.circular(16),
+          //                       child: Image.network(
+          //                         "https://i.ytimg.com/vi/JBZ22ecVTts/mqdefault.jpg",
+          //                         fit: BoxFit.cover,
+          //                         width: 300,
+          //                         height: 200,
+          //                       ),
+          //                     ),
+          //                     Container(
+          //                       decoration: BoxDecoration(
+          //                         borderRadius: BorderRadius.circular(16),
+          //                         gradient: LinearGradient(
+          //                           begin: Alignment.topCenter,
+          //                           end: Alignment.bottomCenter,
+          //                           colors: [
+          //                             Colors.transparent,
+          //                             Colors.black.withOpacity(0.8),
+          //                           ],
+          //                         ),
+          //                       ),
+          //                     ),
+          //                     const Positioned(
+          //                       bottom: 16,
+          //                       left: 16,
+          //                       right: 16,
+          //                       child: Column(
+          //                         crossAxisAlignment: CrossAxisAlignment.start,
+          //                         children: [
+          //                           Text(
+          //                             'Student Success Story',
+          //                             style: TextStyle(
+          //                               color: Colors.white,
+          //                               fontSize: 18,
+          //                               fontWeight: FontWeight.bold,
+          //                             ),
+          //                           ),
+          //                           SizedBox(height: 4),
+          //                           Text(
+          //                             'From scholarship recipient to successful professional',
+          //                             style: TextStyle(
+          //                               color: Colors.white70,
+          //                               fontSize: 14,
+          //                             ),
+          //                           ),
+          //                         ],
+          //                       ),
+          //                     ),
+          //                   ],
+          //                 ),
+          //               );
+          //             },
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          // Handle scholarship application
-        },
-        backgroundColor: const Color(0xFFB71C1C),
-        icon: const Icon(
-          LucideIcons.pencil,
-          color: Colors.white,
-        ),
-        label: const Text(
-          'Apply Now',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
+      // floatingActionButton: FloatingActionButton.extended(
+      //   onPressed: () {
+      //     // Handle scholarship application
+      //   },
+      //   backgroundColor: const Color(0xFFB71C1C),
+      //   icon: const Icon(
+      //     LucideIcons.pencil,
+      //     color: Colors.white,
+      //   ),
+      //   label: const Text(
+      //     'Apply Now',
+      //     style: TextStyle(
+      //       color: Colors.white,
+      //       fontWeight: FontWeight.bold,
+      //     ),
+      //   ),
+      // ),
     );
   }
 
