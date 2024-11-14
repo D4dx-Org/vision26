@@ -24,8 +24,8 @@ class EducationServicesScreen extends StatelessWidget {
               background: Stack(
                 fit: StackFit.expand,
                 children: [
-                  Image.network(
-                    "https://vision.gcdn.co//media/1044/education_img-3.jpg",
+                  Image.asset(
+                    HwfContent.guwahatiScholarSchool5,
                     fit: BoxFit.cover,
                   ),
                   Container(
@@ -86,7 +86,7 @@ class EducationServicesScreen extends StatelessWidget {
                   title: 'Capacity Building of Schools',
                   code: 'Capacity',
                   context: context,
-                  image: HwfContent.capacityBuildingImagesList[0],
+                  image: HwfContent.capacityBuildingofBuilding2,
                   description:
                       'Enhancing infrastructure and teaching capabilities.',
                 ),
@@ -95,8 +95,7 @@ class EducationServicesScreen extends StatelessWidget {
                   context: context,
                   child: const ScholarshipScreen(),
                   code: 'Scholarship',
-                  image:
-                      "https://www.sevamandir.org/images/What%20we%20do/WindowImg/171_4_E_3_sub-page_ed.jpg",
+                  image: HwfContent.scholarshipImage,
                   description: 'Financial support for deserving students.',
                 ),
                 _buildServiceCard(

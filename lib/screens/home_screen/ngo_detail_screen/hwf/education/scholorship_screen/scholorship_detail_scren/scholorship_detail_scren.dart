@@ -150,15 +150,6 @@ class ScholarshipDetailScreen extends StatelessWidget {
         icon: const Icon(Icons.arrow_back_ios),
         onPressed: () => Navigator.pop(context),
       ),
-      actions: [
-        IconButton(
-          icon: const Icon(LucideIcons.share2),
-          onPressed: () {
-            // Share functionality
-          },
-        ),
-        const SizedBox(width: 8),
-      ],
     );
   }
   // Continue from previous part...

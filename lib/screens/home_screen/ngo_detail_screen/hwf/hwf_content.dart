@@ -144,4 +144,8 @@ class HwfContent {
     capacityBuildingofBuilding4,
     capacityBuildingofBuilding5,
   ];
+
+  ///////////////////////// [Scholorship] /////////////////////////
+  static const String othersRoot = 'assets/images/hwf/others/';
+  static const String scholarshipImage = '${othersRoot}scholarship.png';
 }
