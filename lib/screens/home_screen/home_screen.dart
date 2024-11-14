@@ -4,6 +4,7 @@ import 'package:vision_2026/constants/color_class.dart';
 import 'package:vision_2026/constants/image_class.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MSS/mss_detail_page.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MVT/mvt_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/hwt_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/masawat/masawat_detail_page.dart';
@@ -193,15 +194,15 @@ class HomeScreen extends StatelessWidget {
                       crossAxisSpacing: 16,
                       childAspectRatio: 1.5,
                       children: const [
-                        // PartnerCard(name: 'SBF'),
+                        PartnerCard(name: 'SBF'),
                         PartnerCard(name: 'HWF'),
                         PartnerCard(name: 'HWT'),
-                        // PartnerCard(name: 'IRT'),
-                        // PartnerCard(name: 'MVT'),
+                        PartnerCard(name: 'IRT'),
+                        PartnerCard(name: 'MVT'),
                         PartnerCard(name: 'MSS'),
                         PartnerCard(name: 'TWEET'),
                         PartnerCard(name: 'MASAWAT'),
-                        // PartnerCard(name: 'SAHULAT'),
+                        PartnerCard(name: 'SAHULAT'),
                       ],
                     ),
                   ],
@@ -277,7 +278,7 @@ class PartnerCard extends StatelessWidget {
         destinationScreen = const NGOProfileScreen();
         break;
       case 'MVT':
-        destinationScreen = const NGOProfileScreen();
+        destinationScreen = MVTProfileScreen();
         break;
       case 'MSS':
         destinationScreen = const MSSProfileScreen();
