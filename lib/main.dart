@@ -30,15 +30,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool isTestMode = Platform.isLinux;
-    int deviceWidth = isTestMode ? 200 : 800;
-
-    final isMobileDevice = MediaQuery.of(context).size.width < deviceWidth;
 
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => HomeProvider()),
       ],
-      child: isMobileDevice
+      child: !isTestMode
           ? MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'Vision 2026',
