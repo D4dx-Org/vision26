@@ -3,6 +3,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vision_2026/constants/color_class.dart';
 import 'package:vision_2026/constants/image_class.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/IRT/irt_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MSS/mss_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MVT/mvt_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_detail_page.dart';
@@ -275,7 +276,7 @@ class PartnerCard extends StatelessWidget {
         destinationScreen = const NGOProfileScreen();
         break;
       case 'IRT':
-        destinationScreen = const NGOProfileScreen();
+        destinationScreen = const IRTProfileScreen();
         break;
       case 'MVT':
         destinationScreen = MVTProfileScreen();
