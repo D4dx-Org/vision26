@@ -10,6 +10,7 @@ import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/hwt_conten
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/hwt_hunger_relief.dart/hwt_hunger_relief.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/low_cost_housing/low_cost_housing.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/orphan_and_widow/orphan_and_widow_care.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/water_sanitation/water_sanitation.dart';
 
 class HWTProfileScreen extends StatelessWidget {
   const HWTProfileScreen({super.key});
@@ -163,7 +164,7 @@ class HWTProfileScreen extends StatelessWidget {
                   InterventionAreaCard(
                     title: 'Water and Sanitaion',
                     icon: LucideIcons.droplet,
-                    child: HealthcareServicesScreen(),
+                    child: WaterSanitationScreen(),
                   ),
                   InterventionAreaCard(
                     title: 'Winter Relief',
