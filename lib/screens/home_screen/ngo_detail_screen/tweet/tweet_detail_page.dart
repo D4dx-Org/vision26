@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:vision_2026/constants/image_class.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
-import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/education_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/general_detail_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/healthcare/health_care_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/tweet/education/education_sub_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/tweet/tweet_content.dart';
 
 class TweetDetailPage extends StatelessWidget {
@@ -129,17 +128,20 @@ class TweetDetailPage extends StatelessWidget {
                 children: const [
                   InterventionAreaCard(
                     title: 'Education',
-                    icon: LucideIcons.graduationCap,
-                    child: EducationServicesScreen(),
+                    icon: LucideIcons
+                        .graduationCap, // Already appropriate - education icon
+                    child: EducationSubPage(),
                   ),
                   InterventionAreaCard(
                     title: 'Economic empowerment',
-                    icon: LucideIcons.stethoscope,
+                    icon: LucideIcons
+                        .wallet, // Changed to wallet icon to represent economic aspects
                     child: HealthcareServicesScreen(),
                   ),
                   InterventionAreaCard(
                     title: 'Widow support',
-                    icon: LucideIcons.heart,
+                    icon: LucideIcons
+                        .heart, // Already appropriate - represents care and support
                     child: GeneralDetailScreen(
                       title: "ORPHAN CARE PROGRAM",
                       description:
@@ -153,7 +155,8 @@ class TweetDetailPage extends StatelessWidget {
                   ),
                   InterventionAreaCard(
                     title: 'Leadership development',
-                    icon: LucideIcons.building,
+                    icon: LucideIcons
+                        .users, // Changed to users icon to represent leadership and team
                     child: GeneralDetailScreen(
                       title: 'Government Scheme\nFacilitation Center',
                       description:
@@ -163,7 +166,8 @@ class TweetDetailPage extends StatelessWidget {
                   ),
                   InterventionAreaCard(
                     title: "Women facilitation centre",
-                    icon: LucideIcons.briefcase,
+                    icon: LucideIcons
+                        .userCircle2, // Changed to user-circle-2 to represent person-centered services
                     child: GeneralDetailScreen(
                       title: 'Vocational Training',
                       description:
@@ -176,7 +180,8 @@ class TweetDetailPage extends StatelessWidget {
                   ),
                   InterventionAreaCard(
                     title: "Social empowerment",
-                    icon: LucideIcons.briefcase,
+                    icon: LucideIcons
+                        .network, // Changed to network icon to represent social connections
                     child: GeneralDetailScreen(
                       title: 'Vocational Training',
                       description:
@@ -189,7 +194,8 @@ class TweetDetailPage extends StatelessWidget {
                   ),
                   InterventionAreaCard(
                     title: "Mahila help desk",
-                    icon: LucideIcons.briefcase,
+                    icon: LucideIcons
+                        .helpingHand, // Changed to helping-hand icon to represent assistance
                     child: GeneralDetailScreen(
                       title: 'Vocational Training',
                       description:
@@ -202,7 +208,8 @@ class TweetDetailPage extends StatelessWidget {
                   ),
                   InterventionAreaCard(
                     title: "Relief & rehabilitation",
-                    icon: LucideIcons.briefcase,
+                    icon: LucideIcons
+                        .lifeBuoy, // Changed to life-buoy icon to represent emergency relief
                     child: GeneralDetailScreen(
                       title: 'Vocational Training',
                       description:
