@@ -7,8 +7,8 @@ import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/general_de
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/healthcare/health_care_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
 
-class NGOProfileScreen extends StatelessWidget {
-  const NGOProfileScreen({super.key});
+class SahulatDetailPage extends StatelessWidget {
+  const SahulatDetailPage({super.key});
 
   @override
   Widget build(BuildContext context) {

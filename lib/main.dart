@@ -35,26 +35,29 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => HomeProvider()),
       ],
-      child: !isTestMode
-          ? MaterialApp(
-              debugShowCheckedModeBanner: false,
-              title: 'Vision 2026',
-              theme: AppTheme.lightTheme(context),
-              home: const SplashScreen(),
-            )
-          : DevicePreview(
-              enabled: true,
-              isToolbarVisible: false,
-              builder: (context) => MaterialApp(
-                useInheritedMediaQuery: true,
-                theme: AppTheme.lightTheme(context),
-                home: const SplashScreen(),
-                locale: DevicePreview.locale(context),
-                builder: DevicePreview.appBuilder,
-                debugShowCheckedModeBanner: false,
-                title: 'Vision 2026',
-              ),
-            ),
+      child:
+          // !isTestMode
+          //     ?
+
+          MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Vision 2026',
+        theme: AppTheme.lightTheme(context),
+        home: const SplashScreen(),
+      ),
+      // : DevicePreview(
+      //     enabled: true,
+      //     isToolbarVisible: false,
+      //     builder: (context) => MaterialApp(
+      //       useInheritedMediaQuery: true,
+      //       theme: AppTheme.lightTheme(context),
+      //       home: const SplashScreen(),
+      //       locale: DevicePreview.locale(context),
+      //       builder: DevicePreview.appBuilder,
+      //       debugShowCheckedModeBanner: false,
+      //       title: 'Vision 2026',
+      //     ),
+      //   ),
     );
   }
 }
