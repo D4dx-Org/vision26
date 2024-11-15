@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vision_2026/constants/color_class.dart';
-import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MVT/components/intervention_areas.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MVT/components/mvt_intervention_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MVT/components/states.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MVT/mvt_content.dart';
 
 class MVTProfileScreen extends StatelessWidget {
-  MVTProfileScreen({super.key});
+  const MVTProfileScreen({super.key});
 
 // Update the interventionAreas list at the top of your MVTProfileScreen file:
 

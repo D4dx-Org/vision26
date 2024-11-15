@@ -1,6 +1,6 @@
+// ignore_for_file: unused_element
+
 import 'package:flutter/material.dart';
-import 'package:lucide_icons/lucide_icons.dart';
-import 'package:vision_2026/constants/color_class.dart';
 import 'package:vision_2026/constants/image_class.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/IRT/irt_detail_page.dart';
@@ -9,6 +9,7 @@ import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MVT/mvt_detail
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/hwt_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/masawat/masawat_detail_page.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sahulat/sahulat_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/tweet/tweet_detail_page.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -279,7 +280,7 @@ class PartnerCard extends StatelessWidget {
         destinationScreen = const IRTProfileScreen();
         break;
       case 'MVT':
-        destinationScreen = MVTProfileScreen();
+        destinationScreen = const MVTProfileScreen();
         break;
       case 'MSS':
         destinationScreen = const MSSProfileScreen();
@@ -291,7 +292,7 @@ class PartnerCard extends StatelessWidget {
         destinationScreen = const MasawatProfileScreen();
         break;
       case 'SAHULAT':
-        destinationScreen = const NGOProfileScreen();
+        destinationScreen = const SahulatDetailPage();
         break;
       default:
         destinationScreen = const NGOProfileScreen();

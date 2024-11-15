@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:vision_2026/constants/color_class.dart';
-import 'package:vision_2026/helper/navigation_helper.dart';
 
 class MSSEmergencyPage extends StatelessWidget {
   const MSSEmergencyPage({super.key});
