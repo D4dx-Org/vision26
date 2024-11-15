@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:vision_2026/constants/image_class.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
-import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/education_screen.dart';
-import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/general_detail_screen.dart';
-import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/healthcare/health_care_screen.dart';
-import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sahulat/detail_screens/advocacy_screen.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sahulat/detail_screens/financial_inclusion.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sahulat/detail_screens/handholding.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sahulat/detail_screens/ifccs_formation.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sahulat/detail_screens/technology_screen.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sahulat/detail_screens/thirft_service_screen.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sahulat/sahulat_content.dart';
 
 class SahulatDetailPage extends StatelessWidget {
   const SahulatDetailPage({super.key});
@@ -18,7 +20,7 @@ class SahulatDetailPage extends StatelessWidget {
         backgroundColor: const Color(0xFFB71C1C),
         elevation: 0,
         title: const Text(
-          'Human Welfare Foundation',
+          'Sahulat Microfinance Society',
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
@@ -46,9 +48,9 @@ class SahulatDetailPage extends StatelessWidget {
                   // Logo
                   Container(
                     width: 190,
-                    height: 100,
+                    height: 190,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      // color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
@@ -61,7 +63,7 @@ class SahulatDetailPage extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
                       child: Image.asset(
-                        ImageClass.hwfLogo,
+                        SahulatContent.sahulat18,
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -89,7 +91,7 @@ class SahulatDetailPage extends StatelessWidget {
                     ],
                   ),
                   child: const Text(
-                    HwfContent.hwfdescription,
+                    SahulatContent.sahulatDescription,
                     style: TextStyle(
                       fontSize: 16,
                       height: 1.5,
@@ -105,7 +107,7 @@ class SahulatDetailPage extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.all(16),
               child: Text(
-                'Core Intervention Areas',
+                "Core Activities",
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -121,57 +123,39 @@ class SahulatDetailPage extends StatelessWidget {
               child: GridView.count(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                crossAxisCount: 2,
+                crossAxisCount: 3,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
                 childAspectRatio: 1.3,
                 children: const [
                   InterventionAreaCard(
-                    title: 'Education',
-                    icon: LucideIcons.graduationCap,
-                    child: EducationServicesScreen(),
+                    title: 'IFCCS Formation',
+                    icon: LucideIcons.orbit,
+                    child: IFCCSFormationScreen(),
                   ),
                   InterventionAreaCard(
-                    title: 'Healthcare',
-                    icon: LucideIcons.stethoscope,
-                    child: HealthcareServicesScreen(),
+                    title: 'Thrift/Deposit Services',
+                    icon: LucideIcons.wallet,
+                    child: ThriftServicesScreen(),
                   ),
                   InterventionAreaCard(
-                    title: 'Orphan Care',
-                    icon: LucideIcons.heart,
-                    child: GeneralDetailScreen(
-                      title: "ORPHAN CARE PROGRAM",
-                      description:
-                          "The Orphan Care Program is dedicated to addressing the essential needs of children who require care and protection. Since 2009, we have been striving to improve the quality of life for children who have lost one or both parents, through a holistic and compassionate approach.",
-                      imagePath: HwfContent.other1,
-                      subPoints: [
-                        'Orphan Scholarship Program',
-                        'Orphan Hostels'
-                      ],
-                    ),
+                    title: 'Financial Inclusion',
+                    icon: LucideIcons.walletCards,
+                    child: FinancialInclusionScreen(),
                   ),
                   InterventionAreaCard(
-                    title: 'Government Scheme\nFacilitation Center',
-                    icon: LucideIcons.building,
-                    child: GeneralDetailScreen(
-                      title: 'Government Scheme\nFacilitation Center',
-                      description:
-                          "Nagrik Vikas Kendra (NVK) serves as a bridge between government schemes and marginalized communities, helping ensure that the benefits of these programs reach those in need.\n\n43 NVKs are functioning in 12 States. \n\nIn the last financial year, NVKs assisted beneficiaries in securing a collective total of ₹44 crore through various government schemes.",
-                      imagePath: HwfContent.other2,
-                    ),
+                    title: 'Technology',
+                    icon: LucideIcons.laptop,
+                    child: TechnologyScreen(),
                   ),
                   InterventionAreaCard(
-                    title: 'Vocational Training',
-                    icon: LucideIcons.briefcase,
-                    child: GeneralDetailScreen(
-                      title: 'Vocational Training',
-                      description:
-                          "Human Welfare Foundation's skill development and vocational training initiatives aim to empower underprivileged communities by enhancing their technical skills, increasing employability, and fostering opportunities for employment and entrepreneurship. These training centers are strategically established in some of the country's most underdeveloped regions. Major courses run are various computer courses and Assistant Nursing & Midwifery.",
-                      imagePath: HwfContent.other3,
-                      subPoints: [
-                        "Innovation and Skill Training Centers in 6 States"
-                      ],
-                    ),
+                      title: 'Advocacy',
+                      icon: LucideIcons.megaphone,
+                      child: AdvocacyScreen()),
+                  InterventionAreaCard(
+                    title: 'Handholding',
+                    icon: LucideIcons.userPlus,
+                    child: HandholdingSupportScreen(),
                   ),
                 ],
               ),

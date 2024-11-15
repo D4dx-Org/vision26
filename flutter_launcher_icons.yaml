@@ -1,0 +1,15 @@
+flutter_launcher_icons:
+  android: true  # Changed from "launcher_icon" to true
+  image_path: "assets/images/applogo.png"
+  adaptive_icon_background: "#FFFFFF"  # Added white background
+  adaptive_icon_foreground: "assets/images/applogo.png"  # Added foreground image
+  min_sdk_android: 21
+
+  ios: true
+  remove_alpha_channel_ios: true
+
+  web:
+    generate: true
+    image_path: "assets/images/applogo.png"
+    background_color: "#FFFFFF"  # Added specific background color
+    theme_color: "#hexcode"

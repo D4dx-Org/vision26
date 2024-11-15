@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element
+
 import 'package:flutter/material.dart';
 import 'package:vision_2026/constants/image_class.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
@@ -7,6 +9,7 @@ import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MVT/mvt_detail
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/hwt_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/masawat/masawat_detail_page.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sahulat/sahulat_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sbf/sbf_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/tweet/tweet_detail_page.dart';
 
@@ -215,6 +218,84 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  Widget _buildInterventionArea({
+    required IconData icon,
+    required String title,
+  }) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 12),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: ListTile(
+        leading: Icon(
+          icon,
+          color: const Color(0xFFB71C1C),
+          size: 24,
+        ),
+        title: Text(
+          title,
+          style: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        onTap: () {
+          // Handle intervention area tap
+        },
+      ),
+    );
+  }
+}
+
+class NGOLogos {
+  static const String hwfLogo =
+      'assets/images/logos/logos1.png'; // Human Welfare Foundation
+  static const String hwtLogo =
+      'assets/images/logos/logos2.png'; // Human Welfare Trust
+  static const String irtLogo =
+      'assets/images/logos/logos3.png'; // IDEAL Relief Trust
+  static const String masawatLogo = 'assets/images/logos/logos4.png'; // MASAWAT
+  static const String mssLogo = 'assets/images/logos/logos5.png'; // MSS
+  static const String mvtLogo =
+      'assets/images/logos/logos6.png'; // Model Village Trust
+  static const String sahulatLogo = 'assets/images/logos/logos7.png'; // Sahulat
+  static const String sbfLogo =
+      'assets/images/logos/logos8.png'; // Society for Bright Future
+  static const String tweetLogo = 'assets/images/logos/logos9.png'; // TWEET
+
+  static String getLogo(String ngoName) {
+    switch (ngoName.toUpperCase()) {
+      case 'HWF':
+        return hwfLogo;
+      case 'HWT':
+        return hwtLogo;
+      case 'IRT':
+        return irtLogo;
+      case 'MASAWAT':
+        return masawatLogo;
+      case 'MSS':
+        return mssLogo;
+      case 'MVT':
+        return mvtLogo;
+      case 'SAHULAT':
+        return sahulatLogo;
+      case 'SBF':
+        return sbfLogo;
+      case 'TWEET':
+        return tweetLogo;
+      default:
+        return '';
+    }
+  }
 }
 
 class PartnerCard extends StatelessWidget {
@@ -254,7 +335,7 @@ class PartnerCard extends StatelessWidget {
         destinationScreen = const MasawatProfileScreen();
         break;
       case 'SAHULAT':
-        destinationScreen = const NGOProfileScreen();
+        destinationScreen = const SahulatDetailPage();
         break;
       default:
         destinationScreen = const NGOProfileScreen();
@@ -285,14 +366,11 @@ class PartnerCard extends StatelessWidget {
           _navigateToNGOScreen(context);
         },
         borderRadius: BorderRadius.circular(12),
-        child: Center(
-          child: Text(
-            name,
-            style: const TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: Color(0xFFB71C1C),
-            ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Image.asset(
+            NGOLogos.getLogo(name),
+            fit: BoxFit.contain,
           ),
         ),
       ),
