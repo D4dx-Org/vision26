@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vision_2026/helper/image_viewer.dart';
+import 'package:vision_2026/helper/navigation_helper.dart';
 
 class EducationDetailPage extends StatelessWidget {
   final String title;
@@ -184,28 +186,38 @@ class EducationDetailPage extends StatelessWidget {
                             const BouncingScrollPhysics(), // Add smooth scrolling
                         itemCount: imageList!.length,
                         itemBuilder: (context, index) {
-                          return Container(
-                            width: 450,
-                            height: 300, // Add explicit height
-                            margin: const EdgeInsets.only(right: 12),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(12),
-                              child: Image.asset(
-                                imageList![index],
-                                fit: BoxFit.cover,
-                                errorBuilder: (context, error, stackTrace) {
-                                  return Container(
-                                    color: Colors.grey[300],
-                                    child: const Icon(
-                                      LucideIcons.imageOff,
-                                      color: Colors.grey,
-                                      size: 30,
-                                    ),
-                                  );
-                                },
+                          return GestureDetector(
+                            onTap: () {
+                              navigateTo(
+                                context: context,
+                                route: ImageViewerScreen(
+                                  imagePath: imageList![index],
+                                ),
+                              );
+                            },
+                            child: Container(
+                              width: 450,
+                              height: 300, // Add explicit height
+                              margin: const EdgeInsets.only(right: 12),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(12),
+                                child: Image.asset(
+                                  imageList![index],
+                                  fit: BoxFit.cover,
+                                  errorBuilder: (context, error, stackTrace) {
+                                    return Container(
+                                      color: Colors.grey[300],
+                                      child: const Icon(
+                                        LucideIcons.imageOff,
+                                        color: Colors.grey,
+                                        size: 30,
+                                      ),
+                                    );
+                                  },
+                                ),
                               ),
                             ),
                           );

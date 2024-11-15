@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vision_2026/constants/image_class.dart';
+import 'package:vision_2026/helper/image_viewer.dart';
+import 'package:vision_2026/helper/navigation_helper.dart';
 
 class SchoolProfileScreen extends StatelessWidget {
   const SchoolProfileScreen({super.key});
@@ -236,14 +238,24 @@ class SchoolProfileScreen extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       itemCount: 5,
                       itemBuilder: (context, index) {
-                        return Container(
-                          width: 160,
-                          margin: const EdgeInsets.only(right: 12),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                            image: const DecorationImage(
-                              image: NetworkImage(ImageClass.tempSchoolImage),
-                              fit: BoxFit.cover,
+                        return GestureDetector(
+                          onTap: () {
+                            navigateTo(
+                              context: context,
+                              route: const ImageViewerScreen(
+                                imagePath: ImageClass.tempSchoolImage,
+                              ),
+                            );
+                          },
+                          child: Container(
+                            width: 160,
+                            margin: const EdgeInsets.only(right: 12),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                              image: const DecorationImage(
+                                image: NetworkImage(ImageClass.tempSchoolImage),
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         );

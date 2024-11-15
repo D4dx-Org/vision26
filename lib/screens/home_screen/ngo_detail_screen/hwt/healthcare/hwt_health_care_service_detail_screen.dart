@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vision_2026/helper/image_viewer.dart';
+import 'package:vision_2026/helper/navigation_helper.dart';
 
 class HWTHealthcareServiceDetail extends StatelessWidget {
   final String title;
@@ -238,22 +240,31 @@ class HWTHealthcareServiceDetail extends StatelessWidget {
                             scrollDirection: Axis.horizontal,
                             itemCount: galleryImages.length,
                             itemBuilder: (context, index) {
-                              return Container(
-                                width: 160,
-                                margin: const EdgeInsets.only(right: 12),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
-                                  image: DecorationImage(
-                                    image: AssetImage(galleryImages[index]),
-                                    fit: BoxFit.cover,
-                                  ),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black.withOpacity(0.1),
-                                      blurRadius: 10,
-                                      offset: const Offset(0, 2),
+                              return GestureDetector(
+                                onTap: () {
+                                  navigateTo(
+                                    context: context,
+                                    route: ImageViewerScreen(
+                                        imagePath: galleryImages[index]),
+                                  );
+                                },
+                                child: Container(
+                                  width: 160,
+                                  margin: const EdgeInsets.only(right: 12),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(12),
+                                    image: DecorationImage(
+                                      image: AssetImage(galleryImages[index]),
+                                      fit: BoxFit.cover,
                                     ),
-                                  ],
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black.withOpacity(0.1),
+                                        blurRadius: 10,
+                                        offset: const Offset(0, 2),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               );
                             },
