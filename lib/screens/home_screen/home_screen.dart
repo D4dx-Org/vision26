@@ -255,6 +255,48 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
+class NGOLogos {
+  static const String hwfLogo =
+      'assets/images/logos/logos1.png'; // Human Welfare Foundation
+  static const String hwtLogo =
+      'assets/images/logos/logos2.png'; // Human Welfare Trust
+  static const String irtLogo =
+      'assets/images/logos/logos3.png'; // IDEAL Relief Trust
+  static const String masawatLogo = 'assets/images/logos/logos4.png'; // MASAWAT
+  static const String mssLogo = 'assets/images/logos/logos5.png'; // MSS
+  static const String mvtLogo =
+      'assets/images/logos/logos6.png'; // Model Village Trust
+  static const String sahulatLogo = 'assets/images/logos/logos7.png'; // Sahulat
+  static const String sbfLogo =
+      'assets/images/logos/logos8.png'; // Society for Bright Future
+  static const String tweetLogo = 'assets/images/logos/logos9.png'; // TWEET
+
+  static String getLogo(String ngoName) {
+    switch (ngoName.toUpperCase()) {
+      case 'HWF':
+        return hwfLogo;
+      case 'HWT':
+        return hwtLogo;
+      case 'IRT':
+        return irtLogo;
+      case 'MASAWAT':
+        return masawatLogo;
+      case 'MSS':
+        return mssLogo;
+      case 'MVT':
+        return mvtLogo;
+      case 'SAHULAT':
+        return sahulatLogo;
+      case 'SBF':
+        return sbfLogo;
+      case 'TWEET':
+        return tweetLogo;
+      default:
+        return '';
+    }
+  }
+}
+
 class PartnerCard extends StatelessWidget {
   final String name;
 
@@ -323,14 +365,11 @@ class PartnerCard extends StatelessWidget {
           _navigateToNGOScreen(context);
         },
         borderRadius: BorderRadius.circular(12),
-        child: Center(
-          child: Text(
-            name,
-            style: const TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: Color(0xFFB71C1C),
-            ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Image.asset(
+            NGOLogos.getLogo(name),
+            fit: BoxFit.contain,
           ),
         ),
       ),
