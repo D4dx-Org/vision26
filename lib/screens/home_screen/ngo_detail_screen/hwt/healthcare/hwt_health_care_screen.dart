@@ -173,7 +173,7 @@ class HWTHealthcareServicesScreen extends StatelessWidget {
                     galleryImages: [
                       'assets/images/hwt/Page-3 A(2)_sub image 1.jpg',
                       'assets/images/hwt/Page-3 A(2)_sub image 2.jpg',
-                      'assets/images/hwt/Page-3 A(2)_sub image 3.JPG',
+                      'assets/images/hwt/Page-3 A(2)_sub image 3.jpg',
                       'assets/images/hwt/Page-3 A(2)_sub image 4.jpeg'
                     ],
                   ),

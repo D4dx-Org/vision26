@@ -268,55 +268,6 @@ class HWTHealthcareServiceDetail extends StatelessWidget {
     );
   }
 
-  Widget _buildQuickStat({
-    required IconData icon,
-    required String value,
-    required String label,
-  }) {
-    return Expanded(
-      child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 4),
-        padding: const EdgeInsets.symmetric(vertical: 16),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(12),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.05),
-              blurRadius: 10,
-              offset: const Offset(0, 2),
-            ),
-          ],
-        ),
-        child: Column(
-          children: [
-            Icon(
-              icon,
-              color: const Color(0xFFB71C1C),
-              size: 24,
-            ),
-            const SizedBox(height: 8),
-            Text(
-              value,
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Color(0xFFB71C1C),
-              ),
-            ),
-            Text(
-              label,
-              style: TextStyle(
-                fontSize: 12,
-                color: Colors.grey[600],
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 
   Widget _buildFeatureItem(String text) {
     return Padding(

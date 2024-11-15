@@ -7,9 +7,6 @@ import 'package:vision_2026/screens/home_screen/ngo_detail_screen/IRT/education_
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/IRT/health/health.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/IRT/irt_content.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/IRT/social_welfare/irt_social_welfare.dart';
-import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MSS/advocacy_for_ethical_practices/mss_advocacy.dart';
-import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MSS/community_health_initiatives/mss_community_health.dart';
-import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MSS/healthcare_education_and_training/mss_healthcare.dart';
 
 class IRTProfileScreen extends StatelessWidget {
   const IRTProfileScreen({super.key});

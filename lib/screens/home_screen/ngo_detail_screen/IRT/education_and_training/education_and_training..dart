@@ -1,8 +1,11 @@
+// ignore: file_names
+// ignore: file_names
+// ignore_for_file: file_names, duplicate_ignore
+
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/IRT/education_and_training/education_training_detailed.dart';
-import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/healthcare/hwt_health_care_service_detail_screen.dart';
 
 class IRTEducationTrainingServicesScreen extends StatelessWidget {
   const IRTEducationTrainingServicesScreen({super.key});

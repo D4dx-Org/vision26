@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lucide_icons/lucide_icons.dart';
-import 'package:vision_2026/constants/color_class.dart';
 import 'package:vision_2026/constants/image_class.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/IRT/irt_detail_page.dart';
@@ -9,6 +7,7 @@ import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MVT/mvt_detail
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/hwt_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/masawat/masawat_detail_page.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sbf/sbf_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/tweet/tweet_detail_page.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -216,42 +215,6 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildInterventionArea({
-    required IconData icon,
-    required String title,
-  }) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 12),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: ListTile(
-        leading: Icon(
-          icon,
-          color: const Color(0xFFB71C1C),
-          size: 24,
-        ),
-        title: Text(
-          title,
-          style: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-        onTap: () {
-          // Handle intervention area tap
-        },
-      ),
-    );
-  }
 }
 
 class PartnerCard extends StatelessWidget {
@@ -267,7 +230,7 @@ class PartnerCard extends StatelessWidget {
 
     switch (name.toUpperCase()) {
       case 'SBF':
-        destinationScreen = const NGOProfileScreen();
+        destinationScreen = const SBFProfileScreen();
         break;
       case 'HWT':
         destinationScreen = const HWTProfileScreen();
@@ -279,7 +242,7 @@ class PartnerCard extends StatelessWidget {
         destinationScreen = const IRTProfileScreen();
         break;
       case 'MVT':
-        destinationScreen = MVTProfileScreen();
+        destinationScreen = const MVTProfileScreen();
         break;
       case 'MSS':
         destinationScreen = const MSSProfileScreen();

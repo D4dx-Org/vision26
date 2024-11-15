@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
-import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/general_detail_screen.dart';
-import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/healthcare/health_care_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/tweet/economic_empowerment/education_sub_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/tweet/education/education_detail_page.dart';

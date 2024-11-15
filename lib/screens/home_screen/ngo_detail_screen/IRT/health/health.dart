@@ -188,28 +188,4 @@ class IRTHealthScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildImageCard(String imagePath, {double aspectRatio = 4 / 3}) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 8,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: AspectRatio(
-        aspectRatio: aspectRatio,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(12),
-          child: Image.asset(
-            imagePath,
-            fit: BoxFit.cover,
-          ),
-        ),
-      ),
-    );
-  }
 }
