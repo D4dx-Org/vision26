@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
-import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sbf/disaster_management/covid_disaster_detail.dart';
-import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sbf/disaster_management/cyclone_disaster_detail_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sbf/disaster_management/detail_screen.dart';
-import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sbf/disaster_management/flood_disaster_detail.dart';
-import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sbf/disaster_management/landslide_disaster_detail.dart';
 
 class TrainingCategoriesScreen extends StatelessWidget {
   const TrainingCategoriesScreen({super.key});
