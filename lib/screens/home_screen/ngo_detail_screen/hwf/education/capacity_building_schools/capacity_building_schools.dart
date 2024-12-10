@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/capacity_building_schools/supported_schools_screen.dart';
+import 'models/school.dart';
 
 class CapacityBuildingScreen extends StatelessWidget {
   const CapacityBuildingScreen({super.key});
@@ -160,7 +162,7 @@ class CapacityBuildingScreen extends StatelessWidget {
                     ),
                     itemCount: states.length,
                     itemBuilder: (context, index) =>
-                        _buildStateChip(states[index]),
+                        _buildStateChip(states[index], context),
                   ),
                 ],
               ),
@@ -310,27 +312,40 @@ class CapacityBuildingScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildStateChip(String state) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 5,
-            offset: const Offset(0, 2),
+  Widget _buildStateChip(String state, BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => SupportedSchoolsScreen(
+              state: state,
+              schools: schoolsByState[state] ?? <School>[],
+            ),
           ),
-        ],
-      ),
-      child: Center(
-        child: Text(
-          state,
-          style: const TextStyle(
-            fontSize: 12,
-            color: Color(0xFFB71C1C),
+        );
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.05),
+              blurRadius: 5,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: Center(
+          child: Text(
+            state,
+            style: const TextStyle(
+              fontSize: 18,
+              color: Color(0xFFB71C1C),
+            ),
+            textAlign: TextAlign.center,
           ),
-          textAlign: TextAlign.center,
         ),
       ),
     );
@@ -400,15 +415,347 @@ class CapacityBuildingScreen extends StatelessWidget {
 
 // Sample data
 final List<String> states = [
-  'Assam',
-  'Bihar',
-  'Delhi',
-  'Gujarat',
-  'Jharkhand',
-  'Haryana',
-  'Madhya Pradesh',
-  'Maharashtra',
-  'Rajasthan',
-  'Uttar Pradesh',
   'West Bengal',
+  'Uttar Pradesh',
+  'Haryana',
+  'Rajasthan',
+  'Bihar',
+  'Jharkhand',
+  'Madhya Pradesh',
+  'Assam',
+  'New Delhi',
+  'Maharashtra',
+  'Gujarat',
+  'Manipur',
 ];
+
+final Map<String, List<School>> schoolsByState = {
+  'West Bengal': [
+    School(
+      district: 'Malda',
+      name: 'Ar-Rahman Social Welfare Society Primary School',
+      address: 'Bidhyananda, Borai, Malda, West Bengal',
+    ),
+    School(
+      district: 'Howrah',
+      name: 'Shishu Shiksha Niketan',
+      address:
+          'Sankharidaha Chunir Math, P.O. Begri, P.S. Domjur, Dist Howrah, West Bengal',
+    ),
+    School(
+      district: 'North 24 Parganas',
+      name: 'Al Manar Adarsh Shiksha Shibir',
+      address:
+          'Village Goalpota, P.O. Chouhata, P.O. Haroa, North 24 Parganas, Pin 743425',
+    ),
+    School(
+      district: 'South 24 Pargana',
+      name: 'Millat Girls Academy',
+      address:
+          'Village Dakhin Janardanpur, P.O. + P.S-Dholahat, South 24 Parganas, Pin-743399',
+    ),
+    School(
+      district: 'Murshidabad',
+      name: 'Madrasa Jamiatul Huda',
+      address:
+          'Umarpur, P.O. Ghorshala, Pin 742229, P.S. Raghunathganj, Murshidabad',
+    ),
+    School(
+      district: 'Murshidabad',
+      name: 'An Najat School',
+      address:
+          'Village Chharkatola, P.O. Sahabajpur, PS Kaliachak, Dist Malda, Pin 732201',
+    ),
+    School(
+      district: 'Murshidabad',
+      name: 'Mount Hira School',
+      address: 'Shankarpur, District Murshidabad, West Bengal',
+    ),
+    School(
+      district: 'Cooch Behar',
+      name: 'Cooch Behar Modern Academy',
+      address:
+          'Village Jibramerkholi, PO. Putimari, PS Kotwali, Cooch Behar, Pin 736157',
+    ),
+    School(
+      district: 'Medinapur',
+      name: 'Darussalam School',
+      address:
+          'Guaberia, P.O. Thabakhali, P.S. Sutahata, Purbo Medinapur, Pin 721635',
+    ),
+    School(
+      district: 'Dinajpur',
+      name: 'Islamic Ideal Mission Dakshin Dinajpur School',
+      address: 'District Dakshin Dinajpur, West Bengal',
+    ),
+    School(
+      district: 'North Dinajpur',
+      name: 'Jamiatul Ansar Lil Banat',
+      address: 'District North Dinajpur, West Bengal',
+    ),
+  ],
+  'Uttar Pradesh': [
+    School(
+      district: 'Mathura',
+      name: 'Darsgah Islami',
+      address: 'Village Sahar, District Mathura, Uttar Pradesh',
+    ),
+    School(
+      district: 'Buland Shahar',
+      name: 'M I J High School',
+      address: 'Julepura, Buland Shahar, Uttar Pradesh',
+    ),
+    School(
+      district: 'Bijnor',
+      name: 'Jametul-Muhsinat',
+      address: 'Basta, Bijnor, Uttar Pradesh',
+    ),
+    School(
+      district: 'Ghaziabad',
+      name: 'Madrasa Falah-e-Aam Junior High School',
+      address: 'Talimabad, Tiyala, Hapur, Ghaziabad - 245101',
+    ),
+    School(
+      district: 'Muzaffar Nagar',
+      name: 'Mahadul Banat Al Islami',
+      address: 'Mustafabad Colony, Muzaffar Nagar, Uttar Pradesh',
+    ),
+    School(
+      district: 'Badaun',
+      name: 'Madrasa Darsgah-E-Islami',
+      address: 'Uraulia, Badaun, Uttar Pradesh',
+    ),
+    School(
+      district: 'Bijnor',
+      name: 'Scholar Public School',
+      address: 'Nagina, Bijnor, UP West',
+    ),
+    School(
+      district: 'Mainpuri',
+      name: 'Al Falah Public School',
+      address: 'Kurawli, Mainpuri - 205265, Uttar Pradesh',
+    ),
+    School(
+      district: 'Bareily',
+      name: 'Darsgah-E Islami',
+      address: 'Bareily, Uttar Pradesh',
+    ),
+    School(
+      district: 'Hapur',
+      name: 'Falah E Aam Junior High School',
+      address: 'Tiyala, Hapur, Uttar Pradesh',
+    ),
+    School(
+      district: 'Deoria',
+      name: 'A.J.I Primary School',
+      address: 'Salempur, Deoria, Uttar Pradesh',
+    ),
+    School(
+      district: 'Jhansi',
+      name: 'Mother Ayesha Public School',
+      address: 'Taj Compound, Nandanpura, Jhansi, Uttar Pradesh',
+    ),
+    School(
+      district: 'Allahabad',
+      name: 'Al Ansar Public School',
+      address: 'Phoolpur, Allahabad, Uttar Pradesh',
+    ),
+    School(
+      district: 'Unnao',
+      name: 'Darsgah-E-Islami',
+      address: 'Miyaganj, Unnao, Uttar Pradesh',
+    ),
+  ],
+  'Haryana': [
+    School(
+      district: 'Palwal',
+      name: 'Al Huda Public School',
+      address: 'V.P.O Uttawar, Tah Hathin, Palwal, Haryana',
+    ),
+    School(
+      district: 'Mewat',
+      name: 'New Cresent Public School',
+      address: 'Village Rehpuwa, Po Pinagwa, Mewat, Haryana',
+    ),
+    School(
+      district: 'Mewat',
+      name: 'Al Falah Model School',
+      address: 'Bhadas, Mewat, Haryana',
+    ),
+    School(
+      district: 'Nuh',
+      name: 'B.H. Modern Public School',
+      address: 'Pinangwan, M H Police Choki, District Nuh, Haryana',
+    ),
+    School(
+      district: 'Mewat',
+      name: 'Govt. Sr. Sec. School',
+      address: 'Firozpur Jhirka, Mewat, Haryana',
+    ),
+    School(
+      district: 'Nuh',
+      name: 'Golden Kids School',
+      address: 'Badarpur, Nagina, District Nuh, Mewat, Haryana',
+    ),
+    School(
+      district: 'Nuh',
+      name: 'Al Hilal Public School',
+      address: 'V.P.O Shikrawa, Tah Punhana, Nuh, Haryana',
+    ),
+    School(
+      district: 'Nuh',
+      name: 'Star Modern Public School',
+      address: 'V.P.O Shikrawa, Tah Punhana, Nuh, Haryana',
+    ),
+    School(
+      district: 'Faridabad',
+      name: 'I.K. Convent School',
+      address: 'Vill Khandawali, Tah Ballabgarh, Faridabad, Haryana',
+    ),
+  ],
+  'Rajasthan': [
+    School(
+      district: 'Sawai Madhepur',
+      name: 'Darsgah e Islami Secondary School',
+      address: 'Chaan, District Sawai Madhepur, Rajasthan',
+    ),
+    School(
+      district: 'Barmer',
+      name: 'M V M Public School',
+      address: 'Pandhi ka Paar, Barmer, Rajasthan',
+    ),
+    School(
+      district: 'Tonk',
+      name: 'Madrasa Banatul Muslimeen Samiti',
+      address: 'Nayab Sahih Ki Naal, Tonk - 304001, Rajasthan',
+    ),
+    School(
+      district: 'Nagaur',
+      name: 'Red Rose Public School',
+      address: 'Makrana, District Nagaur, Rajasthan',
+    ),
+    School(
+      district: 'Ajmer',
+      name: 'Iqra Secondary School',
+      address: 'Beawar, Ajmer, Rajasthan',
+    ),
+  ],
+  'Bihar': [
+    School(
+      district: 'Muzaffarpur',
+      name: 'Hazrat Ali Academy',
+      address: 'Muzaffarpur, Bihar',
+    ),
+    School(
+      district: 'Nalanda',
+      name: 'Darsgah e Islami Educational & Welfare Society',
+      address: 'Islampur, Nalanda, Bihar',
+    ),
+    School(
+      district: 'Basmatia',
+      name: 'Darsgah-E-Islami',
+      address: 'Basmatia, Bihar',
+    ),
+  ],
+  'Jharkhand': [
+    School(
+      district: 'Ramgarh',
+      name: 'Islamic Academy',
+      address: 'Ramgarh, Jharkhand',
+    ),
+    School(
+      district: 'Hazaribagh',
+      name: 'Al Huda Public School',
+      address: 'Village Banha, Po Banha, Hazaribagh, Jharkhand',
+    ),
+    School(
+      district: 'Jamshedpur',
+      name: 'Al Manar Scholar School',
+      address: 'Jamshedpur, Jharkhand',
+    ),
+  ],
+  'Madhya Pradesh': [
+    School(
+      district: 'Jabalpur',
+      name: 'Darsgah e Islami Higher Secondary School',
+      address: 'Plot No 4731/1 At Amkhera, Jabalpur, Madhya Pradesh',
+    ),
+    School(
+      district: 'Ujjain',
+      name: 'Jamia Islamia Anjuman Noorul Islam',
+      address:
+          'Shikshan Samiti, Naguri Colony, Mahidpur, Ujjain, Madhya Pradesh',
+    ),
+    School(
+      district: 'Rankai',
+      name: 'Darsgah Iqra School',
+      address: 'Rankai, Madhya Pradesh',
+    ),
+  ],
+  'Assam': [
+    School(
+      district: 'Nalbari',
+      name: 'Hazrat Ali Model Academy',
+      address: 'P.O. Rampur, Nalbari, Assam',
+    ),
+    School(
+      district: 'Hojai',
+      name: 'Al Hasan Academy',
+      address: 'Hidayat Nagar, Rahmat Nagar, Charing, Nagaon, Hojai, Assam',
+    ),
+    School(
+      district: 'Dibrugarh',
+      name: 'Rameen Public School',
+      address: 'Dibrugarh, Assam',
+    ),
+    School(
+      district: 'Badarpur',
+      name: 'Al Ameen Academy',
+      address: 'Badarpur, Assam',
+    ),
+    School(
+      district: 'Cachar',
+      name: 'Al Ameen Academy',
+      address: 'Gumrah, Cachar, Assam',
+    ),
+  ],
+  'Delhi': [
+    School(
+      district: 'South Delhi',
+      name: 'Milli Model School',
+      address: 'Abul Fazal Enclave, Okhla, New Delhi',
+    ),
+    School(
+      district: 'North East Delhi',
+      name: 'Al Falah Islami School',
+      address: 'Veer Abdul Hameed Road, B-Block, North Ghonda, Delhi - 110053',
+    ),
+    School(
+      district: 'North East Delhi',
+      name: 'S.E.S. Public School',
+      address:
+          '55, Gali No 2, Phase 2, Bhagirathi Vihar, Mustafabad, North East Delhi',
+    ),
+  ],
+  'Maharashtra': [
+    School(
+      district: 'Yavatmal',
+      name: 'Shamshul uloom Urdu High School',
+      address: 'Gujri Chowk, Pusad, Yavatmal, Maharashtra',
+    ),
+  ],
+  'Gujarat': [
+    School(
+      district: 'Anand',
+      name: 'Anjuman Falahe e daren Senior Sec School',
+      address: 'Opp Juni Masjid Po Bhalej, Anand, Gujarat',
+    ),
+  ],
+  'Manipur': [
+    School(
+      district: 'Tamenglong',
+      name: 'Iqra School',
+      address: 'Village Sibilong, Tamenglong, Manipur',
+    ),
+  ],
+};
