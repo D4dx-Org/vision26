@@ -1,6 +1,6 @@
 # vision_2026
 
-A new Flutter project.
+Vision 2026.
 
 ## Getting Started
 
