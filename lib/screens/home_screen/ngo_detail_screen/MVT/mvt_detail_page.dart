@@ -69,19 +69,6 @@ class MVTProfileScreen extends StatelessWidget {
               ),
             ),
 
-            // Page Indicator
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 8),
-              child: Text(
-                'Page-3',
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.grey,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-
             // Mission Statement
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -228,7 +215,7 @@ class MVTProfileScreen extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3,
-                  childAspectRatio: 2.0,
+                  childAspectRatio: 1.5,
                   mainAxisSpacing: 12,
                   crossAxisSpacing: 12,
                 ),

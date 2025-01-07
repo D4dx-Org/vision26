@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vision_2026/helper/image_viewer.dart';
+import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/capacity_building_schools/supported_schools_screen.dart';
 import 'models/school.dart';
@@ -229,7 +231,7 @@ class CapacityBuildingScreen extends StatelessWidget {
                     ),
                     itemCount: HwfContent.capacityBuildingImagesList.length,
                     itemBuilder: (context, index) => _buildGalleryImage(
-                        HwfContent.capacityBuildingImagesList[index]),
+                        HwfContent.capacityBuildingImagesList[index], context),
                   ),
                 ],
               ),
@@ -241,23 +243,31 @@ class CapacityBuildingScreen extends StatelessWidget {
   }
 
 // Add this method to your class
-  Widget _buildGalleryImage(String imagePath) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
+  Widget _buildGalleryImage(String imagePath, context) {
+    return GestureDetector(
+      onTap: () {
+        navigateTo(
+          context: context,
+          route: ImageViewerScreen(imagePath: imagePath),
+        );
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: Image.asset(
+            imagePath,
+            fit: BoxFit.cover,
           ),
-        ],
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(16),
-        child: Image.asset(
-          imagePath,
-          fit: BoxFit.cover,
         ),
       ),
     );
@@ -719,7 +729,7 @@ final Map<String, List<School>> schoolsByState = {
       address: 'Gumrah, Cachar, Assam',
     ),
   ],
-  'Delhi': [
+  'New Delhi': [
     School(
       district: 'South Delhi',
       name: 'Milli Model School',

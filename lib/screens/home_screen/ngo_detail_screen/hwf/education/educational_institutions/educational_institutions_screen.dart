@@ -171,7 +171,7 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                         HwfContent.howrahScholarSchool4,
                         HwfContent.howrahScholarSchool5,
                       ],
-                      location: 'West Bengal',
+                      location: 'Howrah, West Bengal',
                       description:
                           "The Scholar School in Bhagnan, Howrah, West Bengal, offers education up to 10th standard. This residential school has good infrastructure including hostel for boys and good play area.",
                     ),
@@ -195,7 +195,7 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                   name: 'The Scholar School',
                   location: 'Rargaon, Jharkhand',
                   place: 'Jharkhand',
-                  image: HwfContent.howrahScholarSchool5,
+                  image: HwfContent.howrahScholarSchool6,
                 ),
                 _buildInstitutionCard(
                   context: context,

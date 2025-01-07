@@ -4,9 +4,13 @@ class HwfContent {
   static const String imageRoot1 = 'assets/images/hwf/siddikhasan/';
   static const String imageRoot2 = 'assets/images/hwf/malda/';
   static const String imageRoot3 = 'assets/images/hwf/delhischolar/';
+  static const String imageRoot4 = 'assets/images/hwf/scholorship/';
 
   static const String hwfdescription =
       "Human Welfare Foundation carries out humanitarian and development programs to fight poverty and people’s sufferings by working in partnership with vulnerable communities";
+
+  static const String tweetTrust =
+      "With a mission to promote social and economic empowerment, TWEET addresses core challenges facing women today. By focusing on education, financial independence, and emotional well-being, the organization helps women break free from cycles of poverty and dependence, building an environment where they can thrive.";
 
   /// [Educational Institutions] ///
   static const String educationIntro = '${imageRoot}education-intro.jpg';
@@ -90,6 +94,8 @@ class HwfContent {
       '${imageRoot3}howrahScholarSchool4.jpg';
   static const String howrahScholarSchool5 =
       '${imageRoot3}howrahScholarSchool5.jpg';
+  static const String howrahScholarSchool6 =
+      '${imageRoot3}howrahScholarSchool6.jpg';
 
   //// rargaon Scholar School
   static const String rargaonsScholarSchool =
@@ -166,4 +172,39 @@ class HwfContent {
   static const String other1 = '${othersRoot}others1.png';
   static const String other2 = '${othersRoot}others2.png';
   static const String other3 = '${othersRoot}others3.jpg';
+
+  ///////////////////////// [ScholorShip] /////////////////////////
+  static const String scholorshipCommonImg1 =
+      '${imageRoot4}scholorship-common1.jpg';
+  static const String scholorshipCommonImg2 =
+      '${imageRoot4}scholorship-common2.jpg';
+  static const String scholorshipCommonImg3 =
+      '${imageRoot4}scholorship-common3.jpg';
+  static const String scholorshipCommonImg4 =
+      '${imageRoot4}scholorship-common4.jpg';
+  static const String scholorshipCommonImg5 =
+      '${imageRoot4}scholorship-common5.jpg';
+  static const String scholorshipCommonImg6 =
+      '${imageRoot4}scholorship-common6.jpg';
+  static const String scholorshipCommonImg7 =
+      '${imageRoot4}scholorship-common7.jpg';
+  static const String scholorshipCommonImg8 =
+      '${imageRoot4}scholorship-common8.jpg';
+  static const String scholorshipCommonImg9 =
+      '${imageRoot4}scholorship-common9.jpg';
+  static const String scholorshipCommonImg10 =
+      '${imageRoot4}scholorship-common10.jpg';
+
+  static const List<String> scholorShipImageList = [
+    scholorshipCommonImg1,
+    scholorshipCommonImg2,
+    scholorshipCommonImg3,
+    scholorshipCommonImg4,
+    scholorshipCommonImg5,
+    scholorshipCommonImg6,
+    scholorshipCommonImg7,
+    scholorshipCommonImg8,
+    scholorshipCommonImg9,
+    scholorshipCommonImg10,
+  ];
 }

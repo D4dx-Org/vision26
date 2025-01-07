@@ -121,10 +121,10 @@ class NGOProfileScreen extends StatelessWidget {
               child: GridView.count(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                crossAxisCount: 3,
+                crossAxisCount: 2,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
-                childAspectRatio: 1.3,
+                childAspectRatio: 0.9,
                 children: const [
                   InterventionAreaCard(
                     title: 'Education',
@@ -239,7 +239,7 @@ class InterventionAreaCard extends StatelessWidget {
                 Text(
                   title,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 14,
                     fontWeight: FontWeight.w600,
                     color: Colors.black87,
                   ),

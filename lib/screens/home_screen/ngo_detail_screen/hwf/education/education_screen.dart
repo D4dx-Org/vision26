@@ -69,7 +69,7 @@ class EducationServicesScreen extends StatelessWidget {
                 crossAxisCount: 2,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
-                childAspectRatio: 1.2,
+                childAspectRatio: 0.7,
               ),
               delegate: SliverChildListDelegate([
                 _buildServiceCard(
@@ -215,7 +215,7 @@ class EducationServicesScreen extends StatelessWidget {
                         Text(
                           title,
                           style: const TextStyle(
-                            fontSize: 15,
+                            fontSize: 14,
                             fontWeight: FontWeight.bold,
                             color: Color(0xFFB71C1C),
                           ),

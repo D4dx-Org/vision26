@@ -89,7 +89,7 @@ class TweetDetailPage extends StatelessWidget {
                     ],
                   ),
                   child: const Text(
-                    HwfContent.hwfdescription,
+                    HwfContent.tweetTrust,
                     style: TextStyle(
                       fontSize: 16,
                       height: 1.5,
@@ -121,10 +121,10 @@ class TweetDetailPage extends StatelessWidget {
               child: GridView.count(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                crossAxisCount: 3,
+                crossAxisCount: 2,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
-                childAspectRatio: 1.5,
+                childAspectRatio: 1.2,
                 children: const [
                   InterventionAreaCard(
                     title: 'Education',
@@ -301,7 +301,7 @@ class InterventionAreaCard extends StatelessWidget {
                 Text(
                   title,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 15,
                     fontWeight: FontWeight.w600,
                     color: Colors.black87,
                   ),
