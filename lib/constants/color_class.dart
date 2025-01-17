@@ -11,5 +11,7 @@ class ColorClass {
   static const Color transparent = Colors.transparent;
   static const Color grey = Color(0xFF757575);
   static const Color darkGrey = Color(0xFF434343);
+  static const Color grey3C = Color(0xFF3C3C3C);
+
   static const Color neutral900 = Color(0xff0A0D14);
 }

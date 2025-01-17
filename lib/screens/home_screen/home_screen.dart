@@ -1,7 +1,9 @@
 // ignore_for_file: unused_element
 
 import 'package:flutter/material.dart';
+import 'package:vision_2026/constants/color_class.dart';
 import 'package:vision_2026/constants/image_class.dart';
+import 'package:vision_2026/constants/textstyle_class.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/IRT/irt_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MSS/mss_detail_page.dart';
@@ -207,6 +209,39 @@ class HomeScreen extends StatelessWidget {
                         PartnerCard(name: 'MASAWAT'),
                         PartnerCard(name: 'MSS'),
                       ],
+                    ),
+                    SizedBox(height: 20),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 0),
+                      child: Column(
+                        children: [
+                          Text(
+                            'Powered by',
+                            style: TextStyleClass.primaryFont600(
+                              12,
+                              const Color(0xFF64748B),
+                            ),
+                          ),
+                          const SizedBox(height: 5),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                ImageClass.d4Logo,
+                                height: 80,
+                                fit: BoxFit.contain,
+                                color: ColorClass.grey3C,
+                              ),
+                              Image.asset(
+                                ImageClass.d4dxlogo,
+                                height: 80,
+                                fit: BoxFit.contain,
+                                color: ColorClass.grey3C,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),

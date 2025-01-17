@@ -2,6 +2,9 @@ class ImageClass {
   static const String imageRoot = 'assets/images/';
   static const String appIcon = '${imageRoot}appIcon.png';
   static const String hwfLogo = '${imageRoot}logo-hwf.png';
+
+  static const String d4dxlogo = '${imageRoot}D4DX _logo.png';
+  static const String d4Logo = '${imageRoot}D4media_logo.png';
   static const String masawatLogo =
       '${imageRoot}masawat/MASAWAT transparent logo.png';
   static const String hwtLogo =

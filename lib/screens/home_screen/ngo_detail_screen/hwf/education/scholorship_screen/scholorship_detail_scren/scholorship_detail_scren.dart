@@ -2,6 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vision_2026/helper/image_viewer.dart';
+import 'package:vision_2026/helper/navigation_helper.dart';
+import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
 
 enum ScholarshipType {
   undergraduate,
@@ -99,7 +102,70 @@ class ScholarshipDetailScreen extends StatelessWidget {
           SliverToBoxAdapter(
             child: _buildRelatedScholarshipsSection(context),
           ),
+          SliverToBoxAdapter(
+            child: Container(
+              margin: const EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Gallery',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  GridView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 1.0,
+                      mainAxisSpacing: 16,
+                      crossAxisSpacing: 16,
+                    ),
+                    itemCount: HwfContent.scholorShipImageList.length,
+                    itemBuilder: (context, index) => _buildGalleryImage(
+                        HwfContent.scholorShipImageList[index], context),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildGalleryImage(String imagePath, context) {
+    return GestureDetector(
+      onTap: () {
+        navigateTo(
+          context: context,
+          route: ImageViewerScreen(imagePath: imagePath),
+        );
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: Image.asset(
+            imagePath,
+            fit: BoxFit.cover,
+          ),
+        ),
       ),
     );
   }
@@ -156,9 +222,6 @@ class ScholarshipDetailScreen extends StatelessWidget {
   }
   // Continue from previous part...
 
-
-
-
   Widget _buildRelatedScholarshipsSection(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(20),
@@ -181,8 +244,6 @@ class ScholarshipDetailScreen extends StatelessWidget {
       ),
     );
   }
-
-
 
   Widget _buildRelatedScholarshipCard(
       ScholarshipType scholarshipType, BuildContext context) {
@@ -304,8 +365,6 @@ class ScholarshipDetailScreen extends StatelessWidget {
         return 'The Prof. K.A Siddique Hassan Memorial PG Scholarship honors the visionary behind the Vision 2026 project and a pioneer in human empowerment. This annual scholarship program is designed to support exceptionally talented students from underprivileged communities, providing them with the opportunity to pursue higher education in top institutions across the country. A total of 100 postgraduate students will be selected for this scholarship each year, with each recipient receiving Rs 8,000 monthly till end of their course.';
     }
   }
-
-
 
   Color _getScholarshipTypeColor(ScholarshipType scholarshipType) {
     switch (scholarshipType) {
