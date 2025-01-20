@@ -186,13 +186,13 @@ class HWTHealthcareServicesScreen extends StatelessWidget {
                   child: const HWTHealthcareServiceDetail(
                     title: 'Mobile Medical Vans',
                     code: "#MobileMedicalVans",
-                    description:
-                        'These mobile medical vans travel through various slum areas of Delhi and Lucknow. An MBBS doctor onboard provides free consultations and distributes medicines at no charge.',
+                    description: '',
                     imagePath: "assets/images/hwt/Page-3 A(3)_sub image 1.jpeg",
                     icon: LucideIcons.truck,
                     features: [
                       '	HWT, through its Al Shifa Multi Specialty Hospital, runs a mobile medical van in Delhi benefiting residents of slums across South Delhi area.',
                       'In collaboration with Khidmat Welfare Trust and Zakat and Charitable Foundation (Lucknow), HWT runs another medical van in Lucknow, serving slum dwellers. ',
+                      'These mobile medical vans travel through various slum areas of Delhi and Lucknow. An MBBS doctor onboard provides free consultations and distributes medicines at no charge.',
                     ],
                   ),
                 ),

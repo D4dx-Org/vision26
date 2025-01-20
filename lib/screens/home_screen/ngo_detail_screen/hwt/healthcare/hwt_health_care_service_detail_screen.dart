@@ -157,43 +157,45 @@ class HWTHealthcareServiceDetail extends StatelessWidget {
                 // ),
 
                 // Description
-                Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 20),
-                  padding: const EdgeInsets.all(24),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(16),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.05),
-                        blurRadius: 10,
-                        offset: const Offset(0, 2),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // const Text(
-                      //   'About this Service',
-                      //   style: TextStyle(
-                      //     fontSize: 20,
-                      //     fontWeight: FontWeight.bold,
-                      //     color: Colors.black87,
-                      //   ),
-                      // ),
-                      const SizedBox(height: 16),
-                      Text(
-                        description,
-                        style: TextStyle(
-                          fontSize: 16,
-                          height: 1.6,
-                          color: Colors.grey[800],
+                description.isEmpty
+                    ? SizedBox.shrink()
+                    : Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 20),
+                        padding: const EdgeInsets.all(24),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(16),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.05),
+                              blurRadius: 10,
+                              offset: const Offset(0, 2),
+                            ),
+                          ],
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            // const Text(
+                            //   'About this Service',
+                            //   style: TextStyle(
+                            //     fontSize: 20,
+                            //     fontWeight: FontWeight.bold,
+                            //     color: Colors.black87,
+                            //   ),
+                            // ),
+                            const SizedBox(height: 16),
+                            Text(
+                              description,
+                              style: TextStyle(
+                                fontSize: 16,
+                                height: 1.6,
+                                color: Colors.grey[800],
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
-                ),
 
                 // Key Features
                 // Key Features
@@ -280,7 +282,6 @@ class HWTHealthcareServiceDetail extends StatelessWidget {
       ),
     );
   }
-
 
   Widget _buildFeatureItem(String text) {
     return Padding(
