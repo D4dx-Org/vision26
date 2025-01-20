@@ -1,6 +1,5 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:device_preview/device_preview.dart';
 import 'package:vision_2026/constants/theme.dart';
 import 'package:vision_2026/providers/home_provider.dart';
 import 'package:vision_2026/screens/splash_screen/splashscreen.dart';
@@ -28,7 +27,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // bool isTestMode = Platform.isLinux;
-    final isMobileDevice = MediaQuery.of(context).size.width < 800;
+    // final isMobileDevice = MediaQuery.of(context).size.width < 800;
 
     return MultiProvider(
       providers: [
@@ -37,35 +36,34 @@ class MyApp extends StatelessWidget {
       child:
           //  !isTestMode
           //     ?
-          //     MaterialApp(
-          //   debugShowCheckedModeBanner: false,
-          //   title: 'Vision 2026',
-          //   theme: AppTheme.lightTheme(context),
-          //   home: const SplashScreen(),
-          // ),
-          // :
-
-          isMobileDevice
-              ? MaterialApp(
-                  home: const SplashScreen(),
-                  debugShowCheckedModeBanner: false,
-                  title: 'Vision 2026',
-                  theme: AppTheme.lightTheme(context),
-                )
-              : DevicePreview(
-                  enabled: true,
-                  defaultDevice: Devices.ios.iPadAir4,
-                  isToolbarVisible: false,
-                  builder: (context) => MaterialApp(
-                    useInheritedMediaQuery: true,
-                    theme: AppTheme.lightTheme(context),
-                    home: const SplashScreen(),
-                    locale: DevicePreview.locale(context),
-                    builder: DevicePreview.appBuilder,
-                    debugShowCheckedModeBanner: false,
-                    title: 'Vision 2026',
-                  ),
-                ),
+          MaterialApp(
+        home: const SplashScreen(),
+        debugShowCheckedModeBanner: false,
+        title: 'Vision 2026',
+        theme: AppTheme.lightTheme(context),
+      ),
+      // :
+      // isMobileDevice
+      //     ? MaterialApp(
+      //         home: const SplashScreen(),
+      //         debugShowCheckedModeBanner: false,
+      //         title: 'Vision 2026',
+      //         theme: AppTheme.lightTheme(context),
+      //       )
+      //     : DevicePreview(
+      //         enabled: true,
+      //         defaultDevice: Devices.ios.iPadAir4,
+      //         isToolbarVisible: false,
+      //         builder: (context) => MaterialApp(
+      //           useInheritedMediaQuery: true,
+      //           theme: AppTheme.lightTheme(context),
+      //           home: const SplashScreen(),
+      //           locale: DevicePreview.locale(context),
+      //           builder: DevicePreview.appBuilder,
+      //           debugShowCheckedModeBanner: false,
+      //           title: 'Vision 2026',
+      //         ),
+      //       ),
     );
   }
 }
