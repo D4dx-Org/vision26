@@ -121,8 +121,8 @@ class HWTHealthcareServicesScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             sliver: SliverGrid(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                childAspectRatio: 0.85,
+                crossAxisCount: 2,
+                childAspectRatio: 1.0,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
               ),
@@ -324,11 +324,11 @@ class HWTHealthcareServicesScreen extends StatelessWidget {
                     color: const Color(0xFFB71C1C),
                   ),
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 6),
                 Text(
                   title,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 12,
                     fontWeight: FontWeight.bold,
                     color: Colors.black87,
                   ),

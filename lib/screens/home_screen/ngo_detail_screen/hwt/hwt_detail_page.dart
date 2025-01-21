@@ -129,7 +129,7 @@ class HWTProfileScreen extends StatelessWidget {
                 crossAxisCount: 3,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
-                childAspectRatio: 1.3,
+                childAspectRatio: 0.8,
                 children: const [
                   InterventionAreaCard(
                     title: 'HealthCare',
@@ -228,11 +228,11 @@ class InterventionAreaCard extends StatelessWidget {
                   size: 32,
                   color: const Color(0xFFB71C1C),
                 ),
-                const SizedBox(height: 12),
+                const SizedBox(height: 6),
                 Text(
                   title,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 13,
                     fontWeight: FontWeight.w600,
                     color: Colors.black87,
                   ),

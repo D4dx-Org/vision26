@@ -112,7 +112,7 @@ class WaterSanitationScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: 16),
                           Text(
-                            'WT addresses the critical clean drinking water shortage by installing hand pumps, submersibles, open wells and water coolers in rural areas.',
+                            'HWT addresses the critical clean drinking water shortage by installing hand pumps, submersibles, open wells and water coolers in rural areas.',
                             style: TextStyle(
                               fontSize: 16,
                               height: 1.5,
