@@ -90,8 +90,8 @@ class DisasterReadyCategoryScreen extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             sliver: SliverGrid(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 3,
+                crossAxisCount: 1,
+                childAspectRatio: 4,
                 mainAxisSpacing: 20,
                 crossAxisSpacing: 20,
               ),
@@ -232,16 +232,20 @@ class DisasterReadyCategoryScreen extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(20),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFFB71C1C),
+                Expanded(
+                  child: Text(
+                    title,
+                    style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFFB71C1C),
+                    ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
+                const SizedBox(width: 10),
                 const Icon(
                   Icons.arrow_forward_ios,
                   color: Color(0xFFB71C1C),

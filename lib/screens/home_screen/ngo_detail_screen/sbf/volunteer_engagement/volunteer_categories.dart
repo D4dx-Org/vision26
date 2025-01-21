@@ -90,10 +90,10 @@ class VolunteerCategoriesScreen extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             sliver: SliverGrid(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
+                crossAxisCount: 1,
                 childAspectRatio: 3,
-                mainAxisSpacing: 20,
-                crossAxisSpacing: 20,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 10,
               ),
               delegate: SliverChildListDelegate([
                 _buildCycloneCard(
@@ -126,7 +126,7 @@ class VolunteerCategoriesScreen extends StatelessWidget {
                 ),
                 _buildCycloneCard(
                   context,
-                  title: 'TREE FOR LIFE (PLANTATION PROGRAM)',
+                  title: 'TREE FOR LIFE  (PLANTATION PROGRAM)',
                   child: const CycloneDetailScreen(
                     title: 'TREE FOR LIFE (PLANTATION PROGRAM)',
                     content:
@@ -241,16 +241,20 @@ class VolunteerCategoriesScreen extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(20),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFFB71C1C),
+                Expanded(
+                  child: Text(
+                    title,
+                    style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFFB71C1C),
+                    ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
+                const SizedBox(width: 10),
                 const Icon(
                   Icons.arrow_forward_ios,
                   color: Color(0xFFB71C1C),

@@ -121,8 +121,8 @@ class IRTHealthcareServicesScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             sliver: SliverGrid(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                childAspectRatio: 0.85,
+                crossAxisCount: 2,
+                childAspectRatio: 1, // Adjusted for better content fit
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
               ),
@@ -257,40 +257,44 @@ class IRTHealthcareServicesScreen extends StatelessWidget {
           },
           borderRadius: BorderRadius.circular(16),
           child: Padding(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(16), // Reduced padding
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(12), // Reduced padding
                   decoration: BoxDecoration(
                     color: const Color(0xFFB71C1C).withOpacity(0.1),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Icon(
                     icon,
-                    size: 32,
+                    size: 28, // Slightly reduced icon size
                     color: const Color(0xFFB71C1C),
                   ),
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 12), // Reduced spacing
                 Text(
                   title,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 14, // Reduced font size
                     fontWeight: FontWeight.bold,
                     color: Colors.black87,
                   ),
                   textAlign: TextAlign.center,
+                  maxLines: 2, // Limit to 2 lines
+                  overflow: TextOverflow.ellipsis,
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 6), // Reduced spacing
                 Text(
                   description,
                   style: TextStyle(
-                    fontSize: 12,
+                    fontSize: 11, // Reduced font size
                     color: Colors.grey[600],
                   ),
                   textAlign: TextAlign.center,
+                  maxLines: 3, // Limit to 3 lines
+                  overflow: TextOverflow.ellipsis,
                 ),
               ],
             ),

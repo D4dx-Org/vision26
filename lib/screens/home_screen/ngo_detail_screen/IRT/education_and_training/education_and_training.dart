@@ -68,7 +68,7 @@ class IRTEducationTrainingServicesScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        const SizedBox(height: 8),
+                        const SizedBox(height: 6),
                         const Text(
                           'Education & Training',
                           style: TextStyle(
@@ -90,35 +90,35 @@ class IRTEducationTrainingServicesScreen extends StatelessWidget {
           ),
 
           // Mission Statement
-          SliverToBoxAdapter(
-            child: Transform.translate(
-              offset: const Offset(0, -3),
-              child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 20),
-                padding: const EdgeInsets.all(24),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(16),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
-                      blurRadius: 10,
-                      offset: const Offset(0, 5),
-                    ),
-                  ],
-                ),
-                child: Text(
-                  '',
-                  style: TextStyle(
-                    fontSize: 16,
-                    height: 1.6,
-                    color: Colors.grey[800],
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ),
-          ),
+          // SliverToBoxAdapter(
+          //   child: Transform.translate(
+          //     offset: const Offset(0, -3),
+          //     child: Container(
+          //       margin: const EdgeInsets.symmetric(horizontal: 20),
+          //       padding: const EdgeInsets.all(24),
+          //       decoration: BoxDecoration(
+          //         color: Colors.white,
+          //         borderRadius: BorderRadius.circular(16),
+          //         boxShadow: [
+          //           BoxShadow(
+          //             color: Colors.black.withOpacity(0.1),
+          //             blurRadius: 10,
+          //             offset: const Offset(0, 5),
+          //           ),
+          //         ],
+          //       ),
+          //       child: Text(
+          //         '',
+          //         style: TextStyle(
+          //           fontSize: 16,
+          //           height: 1.6,
+          //           color: Colors.grey[800],
+          //         ),
+          //         textAlign: TextAlign.center,
+          //       ),
+          //     ),
+          //   ),
+          // ),
 
           // Services Grid
           SliverPadding(
@@ -126,7 +126,7 @@ class IRTEducationTrainingServicesScreen extends StatelessWidget {
             sliver: SliverGrid(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 0.85,
+                childAspectRatio: 0.72,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
               ),
@@ -210,40 +210,43 @@ class IRTEducationTrainingServicesScreen extends StatelessWidget {
           },
           borderRadius: BorderRadius.circular(16),
           child: Padding(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(16),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
                     color: const Color(0xFFB71C1C).withOpacity(0.1),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Icon(
                     icon,
-                    size: 32,
+                    size: 28,
                     color: const Color(0xFFB71C1C),
                   ),
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 12),
                 Text(
                   title,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.black87,
                   ),
                   textAlign: TextAlign.center,
+                  maxLines: 3,
                 ),
                 const SizedBox(height: 8),
                 Text(
                   description,
                   style: TextStyle(
-                    fontSize: 12,
+                    fontSize: 11,
                     color: Colors.grey[600],
                   ),
                   textAlign: TextAlign.center,
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ],
             ),

@@ -26,8 +26,8 @@ class EconomicEmpowermentScreen extends StatelessWidget {
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
-                          Color.fromARGB(255, 47, 132, 211),
-                          Color.fromARGB(255, 28, 82, 183),
+                          Color(0xFFD32F2F),
+                          Color(0xFFB71C1C),
                         ],
                       ),
                     ),
@@ -125,8 +125,8 @@ class EconomicEmpowermentScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             sliver: SliverGrid(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                childAspectRatio: 1.0,
+                crossAxisCount: 2,
+                childAspectRatio: 0.9,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
               ),
@@ -222,20 +222,20 @@ class EconomicEmpowermentScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: Colors.blueAccent.withOpacity(0.1),
+                    color: const Color(0xFFB71C1C).withOpacity(0.1),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Icon(
                     icon,
                     size: 32,
-                    color: Colors.blueAccent,
+                    color: const Color(0xFFB71C1C),
                   ),
                 ),
                 const SizedBox(height: 16),
                 Text(
                   title,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.black87,
                   ),

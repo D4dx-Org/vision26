@@ -195,7 +195,6 @@ class MasawatProfileScreen extends StatelessWidget {
 class InterventionAreaCard extends StatelessWidget {
   final String title;
   final IconData icon;
-
   final Widget child;
 
   const InterventionAreaCard({
@@ -228,33 +227,30 @@ class InterventionAreaCard extends StatelessWidget {
           },
           borderRadius: BorderRadius.circular(15),
           child: Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Icon(
                   icon,
-                  size: 32,
+                  size: 28,
                   color: ColorClass.primaryColor,
                 ),
-                const SizedBox(height: 12),
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black87,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
                 const SizedBox(height: 4),
-                // Text(
-                //   code,
-                //   style: TextStyle(
-                //     fontSize: 14,
-                //     color: Colors.grey[600],
-                //   ),
-                // ),
+                Flexible(
+                  child: Text(
+                    title,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black87,
+                    ),
+                    textAlign: TextAlign.center,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
               ],
             ),
           ),

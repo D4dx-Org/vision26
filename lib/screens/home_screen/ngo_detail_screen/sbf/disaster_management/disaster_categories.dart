@@ -94,7 +94,7 @@ class DisasterCategoryList extends StatelessWidget {
             sliver: SliverGrid(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 1.2,
+                childAspectRatio: 1,
                 mainAxisSpacing: 20,
                 crossAxisSpacing: 20,
               ),

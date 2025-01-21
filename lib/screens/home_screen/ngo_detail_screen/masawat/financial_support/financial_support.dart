@@ -121,8 +121,8 @@ class MasawatFinancialPage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             sliver: SliverGrid(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                childAspectRatio: 0.85,
+                crossAxisCount: 2,
+                childAspectRatio: 0.95,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
               ),
@@ -130,7 +130,7 @@ class MasawatFinancialPage extends StatelessWidget {
                 _buildServiceCard(
                   context: context,
                   title: 'Micro-Scale Livelihood Initiative',
-                  icon: LucideIcons.store, // Small shop/store icon
+                  icon: LucideIcons.store,
                   description:
                       'Financial support up to ₹25,000 for small businesses in rural and semi-urban areas',
                   child: const MasawatFinancialDetailScreen(
@@ -156,7 +156,7 @@ class MasawatFinancialPage extends StatelessWidget {
                 _buildServiceCard(
                   context: context,
                   title: 'Small-Scale Livelihood Initiative',
-                  icon: LucideIcons.warehouse, // Shop icon for retail ventures
+                  icon: LucideIcons.warehouse,
                   description:
                       'Support up to ₹50,000 for retail ventures like garment, stationery, and grocery shops',
                   child: const MasawatFinancialDetailScreen(
@@ -183,7 +183,7 @@ class MasawatFinancialPage extends StatelessWidget {
                 _buildServiceCard(
                   context: context,
                   title: 'Medium-Scale Livelihood Initiative',
-                  icon: LucideIcons.building2, // Larger business/warehouse icon
+                  icon: LucideIcons.building2,
                   description:
                       'Funding up to ₹1,00,000 for established businesses like poultry farms and pharmacies',
                   child: const MasawatFinancialDetailScreen(
@@ -208,8 +208,7 @@ class MasawatFinancialPage extends StatelessWidget {
                 _buildServiceCard(
                   context: context,
                   title: 'Large-Scale Livelihood Initiative',
-                  icon:
-                      LucideIcons.factory, // Manufacturing/large business icon
+                  icon: LucideIcons.factory,
                   description:
                       'Support for small manufacturing units and commercial vehicle ventures',
                   child: const MasawatFinancialDetailScreen(
@@ -271,40 +270,48 @@ class MasawatFinancialPage extends StatelessWidget {
           },
           borderRadius: BorderRadius.circular(16),
           child: Padding(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(12),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     color: const Color(0xFFB71C1C).withOpacity(0.1),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Icon(
                     icon,
-                    size: 32,
+                    size: 24,
                     color: const Color(0xFFB71C1C),
                   ),
                 ),
-                const SizedBox(height: 16),
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black87,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
                 const SizedBox(height: 8),
-                Text(
-                  description,
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.grey[600],
+                Flexible(
+                  child: Text(
+                    title,
+                    style: const TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ),
+                    textAlign: TextAlign.center,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                   ),
-                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 4),
+                Flexible(
+                  child: Text(
+                    description,
+                    style: TextStyle(
+                      fontSize: 10,
+                      color: Colors.grey[600],
+                    ),
+                    textAlign: TextAlign.center,
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
               ],
             ),
