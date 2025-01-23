@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:vision_2026/constants/color_class.dart';
+import 'package:vision_2026/helper/image_viewer.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/hwt_hunger_relief.dart/hwt_hunger_relief_detailed_page.dart';
 
 class HWTHungerReliefPage extends StatelessWidget {
   const HWTHungerReliefPage({super.key});
+
+  void _openImageViewer(BuildContext context, String imagePath) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ImageViewerScreen(imagePath: imagePath),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,13 +65,17 @@ HWT is committed to fighting hunger by distributing essential Food Kits to those
                 // Banner Image with Overlay Text and Back Button
                 Stack(
                   children: [
-                    Container(
-                      height: isMobile ? 200 : 300,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                              'assets/images/hwt/Page-3 B(1)_sub image 1.jpg'),
-                          fit: BoxFit.cover,
+                    GestureDetector(
+                      onTap: () => _openImageViewer(context,
+                          'assets/images/hwt/Page-3 B(1)_sub image 1.jpg'),
+                      child: Container(
+                        height: isMobile ? 200 : 300,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                                'assets/images/hwt/Page-3 B(1)_sub image 1.jpg'),
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ),
@@ -123,14 +137,7 @@ HWT is committed to fighting hunger by distributing essential Food Kits to those
                             'Launched in 2021, serving over 3,50,000 freshly-cooked meals',
                             Icons.restaurant,
                             isMobile,
-                            () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ProjectDetailPage(
-                                  projectDetails: projectEhsasDetails,
-                                ),
-                              ),
-                            ),
+                            projectEhsasDetails,
                           ),
                           _buildProgramCard(
                             context,
@@ -138,14 +145,7 @@ HWT is committed to fighting hunger by distributing essential Food Kits to those
                             'Distributed 4,00,000 Food Kits including Ration Kits and Meat Kits',
                             Icons.inventory,
                             isMobile,
-                            () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ProjectDetailPage(
-                                  projectDetails: foodKitsDetails,
-                                ),
-                              ),
-                            ),
+                            foodKitsDetails,
                           ),
                         ],
                       ),
@@ -166,40 +166,57 @@ HWT is committed to fighting hunger by distributing essential Food Kits to those
     String description,
     IconData icon,
     bool isMobile,
-    VoidCallback onTap,
+    ProjectDetails details,
   ) {
     return InkWell(
-      onTap: onTap,
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ProjectDetailPage(
+            projectDetails: details,
+          ),
+        ),
+      ),
       child: Card(
         elevation: 4,
         color: Colors.white,
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(icon,
-                  size: isMobile ? 40 : 48, color: ColorClass.primaryColor),
-              const SizedBox(height: 16),
-              Text(
-                title,
-                style: TextStyle(
-                  fontSize: isMobile ? 20 : 24,
-                  fontWeight: FontWeight.bold,
-                  color: ColorClass.primaryColor,
-                ),
+        child: Stack(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  GestureDetector(
+                    onTap: () => _openImageViewer(context, details.coverImage),
+                    child: Icon(
+                      icon,
+                      size: isMobile ? 40 : 48,
+                      color: ColorClass.primaryColor,
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontSize: isMobile ? 20 : 24,
+                      fontWeight: FontWeight.bold,
+                      color: ColorClass.primaryColor,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    description,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: isMobile ? 14 : 16,
+                      color: Colors.grey[800],
+                    ),
+                  ),
+                ],
               ),
-              const SizedBox(height: 8),
-              Text(
-                description,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: isMobile ? 14 : 16,
-                  color: Colors.grey[800],
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

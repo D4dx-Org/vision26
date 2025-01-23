@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vision_2026/helper/image_viewer.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
-import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/education/components/hwt_education_service_detail_screen.dart';
 
 class HWTEducationServicesScreen extends StatelessWidget {
   const HWTEducationServicesScreen({super.key});
@@ -288,16 +288,6 @@ class HWTEducationServicesScreen extends StatelessWidget {
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                         ),
-                        // const SizedBox(height: 4),
-                        // Text(
-                        //   description,
-                        //   style: TextStyle(
-                        //     fontSize: 16,
-                        //     color: Colors.grey[600],
-                        //   ),
-                        //   maxLines: 2,
-                        //   overflow: TextOverflow.ellipsis,
-                        // ),
                       ],
                     ),
                   ),
@@ -305,6 +295,85 @@ class HWTEducationServicesScreen extends StatelessWidget {
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class HwtEducationServiceDetailScreen extends StatelessWidget {
+  final String title;
+  final String description;
+  final List<String> images;
+
+  const HwtEducationServiceDetailScreen({
+    super.key,
+    required this.title,
+    required this.description,
+    required this.images,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    bool isMobile = MediaQuery.of(context).size.width < 600;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+        backgroundColor: const Color(0xFFB71C1C),
+        foregroundColor: Colors.white,
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                description,
+                style: const TextStyle(
+                  fontSize: 16,
+                  height: 1.6,
+                ),
+              ),
+            ),
+            if (images.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: GridView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: isMobile ? 2 : 3,
+                    crossAxisSpacing: 16,
+                    mainAxisSpacing: 16,
+                    childAspectRatio: 1,
+                  ),
+                  itemCount: images.length,
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ImageViewerScreen(
+                              imagePath: images[index],
+                            ),
+                          ),
+                        );
+                      },
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.asset(
+                          images[index],
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+          ],
         ),
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vision_2026/helper/image_viewer.dart';
 
 class WaterSanitationScreen extends StatelessWidget {
   const WaterSanitationScreen({super.key});
@@ -9,23 +10,28 @@ class WaterSanitationScreen extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          // App Bar with Gradient and Title
+          // App Bar with Image and Gradient
           SliverAppBar(
-            expandedHeight: 200,
+            expandedHeight: 300,
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               background: Stack(
                 fit: StackFit.expand,
                 children: [
-                  // Gradient Background
+                  // Header Image
+                  Image.asset(
+                    "assets/images/hwt/Page-3 G_sub image 1.jpg",
+                    fit: BoxFit.cover,
+                  ),
+                  // Gradient Overlay
                   Container(
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       gradient: LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
-                          Color(0xFFD32F2F),
-                          Color(0xFFB71C1C),
+                          Colors.black.withOpacity(0.2),
+                          Colors.black.withOpacity(0.8),
                         ],
                       ),
                     ),
@@ -56,13 +62,25 @@ class WaterSanitationScreen extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 8),
-                        const Text(
-                          'Water and Sanitation',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 32,
-                            fontWeight: FontWeight.bold,
-                          ),
+                        Row(
+                          children: [
+                            const Icon(
+                              LucideIcons.droplets,
+                              color: Colors.white,
+                              size: 24,
+                            ),
+                            const SizedBox(width: 12),
+                            const Expanded(
+                              child: Text(
+                                'Water and Sanitation',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -70,6 +88,7 @@ class WaterSanitationScreen extends StatelessWidget {
                 ],
               ),
             ),
+            backgroundColor: const Color(0xFFB71C1C),
             leading: IconButton(
               icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
               onPressed: () => Navigator.pop(context),
@@ -264,22 +283,36 @@ class WaterSanitationScreen extends StatelessWidget {
   }
 
   Widget _buildImageCard(String imagePath) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
+    return Builder(
+      builder: (context) => GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ImageViewerScreen(
+                imagePath: imagePath,
+              ),
+            ),
+          );
+        },
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.1),
+                blurRadius: 10,
+                offset: const Offset(0, 2),
+              ),
+            ],
           ),
-        ],
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(16),
-        child: Image.asset(
-          imagePath,
-          fit: BoxFit.cover,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(16),
+            child: Image.asset(
+              imagePath,
+              fit: BoxFit.cover,
+            ),
+          ),
         ),
       ),
     );
