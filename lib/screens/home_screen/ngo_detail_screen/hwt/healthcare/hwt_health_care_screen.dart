@@ -173,8 +173,8 @@ class HWTHealthcareServicesScreen extends StatelessWidget {
                     galleryImages: [
                       'assets/images/hwt/Page-3 A(2)_sub image 1.jpg',
                       'assets/images/hwt/Page-3 A(2)_sub image 2.jpg',
-                      'assets/images/hwt/Page-3 A(2)_sub image 3.jpg',
-                      'assets/images/hwt/Page-3 A(2)_sub image 4.jpeg'
+                      'assets/images/hwt/Page-3 A(2)_sub image 3.jpeg',
+                      'assets/images/hwt/Page-3 A(2)_sub image 4.jpeg',
                     ],
                   ),
                 ),
@@ -193,6 +193,9 @@ class HWTHealthcareServicesScreen extends StatelessWidget {
                       '	HWT, through its Al Shifa Multi Specialty Hospital, runs a mobile medical van in Delhi benefiting residents of slums across South Delhi area.',
                       'In collaboration with Khidmat Welfare Trust and Zakat and Charitable Foundation (Lucknow), HWT runs another medical van in Lucknow, serving slum dwellers. ',
                       'These mobile medical vans travel through various slum areas of Delhi and Lucknow. An MBBS doctor onboard provides free consultations and distributes medicines at no charge.',
+                    ],
+                    galleryImages: [
+                      'assets/images/hwt/Page-3 A(3)_sub image 1.jpeg',
                     ],
                   ),
                 ),
@@ -334,15 +337,6 @@ class HWTHealthcareServicesScreen extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                // const SizedBox(height: 8),
-                // Text(
-                //   description,
-                //   style: TextStyle(
-                //     fontSize: 12,
-                //     color: Colors.grey[600],
-                //   ),
-                //   textAlign: TextAlign.center,
-                // ),
               ],
             ),
           ),

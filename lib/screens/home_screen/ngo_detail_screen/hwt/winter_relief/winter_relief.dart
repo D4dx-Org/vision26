@@ -191,13 +191,13 @@ class WinterReliefScreen extends StatelessWidget {
                             children: [
                               Expanded(
                                 child: _buildImageCard(
-                                  "assets/images/hwt/Page-3 H_sub image 2.jpg",
+                                  "assets/images/hwt/Page-3 H_sub image 2.JPG",
                                 ),
                               ),
                               const SizedBox(width: 16),
                               Expanded(
                                 child: _buildImageCard(
-                                  "assets/images/hwt/Page-3 H_sub image 3.jpg",
+                                  "assets/images/hwt/Page-3 H_sub image 3.JPG",
                                 ),
                               ),
                             ],

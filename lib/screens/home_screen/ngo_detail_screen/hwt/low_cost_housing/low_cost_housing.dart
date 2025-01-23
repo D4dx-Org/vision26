@@ -9,7 +9,6 @@ class LowCostHousingScreen extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          // App Bar with Gradient and Title
           SliverAppBar(
             expandedHeight: 200,
             pinned: true,
@@ -17,7 +16,6 @@ class LowCostHousingScreen extends StatelessWidget {
               background: Stack(
                 fit: StackFit.expand,
                 children: [
-                  // Gradient Background
                   Container(
                     decoration: const BoxDecoration(
                       gradient: LinearGradient(
@@ -30,7 +28,6 @@ class LowCostHousingScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // Tag and Title
                   Positioned(
                     left: 24,
                     right: 24,
@@ -75,8 +72,6 @@ class LowCostHousingScreen extends StatelessWidget {
               onPressed: () => Navigator.pop(context),
             ),
           ),
-
-          // Content
           SliverToBoxAdapter(
             child: Transform.translate(
               offset: const Offset(0, -20),
@@ -88,7 +83,6 @@ class LowCostHousingScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Description
                     Container(
                       margin: const EdgeInsets.all(24),
                       padding: const EdgeInsets.all(20),
@@ -123,8 +117,6 @@ class LowCostHousingScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-
-                    // Statistics Section
                     Container(
                       margin: const EdgeInsets.symmetric(horizontal: 24),
                       padding: const EdgeInsets.all(20),
@@ -176,76 +168,21 @@ class LowCostHousingScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 24),
-
-                    // Images Grid
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 24),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      child: GridView.count(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 16,
+                        crossAxisSpacing: 16,
                         children: [
-                          // First row - 2 images
-                          Row(
-                            children: [
-                              Expanded(
-                                  child: _buildImageCard(
-                                      "assets/images/hwt/Page-3 F_sub image 1.jpg")),
-                              const SizedBox(width: 16),
-                              Expanded(
-                                  child: _buildImageCard(
-                                      "assets/images/hwt/Page-3 F_sub image 2.jpeg")),
-                              const SizedBox(width: 16),
-                              Expanded(
-                                  child: _buildImageCard(
-                                "assets/images/hwt/Page-3 F_sub image 3.png",
-                              )),
-                            ],
-                          ),
-                          const SizedBox(height: 16),
-                          // Single image with caption
-                          // Container(
-                          //   decoration: BoxDecoration(
-                          //     color: Colors.white,
-                          //     borderRadius: BorderRadius.circular(16),
-                          //     boxShadow: [
-                          //       BoxShadow(
-                          //         color: Colors.black.withOpacity(0.1),
-                          //         blurRadius: 10,
-                          //         offset: const Offset(0, 2),
-                          //       ),
-                          //     ],
-                          //   ),
-                          //   child: Column(
-                          //     children: [
-                          //       ClipRRect(
-                          //         borderRadius: const BorderRadius.vertical(
-                          //           top: Radius.circular(16),
-                          //         ),
-                          //         child: Image.asset(
-                          //           "assets/images/hwt/Page-3 F_sub image 3.png",
-                          //           fit: BoxFit.cover,
-                          //           width: double.infinity,
-                          //         ),
-                          //       ),
-                          //       Container(
-                          //         padding: const EdgeInsets.all(12),
-                          //         decoration: const BoxDecoration(
-                          //           color: Colors.white,
-                          //           borderRadius: BorderRadius.vertical(
-                          //             bottom: Radius.circular(16),
-                          //           ),
-                          //         ),
-                          //         child: const Text(
-                          //           'Assam Flood Rehabilitation - Gobardhana, Barpeta',
-                          //           style: TextStyle(
-                          //             fontSize: 14,
-                          //             color: Colors.grey,
-                          //           ),
-                          //           textAlign: TextAlign.center,
-                          //         ),
-                          //       ),
-                          //     ],
-                          //   ),
-                          // ),
+                          _buildImageCard(
+                              "assets/images/hwt/Page-3 F_sub image 1.jpg"),
+                          _buildImageCard(
+                              "assets/images/hwt/Page-3 F_sub image 2.jpeg"),
+                          _buildImageCard(
+                              "assets/images/hwt/Page-3 F_sub image 3.png"),
                         ],
                       ),
                     ),
@@ -301,7 +238,7 @@ class LowCostHousingScreen extends StatelessWidget {
         ],
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(16),
         child: Image.asset(
           imagePath,
           fit: BoxFit.cover,
