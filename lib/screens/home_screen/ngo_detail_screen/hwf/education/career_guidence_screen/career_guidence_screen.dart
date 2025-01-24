@@ -140,7 +140,7 @@ class CareerGuidanceScreen extends StatelessWidget {
             sliver: SliverGrid(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 1,
+                childAspectRatio: 0.72,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
               ),

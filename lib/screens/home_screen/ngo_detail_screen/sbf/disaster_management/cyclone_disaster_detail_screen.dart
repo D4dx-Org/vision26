@@ -21,7 +21,7 @@ class CycloneDisasterDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        // title: Text(title),
         backgroundColor: const Color(0xFFB71C1C),
       ),
       body: SingleChildScrollView(
@@ -45,7 +45,7 @@ class CycloneDisasterDetailScreen extends StatelessWidget {
                     child: Text(
                       title.toUpperCase(),
                       style: const TextStyle(
-                        color: Colors.black,
+                        color: Colors.white,
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
                       ),

@@ -181,7 +181,7 @@ class DisasterReadyCategoryScreen extends StatelessWidget {
                     images: [
                       'assets/images/sbf/3 B 7 SUB IMAGE (1).jpg',
                       'assets/images/sbf/3 B 7 SUB IMAGE (2).jpg',
-                      '',
+                      'assets/images/sbf/3 B 7 SUB IMAGE (3).jpg',
                     ],
                   ),
                 ),

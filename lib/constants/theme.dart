@@ -10,8 +10,8 @@ class AppTheme {
       appBarTheme: AppBarTheme(
           color: Colors.white,
           elevation: 0,
-          iconTheme: const IconThemeData(color: Colors.black),
-          titleTextStyle: GoogleFonts.poppins(color: Colors.black)),
+          iconTheme: const IconThemeData(color: Colors.white),
+          titleTextStyle: GoogleFonts.poppins(color: Colors.white)),
       textTheme: TextTheme(
         bodyLarge: GoogleFonts.poppins(color: ColorClass.neutral900),
         bodyMedium: GoogleFonts.poppins(color: ColorClass.neutral900),
