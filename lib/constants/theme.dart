@@ -8,10 +8,11 @@ class AppTheme {
       scaffoldBackgroundColor: Colors.white,
       fontFamily: 'Poppins',
       appBarTheme: AppBarTheme(
-          color: Colors.white,
-          elevation: 0,
-          iconTheme: const IconThemeData(color: Colors.white),
-          titleTextStyle: GoogleFonts.poppins(color: Colors.white)),
+        color: Colors.white,
+        elevation: 0,
+        iconTheme: const IconThemeData(color: Colors.black), // Changed to black
+        titleTextStyle: GoogleFonts.poppins(color: Colors.white),
+      ),
       textTheme: TextTheme(
         bodyLarge: GoogleFonts.poppins(color: ColorClass.neutral900),
         bodyMedium: GoogleFonts.poppins(color: ColorClass.neutral900),

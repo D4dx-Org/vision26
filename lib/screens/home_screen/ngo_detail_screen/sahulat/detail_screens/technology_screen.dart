@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vision_2026/helper/image_viewer.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sahulat/sahulat_content.dart';
 
 class TechnologyScreen extends StatelessWidget {
@@ -27,47 +28,80 @@ class TechnologyScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Row(
-        children: [
-          // Left Panel - Information
-          const Expanded(
-            flex: 3,
-            child: SingleChildScrollView(
-              padding: EdgeInsets.all(24),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  AboutTechnologyCard(),
-                  SizedBox(height: 24),
-                  SoftwareInfoCard(),
-                  SizedBox(height: 24),
-                  FeaturesCard(),
-                ],
-              ),
+      body: CustomScrollView(
+        slivers: [
+          SliverPadding(
+            padding: const EdgeInsets.all(24),
+            sliver: SliverList(
+              delegate: SliverChildListDelegate([
+                const AboutTechnologyCard(),
+                const SizedBox(height: 24),
+                const SoftwareInfoCard(),
+                const SizedBox(height: 24),
+                const FeaturesCard(),
+                const SizedBox(height: 24),
+                Text(
+                  'Gallery',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.red[700],
+                  ),
+                ),
+                const SizedBox(height: 16),
+              ]),
             ),
           ),
-          // Right Panel - Screenshots
-          Expanded(
-            flex: 2,
-            child: Container(
-              color: Colors.grey[100],
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.all(24),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Gallery',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.red[700],
+          SliverPadding(
+            padding: const EdgeInsets.symmetric(horizontal: 24),
+            sliver: SliverGrid(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 16,
+                crossAxisSpacing: 16,
+                childAspectRatio: 1.5,
+              ),
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  List<String> images = [
+                    SahulatContent.sahulat19,
+                    SahulatContent.sahulat20,
+                    SahulatContent.sahulat21,
+                    SahulatContent.sahulat22,
+                    SahulatContent.sahulat23,
+                  ];
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ImageViewerScreen(
+                            imagePath: images[index],
+                          ),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.1),
+                            blurRadius: 10,
+                          ),
+                        ],
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(16),
+                        child: Image.asset(
+                          images[index],
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
-                    const SizedBox(height: 16),
-                    const ScreenshotsGrid(),
-                  ],
-                ),
+                  );
+                },
+                childCount: 5,
               ),
             ),
           ),
@@ -122,7 +156,7 @@ class SoftwareInfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(24),
+      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
@@ -143,11 +177,11 @@ class SoftwareInfoCard extends StatelessWidget {
                 color: Colors.red[700],
                 size: 24,
               ),
-              const SizedBox(width: 12),
+              const SizedBox(width: 3),
               Text(
                 'K3One Software',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color: Colors.red[700],
                 ),

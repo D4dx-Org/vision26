@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vision_2026/helper/image_viewer.dart';
+import 'package:vision_2026/helper/navigation_helper.dart';
 
 class CommunityDevelopmentScreen extends StatelessWidget {
   const CommunityDevelopmentScreen({super.key});
@@ -9,7 +11,6 @@ class CommunityDevelopmentScreen extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          // App Bar with Gradient and Title
           SliverAppBar(
             expandedHeight: 200,
             pinned: true,
@@ -17,7 +18,6 @@ class CommunityDevelopmentScreen extends StatelessWidget {
               background: Stack(
                 fit: StackFit.expand,
                 children: [
-                  // Gradient Background
                   Container(
                     decoration: const BoxDecoration(
                       gradient: LinearGradient(
@@ -30,7 +30,6 @@ class CommunityDevelopmentScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // Tag and Title
                   Positioned(
                     left: 24,
                     right: 24,
@@ -75,8 +74,6 @@ class CommunityDevelopmentScreen extends StatelessWidget {
               onPressed: () => Navigator.pop(context),
             ),
           ),
-
-          // Content
           SliverToBoxAdapter(
             child: Transform.translate(
               offset: const Offset(0, -20),
@@ -88,7 +85,6 @@ class CommunityDevelopmentScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Description
                     Container(
                       margin: const EdgeInsets.all(24),
                       padding: const EdgeInsets.all(20),
@@ -123,8 +119,6 @@ class CommunityDevelopmentScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-
-                    // Images Section
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 24),
                       child: Column(
@@ -135,6 +129,7 @@ class CommunityDevelopmentScreen extends StatelessWidget {
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: _buildImageCard(
+                                    context,
                                     "assets/images/irt/image39.jpg",
                                     aspectRatio: 4 / 3,
                                   ),
@@ -144,6 +139,7 @@ class CommunityDevelopmentScreen extends StatelessWidget {
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: _buildImageCard(
+                                    context,
                                     "assets/images/irt/image40.jpg",
                                     aspectRatio: 4 / 3,
                                   ),
@@ -158,6 +154,7 @@ class CommunityDevelopmentScreen extends StatelessWidget {
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: _buildImageCard(
+                                    context,
                                     "assets/images/irt/image11.jpg",
                                     aspectRatio: 4 / 3,
                                   ),
@@ -167,6 +164,7 @@ class CommunityDevelopmentScreen extends StatelessWidget {
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: _buildImageCard(
+                                    context,
                                     "assets/images/irt/image13.jpg",
                                     aspectRatio: 4 / 3,
                                   ),
@@ -188,25 +186,34 @@ class CommunityDevelopmentScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildImageCard(String imagePath, {double aspectRatio = 4 / 3}) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 8,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: AspectRatio(
-        aspectRatio: aspectRatio,
-        child: ClipRRect(
+  Widget _buildImageCard(BuildContext context, String imagePath,
+      {double aspectRatio = 4 / 3}) {
+    return GestureDetector(
+      onTap: () {
+        navigateTo(
+          context: context,
+          route: ImageViewerScreen(imagePath: imagePath),
+        );
+      },
+      child: Container(
+        decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          child: Image.asset(
-            imagePath,
-            fit: BoxFit.cover,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 8,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: AspectRatio(
+          aspectRatio: aspectRatio,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: Image.asset(
+              imagePath,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vision_2026/helper/image_viewer.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sahulat/sahulat_content.dart';
 
 class AdvocacyScreen extends StatelessWidget {
@@ -27,31 +28,84 @@ class AdvocacyScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const AboutAdvocacyCard(),
-              const SizedBox(height: 5),
-              const PolicyAdvocacyCard(),
-              const SizedBox(height: 5),
-              const PropagationCard(),
-              const SizedBox(height: 5),
-              Text(
-                'Gallery',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.red[700],
+      body: CustomScrollView(
+        slivers: [
+          SliverPadding(
+            padding: const EdgeInsets.all(24),
+            sliver: SliverList(
+              delegate: SliverChildListDelegate([
+                const AboutAdvocacyCard(),
+                const SizedBox(height: 5),
+                const PolicyAdvocacyCard(),
+                const SizedBox(height: 5),
+                const PropagationCard(),
+                const SizedBox(height: 5),
+                Text(
+                  'Gallery',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.red[700],
+                  ),
                 ),
-              ),
-              const SizedBox(height: 16),
-              const ImagesGridView(),
-            ],
+                const SizedBox(height: 16),
+              ]),
+            ),
           ),
-        ),
+          SliverPadding(
+            padding: const EdgeInsets.all(24),
+            sliver: SliverGrid(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 1.5,
+                crossAxisSpacing: 16,
+                mainAxisSpacing: 16,
+              ),
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  List<String> images = [
+                    SahulatContent.sahulat1,
+                    SahulatContent.sahulat2,
+                    SahulatContent.sahulat3,
+                    SahulatContent.sahulat4,
+                    SahulatContent.sahulat5,
+                  ];
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ImageViewerScreen(
+                            imagePath: images[index],
+                          ),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.1),
+                            blurRadius: 10,
+                          ),
+                        ],
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(16),
+                        child: Image.asset(
+                          images[index],
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  );
+                },
+                childCount: 5,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -265,52 +319,6 @@ class AchievementItem extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class ImagesGridView extends StatelessWidget {
-  const ImagesGridView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return GridView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 16,
-        mainAxisSpacing: 16,
-        childAspectRatio: 1.5,
-      ),
-      itemCount: 5,
-      itemBuilder: (context, index) {
-        List images = [
-          SahulatContent.sahulat1,
-          SahulatContent.sahulat2,
-          SahulatContent.sahulat3,
-          SahulatContent.sahulat4,
-          SahulatContent.sahulat5,
-        ];
-        return Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1),
-                blurRadius: 10,
-              ),
-            ],
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(16),
-            child: Image.asset(
-              images[index],
-              fit: BoxFit.cover,
-            ),
-          ),
-        );
-      },
     );
   }
 }

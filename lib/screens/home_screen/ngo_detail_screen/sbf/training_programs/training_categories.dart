@@ -139,19 +139,6 @@ class TrainingCategoriesScreen extends StatelessWidget {
                 ),
                 _buildCycloneCard(
                   context,
-                  title: 'NATIONAL ADVANCE TRAINING & WORKSHOP',
-                  child: const CycloneDetailScreen(
-                    title: 'NATIONAL ADVANCE TRAINING & WORKSHOP',
-                    content:
-                        'The National Advanced Training program, organized by the Society for Bright Future, accommodates a total of 60 participants. Spanning 60 hours, the training is conducted over six consecutive days, providing an intensive and enriching experience designed to enhance skills and foster personal growth.',
-                    images: [
-                      'assets/images/sbf/3 C 2 SUB IMAGE (1).JPG',
-                      'assets/images/sbf/3 C 2 SUB IMAGE (2).JPG',
-                    ],
-                  ),
-                ),
-                _buildCycloneCard(
-                  context,
                   title: 'DISASTER MANAGEMENT INTRODUCTION',
                   child: const CycloneDetailScreen(
                     title: 'DISASTER MANAGEMENT INTRODUCTION',
@@ -186,45 +173,6 @@ class TrainingCategoriesScreen extends StatelessWidget {
                     images: [
                       'assets/images/sbf/TRAINING ON FIRST AID (1).jpg',
                       'assets/images/sbf/TRAINING ON FIRST AID (2).jpg',
-                    ],
-                  ),
-                ),
-                _buildCycloneCard(
-                  context,
-                  title: 'NATIONAL ADVANCE TRAINING & WORKSHOP',
-                  child: const CycloneDetailScreen(
-                    title: 'NATIONAL ADVANCE TRAINING & WORKSHOP',
-                    content:
-                        'The National Advanced Training program, organized by the Society for Bright Future, accommodates a total of 60 participants. Spanning 60 hours, the training is conducted over six consecutive days, providing an intensive and enriching experience designed to enhance skills and foster personal growth.',
-                    images: [
-                      'assets/images/sbf/3 C 2 SUB IMAGE (1).JPG',
-                      'assets/images/sbf/3 C 2 SUB IMAGE (2).JPG',
-                    ],
-                  ),
-                ),
-                _buildCycloneCard(
-                  context,
-                  title: 'NATIONAL ADVANCE TRAINING & WORKSHOP',
-                  child: const CycloneDetailScreen(
-                    title: 'NATIONAL ADVANCE TRAINING & WORKSHOP',
-                    content:
-                        'The National Advanced Training program, organized by the Society for Bright Future, accommodates a total of 60 participants. Spanning 60 hours, the training is conducted over six consecutive days, providing an intensive and enriching experience designed to enhance skills and foster personal growth.',
-                    images: [
-                      'assets/images/sbf/3 C 2 SUB IMAGE (1).JPG',
-                      'assets/images/sbf/3 C 2 SUB IMAGE (2).JPG',
-                    ],
-                  ),
-                ),
-                _buildCycloneCard(
-                  context,
-                  title: 'NATIONAL ADVANCE TRAINING & WORKSHOP',
-                  child: const CycloneDetailScreen(
-                    title: 'NATIONAL ADVANCE TRAINING & WORKSHOP',
-                    content:
-                        'The National Advanced Training program, organized by the Society for Bright Future, accommodates a total of 60 participants. Spanning 60 hours, the training is conducted over six consecutive days, providing an intensive and enriching experience designed to enhance skills and foster personal growth.',
-                    images: [
-                      'assets/images/sbf/3 C 2 SUB IMAGE (1).JPG',
-                      'assets/images/sbf/3 C 2 SUB IMAGE (2).JPG',
                     ],
                   ),
                 ),

@@ -5,6 +5,17 @@ import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sahulat/sahula
 class IFCCSFormationScreen extends StatelessWidget {
   const IFCCSFormationScreen({super.key});
 
+  void _openImageViewer(BuildContext context, String imagePath) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ImageViewerScreen(
+          imagePath: imagePath,
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,100 +27,126 @@ class IFCCSFormationScreen extends StatelessWidget {
         title: const Text('IFCCS Formation'),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(24),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const InfoCard(),
-            const SizedBox(height: 24),
-            const Text(
-              'Formation Process',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+            Padding(
+              padding: const EdgeInsets.all(24),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const InfoCard(),
+                  const SizedBox(height: 24),
+                  const Text(
+                    'Formation Process',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  ...formationSteps.map((step) => StepCard(step: step)),
+                ],
               ),
             ),
-            const SizedBox(height: 16),
-            ...formationSteps.map((step) => StepCard(step: step)),
             Container(
               color: Colors.grey[100],
-              child: SingleChildScrollView(
+              width: double.infinity,
+              child: Padding(
                 padding: const EdgeInsets.all(24),
                 child: Column(
                   children: [
                     const BranchStatsCard(),
                     const SizedBox(height: 24),
-                    Container(
-                      height: 500,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(16),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.05),
-                            blurRadius: 10,
-                          ),
-                        ],
+                    GestureDetector(
+                      onTap: () => _openImageViewer(
+                        context,
+                        SahulatContent.sahulat15,
                       ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(16),
-                        child: Image.asset(
-                          SahulatContent.sahulat15,
-                          fit: BoxFit.contain,
+                      child: Container(
+                        height: 500,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(16),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.05),
+                              blurRadius: 10,
+                            ),
+                          ],
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(16),
+                          child: Image.asset(
+                            SahulatContent.sahulat15,
+                            fit: BoxFit.contain,
+                          ),
                         ),
                       ),
                     ),
-                    // 2 images here
                     const SizedBox(height: 24),
                     Row(
                       children: [
                         Expanded(
-                          child: Container(
-                            height: 200,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(16),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(0.05),
-                                  blurRadius: 10,
-                                ),
-                              ],
+                          child: GestureDetector(
+                            onTap: () => _openImageViewer(
+                              context,
+                              SahulatContent.sahulat16,
                             ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(16),
-                              child: Image.asset(
-                                SahulatContent.sahulat16,
-                                fit: BoxFit.cover,
+                            child: Container(
+                              height: 200,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(16),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.05),
+                                    blurRadius: 10,
+                                  ),
+                                ],
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(16),
+                                child: Image.asset(
+                                  SahulatContent.sahulat16,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ),
                         ),
                         const SizedBox(width: 16),
                         Expanded(
-                          child: Container(
-                            height: 200,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(16),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(0.05),
-                                  blurRadius: 10,
-                                ),
-                              ],
+                          child: GestureDetector(
+                            onTap: () => _openImageViewer(
+                              context,
+                              SahulatContent.sahulat17,
                             ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(16),
-                              child: Image.asset(
-                                SahulatContent.sahulat17,
-                                fit: BoxFit.cover,
+                            child: Container(
+                              height: 200,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(16),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.05),
+                                    blurRadius: 10,
+                                  ),
+                                ],
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(16),
+                                child: Image.asset(
+                                  SahulatContent.sahulat17,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ),
                         )
                       ],
-                    )
+                    ),
+                    const SizedBox(height: 24),
                   ],
                 ),
               ),
@@ -228,10 +265,10 @@ class BranchStatsCard extends StatelessWidget {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
+              crossAxisCount: 2,
               childAspectRatio: 3,
-              crossAxisSpacing: 14,
-              mainAxisSpacing: 16,
+              crossAxisSpacing: 8,
+              mainAxisSpacing: 14,
             ),
             itemCount: branchStats.length,
             itemBuilder: (context, index) {
@@ -284,6 +321,55 @@ class StatItem extends StatelessWidget {
               style: TextStyle(
                 color: Colors.red[700],
                 fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ImageViewerScreen extends StatelessWidget {
+  final String imagePath;
+
+  const ImageViewerScreen({
+    super.key,
+    required this.imagePath,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Stack(
+        children: [
+          Center(
+            child: InteractiveViewer(
+              minScale: 0.5,
+              maxScale: 4.0,
+              child: Image.asset(
+                imagePath,
+                fit: BoxFit.contain,
+                width: double.infinity,
+                height: double.infinity,
+              ),
+            ),
+          ),
+          Positioned(
+            top: 40,
+            left: 16,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.5),
+                shape: BoxShape.circle,
+              ),
+              child: IconButton(
+                icon: const Icon(
+                  LucideIcons.arrowLeft,
+                  color: Colors.white,
+                ),
+                onPressed: () => Navigator.pop(context),
               ),
             ),
           ),
