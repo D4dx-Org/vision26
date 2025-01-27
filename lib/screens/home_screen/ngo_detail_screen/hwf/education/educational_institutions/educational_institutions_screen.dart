@@ -1,11 +1,279 @@
+// image_gallery_grid.dart
 import 'package:flutter/material.dart';
-import 'package:lucide_icons/lucide_icons.dart';
-import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/educational_institutions/capmpuses/hwf_malda_campus/hwf_malda_campus.dart';
-import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/educational_institutions/capmpuses/other_campuses/other_campuses_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/educational_institutions/capmpuses/siddique_hassan_campus/siddique_hassan_campus.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
 
+class ImageGalleryGrid extends StatelessWidget {
+  final List<String> imageList;
+  final double spacing;
+  final int crossAxisCount;
+  final double childAspectRatio;
+
+  const ImageGalleryGrid({
+    Key? key,
+    required this.imageList,
+    this.spacing = 8.0,
+    this.crossAxisCount = 2,
+    this.childAspectRatio = 1.0,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: crossAxisCount,
+        crossAxisSpacing: spacing,
+        mainAxisSpacing: spacing,
+        childAspectRatio: childAspectRatio,
+      ),
+      itemCount: imageList.length,
+      itemBuilder: (context, index) {
+        return GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ImageViewerScreen(
+                  imagePath: imageList[index],
+                ),
+              ),
+            );
+          },
+          child: Hero(
+            tag: imageList[index],
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 5,
+                    spreadRadius: 1,
+                  ),
+                ],
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: imageList[index].startsWith('http')
+                    ? Image.network(
+                        imageList[index],
+                        fit: BoxFit.cover,
+                      )
+                    : Image.asset(
+                        imageList[index],
+                        fit: BoxFit.cover,
+                      ),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
+
+// image_viewer_screen.dart
+class ImageViewerScreen extends StatelessWidget {
+  final String imagePath;
+
+  const ImageViewerScreen({
+    super.key,
+    required this.imagePath,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Stack(
+        children: [
+          Center(
+            child: Hero(
+              tag: imagePath,
+              child: InteractiveViewer(
+                minScale: 0.5,
+                maxScale: 4.0,
+                child: imagePath.startsWith('http')
+                    ? Image.network(
+                        imagePath,
+                        fit: BoxFit.contain,
+                        width: double.infinity,
+                        height: double.infinity,
+                      )
+                    : Image.asset(
+                        imagePath,
+                        fit: BoxFit.contain,
+                        width: double.infinity,
+                        height: double.infinity,
+                      ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 40,
+            left: 16,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.5),
+                shape: BoxShape.circle,
+              ),
+              child: IconButton(
+                icon: const Icon(
+                  Icons.arrow_back_ios,
+                  color: Colors.white,
+                ),
+                onPressed: () => Navigator.pop(context),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// other_campuses_screen.dart
+class OtherCampusesScreen extends StatelessWidget {
+  final String title;
+  final List<String> imageList;
+  final String location;
+  final String description;
+
+  const OtherCampusesScreen({
+    super.key,
+    required this.title,
+    required this.imageList,
+    required this.location,
+    required this.description,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: CustomScrollView(
+        slivers: [
+          // Custom App Bar with Image
+          SliverAppBar(
+            expandedHeight: 250,
+            pinned: true,
+            flexibleSpace: FlexibleSpaceBar(
+              background: Stack(
+                fit: StackFit.expand,
+                children: [
+                  imageList.isNotEmpty
+                      ? Image.asset(
+                          imageList[0],
+                          fit: BoxFit.cover,
+                        )
+                      : Container(color: Colors.grey),
+                  Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Colors.black.withOpacity(0.3),
+                          Colors.black.withOpacity(0.7),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              title: Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 24,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              titlePadding: const EdgeInsets.all(16),
+            ),
+            backgroundColor: const Color(0xFFB71C1C),
+            leading: IconButton(
+              icon: const Icon(
+                Icons.arrow_back_ios,
+                color: Colors.white,
+              ),
+              onPressed: () => Navigator.pop(context),
+            ),
+          ),
+
+          // Content
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Location
+                  Row(
+                    children: [
+                      const Icon(
+                        Icons.location_on,
+                        color: Color(0xFFB71C1C),
+                        size: 24,
+                      ),
+                      const SizedBox(width: 8),
+                      Text(
+                        location,
+                        style: const TextStyle(
+                          fontSize: 18,
+                          color: Colors.black87,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+
+                  // Description
+                  Text(
+                    description,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      color: Colors.black87,
+                      height: 1.5,
+                    ),
+                  ),
+                  const SizedBox(height: 24),
+
+                  // Image Gallery Header
+                  const Text(
+                    'Gallery',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFFB71C1C),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+
+                  // Image Gallery
+                  ImageGalleryGrid(
+                    imageList: imageList,
+                    crossAxisCount: 2,
+                    spacing: 16,
+                    childAspectRatio: 1.0,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// educational_institutions_screen.dart
 class EducationalInstitutionsScreen extends StatelessWidget {
   const EducationalInstitutionsScreen({super.key});
 
@@ -41,9 +309,7 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                 ],
               ),
               title: const Padding(
-                padding: EdgeInsets.only(
-                  left: 20,
-                ),
+                padding: EdgeInsets.only(left: 20),
                 child: Text(
                   'Educational Institutions',
                   style: TextStyle(
@@ -114,77 +380,82 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                   image: HwfContent.siddiqueHassanCampus,
                 ),
                 _buildInstitutionCard(
-                    context: context,
-                    child: const HwfMaldaCampus(),
-                    name: 'HWF Malda Campus',
-                    location: 'West Bengal',
-                    place: 'West Bengal',
-                    image: HwfContent.hwfMaldaCampus),
+                  context: context,
+                  child: const HwfMaldaCampus(),
+                  name: 'HWF Malda Campus',
+                  location: 'West Bengal',
+                  place: 'West Bengal',
+                  image: HwfContent.hwfMaldaCampus,
+                ),
                 _buildInstitutionCard(
-                    context: context,
-                    child: const OtherCampusesScreen(
-                      title: 'The Scholar School',
-                      imageList: [
-                        HwfContent.delphiScholarSchool,
-                        HwfContent.delphiScholarSchool1,
-                        HwfContent.delphiScholarSchool2,
-                        HwfContent.delphiScholarSchool3,
-                        HwfContent.delphiScholarSchool4,
-                      ],
-                      location: 'Jamia Nagar, New Delhi',
-                      description:
-                          "The Scholar School in Jamia Nagar, Delhi, provides education up to the 8th grade, following the CBSE curriculum. The school features quality infrastructure, including well-equipped classrooms and a newly inaugurated multipurpose hall.",
-                    ),
-                    name: 'The Scholar School',
+                  context: context,
+                  child: const OtherCampusesScreen(
+                    title: 'The Scholar School',
+                    imageList: [
+                      HwfContent.delphiScholarSchool,
+                      HwfContent.delphiScholarSchool1,
+                      HwfContent.delphiScholarSchool2,
+                      HwfContent.delphiScholarSchool3,
+                      HwfContent.delphiScholarSchool4,
+                    ],
                     location: 'Jamia Nagar, New Delhi',
-                    place: 'New Delhi',
-                    image: HwfContent.delphiScholarSchool),
+                    description:
+                        "The Scholar School in Jamia Nagar, Delhi, provides education up to the 8th grade, following the CBSE curriculum. The school features quality infrastructure, including well-equipped classrooms and a newly inaugurated multipurpose hall.",
+                  ),
+                  name: 'The Scholar School',
+                  location: 'Jamia Nagar, New Delhi',
+                  place: 'New Delhi',
+                  image: HwfContent.delphiScholarSchool,
+                ),
                 _buildInstitutionCard(
-                    context: context,
-                    name: 'The Scholar School',
-                    location: 'Guwahati, Assam',
-                    child: const OtherCampusesScreen(
-                        title: 'The Scholar School',
-                        imageList: [
-                          HwfContent.guwahatiScholarSchool,
-                          HwfContent.guwahatiScholarSchool2,
-                          HwfContent.guwahatiScholarSchool3,
-                          HwfContent.guwahatiScholarSchool4,
-                          HwfContent.guwahatiScholarSchool5,
-                          HwfContent.guwahatiScholarSchool6,
-                          HwfContent.guwahatiScholarSchool7,
-                          HwfContent.guwahatiScholarSchool8,
-                          HwfContent.guwahatiScholarSchool9,
-                          HwfContent.guwahatiScholarSchool10,
-                          HwfContent.guwahatiScholarSchool11,
-                          HwfContent.guwahatiScholarSchool12,
-                          HwfContent.guwahatiScholarSchool13,
-                        ],
-                        location: 'Assam',
-                        description:
-                            "The Scholar School in Guwahati, Assam, affiliated with CBSE, offers education up to grade 12. In the recent final examinations, it achieved the highest scores in the state. This residential school of separate hostels for boys and girls."),
-                    place: 'Assam',
-                    image: HwfContent.guwahatiScholarSchool),
+                  context: context,
+                  name: 'The Scholar School',
+                  location: 'Guwahati, Assam',
+                  child: const OtherCampusesScreen(
+                    title: 'The Scholar School',
+                    imageList: [
+                      HwfContent.guwahatiScholarSchool,
+                      HwfContent.guwahatiScholarSchool2,
+                      HwfContent.guwahatiScholarSchool3,
+                      HwfContent.guwahatiScholarSchool4,
+                      HwfContent.guwahatiScholarSchool5,
+                      HwfContent.guwahatiScholarSchool6,
+                      HwfContent.guwahatiScholarSchool7,
+                      HwfContent.guwahatiScholarSchool8,
+                      HwfContent.guwahatiScholarSchool9,
+                      HwfContent.guwahatiScholarSchool10,
+                      HwfContent.guwahatiScholarSchool11,
+                      HwfContent.guwahatiScholarSchool12,
+                      HwfContent.guwahatiScholarSchool13,
+                    ],
+                    location: 'Assam',
+                    description:
+                        "The Scholar School in Guwahati, Assam, affiliated with CBSE, offers education up to grade 12. In the recent final examinations, it achieved the highest scores in the state. This residential school of separate hostels for boys and girls.",
+                  ),
+                  place: 'Assam',
+                  image: HwfContent.guwahatiScholarSchool,
+                ),
                 _buildInstitutionCard(
-                    context: context,
-                    name: 'The Scholar School',
+                  context: context,
+                  name: 'The Scholar School',
+                  location: 'Howrah, West Bengal',
+                  child: const OtherCampusesScreen(
+                    title: 'The Scholar School',
+                    imageList: [
+                      HwfContent.howrahScholarSchool,
+                      HwfContent.howrahScholarSchool1,
+                      HwfContent.howrahScholarSchool2,
+                      HwfContent.howrahScholarSchool3,
+                      HwfContent.howrahScholarSchool4,
+                      HwfContent.howrahScholarSchool5,
+                    ],
                     location: 'Howrah, West Bengal',
-                    child: const OtherCampusesScreen(
-                      title: 'The Scholar School',
-                      imageList: [
-                        HwfContent.howrahScholarSchool,
-                        HwfContent.howrahScholarSchool1,
-                        HwfContent.howrahScholarSchool2,
-                        HwfContent.howrahScholarSchool3,
-                        HwfContent.howrahScholarSchool4,
-                        HwfContent.howrahScholarSchool5,
-                      ],
-                      location: 'Howrah, West Bengal',
-                      description:
-                          "The Scholar School in Bhagnan, Howrah, West Bengal, offers education up to 10th standard. This residential school has good infrastructure including hostel for boys and good play area.",
-                    ),
-                    place: 'West Bengal',
-                    image: HwfContent.howrahScholarSchool),
+                    description:
+                        "The Scholar School in Bhagnan, Howrah, West Bengal, offers education up to 10th standard. This residential school has good infrastructure including hostel for boys and good play area.",
+                  ),
+                  place: 'West Bengal',
+                  image: HwfContent.howrahScholarSchool,
+                ),
                 _buildInstitutionCard(
                   context: context,
                   child: const OtherCampusesScreen(
@@ -208,15 +479,16 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                 _buildInstitutionCard(
                   context: context,
                   child: const OtherCampusesScreen(
-                      title: 'The Scholar School',
-                      location: 'Darbhanga, Bihar',
-                      imageList: [
-                        HwfContent.biharscholarSchool,
-                        HwfContent.biharscholarSchool1,
-                        HwfContent.biharscholarSchool2,
-                      ],
-                      description:
-                          "The Scholar School in Darbhanga, Bihar, provides education from nursery through 3rd standard. In the coming years, it is set to develop into a CBSE-affiliated English medium school."),
+                    title: 'The Scholar School',
+                    location: 'Darbhanga, Bihar',
+                    imageList: [
+                      HwfContent.biharscholarSchool,
+                      HwfContent.biharscholarSchool1,
+                      HwfContent.biharscholarSchool2,
+                    ],
+                    description:
+                        "The Scholar School in Darbhanga, Bihar, provides education from nursery through 3rd standard. In the coming years, it is set to develop into a CBSE-affiliated English medium school.",
+                  ),
                   name: 'The Scholar School',
                   location: 'Darbhanga, Bihar',
                   place: 'Bihar',
@@ -225,17 +497,18 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                 _buildInstitutionCard(
                   context: context,
                   child: const OtherCampusesScreen(
-                      title: 'Millennium Public School',
-                      location: 'Hazaribagh, Jharkhand',
-                      imageList: [
-                        HwfContent.millenniumSchoolImage,
-                        HwfContent.millenniumSchoolImage2,
-                        HwfContent.millenniumSchoolImage3,
-                        HwfContent.millenniumSchoolImage4,
-                        HwfContent.millenniumSchoolImage5,
-                      ],
-                      description:
-                          "The Millennium School in Hazaribagh, Jharkhand, currently offers education up to the 10th grade. With a well-developed infrastructure, future plans include establishing a residential coaching center for girls."),
+                    title: 'Millennium Public School',
+                    location: 'Hazaribagh, Jharkhand',
+                    imageList: [
+                      HwfContent.millenniumSchoolImage,
+                      HwfContent.millenniumSchoolImage2,
+                      HwfContent.millenniumSchoolImage3,
+                      HwfContent.millenniumSchoolImage4,
+                      HwfContent.millenniumSchoolImage5,
+                    ],
+                    description:
+                        "The Millennium School in Hazaribagh, Jharkhand, currently offers education up to the 10th grade. With a well-developed infrastructure, future plans include establishing a residential coaching center for girls.",
+                  ),
                   name: 'Millennium Public School',
                   location: 'Hazaribagh, Jharkhand',
                   place: 'Jharkhand',
@@ -276,7 +549,10 @@ class EducationalInstitutionsScreen extends StatelessWidget {
           color: Colors.transparent,
           child: InkWell(
             onTap: () {
-              navigateTo(context: context, route: child);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => child),
+              );
             },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -343,7 +619,7 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                             Row(
                               children: [
                                 const Icon(
-                                  LucideIcons.mapPin,
+                                  Icons.location_on,
                                   size: 18,
                                   color: Colors.grey,
                                 ),
