@@ -145,9 +145,7 @@ class MVTProfileScreen extends StatelessWidget {
             // States Grid
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: // Replace the states grid builder with:
-
-                  GridView.builder(
+              child: GridView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -157,39 +155,48 @@ class MVTProfileScreen extends StatelessWidget {
                   crossAxisSpacing: 16,
                 ),
                 itemCount: statesData.length,
-                itemBuilder: (context, index) => TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => StateDetailScreen(
-                          stateData: statesData[index],
+                itemBuilder: (context, index) => Container(
+                  decoration: BoxDecoration(
+                    color: ColorClass.white70,
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.1),
+                        blurRadius: 4,
+                        offset: const Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => StateDetailScreen(
+                              stateData: statesData[index],
+                            ),
+                          ),
+                        );
+                      },
+                      borderRadius: BorderRadius.circular(8),
+                      child: Center(
+                        child: Text(
+                          statesData[index].state,
+                          style: const TextStyle(
+                            color: ColorClass.primaryColor,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
                       ),
-                    );
-                  },
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    backgroundColor: ColorClass.primaryColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                  ),
-                  child: Center(
-                    child: Text(
-                      statesData[index].state,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                      ),
-                      textAlign: TextAlign.center,
                     ),
                   ),
                 ),
               ),
             ),
-
             const SizedBox(height: 24),
 
             // Core Intervention Areas Title
@@ -222,7 +229,7 @@ class MVTProfileScreen extends StatelessWidget {
                 itemCount: interventionAreas.length,
                 itemBuilder: (context, index) => Container(
                   decoration: BoxDecoration(
-                    color: ColorClass.primaryColor,
+                    color: ColorClass.white70,
                     borderRadius: BorderRadius.circular(8),
                     boxShadow: [
                       BoxShadow(
@@ -251,7 +258,7 @@ class MVTProfileScreen extends StatelessWidget {
                         children: [
                           Icon(
                             interventionAreas[index].icon,
-                            color: Colors.white,
+                            color: ColorClass.primaryColor,
                             size: 24,
                           ),
                           const SizedBox(height: 8),
@@ -260,7 +267,7 @@ class MVTProfileScreen extends StatelessWidget {
                             child: Text(
                               interventionAreas[index].title,
                               style: const TextStyle(
-                                color: Colors.white,
+                                color: ColorClass.primaryColor,
                                 fontSize: 12,
                                 fontWeight: FontWeight.w500,
                               ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vision_2026/helper/image_viewer.dart';
 
 class MasawatSkillDevelopmentPage extends StatelessWidget {
   const MasawatSkillDevelopmentPage({super.key});
@@ -131,10 +132,12 @@ class MasawatSkillDevelopmentPage extends StatelessWidget {
               ),
               delegate: SliverChildListDelegate([
                 _buildImageWithCaption(
+                  context,
                   "assets/images/masawat/3B-1.jpg",
                   "Sewing Training Program",
                 ),
                 _buildImageWithCaption(
+                  context,
                   "assets/images/masawat/3B-2.jpg",
                   "Group Training Sessions",
                 ),
@@ -151,23 +154,67 @@ class MasawatSkillDevelopmentPage extends StatelessWidget {
     );
   }
 
-  Widget _buildImageWithCaption(String imagePath, String caption) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
+  Widget _buildImageWithCaption(
+      BuildContext context, String imagePath, String caption) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ImageViewerScreen(imagePath: imagePath),
           ),
-        ],
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(16),
-        child: Image.asset(
-          imagePath,
-          fit: BoxFit.cover,
+        );
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              Image.asset(
+                imagePath,
+                fit: BoxFit.cover,
+              ),
+              // Optional: Add a subtle gradient overlay to make the caption more readable
+              Positioned(
+                left: 0,
+                right: 0,
+                bottom: 0,
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.transparent,
+                        Colors.black.withOpacity(0.5),
+                      ],
+                    ),
+                  ),
+                  child: Text(
+                    caption,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

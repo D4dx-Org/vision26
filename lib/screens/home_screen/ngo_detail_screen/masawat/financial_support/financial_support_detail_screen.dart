@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vision_2026/constants/color_class.dart';
+import 'package:vision_2026/helper/image_viewer.dart';
 
 class MasawatFinancialDetailScreen extends StatelessWidget {
   final String title;
@@ -9,8 +10,8 @@ class MasawatFinancialDetailScreen extends StatelessWidget {
   final String imagePath;
   final IconData icon;
   final List<String> features;
-  final List<String> stats; // Added for quick stats
-  final List<String> galleryImages; // Added for gallery images
+  final List<String> stats;
+  final List<String> galleryImages;
 
   const MasawatFinancialDetailScreen({
     super.key,
@@ -23,6 +24,15 @@ class MasawatFinancialDetailScreen extends StatelessWidget {
     this.stats = const [],
     this.galleryImages = const [],
   });
+
+  void _openImageViewer(BuildContext context, String imagePath) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ImageViewerScreen(imagePath: imagePath),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +47,12 @@ class MasawatFinancialDetailScreen extends StatelessWidget {
               background: Stack(
                 fit: StackFit.expand,
                 children: [
-                  Image.asset(
-                    imagePath,
-                    fit: BoxFit.cover,
+                  GestureDetector(
+                    onTap: () => _openImageViewer(context, imagePath),
+                    child: Image.asset(
+                      imagePath,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                   Container(
                     decoration: BoxDecoration(
@@ -145,8 +158,7 @@ class MasawatFinancialDetailScreen extends StatelessWidget {
                       itemCount: stats.length,
                       itemBuilder: (context, index) => Container(
                         decoration: BoxDecoration(
-                          color: ColorClass
-                              .primaryColor, // Blue color from the image
+                          color: ColorClass.primaryColor,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Center(
@@ -179,31 +191,16 @@ class MasawatFinancialDetailScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // const Text(
-                      //   'About this Service',
-                      //   style: TextStyle(
-                      //     fontSize: 20,
-                      //     fontWeight: FontWeight.bold,
-                      //     color: Colors.black87,
-                      //   ),
-                      // ),
-                      // const SizedBox(height: 16),
-                      Text(
-                        description,
-                        style: TextStyle(
-                          fontSize: 16,
-                          height: 1.6,
-                          color: Colors.grey[800],
-                        ),
-                      ),
-                    ],
+                  child: Text(
+                    description,
+                    style: TextStyle(
+                      fontSize: 16,
+                      height: 1.6,
+                      color: Colors.grey[800],
+                    ),
                   ),
                 ),
 
-                // Key Features
                 // Key Features
                 if (features.isNotEmpty)
                   Container(
@@ -253,27 +250,31 @@ class MasawatFinancialDetailScreen extends StatelessWidget {
                             crossAxisSpacing: 16,
                           ),
                           itemCount: galleryImages.length,
-                          itemBuilder: (context, index) => Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(0.1),
-                                  blurRadius: 10,
-                                  offset: const Offset(0, 2),
+                          itemBuilder: (context, index) => GestureDetector(
+                            onTap: () =>
+                                _openImageViewer(context, galleryImages[index]),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(12),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.1),
+                                    blurRadius: 10,
+                                    offset: const Offset(0, 2),
+                                  ),
+                                ],
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(12),
+                                child: Image.asset(
+                                  galleryImages[index],
+                                  fit: BoxFit.cover,
                                 ),
-                              ],
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(12),
-                              child: Image.asset(
-                                galleryImages[index],
-                                fit: BoxFit.cover,
                               ),
                             ),
                           ),
                         ),
-                        const SizedBox(height: 20), // Added bottom spacing
+                        const SizedBox(height: 20),
                       ],
                     ),
                   ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vision_2026/constants/color_class.dart';
+import 'package:vision_2026/helper/image_viewer.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/masawat/financial_support/financial_support.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/masawat/market_linkage/market_linkage.dart';
@@ -156,10 +157,10 @@ class MasawatProfileScreen extends StatelessWidget {
                 crossAxisSpacing: 16,
                 childAspectRatio: 1.3,
                 children: [
-                  _buildImageCard("assets/images/masawat/3A-1.jpg"),
-                  _buildImageCard("assets/images/masawat/3A-2.jpg"),
-                  _buildImageCard("assets/images/masawat/3A-3.jpg"),
-                  _buildImageCard("assets/images/masawat/3A-4.jpg"),
+                  _buildImageCard(context, "assets/images/masawat/3A-1.jpg"),
+                  _buildImageCard(context, "assets/images/masawat/3A-2.jpg"),
+                  _buildImageCard(context, "assets/images/masawat/3A-3.jpg"),
+                  _buildImageCard(context, "assets/images/masawat/3A-4.jpg"),
                 ],
               ),
             ),
@@ -169,23 +170,33 @@ class MasawatProfileScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildImageCard(String imagePath) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
+  Widget _buildImageCard(BuildContext context, String imagePath) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ImageViewerScreen(imagePath: imagePath),
           ),
-        ],
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(12),
-        child: Image.asset(
-          imagePath,
-          fit: BoxFit.cover,
+        );
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(12),
+          child: Image.asset(
+            imagePath,
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );

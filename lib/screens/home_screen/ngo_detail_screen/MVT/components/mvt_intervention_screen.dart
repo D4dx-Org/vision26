@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vision_2026/constants/color_class.dart';
+import 'package:vision_2026/helper/image_viewer.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MVT/model/intervection_section.dart';
 
 class MVTInterventionScreen extends StatelessWidget {
@@ -207,9 +208,9 @@ class MVTInterventionScreen extends StatelessWidget {
                     child: Text(
                       section.title,
                       style: const TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: ColorClass.primaryColor),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -263,7 +264,7 @@ class MVTInterventionScreen extends StatelessWidget {
                       ),
                     ),
 
-                  // Images if exist
+                  // Images if exist with ImageViewer integration
                   if (section.images != null)
                     Center(
                       child: Padding(
@@ -273,16 +274,28 @@ class MVTInterventionScreen extends StatelessWidget {
                           physics: const NeverScrollableScrollPhysics(),
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 3,
-                                  mainAxisSpacing: 8,
-                                  crossAxisSpacing: 8,
-                                  childAspectRatio: 2),
+                                  crossAxisCount: 1,
+                                  mainAxisSpacing: 16,
+                                  crossAxisSpacing: 16,
+                                  childAspectRatio: 1.5),
                           itemCount: section.images!.length,
-                          itemBuilder: (context, index) => ClipRRect(
-                            borderRadius: BorderRadius.circular(12),
-                            child: Image.asset(
-                              section.images![index],
-                              fit: BoxFit.contain,
+                          itemBuilder: (context, index) => GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ImageViewerScreen(
+                                    imagePath: section.images![index],
+                                  ),
+                                ),
+                              );
+                            },
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(12),
+                              child: Image.asset(
+                                section.images![index],
+                                fit: BoxFit.contain,
+                              ),
                             ),
                           ),
                         ),

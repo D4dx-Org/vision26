@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vision_2026/helper/image_viewer.dart';
 
 class MSSEmergencyPage extends StatelessWidget {
   const MSSEmergencyPage({super.key});
@@ -131,18 +132,22 @@ class MSSEmergencyPage extends StatelessWidget {
               ),
               delegate: SliverChildListDelegate([
                 _buildImageWithCaption(
+                  context,
                   "assets/images/MSS/3 A (i).jpeg",
                   " ",
                 ),
                 _buildImageWithCaption(
+                  context,
                   "assets/images/MSS/3 A (ii).jpeg",
                   " ",
                 ),
                 _buildImageWithCaption(
+                  context,
                   "assets/images/MSS/3 A (iii).jpeg",
                   " ",
                 ),
                 _buildImageWithCaption(
+                  context,
                   "assets/images/MSS/3 A (iv).jpeg",
                   " ",
                 ),
@@ -159,23 +164,33 @@ class MSSEmergencyPage extends StatelessWidget {
     );
   }
 
-  Widget _buildImageWithCaption(String imagePath, String caption) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
+  Widget _buildImageWithCaption(BuildContext context, String imagePath, String caption) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ImageViewerScreen(imagePath: imagePath),
           ),
-        ],
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(16),
-        child: Image.asset(
-          imagePath,
-          fit: BoxFit.cover,
+        );
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: Image.asset(
+            imagePath,
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );

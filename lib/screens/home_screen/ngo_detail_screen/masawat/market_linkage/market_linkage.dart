@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vision_2026/helper/image_viewer.dart';
 
 class MasawatMarketLinkagePage extends StatelessWidget {
   const MasawatMarketLinkagePage({super.key});
@@ -131,10 +132,12 @@ class MasawatMarketLinkagePage extends StatelessWidget {
               ),
               delegate: SliverChildListDelegate([
                 _buildImageWithCaption(
+                  context,
                   "assets/images/masawat/3C-1.jpg",
                   " ",
                 ),
                 _buildImageWithCaption(
+                  context,
                   "assets/images/masawat/3C-2.jpg",
                   " ",
                 ),
@@ -151,23 +154,34 @@ class MasawatMarketLinkagePage extends StatelessWidget {
     );
   }
 
-  Widget _buildImageWithCaption(String imagePath, String caption) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
+  Widget _buildImageWithCaption(
+      BuildContext context, String imagePath, String caption) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ImageViewerScreen(imagePath: imagePath),
           ),
-        ],
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(16),
-        child: Image.asset(
-          imagePath,
-          fit: BoxFit.cover,
+        );
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: Image.asset(
+            imagePath,
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );

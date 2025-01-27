@@ -133,7 +133,7 @@ class MasawatFinancialPage extends StatelessWidget {
                   icon: LucideIcons.store,
                   description:
                       'Financial support up to ₹25,000 for small businesses in rural and semi-urban areas',
-                  child: const MasawatFinancialDetailScreen(
+                  child: MasawatFinancialDetailScreen(
                     title: 'Micro-Scale Livelihood Initiative',
                     code: "#Micro-Scale",
                     description:
@@ -159,7 +159,7 @@ class MasawatFinancialPage extends StatelessWidget {
                   icon: LucideIcons.warehouse,
                   description:
                       'Support up to ₹50,000 for retail ventures like garment, stationery, and grocery shops',
-                  child: const MasawatFinancialDetailScreen(
+                  child: MasawatFinancialDetailScreen(
                     title: 'Small-Scale Livelihood Initiative',
                     code: "#Small-Scale",
                     description:
@@ -186,7 +186,7 @@ class MasawatFinancialPage extends StatelessWidget {
                   icon: LucideIcons.building2,
                   description:
                       'Funding up to ₹1,00,000 for established businesses like poultry farms and pharmacies',
-                  child: const MasawatFinancialDetailScreen(
+                  child: MasawatFinancialDetailScreen(
                     title: 'Medium-Scale Livelihood Initiative',
                     code: "#Medium-Scale",
                     description:
@@ -211,7 +211,7 @@ class MasawatFinancialPage extends StatelessWidget {
                   icon: LucideIcons.factory,
                   description:
                       'Support for small manufacturing units and commercial vehicle ventures',
-                  child: const MasawatFinancialDetailScreen(
+                  child: MasawatFinancialDetailScreen(
                     title: 'Large-Scale Livelihood Initiative',
                     code: "#Large-Scale",
                     description:
