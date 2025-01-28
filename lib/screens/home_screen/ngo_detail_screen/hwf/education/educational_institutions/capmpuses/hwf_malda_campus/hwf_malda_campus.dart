@@ -167,8 +167,10 @@ class HwfMaldaCampus extends StatelessWidget {
                           schoolName: 'The Scholar School',
                           description:
                               "This year, The Scholar School at the Malda campus has launched with KG and 1st grade. In the coming years, it is set to develop into a CBSE-affiliated English medium school.",
-                          image: HwfContent.maldaScholorSchool,
+                          image:
+                             HwfContent.maldaScholorSchool1,
                           imageList: [
+                             HwfContent.maldaScholorSchool1,
                             HwfContent.maldaScholorSchool2,
                             HwfContent.maldaScholorSchool3,
                           ],

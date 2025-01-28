@@ -49,7 +49,7 @@ class HwfContent {
   static const String maldaJamiaCampus2 = '${imageRoot2}malda-aljamia-2.jpg';
   static const String maldaJamiaCampus3 = '${imageRoot2}malda-aljamia-3.jpg';
   static const String maldaJamiaCampus4 = '${imageRoot2}malda-aljamia-4.jpg';
-  static const String maldaScholorSchool =
+  static const String maldaScholorSchool1 =
       '${imageRoot2}malda-scholor-school3.jpeg';
   static const String maldaScholorSchool2 =
       '${imageRoot2}malda-scholor-school2.jpeg';
