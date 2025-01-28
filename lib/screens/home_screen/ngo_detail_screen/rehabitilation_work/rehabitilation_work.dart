@@ -162,7 +162,7 @@ class RehabitilationWorkCategoryScreen extends StatelessWidget {
           onTap: () => navigateTo(context: context, route: child),
           borderRadius: BorderRadius.circular(12),
           child: Padding(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(18),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
