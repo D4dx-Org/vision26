@@ -42,6 +42,7 @@ class MyApp extends StatelessWidget {
         title: 'Vision 2026',
         theme: AppTheme.lightTheme(context),
       ),
+
       // :
       // isMobileDevice
       //     ? MaterialApp(

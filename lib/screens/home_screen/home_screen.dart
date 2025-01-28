@@ -5,6 +5,7 @@ import 'package:vision_2026/constants/color_class.dart';
 import 'package:vision_2026/constants/image_class.dart';
 import 'package:vision_2026/constants/textstyle_class.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
+import 'package:vision_2026/helper/url_launcher.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/IRT/irt_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MSS/mss_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MVT/mvt_detail_page.dart';
@@ -14,6 +15,7 @@ import 'package:vision_2026/screens/home_screen/ngo_detail_screen/masawat/masawa
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sahulat/sahulat_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sbf/sbf_detail_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/tweet/tweet_detail_page.dart';
+import 'package:vision_2026/screens/settings/about_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -21,6 +23,49 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Vision 2026',
+          style: TextStyleClass.primaryFont600(
+            16,
+            ColorClass.white,
+          ),
+        ),
+        backgroundColor: const Color(0xFFB71C1C), // Customize the color
+        actions: [
+          // Menu Button
+          PopupMenuButton<String>(
+            color: Colors.white,
+            onSelected: (value) {
+              // Handle menu item selection
+              if (value == 'about') {
+                navigateTo(context: context, route: AboutScreen());
+              } else if (value == 'contact') {
+                launchURL('https://d4dx.co/contact');
+              } else if (value == 'privacy') {
+                launchURL(
+                    'https://www.termsfeed.com/live/653c2842-fa9d-46b6-87de-37db3c6ce8bc');
+              }
+            },
+            itemBuilder: (BuildContext context) {
+              return [
+                const PopupMenuItem<String>(
+                  value: 'about',
+                  child: Text('About'),
+                ),
+                const PopupMenuItem<String>(
+                  value: 'contact',
+                  child: Text('Contact'),
+                ),
+                const PopupMenuItem<String>(
+                  value: 'privacy',
+                  child: Text('Privacy Policy'),
+                ),
+              ];
+            },
+          ),
+        ],
+      ),
       backgroundColor: Colors.grey[50],
       body: SafeArea(
         child: CustomScrollView(
