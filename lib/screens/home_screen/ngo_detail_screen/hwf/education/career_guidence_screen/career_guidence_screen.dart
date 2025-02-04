@@ -271,7 +271,7 @@ class CareerGuidanceScreen extends StatelessWidget {
                 Text(
                   title,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 13,
                     fontWeight: FontWeight.bold,
                     color: Colors.black87,
                   ),
@@ -281,7 +281,7 @@ class CareerGuidanceScreen extends StatelessWidget {
                 Text(
                   subtitle,
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 11,
                     color: Colors.grey[600],
                   ),
                   textAlign: TextAlign.center,

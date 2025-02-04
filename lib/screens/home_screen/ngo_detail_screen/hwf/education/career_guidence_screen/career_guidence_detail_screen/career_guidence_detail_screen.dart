@@ -49,7 +49,7 @@ class TrainingCenterDetailScreen extends StatelessWidget {
                   Text(
                     title!,
                     style: const TextStyle(
-                      fontSize: 24,
+                      fontSize: 20,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
@@ -99,7 +99,6 @@ class TrainingCenterDetailScreen extends StatelessWidget {
                       height: 1.6,
                       color: Colors.grey[800],
                     ),
-                    textAlign: TextAlign.center,
                   ),
                 ],
               ),
