@@ -194,7 +194,10 @@ class OtherCampusesScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              titlePadding: const EdgeInsets.all(16),
+              titlePadding: EdgeInsets.symmetric(
+                vertical: 16,
+                horizontal: MediaQuery.of(context).size.width * 0.05,
+              ),
             ),
             backgroundColor: const Color(0xFFB71C1C),
             leading: IconButton(

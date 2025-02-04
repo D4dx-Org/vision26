@@ -335,7 +335,7 @@ class SiddiqueHassanCampus extends StatelessWidget {
                 Text(
                   title,
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 12,
                     fontWeight: FontWeight.bold,
                     color: Colors.grey[800],
                   ),

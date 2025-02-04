@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sahulat/sahulat_content.dart';
+import 'package:vision_2026/helper/image_viewer.dart';
 
 class FinancialInclusionScreen extends StatelessWidget {
   const FinancialInclusionScreen({super.key});
@@ -27,47 +28,85 @@ class FinancialInclusionScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Top Section with About and Financial Overview
-              const Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // About Microfinance
-                  Expanded(
-                    flex: 3,
-                    child: AboutSection(),
+      body: CustomScrollView(
+        slivers: [
+          SliverPadding(
+            padding: const EdgeInsets.all(24),
+            sliver: SliverList(
+              delegate: SliverChildListDelegate([
+                const AboutSection(),
+                const SizedBox(height: 24),
+                const FinanceStats(),
+                const SizedBox(height: 24),
+                const SchemesList(),
+                const SizedBox(height: 24),
+                Text(
+                  'Gallery',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.red[700],
                   ),
-                  SizedBox(width: 24),
-                  // Financial Overview
-                  Expanded(
-                    flex: 2,
-                    child: FinanceStats(),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 24),
-              // Schemes Section
-              const SchemesList(),
-              const SizedBox(height: 24),
-              // Gallery Section
-              Text(
-                'Gallery',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.red[700],
                 ),
-              ),
-              const SizedBox(height: 16),
-              const ImagesGrid(),
-            ],
+                const SizedBox(height: 16),
+              ]),
+            ),
           ),
-        ),
+          SliverPadding(
+            padding: const EdgeInsets.symmetric(horizontal: 24),
+            sliver: SliverGrid(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 16,
+                crossAxisSpacing: 16,
+                childAspectRatio: 1.5,
+              ),
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  List<String> images = [
+                    SahulatContent.sahulat6,
+                    SahulatContent.sahulat7,
+                    SahulatContent.sahulat8,
+                    SahulatContent.sahulat9,
+                    SahulatContent.sahulat10,
+                    SahulatContent.sahulat11,
+                  ];
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ImageViewerScreen(
+                            imagePath: images[index],
+                          ),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.1),
+                            blurRadius: 10,
+                          ),
+                        ],
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(16),
+                        child: Image.asset(
+                          images[index],
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  );
+                },
+                childCount: 6,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -112,7 +151,6 @@ class AboutSection extends StatelessWidget {
   }
 }
 
-// Previous SchemesList and SchemeItem remain the same
 class SchemesList extends StatelessWidget {
   const SchemesList({super.key});
 
@@ -191,30 +229,6 @@ class SchemeItem extends StatelessWidget {
     );
   }
 }
-
-final List<Map<String, dynamic>> schemes = [
-  {
-    'icon': LucideIcons.banknote,
-    'title': 'Demand Loan',
-    'description': 'For non-productive purpose',
-  },
-  {
-    'icon': LucideIcons.warehouse,
-    'title': 'Murabaha/Cost-plus Financing',
-    'description': 'For machinery, equipment, home appliances etc.',
-  },
-  {
-    'icon': LucideIcons.car,
-    'title': 'Ijarah/Rental Finance',
-    'description': 'Mostly for light machinery and light commercial vehicle',
-  },
-  {
-    'icon': LucideIcons.users,
-    'title': 'Diminishing Partnership',
-    'description':
-        'Recently introduced instrument for small working capital finance on partnership basis',
-  },
-];
 
 class FinanceStats extends StatelessWidget {
   const FinanceStats({super.key});
@@ -302,51 +316,26 @@ class FinanceStats extends StatelessWidget {
   }
 }
 
-class ImagesGrid extends StatelessWidget {
-  const ImagesGrid({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return GridView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 16,
-        mainAxisSpacing: 16,
-        childAspectRatio: 1.5,
-      ),
-      itemCount: 6,
-      itemBuilder: (context, index) {
-        List images = [
-          SahulatContent.sahulat6,
-          SahulatContent.sahulat7,
-          SahulatContent.sahulat8,
-          SahulatContent.sahulat9,
-          SahulatContent.sahulat10,
-          SahulatContent.sahulat11,
-        ];
-        return Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1),
-                blurRadius: 10,
-              ),
-            ],
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(16),
-            child: Image.asset(
-              images[index],
-              fit: BoxFit.cover,
-            ),
-          ),
-        );
-      },
-    );
-  }
-}
-
-// Keep the previous schemes data list
+final List<Map<String, dynamic>> schemes = [
+  {
+    'icon': LucideIcons.banknote,
+    'title': 'Demand Loan',
+    'description': 'For non-productive purpose',
+  },
+  {
+    'icon': LucideIcons.warehouse,
+    'title': 'Murabaha/Cost-plus Financing',
+    'description': 'For machinery, equipment, home appliances etc.',
+  },
+  {
+    'icon': LucideIcons.car,
+    'title': 'Ijarah/Rental Finance',
+    'description': 'Mostly for light machinery and light commercial vehicle',
+  },
+  {
+    'icon': LucideIcons.users,
+    'title': 'Diminishing Partnership',
+    'description':
+        'Recently introduced instrument for small working capital finance on partnership basis',
+  },
+];

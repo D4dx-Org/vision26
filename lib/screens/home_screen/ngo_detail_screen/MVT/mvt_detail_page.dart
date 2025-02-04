@@ -182,14 +182,18 @@ class MVTProfileScreen extends StatelessWidget {
                       },
                       borderRadius: BorderRadius.circular(8),
                       child: Center(
-                        child: Text(
-                          statesData[index].state,
-                          style: const TextStyle(
-                            color: ColorClass.primaryColor,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            statesData[index].state,
+                            style: TextStyle(
+                              color: ColorClass.primaryColor,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.03,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                          textAlign: TextAlign.center,
                         ),
                       ),
                     ),
@@ -221,7 +225,7 @@ class MVTProfileScreen extends StatelessWidget {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
+                  crossAxisCount: 2,
                   childAspectRatio: 1.5,
                   mainAxisSpacing: 12,
                   crossAxisSpacing: 12,
