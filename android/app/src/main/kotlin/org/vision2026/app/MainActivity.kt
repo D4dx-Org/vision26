@@ -1,4 +1,4 @@
-package com.example.vision_2026
+package org.vision2026.app
 
 import io.flutter.embedding.android.FlutterActivity
 
