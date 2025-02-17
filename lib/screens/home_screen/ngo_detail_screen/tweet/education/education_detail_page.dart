@@ -192,6 +192,9 @@ class EducationDetailPage extends StatelessWidget {
                                 context: context,
                                 route: ImageViewerScreen(
                                   imagePath: imageList![index],
+                                currentIndex: 0,
+                                  imagePaths: [imageList![index]],
+                            
                                 ),
                               );
                             },

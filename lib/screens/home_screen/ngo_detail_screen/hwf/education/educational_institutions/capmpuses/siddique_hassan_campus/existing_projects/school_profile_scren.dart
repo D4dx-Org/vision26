@@ -139,7 +139,7 @@ class SchoolProfileScreen extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => ImageViewerScreen(
-                                    imagePath: imageList![index],
+                                    imagePath: imageList![index],currentIndex: 0,imagePaths: [...imageList!],
                                   ),
                                 ),
                               );

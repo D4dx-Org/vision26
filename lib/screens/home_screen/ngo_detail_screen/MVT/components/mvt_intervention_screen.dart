@@ -286,6 +286,8 @@ class MVTInterventionScreen extends StatelessWidget {
                                 MaterialPageRoute(
                                   builder: (context) => ImageViewerScreen(
                                     imagePath: section.images![index],
+                                    currentIndex: index,
+                                    imagePaths: section.images!,
                                   ),
                                 ),
                               );

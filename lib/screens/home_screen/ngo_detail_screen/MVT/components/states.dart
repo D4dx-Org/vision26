@@ -207,7 +207,7 @@ class StateDetailScreen extends StatelessWidget {
                 children: [
                   Container(
                     width: double.infinity,
-                    padding: const EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(8),
                     decoration: const BoxDecoration(
                       borderRadius:
                           BorderRadius.vertical(top: Radius.circular(16)),
@@ -241,8 +241,8 @@ class StateDetailScreen extends StatelessWidget {
                       // },
                       style: TextButton.styleFrom(
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 20,
-                          vertical: 16,
+                          horizontal: 15,
+                          vertical: 4,
                         ),
                       ),
                       child: Row(

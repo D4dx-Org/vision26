@@ -124,7 +124,7 @@ class NGOProfileScreen extends StatelessWidget {
                 crossAxisCount: 2,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
-                childAspectRatio: 0.9,
+                childAspectRatio: 1,
                 children: const [
                   InterventionAreaCard(
                     title: 'Education',
@@ -238,8 +238,9 @@ class InterventionAreaCard extends StatelessWidget {
                 const SizedBox(height: 12),
                 Text(
                   title,
+                  maxLines: 3,
                   style: const TextStyle(
-                    fontSize: 14,
+                    fontSize: 12,
                     fontWeight: FontWeight.w600,
                     color: Colors.black87,
                   ),
