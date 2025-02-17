@@ -248,7 +248,11 @@ class CapacityBuildingScreen extends StatelessWidget {
       onTap: () {
         navigateTo(
           context: context,
-          route: ImageViewerScreen(imagePath: imagePath),
+          route: ImageViewerScreen(
+            currentIndex: 0,
+            imagePaths: [...HwfContent.capacityBuildingImagesList],
+            imagePath: imagePath,
+          ),
         );
       },
       child: Container(

@@ -29,7 +29,11 @@ class MasawatFinancialDetailScreen extends StatelessWidget {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => ImageViewerScreen(imagePath: imagePath),
+        builder: (context) => ImageViewerScreen(
+          imagePath: imagePath,
+          currentIndex: 0,
+          imagePaths: [imagePath],
+        ),
       ),
     );
   }

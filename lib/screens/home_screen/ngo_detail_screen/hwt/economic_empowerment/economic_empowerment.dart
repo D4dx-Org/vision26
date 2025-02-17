@@ -244,6 +244,8 @@ class EconomicEmpowermentScreen extends StatelessWidget {
             MaterialPageRoute(
               builder: (context) => ImageViewerScreen(
                 imagePath: imagePath,
+                currentIndex: 0,
+                imagePaths: [imagePath],
               ),
             ),
           );

@@ -11,6 +11,9 @@ class IFCCSFormationScreen extends StatelessWidget {
       MaterialPageRoute(
         builder: (context) => ImageViewerScreen(
           imagePath: imagePath,
+          
+
+        
         ),
       ),
     );

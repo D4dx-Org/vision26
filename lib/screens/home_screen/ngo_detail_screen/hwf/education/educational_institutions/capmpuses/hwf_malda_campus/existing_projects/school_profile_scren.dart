@@ -244,6 +244,8 @@ class SchoolProfileScreen extends StatelessWidget {
                               context: context,
                               route: const ImageViewerScreen(
                                 imagePath: ImageClass.tempSchoolImage,
+                                imagePaths: [ImageClass.tempSchoolImage],
+                                currentIndex: 0,
                               ),
                             );
                           },

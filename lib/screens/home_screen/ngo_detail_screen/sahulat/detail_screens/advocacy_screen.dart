@@ -77,6 +77,9 @@ class AdvocacyScreen extends StatelessWidget {
                         MaterialPageRoute(
                           builder: (context) => ImageViewerScreen(
                             imagePath: images[index],
+                            currentIndex: 0,
+                            imagePaths: [...images],
+                           
                           ),
                         ),
                       );

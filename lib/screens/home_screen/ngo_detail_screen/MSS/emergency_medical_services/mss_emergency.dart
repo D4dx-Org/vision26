@@ -164,15 +164,20 @@ class MSSEmergencyPage extends StatelessWidget {
     );
   }
 
-  Widget _buildImageWithCaption(BuildContext context, String imagePath, String caption) {
+  Widget _buildImageWithCaption(
+      BuildContext context, String imagePath, String caption) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => ImageViewerScreen(imagePath: imagePath),
+            builder: (context) => ImageViewerScreen(
+                imagePath: imagePath,
+                currentIndex: 0,
+                imagePaths: [imagePath],
+              captions: [caption],
           ),
-        );
+        ));
       },
       child: Container(
         decoration: BoxDecoration(

@@ -197,7 +197,10 @@ class HWTHealthcareServiceDetail extends StatelessWidget {
                                 navigateTo(
                                   context: context,
                                   route: ImageViewerScreen(
-                                      imagePath: galleryImages[index]),
+                                    imagePath: galleryImages[index],
+                                    currentIndex: 0,
+                                    imagePaths: [...galleryImages],
+                                  ),
                                 );
                               },
                               child: ClipRRect(

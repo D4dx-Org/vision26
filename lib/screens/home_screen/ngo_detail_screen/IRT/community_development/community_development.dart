@@ -192,7 +192,8 @@ class CommunityDevelopmentScreen extends StatelessWidget {
       onTap: () {
         navigateTo(
           context: context,
-          route: ImageViewerScreen(imagePath: imagePath),
+          route: ImageViewerScreen(
+              imagePath: imagePath, currentIndex: 0, imagePaths: [imagePath]),
         );
       },
       child: Container(
