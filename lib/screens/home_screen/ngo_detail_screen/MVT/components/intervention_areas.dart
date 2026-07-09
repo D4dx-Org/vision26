@@ -1,4 +1,4 @@
-import 'package:lucide_icons/lucide_icons.dart';
+import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MVT/model/intervection_section.dart';
 
 final List<InterventionArea> interventionAreas = [
