@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:vision_2026/constants/image_class.dart';
-import 'package:vision_2026/helper/navigation_helper.dart';
+import 'package:vision_2026/helper/intervention_area_card.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/education_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/general_detail_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/healthcare/health_care_screen.dart';
@@ -124,21 +124,27 @@ class NGOProfileScreen extends StatelessWidget {
                 crossAxisCount: 2,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
-                childAspectRatio: 1,
+                childAspectRatio: 1.05,
                 children: const [
                   InterventionAreaCard(
+                    accentColor: const Color(0xFFB71C1C),
                     title: 'Education',
                     icon: LucideIcons.graduationCap,
+                    topImage: 'assets/images/education.png',
                     child: EducationServicesScreen(),
                   ),
                   InterventionAreaCard(
+                    accentColor: const Color(0xFFB71C1C),
                     title: 'Healthcare',
                     icon: LucideIcons.stethoscope,
+                    topImage: 'assets/images/healthcare.png',
                     child: HealthcareServicesScreen(),
                   ),
                   InterventionAreaCard(
+                    accentColor: const Color(0xFFB71C1C),
                     title: 'Orphan Care',
                     icon: LucideIcons.heart,
+                    topImage: 'assets/images/orphan-care.png',
                     child: GeneralDetailScreen(
                       title: "ORPHAN CARE PROGRAM",
                       description:
@@ -151,10 +157,12 @@ class NGOProfileScreen extends StatelessWidget {
                     ),
                   ),
                   InterventionAreaCard(
-                    title: 'Government Scheme\nFacilitation Center',
+                    accentColor: const Color(0xFFB71C1C),
+                    title: 'Government Scheme & Facilitation Center',
                     icon: LucideIcons.building,
+                    topImage: 'assets/images/hwf/government scheme.png',
                     child: GeneralDetailScreen(
-                      title: 'Government Scheme\nFacilitation Center',
+                      title: 'Government Scheme & Facilitation Center',
                       description:
                           "Nagrik Vikas Kendra (NVK) serves as a bridge between government schemes and marginalized communities, helping ensure that the benefits of these programs reach those in need.\n\n43 NVKs are functioning in 12 States. \n\nIn the last financial year, NVKs assisted beneficiaries in securing a collective total of ₹44 crore through various government schemes.",
                       imagePath: HwfContent.other2,
@@ -166,8 +174,10 @@ class NGOProfileScreen extends StatelessWidget {
                     ),
                   ),
                   InterventionAreaCard(
+                    accentColor: const Color(0xFFB71C1C),
                     title: 'Vocational Training',
                     icon: LucideIcons.briefcase,
+                    topImage: 'assets/images/vocational-training.png',
                     child: GeneralDetailScreen(
                       title: 'Vocational Training',
                       description:
@@ -184,79 +194,6 @@ class NGOProfileScreen extends StatelessWidget {
 
             const SizedBox(height: 24),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class InterventionAreaCard extends StatelessWidget {
-  final String title;
-  final IconData icon;
-
-  final Widget child;
-
-  const InterventionAreaCard({
-    super.key,
-    required this.title,
-    required this.icon,
-    required this.child,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Material(
-        color: Colors.transparent,
-        borderRadius: BorderRadius.circular(15),
-        child: InkWell(
-          onTap: () {
-            navigateTo(context: context, route: child);
-          },
-          borderRadius: BorderRadius.circular(15),
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  icon,
-                  size: 32,
-                  color: const Color(0xFFB71C1C),
-                ),
-                const SizedBox(height: 12),
-                Text(
-                  title,
-                  maxLines: 3,
-                  style: const TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black87,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 4),
-                // Text(
-                //   code,
-                //   style: TextStyle(
-                //     fontSize: 14,
-                //     color: Colors.grey[600],
-                //   ),
-                // ),
-              ],
-            ),
-          ),
         ),
       ),
     );

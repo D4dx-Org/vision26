@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vision_2026/constants/color_class.dart';
+import 'package:vision_2026/helper/gallery_grid.dart';
 
 class ProjectDetails {
   final String title;
@@ -144,25 +145,7 @@ class ProjectDetailPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  GridView.builder(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: isMobile ? 2 : 3,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10,
-                    ),
-                    itemCount: projectDetails.galleryImages.length,
-                    itemBuilder: (context, index) {
-                      return ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Image.asset(
-                          projectDetails.galleryImages[index],
-                          fit: BoxFit.cover,
-                        ),
-                      );
-                    },
-                  ),
+                  GalleryGrid(images: projectDetails.galleryImages),
                 ],
               ),
             ),

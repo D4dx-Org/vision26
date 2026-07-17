@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:vision_2026/constants/image_class.dart';
-import 'package:vision_2026/helper/image_viewer.dart';
-import 'package:vision_2026/helper/navigation_helper.dart';
+import 'package:vision_2026/helper/gallery_grid.dart';
 
 class SchoolProfileScreen extends StatelessWidget {
   const SchoolProfileScreen({super.key});
@@ -44,7 +43,7 @@ class SchoolProfileScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Al Jamia Senior Secondary School',
+                    'Senior Secondary School',
                     style: TextStyle(
                       fontSize: 24,
                       color: Colors.white,
@@ -232,38 +231,7 @@ class SchoolProfileScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  SizedBox(
-                    height: 120,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 5,
-                      itemBuilder: (context, index) {
-                        return GestureDetector(
-                          onTap: () {
-                            navigateTo(
-                              context: context,
-                              route: const ImageViewerScreen(
-                                imagePath: ImageClass.tempSchoolImage,
-                                imagePaths: [ImageClass.tempSchoolImage],
-                                currentIndex: 0,
-                              ),
-                            );
-                          },
-                          child: Container(
-                            width: 160,
-                            margin: const EdgeInsets.only(right: 12),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                              image: const DecorationImage(
-                                image: NetworkImage(ImageClass.tempSchoolImage),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
+                  GalleryGrid(images: List.filled(5, ImageClass.tempSchoolImage)),
                 ],
               ),
             ),

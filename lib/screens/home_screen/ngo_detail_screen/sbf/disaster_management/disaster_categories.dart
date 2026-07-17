@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:vision_2026/helper/navigation_helper.dart';
+import 'package:vision_2026/helper/intervention_area_card.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sbf/disaster_management/covid_disaster_detail.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sbf/disaster_management/cyclone_disaster_detail_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sbf/disaster_management/flood_disaster_detail.dart';
@@ -100,11 +100,11 @@ class DisasterCategoryList extends StatelessWidget {
                 crossAxisSpacing: 20,
               ),
               delegate: SliverChildListDelegate([
-                _buildDisasterCard(
-                  context: context,
+                const InterventionAreaCard(
                   title: 'CYCLONE',
                   icon: LucideIcons.wind,
-                  child: const CycloneDisasterDetailScreen(
+                  accentColor: Color(0xFFB71C1C),
+                  child: CycloneDisasterDetailScreen(
                     title: 'Cyclone Management',
                     code: "#cyclone",
                     description:
@@ -112,11 +112,11 @@ class DisasterCategoryList extends StatelessWidget {
                     icon: LucideIcons.wind,
                   ),
                 ),
-                _buildDisasterCard(
-                  context: context,
+                const InterventionAreaCard(
                   title: 'FLOOD',
                   icon: LucideIcons.droplets,
-                  child: const FloodDisasterDetailScreen(
+                  accentColor: Color(0xFFB71C1C),
+                  child: FloodDisasterDetailScreen(
                     title: 'Flood Management',
                     code: "#flood",
                     description:
@@ -124,11 +124,11 @@ class DisasterCategoryList extends StatelessWidget {
                     icon: LucideIcons.droplets,
                   ),
                 ),
-                _buildDisasterCard(
-                  context: context,
+                const InterventionAreaCard(
                   title: 'LANDSLIDE',
                   icon: LucideIcons.mountain,
-                  child: const LandSlideDisasterDetailScreen(
+                  accentColor: Color(0xFFB71C1C),
+                  child: LandSlideDisasterDetailScreen(
                     title: 'Landslide Management',
                     code: "#landslide",
                     description:
@@ -136,11 +136,11 @@ class DisasterCategoryList extends StatelessWidget {
                     icon: LucideIcons.mountain,
                   ),
                 ),
-                _buildDisasterCard(
-                  context: context,
+                const InterventionAreaCard(
                   title: 'COVID-19\nPHASE 1 & 2',
                   icon: LucideIcons.apple,
-                  child: const CovidDisasterDetailScreen(
+                  accentColor: Color(0xFFB71C1C),
+                  child: CovidDisasterDetailScreen(
                     title: 'COVID-19 Response',
                     code: "#covid",
                     description:
@@ -156,63 +156,4 @@ class DisasterCategoryList extends StatelessWidget {
     );
   }
 
-  Widget _buildDisasterCard({
-    required String title,
-    required IconData icon,
-    required Widget child,
-    required BuildContext context,
-  }) {
-    return Container(
-      decoration: BoxDecoration(
-        color: const Color(0xFFB71C1C),
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 10,
-            offset: const Offset(0, 5),
-          ),
-        ],
-      ),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: () {
-            navigateTo(context: context, route: child);
-          },
-          borderRadius: BorderRadius.circular(16),
-          child: Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Icon(
-                    icon,
-                    size: 32,
-                    color: Colors.white,
-                  ),
-                ),
-                const SizedBox(height: 16),
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
 }

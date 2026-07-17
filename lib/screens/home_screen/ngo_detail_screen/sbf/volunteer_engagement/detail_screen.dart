@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vision_2026/helper/gallery_grid.dart';
 
 class CycloneDetailScreen extends StatelessWidget {
   final String title;
@@ -71,27 +72,7 @@ class CycloneDetailScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 16),
-                    SizedBox(
-                      height: 200,
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: images.length,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.only(right: 16),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(12),
-                              child: Image.asset(
-                                images[index],
-                                width: 300,
-                                height: 200,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                    ),
+                    GalleryGrid(images: images),
                   ],
                 ],
               ),

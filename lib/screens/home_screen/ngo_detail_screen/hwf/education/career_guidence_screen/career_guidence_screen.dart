@@ -1,7 +1,6 @@
 // ignore_for_file: unused_element
 
 import 'package:flutter/material.dart';
-import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/career_guidence_screen/career_guidence_detail_screen/career_guidence_detail_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
@@ -104,8 +103,13 @@ class CareerGuidanceScreen extends StatelessWidget {
                   _buildSectionTitle(
                       'Centre for Training and Academic Guidance (CTAG)'),
                   const SizedBox(height: 16),
-                  Image.asset(
-                    HwfContent.ctag,
+                  SizedBox(
+                    height: 200,
+                    width: double.infinity,
+                    child: Image.asset(
+                      'assets/images/hwf/career guidance.png',
+                      fit: BoxFit.cover,
+                    ),
                   ),
                   Container(
                     padding: const EdgeInsets.all(20),
@@ -148,7 +152,7 @@ class CareerGuidanceScreen extends StatelessWidget {
                 _buildProgramCard(
                   title: 'WEST BENGAL CIVIL SERVICE COACHING CENTRE',
                   subtitle: 'Kolkata',
-                  icon: LucideIcons.school2,
+                  image: 'assets/images/hwf/west bengal civil coaching.png',
                   child: const TrainingCenterDetailScreen(
                     title: 'WEST BENGAL CIVIL SERVICE COACHING CENTRE',
                     image: HwfContent.coaching1,
@@ -160,7 +164,7 @@ class CareerGuidanceScreen extends StatelessWidget {
                 _buildProgramCard(
                   title: 'CAREER GUIDANCE & COUNSELLING',
                   subtitle: 'WBCS',
-                  icon: LucideIcons.compass,
+                  image: 'assets/images/hwf/career guidance and counsilling.png',
                   child: const TrainingCenterDetailScreen(
                     title: 'CAREER GUIDANCE & COUNSELLING',
                     image: HwfContent.coaching2,
@@ -172,7 +176,7 @@ class CareerGuidanceScreen extends StatelessWidget {
                 _buildProgramCard(
                   title: 'Training Programs',
                   subtitle: 'Skill Development',
-                  icon: LucideIcons.briefcase,
+                  image: 'assets/images/hwf/career guidance and counsilling.png',
                   child: const TrainingCenterDetailScreen(
                     title: 'Training Programs',
                     image: HwfContent.coaching,
@@ -184,7 +188,7 @@ class CareerGuidanceScreen extends StatelessWidget {
                 _buildProgramCard(
                   title: 'Career Web Portal',
                   subtitle: 'Online Resources',
-                  icon: LucideIcons.globe2,
+                  image: 'assets/images/hwf/career web portal.png',
                   child: const TrainingCenterDetailScreen(
                     title: 'Career Web Portal',
                     image: HwfContent.coaching3,
@@ -196,7 +200,7 @@ class CareerGuidanceScreen extends StatelessWidget {
                 _buildProgramCard(
                   title: 'Career Newsletter',
                   subtitle: 'Monthly Updates',
-                  icon: LucideIcons.mailCheck,
+                  image: 'assets/images/hwf/career news letter.png',
                   child: const TrainingCenterDetailScreen(
                     title: 'Career Newsletter',
                     image: HwfContent.coaching4,
@@ -227,7 +231,7 @@ class CareerGuidanceScreen extends StatelessWidget {
   Widget _buildProgramCard({
     required String title,
     required String subtitle,
-    required IconData icon,
+    required String image,
     required BuildContext context,
     required Widget child,
   }) {
@@ -250,41 +254,44 @@ class CareerGuidanceScreen extends StatelessWidget {
             navigateTo(context: context, route: child);
           },
           borderRadius: BorderRadius.circular(16),
-          child: Padding(
-            padding: const EdgeInsets.all(20),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(16),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF1565C0).withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Icon(
-                    icon,
-                    color: const Color(0xFF1565C0),
-                    size: 32,
+                Expanded(
+                  child: Image.asset(
+                    image,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
                   ),
                 ),
-                const SizedBox(height: 16),
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 13,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black87,
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(12, 10, 12, 14),
+                  child: Column(
+                    children: [
+                      Text(
+                        title,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black87,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        subtitle,
+                        style: TextStyle(
+                          fontSize: 11,
+                          color: Colors.grey[600],
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
                   ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  subtitle,
-                  style: TextStyle(
-                    fontSize: 11,
-                    color: Colors.grey[600],
-                  ),
-                  textAlign: TextAlign.center,
                 ),
               ],
             ),

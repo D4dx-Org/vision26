@@ -1,9 +1,7 @@
 // ignore_for_file: unused_element
 
 import 'package:flutter/material.dart';
-import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:vision_2026/helper/image_viewer.dart';
-import 'package:vision_2026/helper/navigation_helper.dart';
+import 'package:vision_2026/helper/gallery_grid.dart';
 
 class EducationDetailPage extends StatelessWidget {
   final String title;
@@ -177,56 +175,7 @@ class EducationDetailPage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 16),
-                    SizedBox(
-                      // Add fixed height container
-                      height: 300,
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        physics:
-                            const BouncingScrollPhysics(), // Add smooth scrolling
-                        itemCount: imageList!.length,
-                        itemBuilder: (context, index) {
-                          return GestureDetector(
-                            onTap: () {
-                              navigateTo(
-                                context: context,
-                                route: ImageViewerScreen(
-                                  imagePath: imageList![index],
-                                currentIndex: 0,
-                                  imagePaths: [imageList![index]],
-                            
-                                ),
-                              );
-                            },
-                            child: Container(
-                              width: 450,
-                              height: 300, // Add explicit height
-                              margin: const EdgeInsets.only(right: 12),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(12),
-                                child: Image.asset(
-                                  imageList![index],
-                                  fit: BoxFit.cover,
-                                  errorBuilder: (context, error, stackTrace) {
-                                    return Container(
-                                      color: Colors.grey[300],
-                                      child: const Icon(
-                                        LucideIcons.imageOff,
-                                        color: Colors.grey,
-                                        size: 30,
-                                      ),
-                                    );
-                                  },
-                                ),
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                    ),
+                    GalleryGrid(images: imageList!.cast<String>()),
                   ],
                 ),
               ),

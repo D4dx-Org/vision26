@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:vision_2026/helper/image_viewer.dart';
+import 'package:vision_2026/helper/gallery_grid.dart';
 
 class SchoolProfileScreen extends StatelessWidget {
   final String? image;
@@ -30,7 +29,7 @@ class SchoolProfileScreen extends StatelessWidget {
                 fit: StackFit.expand,
                 children: [
                   Image.asset(
-                    image!,
+                    image ?? imageList!.cast<String>().first,
                     fit: BoxFit.cover,
                   ),
                   Container(
@@ -93,7 +92,7 @@ class SchoolProfileScreen extends StatelessWidget {
                 children: [
                   const SizedBox(height: 16),
                   Text(
-                    description!,
+                    description ?? '',
                     style: TextStyle(
                       fontSize: 16,
                       height: 1.6,
@@ -122,56 +121,7 @@ class SchoolProfileScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 16),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.width / 2,
-                      child: GridView.builder(
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          mainAxisSpacing: 12,
-                          crossAxisSpacing: 12,
-                        ),
-                        itemCount: imageList!.length,
-                        itemBuilder: (context, index) {
-                          return GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => ImageViewerScreen(
-                                    imagePath: imageList![index],currentIndex: 0,imagePaths: [...imageList!],
-                                  ),
-                                ),
-                              );
-                            },
-                            child: Container(
-                              width: 160,
-                              margin: const EdgeInsets.only(right: 12),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(12),
-                                child: Image.asset(
-                                  imageList![index],
-                                  fit: BoxFit.cover,
-                                  errorBuilder: (context, error, stackTrace) {
-                                    return Container(
-                                      color: Colors.grey[300],
-                                      child: const Icon(
-                                        LucideIcons.imageOff,
-                                        color: Colors.grey,
-                                        size: 30,
-                                      ),
-                                    );
-                                  },
-                                ),
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                    ),
+                    GalleryGrid(images: [...imageList!.cast<String>()]),
                   ],
                 ),
               ),

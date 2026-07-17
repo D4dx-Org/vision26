@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:vision_2026/helper/image_viewer.dart';
+import 'package:vision_2026/helper/stat_tile.dart';
 
 class WaterSanitationScreen extends StatelessWidget {
   const WaterSanitationScreen({super.key});
@@ -178,25 +179,29 @@ class WaterSanitationScreen extends StatelessWidget {
                             mainAxisSpacing: 16,
                             physics: const NeverScrollableScrollPhysics(),
                             children: [
-                              _buildStatisticCard(
+                              StatTile(
                                 icon: LucideIcons.droplet,
                                 label: 'Submersible Pumps',
                                 value: '433',
+                                accentColor: const Color(0xFFB71C1C),
                               ),
-                              _buildStatisticCard(
+                              StatTile(
                                 icon: LucideIcons.circle,
                                 label: 'Open Well',
                                 value: '174',
+                                accentColor: const Color(0xFFB71C1C),
                               ),
-                              _buildStatisticCard(
+                              StatTile(
                                 icon: LucideIcons.grip,
                                 label: 'Handpump',
                                 value: '56',
+                                accentColor: const Color(0xFFB71C1C),
                               ),
-                              _buildStatisticCard(
+                              StatTile(
                                 icon: LucideIcons.thermometerSnowflake,
                                 label: 'Water Cooler',
                                 value: '196',
+                                accentColor: const Color(0xFFB71C1C),
                               ),
                             ],
                           ),
@@ -237,50 +242,6 @@ class WaterSanitationScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildStatisticCard({
-    required IconData icon,
-    required String label,
-    required String value,
-  }) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: Colors.grey.withOpacity(0.2),
-        ),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            icon,
-            size: 24,
-            color: const Color(0xFFB71C1C),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            value,
-            style: const TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Color(0xFFB71C1C),
-            ),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            label,
-            style: TextStyle(
-              fontSize: 14,
-              color: Colors.grey[600],
-            ),
-            textAlign: TextAlign.center,
-          ),
-        ],
-      ),
-    );
-  }
 
   Widget _buildImageCard(String imagePath) {
     return Builder(

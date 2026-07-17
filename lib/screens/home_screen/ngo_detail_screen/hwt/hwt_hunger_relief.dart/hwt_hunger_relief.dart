@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vision_2026/constants/color_class.dart';
+import 'package:vision_2026/helper/dot_pattern_background.dart';
 import 'package:vision_2026/helper/image_viewer.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/hwt_hunger_relief.dart/hwt_hunger_relief_detailed_page.dart';
 
@@ -170,6 +171,7 @@ HWT is committed to fighting hunger by distributing essential Food Kits to those
     ProjectDetails details,
   ) {
     return InkWell(
+      borderRadius: BorderRadius.circular(20),
       onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
@@ -178,46 +180,68 @@ HWT is committed to fighting hunger by distributing essential Food Kits to those
           ),
         ),
       ),
-      child: Card(
-        elevation: 4,
-        color: Colors.white,
-        child: Stack(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  GestureDetector(
-                    onTap: () => _openImageViewer(context, details.coverImage),
-                    child: Icon(
-                      icon,
-                      size: isMobile ? 40 : 48,
-                      color: ColorClass.primaryColor,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    title,
-                    style: TextStyle(
-                      fontSize: isMobile ? 20 : 24,
-                      fontWeight: FontWeight.bold,
-                      color: ColorClass.primaryColor,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    description,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: isMobile ? 14 : 16,
-                      color: Colors.grey[800],
-                    ),
-                  ),
-                ],
-              ),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: ColorClass.primaryColor.withOpacity(0.10)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.06),
+              blurRadius: 16,
+              offset: const Offset(0, 6),
+            ),
+            BoxShadow(
+              color: ColorClass.primaryColor.withOpacity(0.12),
+              blurRadius: 20,
+              offset: const Offset(0, 8),
             ),
           ],
+        ),
+        child: DotPatternBackground(
+          color: ColorClass.primaryColor,
+          borderRadius: BorderRadius.circular(20),
+          child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () => _openImageViewer(context, details.coverImage),
+                child: Container(
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: ColorClass.primaryColor.withOpacity(0.10),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    icon,
+                    size: isMobile ? 32 : 40,
+                    color: ColorClass.primaryColor,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+              Text(
+                title,
+                style: TextStyle(
+                  fontSize: isMobile ? 20 : 24,
+                  fontWeight: FontWeight.bold,
+                  color: ColorClass.primaryColor,
+                ),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                description,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: isMobile ? 14 : 16,
+                  color: Colors.grey[800],
+                ),
+              ),
+            ],
+          ),
+          ),
         ),
       ),
     );

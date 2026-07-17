@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vision_2026/constants/color_class.dart';
+import 'package:vision_2026/helper/intervention_area_card.dart';
+import 'package:vision_2026/helper/pill_tile.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MVT/components/intervention_areas.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MVT/components/mvt_intervention_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/MVT/components/states.dart';
@@ -155,49 +157,19 @@ class MVTProfileScreen extends StatelessWidget {
                   crossAxisSpacing: 16,
                 ),
                 itemCount: statesData.length,
-                itemBuilder: (context, index) => Container(
-                  decoration: BoxDecoration(
-                    color: ColorClass.white70,
-                    borderRadius: BorderRadius.circular(8),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
-                        blurRadius: 4,
-                        offset: const Offset(0, 2),
-                      ),
-                    ],
-                  ),
-                  child: Material(
-                    color: Colors.transparent,
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => StateDetailScreen(
-                              stateData: statesData[index],
-                            ),
-                          ),
-                        );
-                      },
-                      borderRadius: BorderRadius.circular(8),
-                      child: Center(
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Text(
-                            statesData[index].state,
-                            style: TextStyle(
-                              color: ColorClass.primaryColor,
-                              fontSize:
-                                  MediaQuery.of(context).size.width * 0.03,
-                              fontWeight: FontWeight.w500,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
+                itemBuilder: (context, index) => PillTile(
+                  text: statesData[index].state,
+                  accentColor: ColorClass.primaryColor,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => StateDetailScreen(
+                          stateData: statesData[index],
                         ),
                       ),
-                    ),
-                  ),
+                    );
+                  },
                 ),
               ),
             ),
@@ -231,58 +203,12 @@ class MVTProfileScreen extends StatelessWidget {
                   crossAxisSpacing: 12,
                 ),
                 itemCount: interventionAreas.length,
-                itemBuilder: (context, index) => Container(
-                  decoration: BoxDecoration(
-                    color: ColorClass.white70,
-                    borderRadius: BorderRadius.circular(8),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
-                        blurRadius: 4,
-                        offset: const Offset(0, 2),
-                      ),
-                    ],
-                  ),
-                  child: Material(
-                    color: Colors.transparent,
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => MVTInterventionScreen(
-                              intervention: interventionAreas[index],
-                            ),
-                          ),
-                        );
-                      },
-                      borderRadius: BorderRadius.circular(8),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            interventionAreas[index].icon,
-                            color: ColorClass.primaryColor,
-                            size: 24,
-                          ),
-                          const SizedBox(height: 8),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 4),
-                            child: Text(
-                              interventionAreas[index].title,
-                              style: const TextStyle(
-                                color: ColorClass.primaryColor,
-                                fontSize: 12,
-                                fontWeight: FontWeight.w500,
-                              ),
-                              textAlign: TextAlign.center,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                itemBuilder: (context, index) => InterventionAreaCard(
+                  title: interventionAreas[index].title,
+                  icon: interventionAreas[index].icon,
+                  accentColor: ColorClass.primaryColor,
+                  child: MVTInterventionScreen(
+                    intervention: interventionAreas[index],
                   ),
                 ),
               ),

@@ -15,7 +15,7 @@ class HwfContent {
   /// [Educational Institutions] ///
   static const String educationIntro = '${imageRoot}education-intro.jpg';
 
-  ///  Siddique hassan campus
+  ///  Vision Academic City
   static const String siddiqueHassanCampus =
       '${imageRoot1}siddique_hassan_campus.png';
   static const String siddiqueHassanCampus1 =
@@ -42,6 +42,8 @@ class HwfContent {
       '${imageRoot1}siddikhasanaljamia-campus4.png';
   static const String siddiqueHassanCampus5 =
       '${imageRoot1}siddikhasanaljamia-campus5.png';
+  static const String ugCollege =
+      '${imageRoot1}ug_college.png';
 
   //// Hwf Malda campus
   static const String hwfMaldaCampus = '${imageRoot2}hwfMaldaCampus.png';

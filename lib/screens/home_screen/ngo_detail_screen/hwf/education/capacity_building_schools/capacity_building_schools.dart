@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:vision_2026/helper/image_viewer.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
+import 'package:vision_2026/helper/pill_tile.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/capacity_building_schools/supported_schools_screen.dart';
 import 'models/school.dart';
@@ -163,8 +164,22 @@ class CapacityBuildingScreen extends StatelessWidget {
                       crossAxisSpacing: 12,
                     ),
                     itemCount: states.length,
-                    itemBuilder: (context, index) =>
-                        _buildStateChip(states[index], context),
+                    itemBuilder: (context, index) => PillTile(
+                      text: states[index],
+                      accentColor: const Color(0xFFB71C1C),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SupportedSchoolsScreen(
+                              state: states[index],
+                              schools: schoolsByState[states[index]] ??
+                                  <School>[],
+                            ),
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ],
               ),
@@ -198,6 +213,12 @@ class CapacityBuildingScreen extends StatelessWidget {
                     icon: LucideIcons.graduationCap,
                     title: 'Teacher Training',
                     description: 'Capacity building workshops for teachers',
+                  ),
+                  const SizedBox(height: 12),
+                  _buildInitiativeCard(
+                    icon: LucideIcons.graduationCap,
+                    title: 'Management Training',
+                    description: 'Leadership and administration workshops for school management',
                   ),
                 ],
               ),
@@ -321,45 +342,6 @@ class CapacityBuildingScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildStateChip(String state, BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => SupportedSchoolsScreen(
-              state: state,
-              schools: schoolsByState[state] ?? <School>[],
-            ),
-          ),
-        );
-      },
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.05),
-              blurRadius: 5,
-              offset: const Offset(0, 2),
-            ),
-          ],
-        ),
-        child: Center(
-          child: Text(
-            state,
-            style: const TextStyle(
-              fontSize: 18,
-              color: Color(0xFFB71C1C),
-            ),
-            textAlign: TextAlign.center,
-          ),
         ),
       ),
     );

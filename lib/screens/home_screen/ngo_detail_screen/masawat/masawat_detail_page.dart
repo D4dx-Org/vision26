@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:vision_2026/constants/color_class.dart';
 import 'package:vision_2026/helper/image_viewer.dart';
-import 'package:vision_2026/helper/navigation_helper.dart';
+import 'package:vision_2026/helper/intervention_area_card.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/masawat/financial_support/financial_support.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/masawat/market_linkage/market_linkage.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/masawat/masawat_content.dart';
@@ -125,19 +125,22 @@ class MasawatProfileScreen extends StatelessWidget {
                 crossAxisCount: 3,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
-                childAspectRatio: 1.3,
+                childAspectRatio: 0.8,
                 children: const [
                   InterventionAreaCard(
+                    accentColor: ColorClass.primaryColor,
                     title: 'Financial Support',
                     icon: LucideIcons.dollarSign,
                     child: MasawatFinancialPage(),
                   ),
                   InterventionAreaCard(
+                    accentColor: ColorClass.primaryColor,
                     title: 'Skill Development',
                     icon: LucideIcons.utensilsCrossed,
                     child: MasawatSkillDevelopmentPage(),
                   ),
                   InterventionAreaCard(
+                    accentColor: ColorClass.primaryColor,
                     title: 'Market Linkage',
                     icon: LucideIcons.graduationCap,
                     child: MasawatMarketLinkagePage(),
@@ -204,70 +207,3 @@ class MasawatProfileScreen extends StatelessWidget {
   }
 }
 
-class InterventionAreaCard extends StatelessWidget {
-  final String title;
-  final IconData icon;
-  final Widget child;
-
-  const InterventionAreaCard({
-    super.key,
-    required this.title,
-    required this.icon,
-    required this.child,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Material(
-        color: Colors.transparent,
-        borderRadius: BorderRadius.circular(15),
-        child: InkWell(
-          onTap: () {
-            navigateTo(context: context, route: child);
-          },
-          borderRadius: BorderRadius.circular(15),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(
-                  icon,
-                  size: 28,
-                  color: ColorClass.primaryColor,
-                ),
-                const SizedBox(height: 4),
-                Flexible(
-                  child: Text(
-                    title,
-                    style: const TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black87,
-                    ),
-                    textAlign: TextAlign.center,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}

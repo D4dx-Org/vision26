@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:vision_2026/helper/navigation_helper.dart';
+import 'package:vision_2026/helper/intervention_area_card.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/educational_institutions/capmpuses/siddique_hassan_campus/existing_projects/school_profile_scren.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
 
@@ -45,7 +45,7 @@ class SiddiqueHassanCampus extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Siddique Hassan Campus',
+                    'Vision Academic City',
                     style: TextStyle(
                       fontSize: 24,
                       color: Colors.white,
@@ -141,15 +141,20 @@ class SiddiqueHassanCampus extends StatelessWidget {
                     crossAxisCount: 2,
                     mainAxisSpacing: 16,
                     crossAxisSpacing: 16,
-                    childAspectRatio: 1.3,
+                    childAspectRatio: 1.0,
                     children: [
-                      _buildProjectCard(
-                        title: 'Al Jamia Senior Secondary School',
+                      InterventionAreaCard(
+                        title: 'Senior Secondary School',
                         icon: LucideIcons.graduationCap,
-                        context: context,
+                        accentColor: const Color(0xFFB71C1C),
+                        showIcon: false,
+                        topImage:
+                            'assets/images/hwf/senior secondary school.png',
                         child: const SchoolProfileScreen(
-                          schoolName: 'Al Jamia Senior Secondary School',
+                          schoolName: 'Senior Secondary School',
                           imageList: [
+                            'assets/images/hwf/senior secondary school malda.png',
+                            'assets/images/hwf/senior secondary school.png',
                             HwfContent.siddiqueHassanCampus1_1,
                             HwfContent.siddiqueHassanCampus1_2,
                             HwfContent.siddiqueHassanCampus1_3,
@@ -162,35 +167,61 @@ class SiddiqueHassanCampus extends StatelessWidget {
                           image: HwfContent.siddiqueHassanCampus1,
                         ),
                       ),
-                      _buildProjectCard(
-                        title: 'UG & PG College',
+                      InterventionAreaCard(
+                        title: 'UG College',
                         icon: LucideIcons.building2,
-                        context: context,
+                        accentColor: const Color(0xFFB71C1C),
+                        showIcon: false,
+                        topImage:
+                            'assets/images/hwf/siddikhasan/ug_college.png',
                         child: const SchoolProfileScreen(
-                            schoolName: 'UG & PG College',
+                            schoolName: 'UG College',
                             description:
-                                "The UG and PG College offers a variety of undergraduate and postgraduate courses, affiliated with recognized universities. Comprehensive facilities, including hostels, are already in place to support student needs.",
-                            image: HwfContent.siddiqueHassanCampus5),
+                                "The UG College offers a variety of undergraduate and postgraduate courses, affiliated with recognized universities. Comprehensive facilities, including hostels, are already in place to support student needs.",
+                            image: HwfContent.ugCollege),
                       ),
-                      _buildProjectCard(
-                        title: 'Chirag Public School (Hindi Medium)',
+                      InterventionAreaCard(
+                        title: 'Chirag Middle School',
                         icon: LucideIcons.school,
-                        context: context,
+                        accentColor: const Color(0xFFB71C1C),
+                        showIcon: false,
+                        topImage:
+                            'assets/images/hwf/chirag middle school mevat.png',
                         child: const SchoolProfileScreen(
-                          schoolName: 'Chirag Public School (Hindi Medium)',
+                          schoolName: 'Chirag Middle School ',
                           description:
-                              "Chirag Public School is a state-recognized, Hindi-medium institution established to address the region's educational needs. With limited schooling options and inadequate infrastructure in existing government schools, Chirag Public School aims to bridge this gap and tackle the educational challenges faced by the local community.",
+                              "Chirag Middle School is a state-recognized, Hindi-medium institution established to address the region's educational needs. With limited schooling options and inadequate infrastructure in existing government schools, Chirag Public School aims to bridge this gap and tackle the educational challenges faced by the local community.",
                           image: HwfContent.siddiqueHassanCampus3,
                         ),
                       ),
-                      _buildProjectCard(
-                        title: 'Hostels for Boys',
+                      InterventionAreaCard(
+                        title: 'Hostels for Boys ',
                         icon: LucideIcons.bed,
-                        context: context,
+                        accentColor: const Color(0xFFB71C1C),
+                        showIcon: false,
+                        topImage: 'assets/images/hwf/boys hostel.png',
                         child: const SchoolProfileScreen(
-                          schoolName: 'Hostels for Boys & girls',
+                          schoolName: 'Hostels for Boys ',
                           description:
-                              "Separate hostels have been arranged for boys and girls of Al Jamia Off-Campus and UG & PG Colleges. Special accommodations are reserved for orphaned students in these hostels.",
+                              "Separate hostels have been arranged for boys of Al Jamia Off-Campus and UG & PG Colleges. Special accommodations are reserved for orphaned students in these hostels.",
+                          image: HwfContent.siddiqueHassanCampus2,
+                          imageList: [
+                            HwfContent.siddiqueHassanCampus2,
+                            HwfContent.siddiqueHassanCampus4,
+                          ],
+                        ),
+                      ),
+
+                       InterventionAreaCard(
+                        title: 'Hostels for Girls',
+                        icon: LucideIcons.bed,
+                        accentColor: const Color(0xFFB71C1C),
+                        showIcon: false,
+                        topImage: 'assets/images/hwf/girls hostal.png',
+                        child: const SchoolProfileScreen(
+                          schoolName: 'Hostels for girls',
+                          description:
+                              "Separate hostels have been arranged for girls of Al Jamia Off-Campus and UG & PG Colleges. Special accommodations are reserved for orphaned students in these hostels.",
                           image: HwfContent.siddiqueHassanCampus2,
                           imageList: [
                             HwfContent.siddiqueHassanCampus2,
@@ -241,29 +272,56 @@ class SiddiqueHassanCampus extends StatelessWidget {
                     crossAxisCount: 2,
                     mainAxisSpacing: 16,
                     crossAxisSpacing: 16,
-                    childAspectRatio: 1.3,
+                    childAspectRatio: 1.0,
                     children: [
-                      _buildProjectCard(
-                        title: 'Industrial Training Centre',
+                      InterventionAreaCard(
+                        title: 'Skill development Centre',
                         icon: LucideIcons.wrench,
-                        isFuture: true,
-                        context: context,
-                        child: const SchoolProfileScreen(),
+                        showIcon: false,
+                        topImage: 'assets/images/hwf/skill development.png',
+                        accentColor: Colors.orange[800]!,
+                        child: const SchoolProfileScreen(
+                          schoolName: 'Skill development Centre',
+                          image: 'assets/images/hwf/skill development.png',
+                        ),
                       ),
-                      _buildProjectCard(
+                      InterventionAreaCard(
                         title: 'The Scholar School',
                         icon: LucideIcons.school2,
-                        isFuture: true,
-                        context: context,
-                        child: const SchoolProfileScreen(),
+                        showIcon: false,
+                        topImage: 'assets/images/hwf/scholar school malda.png',
+                        accentColor: Colors.orange[800]!,
+                        child: const SchoolProfileScreen(
+                          schoolName: 'The Scholar School',
+                          imageList: [
+                            'assets/images/hwf/scholar school malda.png',
+                            'assets/images/hwf/scholar school malda2.png',
+                            'assets/images/hwf/scholar school mevat.png',
+                          ],
+                        ),
                       ),
-                      _buildProjectCard(
-                        title: 'Medical Centre',
-                        icon: LucideIcons.stethoscope,
-                        isFuture: true,
-                        context: context,
-                        child: const SchoolProfileScreen(),
+                       InterventionAreaCard(
+                        title: 'TSS Hostel For Boys',
+                        icon: LucideIcons.school2,
+                        showIcon: false,
+                        topImage: 'assets/images/hwf/tss hostel.png',
+                        accentColor: Colors.orange[800]!,
+                        child: const SchoolProfileScreen(
+                          schoolName: 'TSS Hostel For Boys',
+                          image: 'assets/images/hwf/tss hostel.png',
+                        ),
+                      ), InterventionAreaCard(
+                        title: 'TSS Hostel For Girls',
+                        icon: LucideIcons.school2,
+                        showIcon: false,
+                        topImage: 'assets/images/hwf/tss hostel.png',
+                        accentColor: Colors.orange[800]!,
+                        child: const SchoolProfileScreen(
+                          schoolName: 'TSS Hostel For Girls',
+                          image: 'assets/images/hwf/tss hostel.png',
+                        ),
                       ),
+                    
                     ],
                   ),
                 ],
@@ -289,65 +347,6 @@ class SiddiqueHassanCampus extends StatelessWidget {
       //     color: Colors.white,
       //   ),
       // ),
-    );
-  }
-
-  Widget _buildProjectCard({
-    required String title,
-    required IconData icon,
-    bool isFuture = false,
-    Widget child = const SizedBox(),
-    required BuildContext context,
-  }) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: isFuture
-              ? null
-              : () {
-                  navigateTo(context: context, route: child);
-                },
-          borderRadius: BorderRadius.circular(12),
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  icon,
-                  size: 32,
-                  color:
-                      isFuture ? Colors.orange[800] : const Color(0xFFB71C1C),
-                ),
-                const SizedBox(height: 12),
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey[800],
-                  ),
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
     );
   }
 }

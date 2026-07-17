@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:vision_2026/constants/image_class.dart';
-import 'package:vision_2026/helper/navigation_helper.dart';
+import 'package:vision_2026/helper/intervention_area_card.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/economic_empowerment/economic_empowerment.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/education/hwt_education_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwt/healthcare/hwt_health_care_screen.dart';
@@ -132,41 +132,49 @@ class HWTProfileScreen extends StatelessWidget {
                 childAspectRatio: 0.8,
                 children: const [
                   InterventionAreaCard(
+                    accentColor: const Color(0xFFB71C1C),
                     title: 'HealthCare',
                     icon: LucideIcons.heartPulse,
                     child: HWTHealthcareServicesScreen(),
                   ),
                   InterventionAreaCard(
+                    accentColor: const Color(0xFFB71C1C),
                     title: 'Hunger Relief',
                     icon: LucideIcons.utensilsCrossed,
                     child: HWTHungerReliefPage(),
                   ),
                   InterventionAreaCard(
+                    accentColor: const Color(0xFFB71C1C),
                     title: 'Education',
                     icon: LucideIcons.graduationCap,
                     child: HWTEducationServicesScreen(),
                   ),
                   InterventionAreaCard(
+                    accentColor: const Color(0xFFB71C1C),
                     title: 'Orphan and Widow Care',
                     icon: LucideIcons.users,
                     child: OrphanWidowCareScreen(),
                   ),
                   InterventionAreaCard(
+                    accentColor: const Color(0xFFB71C1C),
                     title: 'Economic Empowerment',
                     icon: LucideIcons.dollarSign,
                     child: EconomicEmpowermentScreen(),
                   ),
                   InterventionAreaCard(
+                    accentColor: const Color(0xFFB71C1C),
                     title: 'Low-Cost Housing',
                     icon: LucideIcons.home,
                     child: LowCostHousingScreen(),
                   ),
                   InterventionAreaCard(
+                    accentColor: const Color(0xFFB71C1C),
                     title: 'Water and Sanitaion',
                     icon: LucideIcons.droplet,
                     child: WaterSanitationScreen(),
                   ),
                   InterventionAreaCard(
+                    accentColor: const Color(0xFFB71C1C),
                     title: 'Winter Relief',
                     icon: LucideIcons.snowflake,
                     child: WinterReliefScreen(),
@@ -183,74 +191,3 @@ class HWTProfileScreen extends StatelessWidget {
   }
 }
 
-class InterventionAreaCard extends StatelessWidget {
-  final String title;
-  final IconData icon;
-
-  final Widget child;
-
-  const InterventionAreaCard({
-    super.key,
-    required this.title,
-    required this.icon,
-    required this.child,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Material(
-        color: Colors.transparent,
-        borderRadius: BorderRadius.circular(15),
-        child: InkWell(
-          onTap: () {
-            navigateTo(context: context, route: child);
-          },
-          borderRadius: BorderRadius.circular(15),
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  icon,
-                  size: 32,
-                  color: const Color(0xFFB71C1C),
-                ),
-                const SizedBox(height: 6),
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black87,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 4),
-                // Text(
-                //   code,
-                //   style: TextStyle(
-                //     fontSize: 14,
-                //     color: Colors.grey[600],
-                //   ),
-                // ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}

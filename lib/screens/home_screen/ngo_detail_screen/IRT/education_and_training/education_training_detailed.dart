@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:vision_2026/constants/color_class.dart';
-import 'package:vision_2026/helper/image_viewer.dart';
-import 'package:vision_2026/helper/navigation_helper.dart';
+import 'package:vision_2026/helper/gallery_grid.dart';
 
 class IRTEducationTrainingServiceDetail extends StatelessWidget {
   final String title;
@@ -236,48 +235,7 @@ class IRTEducationTrainingServiceDetail extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 16),
-                        GridView.builder(
-                          shrinkWrap: true,
-                          physics: const NeverScrollableScrollPhysics(),
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            childAspectRatio: 1.0,
-                            crossAxisSpacing: 16,
-                            mainAxisSpacing: 16,
-                          ),
-                          itemCount: galleryImages.length,
-                          itemBuilder: (context, index) {
-                            return GestureDetector(
-                              onTap: () {
-                                navigateTo(
-                                  context: context,
-                                  route: ImageViewerScreen(
-                                    imagePath: galleryImages[index],
-                                    currentIndex: 0,
-                                    imagePaths: [...galleryImages],
-                                  ),
-                                );
-                              },
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(16),
-                                  image: DecorationImage(
-                                    image: AssetImage(galleryImages[index]),
-                                    fit: BoxFit.cover,
-                                  ),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black.withOpacity(0.05),
-                                      blurRadius: 10,
-                                      offset: const Offset(0, 2),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            );
-                          },
-                        ),
+                        GalleryGrid(images: galleryImages),
                       ],
                     ),
                   ),

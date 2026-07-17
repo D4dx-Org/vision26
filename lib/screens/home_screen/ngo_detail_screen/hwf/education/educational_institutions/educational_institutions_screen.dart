@@ -1,5 +1,6 @@
 // image_gallery_grid.dart
 import 'package:flutter/material.dart';
+import 'package:vision_2026/helper/gallery_grid.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/educational_institutions/capmpuses/hwf_malda_campus/hwf_malda_campus.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/educational_institutions/capmpuses/siddique_hassan_campus/siddique_hassan_campus.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
@@ -20,118 +21,7 @@ class ImageGalleryGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: crossAxisCount,
-        crossAxisSpacing: spacing,
-        mainAxisSpacing: spacing,
-        childAspectRatio: childAspectRatio,
-      ),
-      itemCount: imageList.length,
-      itemBuilder: (context, index) {
-        return GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => ImageViewerScreen(
-                  imagePath: imageList[index],
-                ),
-              ),
-            );
-          },
-          child: Hero(
-            tag: imageList[index],
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 5,
-                    spreadRadius: 1,
-                  ),
-                ],
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: imageList[index].startsWith('http')
-                    ? Image.network(
-                        imageList[index],
-                        fit: BoxFit.cover,
-                      )
-                    : Image.asset(
-                        imageList[index],
-                        fit: BoxFit.cover,
-                      ),
-              ),
-            ),
-          ),
-        );
-      },
-    );
-  }
-}
-
-// image_viewer_screen.dart
-class ImageViewerScreen extends StatelessWidget {
-  final String imagePath;
-
-  const ImageViewerScreen({
-    super.key,
-    required this.imagePath,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      body: Stack(
-        children: [
-          Center(
-            child: Hero(
-              tag: imagePath,
-              child: InteractiveViewer(
-                minScale: 0.5,
-                maxScale: 4.0,
-                child: imagePath.startsWith('http')
-                    ? Image.network(
-                        imagePath,
-                        fit: BoxFit.contain,
-                        width: double.infinity,
-                        height: double.infinity,
-                      )
-                    : Image.asset(
-                        imagePath,
-                        fit: BoxFit.contain,
-                        width: double.infinity,
-                        height: double.infinity,
-                      ),
-              ),
-            ),
-          ),
-          Positioned(
-            top: 40,
-            left: 16,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.black.withOpacity(0.5),
-                shape: BoxShape.circle,
-              ),
-              child: IconButton(
-                icon: const Icon(
-                  Icons.arrow_back_ios,
-                  color: Colors.white,
-                ),
-                onPressed: () => Navigator.pop(context),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
+    return GalleryGrid(images: imageList);
   }
 }
 
@@ -377,9 +267,9 @@ class EducationalInstitutionsScreen extends StatelessWidget {
                 _buildInstitutionCard(
                   context: context,
                   child: const SiddiqueHassanCampus(),
-                  name: 'Siddique Hassan Campus',
+                  name: 'Vision Academic City',
                   location: 'Mewat, Haryana',
-                  place: 'Hayana',
+                  place: 'Haryana',
                   image: HwfContent.siddiqueHassanCampus,
                 ),
                 _buildInstitutionCard(

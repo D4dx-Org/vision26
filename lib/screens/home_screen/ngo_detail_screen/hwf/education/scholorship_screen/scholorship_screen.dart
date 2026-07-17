@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:vision_2026/helper/image_viewer.dart';
+import 'package:vision_2026/helper/gallery_grid.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/scholorship_screen/scholorship_detail_scren/scholorship_detail_scren.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
@@ -208,20 +208,7 @@ class ScholarshipScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  GridView.builder(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      childAspectRatio: 1.0,
-                      mainAxisSpacing: 16,
-                      crossAxisSpacing: 16,
-                    ),
-                    itemCount: HwfContent.scholorShipImageList.length,
-                    itemBuilder: (context, index) => _buildGalleryImage(
-                        HwfContent.scholorShipImageList[index], context),
-                  ),
+                  GalleryGrid(images: HwfContent.scholorShipImageList),
                 ],
               ),
             ),
@@ -342,37 +329,6 @@ class ScholarshipScreen extends StatelessWidget {
       //     ),
       //   ),
       // ),
-    );
-  } // Add this method to your class
-
-  Widget _buildGalleryImage(String imagePath, context) {
-    return GestureDetector(
-      onTap: () {
-        navigateTo(
-          context: context,
-          route: ImageViewerScreen(
-              imagePath: imagePath, currentIndex: 0, imagePaths: [imagePath]),
-        );
-      },
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.1),
-              blurRadius: 10,
-              offset: const Offset(0, 2),
-            ),
-          ],
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(16),
-          child: Image.asset(
-            imagePath,
-            fit: BoxFit.cover,
-          ),
-        ),
-      ),
     );
   }
 

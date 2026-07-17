@@ -2,8 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:vision_2026/helper/image_viewer.dart';
-import 'package:vision_2026/helper/navigation_helper.dart';
+import 'package:vision_2026/helper/gallery_grid.dart';
 
 class HWTHealthcareServiceDetail extends StatelessWidget {
   final String title;
@@ -181,38 +180,7 @@ class HWTHealthcareServiceDetail extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 16),
-                        GridView.builder(
-                          shrinkWrap: true,
-                          physics: NeverScrollableScrollPhysics(),
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            crossAxisSpacing: 10,
-                            mainAxisSpacing: 10,
-                          ),
-                          itemCount: galleryImages.length,
-                          itemBuilder: (context, index) {
-                            return GestureDetector(
-                              onTap: () {
-                                navigateTo(
-                                  context: context,
-                                  route: ImageViewerScreen(
-                                    imagePath: galleryImages[index],
-                                    currentIndex: 0,
-                                    imagePaths: [...galleryImages],
-                                  ),
-                                );
-                              },
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8),
-                                child: Image.asset(
-                                  galleryImages[index],
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            );
-                          },
-                        ),
+                        GalleryGrid(images: galleryImages),
                       ],
                     ),
                   ),

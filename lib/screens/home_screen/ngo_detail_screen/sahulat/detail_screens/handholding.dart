@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:vision_2026/helper/image_viewer.dart';
+import 'package:vision_2026/helper/gallery_grid.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sahulat/sahulat_content.dart';
 
 class HandholdingSupportScreen extends StatelessWidget {
@@ -47,55 +47,13 @@ class HandholdingSupportScreen extends StatelessWidget {
           ),
           SliverPadding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
-            sliver: SliverGrid(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 16,
-                crossAxisSpacing: 16,
-                childAspectRatio: 1.5,
-              ),
-              delegate: SliverChildBuilderDelegate(
-                (context, index) {
-                  List<String> images = [
-                    SahulatContent.sahulat12,
-                    SahulatContent.sahulat13,
-                    SahulatContent.sahulat14,
-                  ];
-                  return GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ImageViewerScreen(
-                            imagePath: images[index],
-                            currentIndex: 0,
-                            imagePaths: [...images],
-                           
-                          ),
-                        ),
-                      );
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
-                            blurRadius: 10,
-                          ),
-                        ],
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(16),
-                        child: Image.asset(
-                          images[index],
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                    ),
-                  );
-                },
-                childCount: 3,
+            sliver: SliverToBoxAdapter(
+              child: GalleryGrid(
+                images: [
+                  SahulatContent.sahulat12,
+                  SahulatContent.sahulat13,
+                  SahulatContent.sahulat14,
+                ],
               ),
             ),
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
+import 'package:vision_2026/helper/dot_pattern_background.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sahulat/sahulat_content.dart';
 
 class IFCCSFormationScreen extends StatelessWidget {
@@ -299,35 +300,59 @@ class StatItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const accentColor = Color(0xFFB71C1C);
     return Container(
-      padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.grey[50],
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.grey[200]!),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            state,
-            style: const TextStyle(fontWeight: FontWeight.w500),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: accentColor.withOpacity(0.10)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.05),
+            blurRadius: 12,
+            offset: const Offset(0, 4),
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
-            decoration: BoxDecoration(
-              color: Colors.red[50],
-              borderRadius: BorderRadius.circular(4),
-            ),
-            child: Text(
-              branches.toString(),
-              style: TextStyle(
-                color: Colors.red[700],
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+          BoxShadow(
+            color: accentColor.withOpacity(0.12),
+            blurRadius: 14,
+            offset: const Offset(0, 6),
           ),
         ],
+      ),
+      child: DotPatternBackground(
+        color: accentColor,
+        borderRadius: BorderRadius.circular(16),
+        child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: Text(
+                state,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(fontWeight: FontWeight.w500),
+              ),
+            ),
+            const SizedBox(width: 8),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+              decoration: BoxDecoration(
+                color: accentColor.withOpacity(0.10),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Text(
+                branches.toString(),
+                style: const TextStyle(
+                  color: accentColor,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ],
+        ),
+        ),
       ),
     );
   }

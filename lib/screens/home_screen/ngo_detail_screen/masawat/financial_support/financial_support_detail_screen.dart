@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:vision_2026/constants/color_class.dart';
+import 'package:vision_2026/helper/dot_pattern_background.dart';
+import 'package:vision_2026/helper/gallery_grid.dart';
 import 'package:vision_2026/helper/image_viewer.dart';
 
 class MasawatFinancialDetailScreen extends StatelessWidget {
@@ -163,17 +165,35 @@ class MasawatFinancialDetailScreen extends StatelessWidget {
                       itemBuilder: (context, index) => Container(
                         decoration: BoxDecoration(
                           color: ColorClass.primaryColor,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Center(
-                          child: Text(
-                            stats[index],
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
+                          borderRadius: BorderRadius.circular(14),
+                          boxShadow: [
+                            BoxShadow(
+                              color: ColorClass.primaryColor.withOpacity(0.30),
+                              blurRadius: 14,
+                              offset: const Offset(0, 6),
                             ),
-                            textAlign: TextAlign.center,
+                          ],
+                        ),
+                        child: DotPatternBackground(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(14),
+                          child: Center(
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 4, vertical: 4),
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  stats[index],
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -243,41 +263,7 @@ class MasawatFinancialDetailScreen extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 16),
-                        GridView.builder(
-                          shrinkWrap: true,
-                          physics: const NeverScrollableScrollPhysics(),
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            childAspectRatio: 1.0,
-                            mainAxisSpacing: 16,
-                            crossAxisSpacing: 16,
-                          ),
-                          itemCount: galleryImages.length,
-                          itemBuilder: (context, index) => GestureDetector(
-                            onTap: () =>
-                                _openImageViewer(context, galleryImages[index]),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black.withOpacity(0.1),
-                                    blurRadius: 10,
-                                    offset: const Offset(0, 2),
-                                  ),
-                                ],
-                              ),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(12),
-                                child: Image.asset(
-                                  galleryImages[index],
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
+                        GalleryGrid(images: galleryImages),
                         const SizedBox(height: 20),
                       ],
                     ),

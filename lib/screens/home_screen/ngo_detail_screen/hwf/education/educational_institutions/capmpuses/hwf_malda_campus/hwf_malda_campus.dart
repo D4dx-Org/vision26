@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:vision_2026/helper/navigation_helper.dart';
+import 'package:vision_2026/helper/intervention_area_card.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/education/educational_institutions/capmpuses/siddique_hassan_campus/existing_projects/school_profile_scren.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
 
@@ -143,12 +143,12 @@ class HwfMaldaCampus extends StatelessWidget {
                     crossAxisSpacing: 16,
                     childAspectRatio: 0.9,
                     children: [
-                      _buildProjectCard(
-                        title: 'Al Jamia Senior Secondary School',
+                      InterventionAreaCard(
+                        title: 'Senior Secondary School',
                         icon: LucideIcons.school,
-                        context: context,
+                        accentColor: const Color(0xFFB71C1C),
                         child: const SchoolProfileScreen(
-                          schoolName: 'Al Jamia Senior Secondary School',
+                          schoolName: 'Senior Secondary School',
                           image: HwfContent.maldaJamiaCampus1,
                           imageList: [
                             HwfContent.maldaJamiaCampus2,
@@ -159,10 +159,10 @@ class HwfMaldaCampus extends StatelessWidget {
                               "This institution serves as an off-campus center of Al Jamia Al Islamia, a prestigious Islamic institution based in Santhapuram, Kerala.  Students are admitted into the residential program after completing the 10th grade and continue their education here through to a bachelor’s degree, with a curriculum that includes comprehensive knowledge in Islamic studies.",
                         ),
                       ),
-                      _buildProjectCard(
+                      InterventionAreaCard(
                         title: 'The Scholar School',
                         icon: LucideIcons.graduationCap,
-                        context: context,
+                        accentColor: const Color(0xFFB71C1C),
                         child: const SchoolProfileScreen(
                           schoolName: 'The Scholar School',
                           description:
@@ -176,10 +176,10 @@ class HwfMaldaCampus extends StatelessWidget {
                           ],
                         ),
                       ),
-                      _buildProjectCard(
+                      InterventionAreaCard(
                         title: 'Hostel for Boys',
                         icon: LucideIcons.building2,
-                        context: context,
+                        accentColor: const Color(0xFFB71C1C),
                         child: const SchoolProfileScreen(
                           schoolName: 'Hostels for Boys',
                           description:
@@ -236,18 +236,18 @@ class HwfMaldaCampus extends StatelessWidget {
                     crossAxisSpacing: 16,
                     childAspectRatio: 1.3,
                     children: [
-                      _buildProjectCard(
-                        title: 'Industrial Training Centre',
+                      InterventionAreaCard(
+                        title: 'TSS Hostel For Boys',
                         icon: LucideIcons.wrench,
-                        isFuture: true,
-                        context: context,
+                        enabled: false,
+                        accentColor: Colors.orange[800]!,
                         child: const SchoolProfileScreen(),
                       ),
-                      _buildProjectCard(
-                        title: 'Medical Centre',
+                      InterventionAreaCard(
+                        title: 'Skill Development Center',
                         icon: LucideIcons.stethoscope,
-                        isFuture: true,
-                        context: context,
+                        enabled: false,
+                        accentColor: Colors.orange[800]!,
                         child: const SchoolProfileScreen(),
                       ),
                     ],
@@ -275,81 +275,6 @@ class HwfMaldaCampus extends StatelessWidget {
       //     color: Colors.white,
       //   ),
       // ),
-    );
-  }
-
-  Widget _buildProjectCard({
-    required String title,
-    required IconData icon,
-    bool isFuture = false,
-    Widget child = const SizedBox(),
-    required BuildContext context,
-  }) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: isFuture
-              ? null
-              : () {
-                  navigateTo(context: context, route: child);
-                },
-          borderRadius: BorderRadius.circular(12),
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  icon,
-                  size: 32,
-                  color:
-                      isFuture ? Colors.orange[800] : const Color(0xFFB71C1C),
-                ),
-                const SizedBox(height: 12),
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey[800],
-                  ),
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                const SizedBox(height: 8),
-                Visibility(
-                  visible: !isFuture,
-                  child: TextButton(
-                    onPressed: null,
-                    child: Text(
-                      'View More',
-                      style: TextStyle(
-                        color: isFuture
-                            ? Colors.orange[800]
-                            : const Color(0xFFB71C1C),
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
     );
   }
 }

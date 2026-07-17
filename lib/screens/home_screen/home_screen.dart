@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:vision_2026/constants/color_class.dart';
 import 'package:vision_2026/constants/image_class.dart';
 import 'package:vision_2026/constants/textstyle_class.dart';
+import 'package:vision_2026/helper/dot_pattern_background.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 import 'package:vision_2026/helper/url_launcher.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/IRT/irt_detail_page.dart';
@@ -378,7 +379,7 @@ class NGOLogos {
   }
 }
 
-class PartnerCard extends StatelessWidget {
+class PartnerCard extends StatefulWidget {
   final String name;
 
   const PartnerCard({
@@ -386,10 +387,19 @@ class PartnerCard extends StatelessWidget {
     required this.name,
   });
 
+  @override
+  State<PartnerCard> createState() => _PartnerCardState();
+}
+
+class _PartnerCardState extends State<PartnerCard> {
+  double _scale = 1;
+
+  void _setScale(double value) => setState(() => _scale = value);
+
   void _navigateToNGOScreen(BuildContext context) {
     Widget destinationScreen;
 
-    switch (name.toUpperCase()) {
+    switch (widget.name.toUpperCase()) {
       case 'SBF':
         destinationScreen = const SBFProfileScreen();
         break;
@@ -429,28 +439,45 @@ class PartnerCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
+    return GestureDetector(
+      onTapDown: (_) => _setScale(0.96),
+      onTapUp: (_) => _setScale(1),
+      onTapCancel: () => _setScale(1),
+      onTap: () => _navigateToNGOScreen(context),
+      child: AnimatedScale(
+        scale: _scale,
+        duration: const Duration(milliseconds: 120),
+        curve: Curves.easeOut,
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(18),
+            border: Border.all(
+              color: ColorClass.primaryColor.withOpacity(0.10),
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.06),
+                blurRadius: 16,
+                offset: const Offset(0, 6),
+              ),
+              BoxShadow(
+                color: ColorClass.primaryColor.withOpacity(0.12),
+                blurRadius: 18,
+                offset: const Offset(0, 8),
+              ),
+            ],
           ),
-        ],
-      ),
-      child: InkWell(
-        onTap: () {
-          _navigateToNGOScreen(context);
-        },
-        borderRadius: BorderRadius.circular(12),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Image.asset(
-            NGOLogos.getLogo(name),
-            fit: BoxFit.contain,
+          child: DotPatternBackground(
+            color: ColorClass.primaryColor,
+            borderRadius: BorderRadius.circular(18),
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Image.asset(
+                NGOLogos.getLogo(widget.name),
+                fit: BoxFit.contain,
+              ),
+            ),
           ),
         ),
       ),

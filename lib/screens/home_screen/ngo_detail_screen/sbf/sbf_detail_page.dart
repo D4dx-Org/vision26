@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:vision_2026/constants/color_class.dart';
-import 'package:vision_2026/helper/navigation_helper.dart';
+import 'package:vision_2026/helper/intervention_area_card.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/rehabitilation_work/rehabitilation_work.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sbf/disaster_management/detail_screen.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/sbf/disaster_management/disaster_categories.dart';
@@ -132,21 +132,25 @@ class SBFProfileScreen extends StatelessWidget {
                 childAspectRatio: 1.3,
                 children: const [
                   InterventionAreaCard(
+                    accentColor: ColorClass.primaryColor,
                     title: 'Disaster Management',
                     icon: LucideIcons.alertTriangle,
                     child: DisasterCategoryList(),
                   ),
                   InterventionAreaCard(
+                    accentColor: ColorClass.primaryColor,
                     title: 'Volunteer\'s Engagement',
                     icon: LucideIcons.users,
                     child: VolunteerCategoriesScreen(),
                   ),
                   InterventionAreaCard(
+                    accentColor: ColorClass.primaryColor,
                     title: 'Training Programs',
                     icon: LucideIcons.graduationCap,
                     child: TrainingCategoriesScreen(),
                   ),
                   InterventionAreaCard(
+                    accentColor: ColorClass.primaryColor,
                     title: 'Project Rahat',
                     icon: LucideIcons.heart,
                     child: CycloneDetailScreen(
@@ -160,11 +164,13 @@ class SBFProfileScreen extends StatelessWidget {
                     ),
                   ),
                   InterventionAreaCard(
+                    accentColor: ColorClass.primaryColor,
                     title: 'Disaster Ready Model Village',
                     icon: LucideIcons.home,
                     child: DisasterReadyCategoryScreen(),
                   ),
                   InterventionAreaCard(
+                    accentColor: ColorClass.primaryColor,
                     title: 'Khushiyon Ke Libas',
                     icon: LucideIcons.smile,
                     child: CycloneDetailScreen(
@@ -179,6 +185,7 @@ class SBFProfileScreen extends StatelessWidget {
                     ),
                   ),
                   InterventionAreaCard(
+                    accentColor: ColorClass.primaryColor,
                     title: 'Rehabitilation work',
                     icon: LucideIcons.recycle,
                     child: RehabitilationWorkCategoryScreen(),
@@ -195,74 +202,3 @@ class SBFProfileScreen extends StatelessWidget {
   }
 }
 
-class InterventionAreaCard extends StatelessWidget {
-  final String title;
-  final IconData icon;
-
-  final Widget child;
-
-  const InterventionAreaCard({
-    super.key,
-    required this.title,
-    required this.icon,
-    required this.child,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Material(
-        color: Colors.transparent,
-        borderRadius: BorderRadius.circular(15),
-        child: InkWell(
-          onTap: () {
-            navigateTo(context: context, route: child);
-          },
-          borderRadius: BorderRadius.circular(15),
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  icon,
-                  size: 32,
-                  color: ColorClass.primaryColor,
-                ),
-                const SizedBox(height: 12),
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black87,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 4),
-                // Text(
-                //   code,
-                //   style: TextStyle(
-                //     fontSize: 14,
-                //     color: Colors.grey[600],
-                //   ),
-                // ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}

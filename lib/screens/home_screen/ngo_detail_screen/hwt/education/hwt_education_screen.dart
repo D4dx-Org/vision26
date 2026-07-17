@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:vision_2026/helper/image_viewer.dart';
+import 'package:vision_2026/helper/gallery_grid.dart';
 import 'package:vision_2026/helper/navigation_helper.dart';
 
 class HWTEducationServicesScreen extends StatelessWidget {
@@ -340,40 +340,10 @@ class HwtEducationServiceDetailScreen extends StatelessWidget {
             if (images.isNotEmpty)
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: GridView.builder(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: isMobile ? 2 : 3,
-                    crossAxisSpacing: 16,
-                    mainAxisSpacing: 16,
-                    childAspectRatio: 1,
-                  ),
-                  itemCount: images.length,
-                  itemBuilder: (context, index) {
-                    return GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ImageViewerScreen(
-                              imagePath: images[index],
-                              currentIndex: 0,
-                              imagePaths: [...images],
-                             
-                            ),
-                          ),
-                        );
-                      },
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Image.asset(
-                          images[index],
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    );
-                  },
+                child: GalleryGrid(
+                  images: images,
+                  crossAxisCount: isMobile ? 2 : 3,
+                  spacing: 16,
                 ),
               ),
           ],

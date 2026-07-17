@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
+import 'package:vision_2026/helper/gallery_grid.dart';
 
 class OtherCampusesScreen extends StatelessWidget {
   final String title;
@@ -251,44 +252,7 @@ class OtherCampusesScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.width / 2,
-                    child: GridView.builder(
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        mainAxisSpacing: 12,
-                        crossAxisSpacing: 12,
-                      ),
-                      itemCount: imageList.length,
-                      itemBuilder: (context, index) {
-                        return Container(
-                          width: 160,
-                          margin: const EdgeInsets.only(right: 12),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(12),
-                            child: Image.asset(
-                              imageList[index],
-                              fit: BoxFit.cover,
-                              errorBuilder: (context, error, stackTrace) {
-                                return Container(
-                                  color: Colors.grey[300],
-                                  child: const Icon(
-                                    LucideIcons.imageOff,
-                                    color: Colors.grey,
-                                    size: 30,
-                                  ),
-                                );
-                              },
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
+                  GalleryGrid(images: imageList.cast<String>()),
                 ],
               ),
             ),

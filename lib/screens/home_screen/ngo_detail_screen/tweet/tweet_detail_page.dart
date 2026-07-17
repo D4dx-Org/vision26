@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:vision_2026/helper/navigation_helper.dart';
+import 'package:vision_2026/helper/intervention_area_card.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/hwf/hwf_content.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/tweet/economic_empowerment/education_sub_page.dart';
 import 'package:vision_2026/screens/home_screen/ngo_detail_screen/tweet/education/education_detail_page.dart';
@@ -127,18 +127,21 @@ class TweetDetailPage extends StatelessWidget {
                 childAspectRatio: 1.2,
                 children: const [
                   InterventionAreaCard(
+                    accentColor: const Color(0xFFB71C1C),
                     title: 'Education',
                     icon: LucideIcons
                         .graduationCap, // Already appropriate - education icon
                     child: EducationSubPage(),
                   ),
                   InterventionAreaCard(
+                    accentColor: const Color(0xFFB71C1C),
                     title: 'Economic empowerment',
                     icon: LucideIcons
                         .wallet, // Changed to wallet icon to represent economic aspects
                     child: EconomicEmpowermentScreen(),
                   ),
                   InterventionAreaCard(
+                    accentColor: const Color(0xFFB71C1C),
                     title: 'Widow support',
                     icon: LucideIcons
                         .shield, // Already appropriate - represents care and support
@@ -156,6 +159,7 @@ class TweetDetailPage extends StatelessWidget {
                     ),
                   ),
                   InterventionAreaCard(
+                    accentColor: const Color(0xFFB71C1C),
                     title: 'Leadership development',
                     icon: LucideIcons
                         .trophy, // Changed to users icon to represent leadership and team
@@ -174,6 +178,7 @@ class TweetDetailPage extends StatelessWidget {
                     ),
                   ),
                   InterventionAreaCard(
+                    accentColor: const Color(0xFFB71C1C),
                     title: "Women facilitation centre",
                     icon: LucideIcons
                         .userCircle2, // Changed to user-circle-2 to represent person-centered services
@@ -191,6 +196,7 @@ class TweetDetailPage extends StatelessWidget {
                     ),
                   ),
                   InterventionAreaCard(
+                    accentColor: const Color(0xFFB71C1C),
                     title: "Social empowerment",
                     icon: LucideIcons
                         .network, // Changed to network icon to represent social connections
@@ -209,6 +215,7 @@ class TweetDetailPage extends StatelessWidget {
                     ),
                   ),
                   InterventionAreaCard(
+                    accentColor: const Color(0xFFB71C1C),
                     title: "Mahila help desk",
                     icon: LucideIcons
                         .helpingHand, // Changed to helping-hand icon to represent assistance
@@ -226,6 +233,7 @@ class TweetDetailPage extends StatelessWidget {
                     ),
                   ),
                   InterventionAreaCard(
+                    accentColor: const Color(0xFFB71C1C),
                     title: "Relief & rehabilitation",
                     icon: LucideIcons
                         .lifeBuoy, // Changed to life-buoy icon to represent emergency relief
@@ -252,74 +260,3 @@ class TweetDetailPage extends StatelessWidget {
   }
 }
 
-class InterventionAreaCard extends StatelessWidget {
-  final String title;
-  final IconData icon;
-
-  final Widget child;
-
-  const InterventionAreaCard({
-    super.key,
-    required this.title,
-    required this.icon,
-    required this.child,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Material(
-        color: Colors.transparent,
-        borderRadius: BorderRadius.circular(15),
-        child: InkWell(
-          onTap: () {
-            navigateTo(context: context, route: child);
-          },
-          borderRadius: BorderRadius.circular(15),
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  icon,
-                  size: 32,
-                  color: const Color(0xFFB71C1C),
-                ),
-                const SizedBox(height: 12),
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black87,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 4),
-                // Text(
-                //   code,
-                //   style: TextStyle(
-                //     fontSize: 14,
-                //     color: Colors.grey[600],
-                //   ),
-                // ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
